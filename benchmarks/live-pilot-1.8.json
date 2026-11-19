@@ -1,0 +1,3813 @@
+{
+  "format": "codegraph-live-pilot/2",
+  "live": true,
+  "max_calls": 24,
+  "call_seconds": 180,
+  "claude_review_budget_usd": 0.6,
+  "claude_total_budget_usd": 5,
+  "tokenizer_estimates": false,
+  "cases": [
+    {
+      "task": "refund",
+      "arm": "source_only",
+      "fixture_sha256": "8bf8b2d53f72cbb5547baf8e973965593d07919934be608fa22584f761c8835e",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 22.051,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 28.383,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.693,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 8.383,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 50095,
+            "output_tokens": 704,
+            "cached_input_tokens": 32640,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 50095,
+              "output_tokens": 704,
+              "cached_input_tokens": 32640,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 122847,
+            "output_tokens": 712,
+            "cached_input_tokens": 101248,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 122847,
+              "output_tokens": 712,
+              "cached_input_tokens": 101248,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 17,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 19694,
+            "output_tokens": 696,
+            "cached_input_tokens": 9359,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0984558,
+          "native_usage": [
+            {
+              "input_tokens": 4,
+              "output_tokens": 696,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 9359,
+              "cache_creation_input_tokens": 10331,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "domain/refunds.py",
+        "tests/test_refunds.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_refunds.RefundTests.test_refund_eligibility_window"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.045,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.048,
+          "exit": 0
+        }
+      },
+      "seconds": 59.847,
+      "access_failure": null
+    },
+    {
+      "task": "refund",
+      "arm": "graph_assisted",
+      "fixture_sha256": "8bf8b2d53f72cbb5547baf8e973965593d07919934be608fa22584f761c8835e",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 29.584,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 33.585,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.62,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 8.596,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 75493,
+            "output_tokens": 990,
+            "cached_input_tokens": 52736,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 75493,
+              "output_tokens": 990,
+              "cached_input_tokens": 52736,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 128020,
+            "output_tokens": 981,
+            "cached_input_tokens": 115072,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 128020,
+              "output_tokens": 981,
+              "cached_input_tokens": 115072,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 42,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 25365,
+            "output_tokens": 775,
+            "cached_input_tokens": 12214,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.12313479999999999,
+          "native_usage": [
+            {
+              "input_tokens": 4,
+              "output_tokens": 775,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 12214,
+              "cache_creation_input_tokens": 13147,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "domain/refunds.py",
+        "tests/test_refunds.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_refunds.RefundTests.test_refund_eligibility_window"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.044,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.05,
+          "exit": 0
+        }
+      },
+      "seconds": 72.715,
+      "access_failure": null
+    },
+    {
+      "task": "falsy",
+      "arm": "graph_assisted",
+      "fixture_sha256": "08b95b088c89759bf7693bd434f4e012de969cd6b066c38568b378d5b5abc5e6",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          "fallback",
+          "fallback",
+          "fallback",
+          "fallback",
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 35.155,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 34.957,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.566,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 11.142,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 94004,
+            "output_tokens": 1152,
+            "cached_input_tokens": 71680,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 94004,
+              "output_tokens": 1152,
+              "cached_input_tokens": 71680,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_impact",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_verify_plan",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_source",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read",
+            "cg_verify_plan",
+            "cg_impact"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 130679,
+            "output_tokens": 928,
+            "cached_input_tokens": 116992,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 130679,
+              "output_tokens": 928,
+              "cached_input_tokens": 116992,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 21,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_source",
+            "cg_source",
+            "cg_source",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 37791,
+            "output_tokens": 919,
+            "cached_input_tokens": 31694,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0734708,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 919,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 31694,
+              "cache_creation_input_tokens": 6091,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "domain/settings.py",
+        "tests/test_settings.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_settings.ConfigTests.test_preserves_falsy_values"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 4,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.048,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.05,
+          "exit": 0
+        }
+      },
+      "seconds": 82.152,
+      "access_failure": null
+    },
+    {
+      "task": "falsy",
+      "arm": "source_only",
+      "fixture_sha256": "08b95b088c89759bf7693bd434f4e012de969cd6b066c38568b378d5b5abc5e6",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          "fallback",
+          "fallback",
+          "fallback",
+          "fallback",
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 20.884,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 25.85,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.591,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 9.084,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 50189,
+            "output_tokens": 616,
+            "cached_input_tokens": 32768,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 50189,
+              "output_tokens": 616,
+              "cached_input_tokens": 32768,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 122552,
+            "output_tokens": 646,
+            "cached_input_tokens": 111104,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 122552,
+              "output_tokens": 646,
+              "cached_input_tokens": 111104,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 13,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 19133,
+            "output_tokens": 764,
+            "cached_input_tokens": 12822,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0683164,
+          "native_usage": [
+            {
+              "input_tokens": 4,
+              "output_tokens": 764,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 12822,
+              "cache_creation_input_tokens": 6307,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "domain/settings.py",
+        "tests/test_settings.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_settings.ConfigTests.test_falsy_values"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 4,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "expected": [
+          0,
+          false,
+          "",
+          null,
+          "fallback"
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.045,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.05,
+          "exit": 0
+        }
+      },
+      "seconds": 56.735,
+      "access_failure": null
+    },
+    {
+      "task": "discount",
+      "arm": "source_only",
+      "fixture_sha256": "eb48497e6492db142bf3a544c2f983991efb32d23422f690273be9740f058f7c",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          100.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 31.086,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 28.573,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.58,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 11.361,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 67901,
+            "output_tokens": 858,
+            "cached_input_tokens": 49792,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 67901,
+              "output_tokens": 858,
+              "cached_input_tokens": 49792,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 19,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 90729,
+            "output_tokens": 685,
+            "cached_input_tokens": 82688,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 90729,
+              "output_tokens": 685,
+              "cached_input_tokens": 82688,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 20111,
+            "output_tokens": 1067,
+            "cached_input_tokens": 14338,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0703756,
+          "native_usage": [
+            {
+              "input_tokens": 4,
+              "output_tokens": 1067,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 14338,
+              "cache_creation_input_tokens": 5769,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "shop/discounts.py",
+        "tests/test_checkout.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_checkout.CheckoutTests.test_member_below_threshold",
+          "test_checkout.CheckoutTests.test_member_exact_threshold",
+          "test_checkout.CheckoutTests.test_non_member_exact_threshold"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 3,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.051,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.052,
+          "exit": 0
+        }
+      },
+      "seconds": 71.927,
+      "access_failure": null
+    },
+    {
+      "task": "discount",
+      "arm": "graph_assisted",
+      "fixture_sha256": "eb48497e6492db142bf3a544c2f983991efb32d23422f690273be9740f058f7c",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          100.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 35.292,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 31.702,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.569,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 11.146,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 101049,
+            "output_tokens": 1178,
+            "cached_input_tokens": 76672,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 101049,
+              "output_tokens": 1178,
+              "cached_input_tokens": 76672,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 3,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_search",
+            "cg_source",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 107108,
+            "output_tokens": 876,
+            "cached_input_tokens": 92928,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 107108,
+              "output_tokens": 876,
+              "cached_input_tokens": 92928,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 40052,
+            "output_tokens": 916,
+            "cached_input_tokens": 33283,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0791046,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 916,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 33283,
+              "cache_creation_input_tokens": 6763,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "mcp__code-graph__cg_callers",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_callers",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "shop/discounts.py",
+        "tests/test_checkout.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_checkout.CheckoutTests.test_member_below_threshold",
+          "test_checkout.CheckoutTests.test_member_exact_threshold",
+          "test_checkout.CheckoutTests.test_non_member_exact_threshold"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 3,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "expected": [
+          90.0,
+          99.99,
+          100.0,
+          135.0
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.047,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.051,
+          "exit": 0
+        }
+      },
+      "seconds": 79.034,
+      "access_failure": null
+    },
+    {
+      "task": "reserve",
+      "arm": "graph_assisted",
+      "fixture_sha256": "e3682e17868e23a95b280b543f263bebcddcb50f0a3235f00f1acb1a573f3096",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          [
+            "accepted",
+            {
+              "a": -1
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 42.889,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 42.161,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.579,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 14.854,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 98688,
+            "output_tokens": 1384,
+            "cached_input_tokens": 75648,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 98688,
+              "output_tokens": 1384,
+              "cached_input_tokens": 75648,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 36,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_source",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 174555,
+            "output_tokens": 1206,
+            "cached_input_tokens": 156544,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 174555,
+              "output_tokens": 1206,
+              "cached_input_tokens": 156544,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_search",
+            "cg_read",
+            "cg_read",
+            "cg_source",
+            "cg_source",
+            "cg_source",
+            "cg_source",
+            "cg_impact",
+            "cg_verify_plan",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 41567,
+            "output_tokens": 1299,
+            "cached_input_tokens": 33866,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0943372,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 1299,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 33866,
+              "cache_creation_input_tokens": 7695,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "Grep",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "Grep",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "tests/test_orders.py",
+        "warehouse/reservations.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_orders.OrderTests.test_duplicate_sku_exceeds_stock",
+          "test_orders.OrderTests.test_duplicate_sku_fits"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 2,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.052,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 4,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.047,
+          "exit": 0
+        }
+      },
+      "seconds": 100.818,
+      "access_failure": null
+    },
+    {
+      "task": "reserve",
+      "arm": "source_only",
+      "fixture_sha256": "e3682e17868e23a95b280b543f263bebcddcb50f0a3235f00f1acb1a573f3096",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          [
+            "accepted",
+            {
+              "a": -1
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 28.708,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 32.533,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.588,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 12.358,
+          "error_code": null
+        }
+      ],
+      "outcome": "success",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 67709,
+            "output_tokens": 895,
+            "cached_input_tokens": 49920,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 67709,
+              "output_tokens": 895,
+              "cached_input_tokens": 49920,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 14,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 101826,
+            "output_tokens": 853,
+            "cached_input_tokens": 91264,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 101826,
+              "output_tokens": 853,
+              "cached_input_tokens": 91264,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read",
+            "cg_read"
+          ]
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 20906,
+            "output_tokens": 1089,
+            "cached_input_tokens": 14706,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.0743052,
+          "native_usage": [
+            {
+              "input_tokens": 4,
+              "output_tokens": 1089,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 14706,
+              "cache_creation_input_tokens": 6196,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "tool_calls": [
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "mcp__code-graph__cg_read",
+            "StructuredOutput"
+          ]
+        }
+      ],
+      "verification_ok": true,
+      "review_verdict": "accept",
+      "changed_files": [
+        "tests/test_orders.py",
+        "warehouse/reservations.py"
+      ],
+      "candidate_scope_ok": true,
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_orders.OrderTests.test_duplicate_lines_exact_stock",
+          "test_orders.OrderTests.test_duplicate_lines_exceed_stock",
+          "test_orders.OrderTests.test_duplicate_lines_fit"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 3,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "integrated_holdout": {
+        "passed": true,
+        "actual": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "expected": [
+          [
+            "rejected",
+            {
+              "a": 3
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0
+            }
+          ],
+          [
+            "accepted",
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          [
+            "rejected",
+            {
+              "a": 0
+            }
+          ]
+        ],
+        "exit_code": 0
+      },
+      "integrated_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "cleanup_drained": true,
+      "final_state": "integrated",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.052,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.051,
+          "exit": 0
+        }
+      },
+      "seconds": 74.51,
+      "access_failure": null
+    }
+  ],
+  "environment": {
+    "python": "3.13.14",
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "engine_files": {
+    "agent_queries.py": "24256c4910917041e6b0764a571dd718e9e593485f484a4b20f3c58e80170649",
+    "agents.py": "5a22fabd41611559565648bcf468b3b2d47076adca94f63aedf7deb6484d232f",
+    "architecture.py": "473c6cce28ee1e7390c10ef68d3ecbc0888b309a4cadf72e4378e9a8cb075db7",
+    "catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "cg.py": "85aea0be96d4eb9e73f176858c9f0c78632842311cba048bb2709ad435d0dbaf",
+    "change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+    "change_flow.py": "e34a7e3a357dfac98c70564ab559c46331011187a3cdd96b198a30ef339d60a1",
+    "change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "evidence.py": "e8b5b2e436cf1efb6a145d7fdb3c01ecbf4e9a4729851f4a6ff171e1b23cd04e",
+    "feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+    "features.py": "c2d4176d97399524da6d1bbc077b4d15e2fa370994d13cc1036968d7b1cc9af7",
+    "language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "language_go.py": "e84ff7a25d125c8d1ab39a4771ecf6982fce6824d231721300d111a0152bfe0e",
+    "language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "language_sql.py": "8f47857e066a878fa9b093e968b477e9df52997cd3890ec5e581dbc6267834a8",
+    "language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "mcp_server.py": "da6e175f7bb431fe7f2cbf3f3c56c1a5edcf785eb79f97b9860690b76a6d25b4",
+    "project_data.py": "4c426220b00f33a0952d34320a1f286e7430259d60d0c3f6154878442c099108",
+    "search.py": "fb2d7ac5ffb7210e6aa12b93dddecc5b7480c6f6699b1d1b4b7aeb59ce9eb496",
+    "source_windows.py": "20bed3fe0ba5d8a242fd81d69f97a47b9d7e946ef0f2f591f3d665dcfb23df79",
+    "workbench.py": "be716c0dbfe92b33f33901b7f5175cd857ed375973a5b9b7fa228a43c0bad358"
+  },
+  "clients": {
+    "codex": {
+      "version": "codex-cli 0.167.1",
+      "version_exit": 0,
+      "model_override": null
+    },
+    "claude": {
+      "version": "2.1.323 (Claude Code)",
+      "version_exit": 0,
+      "model_override": null
+    }
+  },
+  "claude_reported_cost_usd": 0.6815,
+  "live_starts": 24
+}

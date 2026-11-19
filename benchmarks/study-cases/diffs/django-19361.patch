@@ -1,0 +1,57 @@
+diff --git a/django/db/migrations/autodetector.py b/django/db/migrations/autodetector.py
+index 1d25101219..731612b318 100644
+--- a/django/db/migrations/autodetector.py
++++ b/django/db/migrations/autodetector.py
+@@ -31,0 +32 @@ class OperationDependency(
++        REMOVE_INDEX_OR_CONSTRAINT = 5
+@@ -530,0 +532,12 @@ class MigrationAutodetector:
++        # Field is removed and part of an index/constraint.
++        elif (
++            dependency.field_name is not None
++            and dependency.type == OperationDependency.Type.REMOVE_INDEX_OR_CONSTRAINT
++        ):
++            return (
++                isinstance(
++                    operation,
++                    (operations.RemoveIndex, operations.RemoveConstraint),
++                )
++                and operation.model_name_lower == dependency.model_name_lower
++            )
+@@ -933,0 +947,18 @@ class MigrationAutodetector:
++            if indexes := model_state.options.pop("indexes", None):
++                for index in indexes:
++                    self.add_operation(
++                        app_label,
++                        operations.RemoveIndex(
++                            model_name=model_name,
++                            name=index.name,
++                        ),
++                    )
++            if constraints := model_state.options.pop("constraints", None):
++                for constraint in constraints:
++                    self.add_operation(
++                        app_label,
++                        operations.RemoveConstraint(
++                            model_name=model_name,
++                            name=constraint.name,
++                        ),
++                    )
+@@ -941,0 +973,8 @@ class MigrationAutodetector:
++                    dependencies=[
++                        OperationDependency(
++                            app_label,
++                            model_name,
++                            name,
++                            OperationDependency.Type.REMOVE_INDEX_OR_CONSTRAINT,
++                        ),
++                    ],
+@@ -1183 +1222 @@ class MigrationAutodetector:
+-            # order_with_respect_to or index/unique_together operation;
++            # order_with_respect_to or index/constraint/unique_together operation;
+@@ -1197,0 +1237,6 @@ class MigrationAutodetector:
++                OperationDependency(
++                    app_label,
++                    model_name,
++                    field_name,
++                    OperationDependency.Type.REMOVE_INDEX_OR_CONSTRAINT,
++                ),

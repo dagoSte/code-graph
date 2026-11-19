@@ -1,0 +1,7 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts b/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
+index 5e5270e3b..389ca6800 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
+@@ -229 +229 @@ export default createRule<Options, MessageIds>({
+-        (hasIndexSignature(uncast) && !hasIndexSignature(cast)) ||
++        hasIndexSignature(uncast) !== hasIndexSignature(cast) ||

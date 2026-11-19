@@ -1,0 +1,793 @@
+{
+  "format": "codegraph-catalog-followup/1",
+  "perimeter": "Only default catalog and features --query pipeline; no prepare or new timings.",
+  "input_manifest_sha256": "f8fc41d6f8a7fc82840bb32fa421a93469c4bc1c8dded498552c9cb77518224a",
+  "input_files": 846,
+  "input_bytes": 7274052,
+  "identical_input_hashes_before_after": true,
+  "engine_hashes": {
+    "scripts/feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+    "scripts/cg.py": "b137600c7202e68cd929448d87e3641ce5f9a04437abfcb2df61ab3fc22cb8e6",
+    "scripts/checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "scripts/project_data.py": "9deb525bc78d987e7e57378c2e755ce4927a80677a32a994d94c70b7ce7e1e67",
+    "scripts/features.py": "5c65ec5d01d8c73b217f72a4682973e80582f6790f18f4d805cbd3edbcb7a3f6",
+    "scripts/workbench.py": "a2b34dec0454057f3c76d23f73ccc36ebfdb1c25afdfd0183124613109f9bdbf",
+    "scripts/entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "scripts/architecture.py": "f295183f57b4b18ce3cefdbcb120dd2f1cd2737134ee105775c566007f3c2b5c",
+    "scripts/evidence.py": "fbc40a13d986adb265b0042fd4e0c928f21bd9cf7f4b71dcb2194d5787824ef0",
+    "scripts/change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+    "scripts/source_windows.py": "e327b1460262ae82addce99f7469a11b167886380ac3146c446d52f69e8c6d35",
+    "scripts/agent_queries.py": "5f7205314ba0cba33bb366b938f0955df07f9a7eba72bb316cf7f66c9b4d72a3"
+  },
+  "default_catalog": {
+    "total": 24,
+    "listed": 24,
+    "candidate_total": 170,
+    "candidates_truncated": true,
+    "items": [
+      {
+        "id": "symbol:850",
+        "title": "main",
+        "location": {
+          "file": "alerts/cli.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "alerts/cli.py",
+            "kind": "python_main_guard",
+            "line": 96
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:964",
+        "title": "main",
+        "location": {
+          "file": "analytics/aggregate.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "analytics/aggregate.py",
+            "kind": "python_main_guard",
+            "line": 898
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:998",
+        "title": "main",
+        "location": {
+          "file": "analytics/report.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "analytics/report.py",
+            "kind": "python_main_guard",
+            "line": 171
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1267",
+        "title": "main",
+        "location": {
+          "file": "deploy/adv-mysql.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/adv-mysql.py",
+            "kind": "python_main_guard",
+            "line": 44
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1308",
+        "title": "rebuild",
+        "location": {
+          "file": "deploy/adv_rebuild.py",
+          "kind": "function",
+          "language": "python",
+          "name": "rebuild"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/adv_rebuild.py",
+            "kind": "python_main_guard",
+            "line": 49
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1316",
+        "title": "bridge",
+        "location": {
+          "file": "deploy/claim-bridge.py",
+          "kind": "function",
+          "language": "python",
+          "name": "bridge"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/claim-bridge.py",
+            "kind": "python_main_guard",
+            "line": 144
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1320",
+        "title": "render",
+        "location": {
+          "file": "deploy/fpm-secrets.py",
+          "kind": "function",
+          "language": "python",
+          "name": "render"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/fpm-secrets.py",
+            "kind": "python_main_guard",
+            "line": 54
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1323",
+        "title": "export_hot",
+        "location": {
+          "file": "deploy/hot-export.py",
+          "kind": "function",
+          "language": "python",
+          "name": "export_hot"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/hot-export.py",
+            "kind": "python_main_guard",
+            "line": 40
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1349",
+        "title": "main",
+        "location": {
+          "file": "deploy/hotskillsctl.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/hotskillsctl.py",
+            "kind": "python_main_guard",
+            "line": 351
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1359",
+        "title": "main",
+        "location": {
+          "file": "deploy/newsletter-run.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/newsletter-run.py",
+            "kind": "python_main_guard",
+            "line": 254
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1373",
+        "title": "OperationError",
+        "location": {
+          "file": "deploy/ops.py",
+          "kind": "class",
+          "language": "python",
+          "name": "OperationError"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/adv_rebuild.py",
+            "kind": "python_main_guard",
+            "line": 47
+          },
+          {
+            "file": "deploy/claim-bridge.py",
+            "kind": "python_main_guard",
+            "line": 143
+          },
+          {
+            "file": "deploy/fpm-secrets.py",
+            "kind": "python_main_guard",
+            "line": 53
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1376",
+        "title": "Settings.__init__",
+        "location": {
+          "file": "deploy/ops.py",
+          "kind": "method",
+          "language": "python",
+          "name": "Settings.__init__"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/adv_rebuild.py",
+            "kind": "python_main_guard",
+            "line": 48
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1381",
+        "title": "_notify",
+        "location": {
+          "file": "deploy/ops.py",
+          "kind": "function",
+          "language": "python",
+          "name": "_notify"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/adv_rebuild.py",
+            "kind": "python_main_guard",
+            "line": 55
+          },
+          {
+            "file": "deploy/claim-bridge.py",
+            "kind": "python_main_guard",
+            "line": 149
+          },
+          {
+            "file": "deploy/watch-runner.py",
+            "kind": "python_main_guard",
+            "line": 70
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1457",
+        "title": "main",
+        "location": {
+          "file": "deploy/ops.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/ops.py",
+            "kind": "python_main_guard",
+            "line": 2135
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1545",
+        "title": "main",
+        "location": {
+          "file": "deploy/releases/kpi_deploy.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/kpi_deploy.py",
+            "kind": "python_main_guard",
+            "line": 2026
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1548",
+        "title": "main",
+        "location": {
+          "file": "deploy/releases/r3/check-baseline.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r3/check-baseline.py",
+            "kind": "python_main_guard",
+            "line": 51
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1563",
+        "title": "main",
+        "location": {
+          "file": "deploy/releases/r3/owner-r3.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r3/owner-r3.py",
+            "kind": "python_main_guard",
+            "line": 186
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1579",
+        "title": "seal",
+        "location": {
+          "file": "deploy/releases/r3/seal-r3.py",
+          "kind": "function",
+          "language": "python",
+          "name": "seal"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r3/seal-r3.py",
+            "kind": "python_main_guard",
+            "line": 112
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1587",
+        "title": "compose",
+        "location": {
+          "file": "deploy/releases/r4/apply/build-apply-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "compose"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/apply/build-apply-r4.py",
+            "kind": "python_main_guard",
+            "line": 262
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1604",
+        "title": "build",
+        "location": {
+          "file": "deploy/releases/r4/collector/build-collector-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "build"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/collector/build-collector-r4.py",
+            "kind": "python_main_guard",
+            "line": 223
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1624",
+        "title": "build",
+        "location": {
+          "file": "deploy/releases/r4/package/build-package-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "build"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/package/build-package-r4.py",
+            "kind": "python_main_guard",
+            "line": 298
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1629",
+        "title": "main",
+        "location": {
+          "file": "deploy/releases/r4/package/check-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/package/check-r4.py",
+            "kind": "python_main_guard",
+            "line": 172
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1647",
+        "title": "main",
+        "location": {
+          "file": "deploy/releases/r4/package/owner-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/package/owner-r4.py",
+            "kind": "python_main_guard",
+            "line": 268
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:1653",
+        "title": "seal",
+        "location": {
+          "file": "deploy/releases/r4/package/seal-r4.py",
+          "kind": "function",
+          "language": "python",
+          "name": "seal"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "deploy/releases/r4/package/seal-r4.py",
+            "kind": "python_main_guard",
+            "line": 113
+          }
+        ],
+        "generated_path_hint": false
+      }
+    ],
+    "issues_count": 0
+  },
+  "pipeline_query": {
+    "total": 11,
+    "listed": 11,
+    "candidate_total": 11,
+    "candidates_truncated": false,
+    "items": [
+      {
+        "id": "symbol:3588",
+        "title": "worker",
+        "location": {
+          "file": "pipeline/claim_rescan.py",
+          "kind": "function",
+          "language": "python",
+          "name": "worker"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/claim_rescan.py",
+            "kind": "python_main_guard",
+            "line": 223
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3815",
+        "title": "main",
+        "location": {
+          "file": "pipeline/hotskills.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/hotskills.py",
+            "kind": "python_main_guard",
+            "line": 2125
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3900",
+        "title": "main",
+        "location": {
+          "file": "pipeline/originals.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/originals.py",
+            "kind": "python_main_guard",
+            "line": 782
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3922",
+        "title": "main",
+        "location": {
+          "file": "pipeline/registries.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/registries.py",
+            "kind": "python_main_guard",
+            "line": 363
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:4128",
+        "title": "main",
+        "location": {
+          "file": "pipeline/smokecheck_worker.py",
+          "kind": "function",
+          "language": "python",
+          "name": "main"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/smokecheck_worker.py",
+            "kind": "python_main_guard",
+            "line": 417
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3579",
+        "title": "pipeline/claim_rescan.py",
+        "location": {
+          "file": "pipeline/claim_rescan.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/claim_rescan.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/claim_rescan.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3703",
+        "title": "pipeline/hotskills.py",
+        "location": {
+          "file": "pipeline/hotskills.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/hotskills.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/hotskills.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3861",
+        "title": "pipeline/originals.py",
+        "location": {
+          "file": "pipeline/originals.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/originals.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/originals.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3901",
+        "title": "pipeline/registries.py",
+        "location": {
+          "file": "pipeline/registries.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/registries.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/registries.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:3923",
+        "title": "pipeline/review_rules.py",
+        "location": {
+          "file": "pipeline/review_rules.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/review_rules.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/review_rules.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      },
+      {
+        "id": "symbol:4107",
+        "title": "pipeline/smokecheck_worker.py",
+        "location": {
+          "file": "pipeline/smokecheck_worker.py",
+          "kind": "module",
+          "language": "python",
+          "name": "pipeline/smokecheck_worker.py"
+        },
+        "provenance": "code_candidate",
+        "source_status": "indexed",
+        "entrypoint_evidence": [
+          {
+            "file": "pipeline/smokecheck_worker.py",
+            "kind": "module_calls",
+            "line": 1
+          }
+        ],
+        "generated_path_hint": false
+      }
+    ],
+    "issues_count": 0
+  },
+  "commands": [
+    {
+      "argv": [
+        "index"
+      ],
+      "exit": 0
+    },
+    {
+      "argv": [
+        "features",
+        "--json"
+      ],
+      "exit": 0
+    },
+    {
+      "argv": [
+        "features",
+        "--query",
+        "pipeline",
+        "--json"
+      ],
+      "exit": 0
+    }
+  ],
+  "measured_tokens": null,
+  "timings_measured": false,
+  "app_executed": false,
+  "previous_frozen_comparison": {
+    "default_location_order_unchanged": true,
+    "previous_pipeline_listed": 0,
+    "new_pipeline_listed": 11,
+    "previous_benchmark_not_modified": true
+  }
+}

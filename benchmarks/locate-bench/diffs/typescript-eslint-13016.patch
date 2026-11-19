@@ -1,0 +1,97 @@
+diff --git a/packages/type-utils/src/TypeOrValueSpecifier.ts b/packages/type-utils/src/TypeOrValueSpecifier.ts
+index 9ff88cce1..6d79b55e2 100644
+--- a/packages/type-utils/src/TypeOrValueSpecifier.ts
++++ b/packages/type-utils/src/TypeOrValueSpecifier.ts
+@@ -9,2 +9 @@ import { specifierNameMatches } from './typeOrValueSpecifiers/specifierNameMatch
+-import { typeDeclaredInFile } from './typeOrValueSpecifiers/typeDeclaredInFile';
+-import { typeDeclaredInLib } from './typeOrValueSpecifiers/typeDeclaredInLib';
++import { specifierSourceMatches } from './typeOrValueSpecifiers/specifierSourceMatches';
+@@ -183,4 +182,4 @@ export function typeMatchesSpecifier(
+-    const symbol = type.getSymbol() ?? type.aliasSymbol;
+-    const declarations = symbol?.getDeclarations() ?? [];
+-    const declarationFiles = declarations.map(declaration =>
+-      declaration.getSourceFile(),
++    return specifierSourceMatches(
++      specifier,
++      type.getSymbol() ?? type.aliasSymbol,
++      program,
+@@ -188,14 +186,0 @@ export function typeMatchesSpecifier(
+-    switch (specifier.from) {
+-      case 'file':
+-        return typeDeclaredInFile(specifier.path, declarationFiles, program);
+-      case 'lib':
+-        return typeDeclaredInLib(declarationFiles, program);
+-      case 'package':
+-        return typeDeclaredInPackageDeclarationFile(
+-          specifier.package,
+-          symbol,
+-          declarations,
+-          declarationFiles,
+-          program,
+-        );
+-    }
+diff --git a/packages/type-utils/src/isTypeReadonly.ts b/packages/type-utils/src/isTypeReadonly.ts
+index 7e753eda2..25747b266 100644
+--- a/packages/type-utils/src/isTypeReadonly.ts
++++ b/packages/type-utils/src/isTypeReadonly.ts
+@@ -13,0 +14 @@ import {
++import { specifierSourceMatches } from './typeOrValueSpecifiers/specifierSourceMatches';
+@@ -238,6 +239,10 @@ function isTypeReadonlyRecurser(
+-      const specifierName =
+-        typeof specifier === 'string' ? specifier : specifier.name;
+-      const names = Array.isArray(specifierName)
+-        ? specifierName
+-        : [specifierName];
+-      return names.includes(aliasSymbol.getName());
++      if (typeof specifier === 'string') {
++        return specifier === aliasSymbol.getName();
++      }
++      const names = Array.isArray(specifier.name)
++        ? specifier.name
++        : [specifier.name];
++      return (
++        names.includes(aliasSymbol.getName()) &&
++        specifierSourceMatches(specifier, aliasSymbol, program)
++      );
+diff --git a/packages/type-utils/src/typeOrValueSpecifiers/specifierSourceMatches.ts b/packages/type-utils/src/typeOrValueSpecifiers/specifierSourceMatches.ts
+new file mode 100644
+index 000000000..cb5141998
+--- /dev/null
++++ b/packages/type-utils/src/typeOrValueSpecifiers/specifierSourceMatches.ts
+@@ -0,0 +1,36 @@
++import type * as ts from 'typescript';
++
++import type {
++  FileSpecifier,
++  LibSpecifier,
++  PackageSpecifier,
++} from '../TypeOrValueSpecifier';
++
++import { typeDeclaredInFile } from './typeDeclaredInFile';
++import { typeDeclaredInLib } from './typeDeclaredInLib';
++import { typeDeclaredInPackageDeclarationFile } from './typeDeclaredInPackageDeclarationFile';
++
++export function specifierSourceMatches(
++  specifier: FileSpecifier | LibSpecifier | PackageSpecifier,
++  symbol: ts.Symbol | undefined,
++  program: ts.Program,
++): boolean {
++  const declarations = symbol?.getDeclarations() ?? [];
++  const declarationFiles = declarations.map(declaration =>
++    declaration.getSourceFile(),
++  );
++  switch (specifier.from) {
++    case 'file':
++      return typeDeclaredInFile(specifier.path, declarationFiles, program);
++    case 'lib':
++      return typeDeclaredInLib(declarationFiles, program);
++    case 'package':
++      return typeDeclaredInPackageDeclarationFile(
++        specifier.package,
++        symbol,
++        declarations,
++        declarationFiles,
++        program,
++      );
++  }
++}

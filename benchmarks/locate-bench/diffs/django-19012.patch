@@ -1,0 +1,55 @@
+diff --git a/django/contrib/contenttypes/fields.py b/django/contrib/contenttypes/fields.py
+index f9d896bc13..f28c346576 100644
+--- a/django/contrib/contenttypes/fields.py
++++ b/django/contrib/contenttypes/fields.py
+@@ -57,0 +58,4 @@ class GenericForeignKey(FieldCacheMixin, Field):
++    @cached_property
++    def ct_field_attname(self):
++        return self.model._meta.get_field(self.ct_field).attname
++
+@@ -62 +66 @@ class GenericForeignKey(FieldCacheMixin, Field):
+-            self.ct_field: getattr(obj, self.ct_field),
++            self.ct_field_attname: getattr(obj, self.ct_field_attname),
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 8e753e6455..589696696b 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -7,0 +8 @@ import warnings
++from functools import reduce
+@@ -23 +24 @@ from django.db import (
+-from django.db.models import AutoField, DateField, DateTimeField, Field, sql
++from django.db.models import AutoField, DateField, DateTimeField, Field, Max, sql
+@@ -802,0 +804 @@ class QuerySet(AltersData):
++            self._handle_order_with_respect_to(objs)
+@@ -842,0 +845,31 @@ class QuerySet(AltersData):
++    def _handle_order_with_respect_to(self, objs):
++        if objs and (order_wrt := self.model._meta.order_with_respect_to):
++            get_filter_kwargs_for_object = order_wrt.get_filter_kwargs_for_object
++            attnames = list(get_filter_kwargs_for_object(objs[0]))
++            group_keys = set()
++            obj_groups = []
++            for obj in objs:
++                group_key = tuple(get_filter_kwargs_for_object(obj).values())
++                group_keys.add(group_key)
++                obj_groups.append((obj, group_key))
++            filters = [
++                Q.create(list(zip(attnames, group_key))) for group_key in group_keys
++            ]
++            next_orders = (
++                self.model._base_manager.using(self.db)
++                .filter(reduce(operator.or_, filters))
++                .values_list(*attnames)
++                .annotate(_order__max=Max("_order") + 1)
++            )
++            # Create mapping of group values to max order.
++            group_next_orders = dict.fromkeys(group_keys, 0)
++            group_next_orders.update(
++                (tuple(group_key), next_order) for *group_key, next_order in next_orders
++            )
++            # Assign _order values to new objects.
++            for obj, group_key in obj_groups:
++                if getattr(obj, "_order", None) is None:
++                    group_next_order = group_next_orders[group_key]
++                    obj._order = group_next_order
++                    group_next_orders[group_key] += 1
++

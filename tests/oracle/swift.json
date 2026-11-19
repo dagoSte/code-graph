@@ -1,0 +1,384 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "swift/private_global",
+      "language": "swift",
+      "files": {
+        "main.swift": "private func leaf()->String{return \"[[\\\"main.swift\\\",\\\"leaf\\\"]]\"}\nfunc drive()->String{return leaf()}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "b63b5578fc975678bb2e518ec13e843b349e167d281f0a16374047a75a437872",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"leaf\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "33061daa9eb91d0b0f1efccbb7469fca743aa5afe4a985a7437f61cbcc0a2cb6"
+    },
+    {
+      "id": "swift/fileprivate_global",
+      "language": "swift",
+      "files": {
+        "main.swift": "fileprivate func leaf()->String{return \"[[\\\"main.swift\\\",\\\"leaf\\\"]]\"}\nfunc drive()->String{return leaf()}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "343fd641d476b052f7aced1fde1847b0207b4ac33084b4fca0f46f10000d40d2",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"leaf\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "495c8fb820170aa9ee7dcdbe90a0161cbe3150e051dc7b949ba3ff5a260ee4ee"
+    },
+    {
+      "id": "swift/private_struct",
+      "language": "swift",
+      "files": {
+        "main.swift": "private struct Repo {static func save()->String{return \"[[\\\"main.swift\\\",\\\"Repo.save\\\"]]\"}}\nfunc drive()->String{return Repo.save()}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "Repo.save"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "save",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "20b1459efad3c5167da88b878aaff1f08469e9cf1f9bf8db8f218c0d7b7d48e2",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"Repo.save\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "48f9da883cf805a27d35c9d7ba157f51ff38afe2d971d1f7c1690189d093ced7"
+    },
+    {
+      "id": "swift/private_class",
+      "language": "swift",
+      "files": {
+        "main.swift": "private final class Repo {static func save()->String{return \"[[\\\"main.swift\\\",\\\"Repo.save\\\"]]\"}}\nfunc drive()->String{return Repo.save()}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "Repo.save"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "save",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "da5153424760b00273c94b11b1881555bbf0205b05877386421c659acc53d11a",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"Repo.save\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "cd152b11612df7038de6ea3132df91d62a9418e839de12ca35c4f31d2bd366ff"
+    },
+    {
+      "id": "swift/labels_reference",
+      "language": "swift",
+      "files": {
+        "main.swift": "private func leaf(_ value:Int)->String{return \"[[\\\"main.swift\\\",\\\"leaf\\\"]]\"}\nfunc drive()->String{let f=leaf(_:);return f(1)}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "leaf",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "3827a66d521075b19a058a745225914680407ec2bc21ec3795c1c1add6d9202a",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"leaf\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "ac12d905784fc31c1926bd14adc1933bb2102b0e3e4ca4c4eb493a92ac77a3a7"
+    },
+    {
+      "id": "swift/stdlib_collision",
+      "language": "swift",
+      "files": {
+        "main.swift": "private func abs(_ value:Int)->Int{return 1001}\nfunc drive()->String{return abs(-2.0)==2.0 ? \"[]\":\"wrong\"}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "abs",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "4bf958f8f340d4498aedfd34c17af1f34ed9b754cd9a841525dc59857a6f04bf",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "1844a506314baed132883284533fdf3aebc7d2cd1125f6b3c33d9e2a06bb297b"
+    },
+    {
+      "id": "swift/overload_abstention",
+      "language": "swift",
+      "files": {
+        "main.swift": "private func leaf(_ value:Int)->String{return \"[[\\\"main.swift\\\",\\\"leaf\\\"]]\"}\nprivate func leaf(text:String)->String{return \"wrong\"}\nfunc drive()->String{return leaf(1)}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            3,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "ba718f18cc41635146e09fde2debc12a36a3de82439948e6e634d8280c093569",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"leaf\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "323c4f772cda279fe9ccde7869a7c9419d8c071edd5abe53fef75466497b2fcf"
+    },
+    {
+      "id": "swift/instance_abstention",
+      "language": "swift",
+      "files": {
+        "main.swift": "private final class Repo {func save()->String{return \"[[\\\"main.swift\\\",\\\"Repo.save\\\"]]\"}}\nfunc drive()->String{let value=Repo();return value.save()}\nprint(drive())\n"
+      },
+      "required_indexed": [
+        "main.swift"
+      ],
+      "targets": [
+        [
+          "main.swift",
+          "Repo.save"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "main.swift",
+            "drive",
+            2,
+            "save",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "main.swift"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "swift-targets",
+      "source_sha256": "dfa8fa42f1d7a166819e1f8ccca2dcb4d481bf88332adef59955fdf2c470524d",
+      "native": {
+        "args": [],
+        "exit": 0,
+        "stdout": "[[\"main.swift\",\"Repo.save\"]]\n",
+        "stderr": "",
+        "version": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+        "compiler_sha256": "448457da9a8a56741f2c8c4b8931e85b7377fc009c16918cd8ac1a8a3210ea1f",
+        "language_mode": 5
+      },
+      "evidence_sha256": "15e911347e6976579a97fd47ff8615914ca82cf4c110a99579b2cb23104ebe82"
+    }
+  ]
+}

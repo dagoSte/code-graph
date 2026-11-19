@@ -1,0 +1,330 @@
+{
+  "format": "codegraph-search-benchmark/1",
+  "cases_sha256": "4910ef9fe653170bb5ab195b9bf39048f185bc5bd2ba384afe6d24284f328d9e",
+  "engine_hashes": {
+    "agent_queries.py": "24256c4910917041e6b0764a571dd718e9e593485f484a4b20f3c58e80170649",
+    "agents.py": "5a22fabd41611559565648bcf468b3b2d47076adca94f63aedf7deb6484d232f",
+    "architecture.py": "473c6cce28ee1e7390c10ef68d3ecbc0888b309a4cadf72e4378e9a8cb075db7",
+    "catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "cg.py": "1ee9e10b979e139ae2730ec18c25d7a43ab684bfd2af2b495860be5ac704a549",
+    "change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+    "change_flow.py": "e34a7e3a357dfac98c70564ab559c46331011187a3cdd96b198a30ef339d60a1",
+    "change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "evidence.py": "e8b5b2e436cf1efb6a145d7fdb3c01ecbf4e9a4729851f4a6ff171e1b23cd04e",
+    "feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+    "features.py": "c2d4176d97399524da6d1bbc077b4d15e2fa370994d13cc1036968d7b1cc9af7",
+    "language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "language_go.py": "e84ff7a25d125c8d1ab39a4771ecf6982fce6824d231721300d111a0152bfe0e",
+    "language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "language_sql.py": "8f47857e066a878fa9b093e968b477e9df52997cd3890ec5e581dbc6267834a8",
+    "language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "mcp_server.py": "0ad64f20e8ce701b41997efe99979000817da0ca15417b499e6a9583ea3b5f65",
+    "project_data.py": "4c426220b00f33a0952d34320a1f286e7430259d60d0c3f6154878442c099108",
+    "search.py": "1ec3b2619b6885568c338df8f858313f2c6848cd02033996632a2c95d1f50941",
+    "source_windows.py": "20bed3fe0ba5d8a242fd81d69f97a47b9d7e946ef0f2f591f3d665dcfb23df79",
+    "start.py": "e7f29eaedd57abf72a22e4ec0b6ed7116c3a73cf6efac77063391c7a47ada637",
+    "workbench.py": "be716c0dbfe92b33f33901b7f5175cd857ed375973a5b9b7fa228a43c0bad358",
+    "catalog/files.json": "a764b5e702b2b147a2f21a1af95f6986e77a5c008aae3f81d1be5ee277ba6ea9",
+    "catalog/js.json": "aa62c130b51b5c740da51a7527f92c0fd4b1931a99d1d4dc9c7cd3d47ce99790",
+    "catalog/php.json": "d1c621a012dadd325f6d8cfb302f069e67e6ff6c4aa5081f6b208742984210a8",
+    "catalog/python.json": "a8972fc275dcef6786424e3d2e213918792fbf06e265886921f7a13163435cb6",
+    "catalog/schema.json": "83b69d808e892db447db1af8387f386c0ccc7e5b16091a54e0727998713c9c89"
+  },
+  "sqlite_version": "3.54.1",
+  "scope": "Synthetic retrieval cases, separate from unit fixtures; expected symbols are declared relevance judgments, not runtime or whole-task correctness.",
+  "measured_tokens": null,
+  "summary": {
+    "lexical": {
+      "recall_at_5": 0.6190476190476191,
+      "mean_reciprocal_rank": 0.9285714285714286,
+      "median_milliseconds": 27.81895801308565
+    },
+    "hybrid": {
+      "recall_at_5": 1.0,
+      "mean_reciprocal_rank": 1.0,
+      "median_milliseconds": 27.91266600252129
+    }
+  },
+  "queries": [
+    {
+      "project": "purchase",
+      "query": "cancel order",
+      "relevant": [
+        "checkout.py:void_purchase",
+        "ledger.py:record_adjustment",
+        "tests/test_checkout.py:test_reversal"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "preview.py:obsolete_cancel_order",
+            "checkout.py:void_purchase"
+          ],
+          "missing": [
+            "ledger.py:record_adjustment",
+            "tests/test_checkout.py:test_reversal"
+          ],
+          "recall_at_5": 0.3333333333333333,
+          "reciprocal_rank": 0.5,
+          "unexpected": 1,
+          "milliseconds": 27.299792011035606,
+          "payload_chars": 2618
+        },
+        "hybrid": {
+          "hits": [
+            "ledger.py:record_adjustment",
+            "preview.py:obsolete_cancel_order",
+            "checkout.py:void_purchase",
+            "tests/test_checkout.py:test_reversal"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 1,
+          "milliseconds": 27.502582990564406,
+          "payload_chars": 4003
+        }
+      }
+    },
+    {
+      "project": "purchase",
+      "query": "audit entry",
+      "relevant": [
+        "checkout.py:void_purchase",
+        "ledger.py:record_adjustment"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "ledger.py:record_adjustment"
+          ],
+          "missing": [
+            "checkout.py:void_purchase"
+          ],
+          "recall_at_5": 0.5,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 26.145750016439706,
+          "payload_chars": 1870
+        },
+        "hybrid": {
+          "hits": [
+            "checkout.py:void_purchase",
+            "ledger.py:record_adjustment",
+            "tests/test_checkout.py:test_reversal"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 1,
+          "milliseconds": 27.354541001841426,
+          "payload_chars": 3360
+        }
+      }
+    },
+    {
+      "project": "purchase",
+      "query": "nonexistent quasar",
+      "relevant": [],
+      "modes": {
+        "lexical": {
+          "hits": [],
+          "missing": [],
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "unexpected": 0,
+          "milliseconds": 25.888957985443994,
+          "payload_chars": 1405
+        },
+        "hybrid": {
+          "hits": [],
+          "missing": [],
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "unexpected": 0,
+          "milliseconds": 26.052250002976507,
+          "payload_chars": 1402
+        }
+      }
+    },
+    {
+      "project": "settings",
+      "query": "parse config",
+      "relevant": [
+        "decoder.py:decode_value",
+        "settings.py:load_settings"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "settings.py:load_settings",
+            "decoder.py:decode_value"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 27.69891600473784,
+          "payload_chars": 2698
+        },
+        "hybrid": {
+          "hits": [
+            "decoder.py:decode_value",
+            "settings.py:load_settings"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 29.568833007942885,
+          "payload_chars": 2930
+        }
+      }
+    },
+    {
+      "project": "typescript",
+      "query": "HTTPServer",
+      "relevant": [
+        "api.ts:startHTTPServer",
+        "transport.ts:sendWire"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "api.ts:startHTTPServer"
+          ],
+          "missing": [
+            "transport.ts:sendWire"
+          ],
+          "recall_at_5": 0.5,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 30.097291979473084,
+          "payload_chars": 1876
+        },
+        "hybrid": {
+          "hits": [
+            "api.ts:startHTTPServer",
+            "transport.ts:sendWire"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 27.91266600252129,
+          "payload_chars": 2529
+        }
+      }
+    },
+    {
+      "project": "typescript",
+      "query": "sendWire",
+      "relevant": [
+        "api.ts:startHTTPServer",
+        "transport.ts:sendWire"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "transport.ts:sendWire",
+            "api.ts:startHTTPServer"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 39.11825001705438,
+          "payload_chars": 2568
+        },
+        "hybrid": {
+          "hits": [
+            "transport.ts:sendWire",
+            "api.ts:startHTTPServer"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 30.36833298392594,
+          "payload_chars": 2600
+        }
+      }
+    },
+    {
+      "project": "php",
+      "query": "cancel invoice",
+      "relevant": [
+        "actions.php:cancel_invoice",
+        "ledger.php:append"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "actions.php:cancel_invoice"
+          ],
+          "missing": [
+            "ledger.php:append"
+          ],
+          "recall_at_5": 0.5,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 28.982375020859763,
+          "payload_chars": 2161
+        },
+        "hybrid": {
+          "hits": [
+            "actions.php:cancel_invoice",
+            "ledger.php:append"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 28.10520798084326,
+          "payload_chars": 2819
+        }
+      }
+    },
+    {
+      "project": "callback",
+      "query": "release lock",
+      "relevant": [
+        "lifecycle.py:bind_shutdown",
+        "lifecycle.py:exit_cleanup"
+      ],
+      "modes": {
+        "lexical": {
+          "hits": [
+            "lifecycle.py:exit_cleanup"
+          ],
+          "missing": [
+            "lifecycle.py:bind_shutdown"
+          ],
+          "recall_at_5": 0.5,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 27.81895801308565,
+          "payload_chars": 2030
+        },
+        "hybrid": {
+          "hits": [
+            "lifecycle.py:exit_cleanup",
+            "lifecycle.py:bind_shutdown"
+          ],
+          "missing": [],
+          "recall_at_5": 1.0,
+          "reciprocal_rank": 1.0,
+          "unexpected": 0,
+          "milliseconds": 27.112416981253773,
+          "payload_chars": 2700
+        }
+      }
+    }
+  ]
+}

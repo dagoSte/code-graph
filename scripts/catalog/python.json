@@ -1,0 +1,923 @@
+{
+ "format": "codegraph-catalog/1",
+ "language": "python",
+ "unrecognized_decorator": "registrar",
+ "entries": [
+  {
+   "id": "python.abc.abstractmethod.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "abstractmethod",
+    "module": "abc"
+   },
+   "source": "https://docs.python.org/3/library/abc.html#abc.abstractmethod",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.atexit.register.callback",
+   "language": "python",
+   "role": "callback",
+   "origin": {
+    "via": "import",
+    "name": "register",
+    "module": "atexit"
+   },
+   "source": "https://docs.python.org/3/library/atexit.html#atexit.register",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module",
+   "args": [
+    0
+   ],
+   "label": "atexit"
+  },
+  {
+   "id": "python.atexit.register.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "import",
+    "name": "register",
+    "module": "atexit"
+   },
+   "source": "https://docs.python.org/3/library/atexit.html#atexit.register",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module",
+   "note": "@atexit.register: the decorated function runs at interpreter exit"
+  },
+  {
+   "id": "python.builtin.__import__.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "__import__"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#__import__",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.classmethod.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "builtin",
+    "name": "classmethod"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#classmethod",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.eval.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "eval"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#eval",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.exec.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "exec"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#exec",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.getattr.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "getattr"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#getattr",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.property.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "builtin",
+    "name": "property"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#property",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.setattr.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "setattr"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#setattr",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtin.staticmethod.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "builtin",
+    "name": "staticmethod"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#staticmethod",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtins.property.deleter.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "instance",
+    "name": "property.deleter",
+    "module": "builtins"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#property",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtins.property.getter.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "instance",
+    "name": "property.getter",
+    "module": "builtins"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#property",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.builtins.property.setter.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "instance",
+    "name": "property.setter",
+    "module": "builtins"
+   },
+   "source": "https://docs.python.org/3/library/functions.html#property",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in builtins"
+  },
+  {
+   "id": "python.contextlib.asynccontextmanager.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "asynccontextmanager",
+    "module": "contextlib"
+   },
+   "source": "https://docs.python.org/3/library/contextlib.html#contextlib.asynccontextmanager",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.contextlib.contextmanager.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "contextmanager",
+    "module": "contextlib"
+   },
+   "source": "https://docs.python.org/3/library/contextlib.html#contextlib.contextmanager",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.dataclasses.dataclass.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "dataclass",
+    "module": "dataclasses"
+   },
+   "source": "https://docs.python.org/3/library/dataclasses.html#dataclasses.dataclass",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.fastapi.apirouter.api_route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.api_route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.delete.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.delete",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.get.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.get",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.head.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.head",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.options.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.options",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.patch.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.patch",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.post.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.post",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.put.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.put",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.trace.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.trace",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.websocket.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.websocket",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.apirouter.websocket_route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "APIRouter.websocket_route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/apirouter/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.api_route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.api_route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.delete.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.delete",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.get.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.get",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.head.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.head",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.options.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.options",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.patch.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.patch",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.post.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.post",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.put.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.put",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.trace.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.trace",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.websocket.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.websocket",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastapi.fastapi.websocket_route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastAPI.websocket_route",
+    "module": "fastapi"
+   },
+   "source": "https://fastapi.tiangolo.com/reference/fastapi/",
+   "checked_with": "fastapi 0.104.1 (python 3.11.5): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.fastmcp.fastmcp.prompt.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.prompt",
+    "module": "fastmcp"
+   },
+   "source": "https://gofastmcp.com/servers/tools",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.fastmcp.fastmcp.resource.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.resource",
+    "module": "fastmcp"
+   },
+   "source": "https://gofastmcp.com/servers/tools",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.fastmcp.fastmcp.tool.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.tool",
+    "module": "fastmcp"
+   },
+   "source": "https://gofastmcp.com/servers/tools",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.flask.blueprint.delete.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.delete",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.delete",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.blueprint.get.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.get",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.get",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.blueprint.patch.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.patch",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.patch",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.blueprint.post.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.post",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.post",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.blueprint.put.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.put",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.put",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.blueprint.route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Blueprint.route",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Blueprint.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.delete.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.delete",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.get.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.get",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.patch.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.patch",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.post.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.post",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.put.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.put",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.route.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.route",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): hasattr",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.flask.flask.websocket.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "Flask.websocket",
+    "module": "flask"
+   },
+   "source": "https://flask.palletsprojects.com/en/stable/api/#flask.Flask.route",
+   "checked_with": "flask 2.3.3 (python 3.13.2): no Flask.websocket; kept from the code-graph 1.6.4 dump",
+   "observation": "registration.site"
+  },
+  {
+   "id": "python.functools.cache.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "cache",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.cache",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.functools.cached_property.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "cached_property",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.cached_property",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.functools.lru_cache.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "lru_cache",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.lru_cache",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.functools.singledispatch.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "singledispatch",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.singledispatch",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.functools.total_ordering.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "total_ordering",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.total_ordering",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.functools.wraps.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "wraps",
+    "module": "functools"
+   },
+   "source": "https://docs.python.org/3/library/functools.html#functools.wraps",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.importlib.import_module.dynamic",
+   "language": "python",
+   "role": "dynamic",
+   "origin": {
+    "via": "import",
+    "name": "import_module",
+    "module": "importlib"
+   },
+   "source": "https://docs.python.org/3/library/importlib.html#importlib.import_module",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.mcp.server.fastmcp.fastmcp.prompt.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.prompt",
+    "module": "mcp.server.fastmcp"
+   },
+   "source": "https://github.com/modelcontextprotocol/python-sdk",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.mcp.server.fastmcp.fastmcp.resource.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.resource",
+    "module": "mcp.server.fastmcp"
+   },
+   "source": "https://github.com/modelcontextprotocol/python-sdk",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.mcp.server.fastmcp.fastmcp.tool.registrar",
+   "language": "python",
+   "role": "registrar",
+   "origin": {
+    "via": "instance",
+    "name": "FastMCP.tool",
+    "module": "mcp.server.fastmcp"
+   },
+   "source": "https://github.com/modelcontextprotocol/python-sdk",
+   "checked_with": "transcribed from code-graph 1.6.4 observe_registration; not run against the framework",
+   "observation": "registration.mcp"
+  },
+  {
+   "id": "python.typing.final.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "final",
+    "module": "typing"
+   },
+   "source": "https://docs.python.org/3/library/typing.html#typing.final",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.typing.overload.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "overload",
+    "module": "typing"
+   },
+   "source": "https://docs.python.org/3/library/typing.html#typing.overload",
+   "checked_with": "python 3.9, 3.12, 3.13: attribute present (hasattr) in this module"
+  },
+  {
+   "id": "python.typing.override.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "override",
+    "module": "typing"
+   },
+   "source": "https://docs.python.org/3/library/typing.html#typing.override",
+   "checked_with": "python 3.12, 3.13: present; absent in 3.9"
+  },
+  {
+   "id": "python.typing_extensions.deprecated.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "deprecated",
+    "module": "typing_extensions"
+   },
+   "source": "https://typing-extensions.readthedocs.io/en/latest/#typing_extensions.deprecated",
+   "checked_with": "not run here: typing_extensions is not installed in this environment"
+  },
+  {
+   "id": "python.typing_extensions.override.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "override",
+    "module": "typing_extensions"
+   },
+   "source": "https://typing-extensions.readthedocs.io/en/latest/#typing_extensions.override",
+   "checked_with": "not run here: typing_extensions is not installed in this environment"
+  },
+  {
+   "id": "python.warnings.deprecated.pure",
+   "language": "python",
+   "role": "pure_decorator",
+   "origin": {
+    "via": "import",
+    "name": "deprecated",
+    "module": "warnings"
+   },
+   "source": "https://docs.python.org/3/library/warnings.html#warnings.deprecated",
+   "checked_with": "python 3.13: present; absent in 3.9 and 3.12"
+  }
+ ]
+}

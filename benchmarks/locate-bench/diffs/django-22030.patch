@@ -1,0 +1,15 @@
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index 1548dbb307..120c90077c 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -9,0 +10 @@ from itertools import chain, tee
++from pathlib import Path
+@@ -13 +14 @@ from django.core.exceptions import ImproperlyConfigured
+-from django.db import IntegrityError
++from django.db import IntegrityError, InterfaceError
+@@ -204,0 +206,5 @@ class DatabaseWrapper(BaseDatabaseWrapper):
++        if not self.is_in_memory_db():
++            try:
++                Path(conn_params["database"]).parent.mkdir(exist_ok=True, parents=True)
++            except OSError as e:
++                raise InterfaceError(f"Error creating path to SQLite database: {e}.")

@@ -1,0 +1,204 @@
+diff --git a/tsdb/head.go b/tsdb/head.go
+index 855de7eeb..cba0737e5 100644
+--- a/tsdb/head.go
++++ b/tsdb/head.go
+@@ -158,0 +159,3 @@ type Head struct {
++	// testAfterSeriesLookup is invoked after getByID in appenders, before the
++	// series is locked. Tests use it to race GC against a resolved pointer.
++	testAfterSeriesLookup func(*memSeries)
+@@ -2383,0 +2387 @@ func (s *stripeSeries) gc(mint int64, minOOOMmapRef chunks.ChunkDiskMapperRef) (
++		series.gced = true
+@@ -2581,0 +2586 @@ func (s *stripeSeries) gcSeries(seriesRefs []storage.SeriesRef, maxt int64, shou
++		series.gced = true
+@@ -2778,0 +2784,5 @@ type memSeries struct {
++	// Whether garbage collection has removed this series from the head index. Such a
++	// series is unreachable, so appending to it would silently lose the samples;
++	// appenders that looked it up before it was collected have to get a fresh one
++	// instead. See headAppenderBase.lockForAppend.
++	gced bool
+diff --git a/tsdb/head_append.go b/tsdb/head_append.go
+index cc82c6355..311fcf15e 100644
+--- a/tsdb/head_append.go
++++ b/tsdb/head_append.go
+@@ -445,0 +446,3 @@ func (a *headAppender) Append(ref storage.SeriesRef, lset labels.Labels, t int64
++	if hook := a.head.testAfterSeriesLookup; hook != nil {
++		hook(s)
++	}
+@@ -474 +477,4 @@ func (a *headAppender) Append(ref storage.SeriesRef, lset labels.Labels, t int64
+-	s.Lock()
++	s, err := a.lockForAppend(s)
++	if err != nil {
++		return 0, err
++	}
+@@ -529 +535,4 @@ func (a *headAppender) AppendSTZeroSample(ref storage.SeriesRef, lset labels.Lab
+-	s.Lock()
++	s, err := a.lockForAppend(s)
++	if err != nil {
++		return 0, err
++	}
+@@ -570,0 +580,24 @@ func (a *headAppenderBase) getOrCreate(lset labels.Labels) (s *memSeries, create
++// lockForAppend locks s and returns it, ready to be marked as pending commit.
++//
++// Looking a series up only holds the stripe lock for the duration of the lookup, so
++// garbage collection can remove the series from the head index before the appender gets
++// to lock it and mark it as pending commit. Appending to such a series succeeds but the
++// samples are unreachable from the head, i.e. they are silently lost. When that
++// happened, a live series for the same labels is created and returned locked instead,
++// which is the same outcome as garbage collection winning the race outright.
++func (a *headAppenderBase) lockForAppend(s *memSeries) (*memSeries, error) {
++	for {
++		s.Lock()
++		if !s.gced {
++			return s, nil
++		}
++		lset := s.lset // Safe to access; the series is locked.
++		s.Unlock()
++
++		var err error
++		if s, _, err = a.getOrCreate(lset); err != nil {
++			return nil, err
++		}
++	}
++}
++
+@@ -850 +883,4 @@ func (a *headAppender) AppendHistogram(ref storage.SeriesRef, lset labels.Labels
+-		s.Lock()
++		var lockErr error
++		if s, lockErr = a.lockForAppend(s); lockErr != nil {
++			return 0, lockErr
++		}
+@@ -882 +918,4 @@ func (a *headAppender) AppendHistogram(ref storage.SeriesRef, lset labels.Labels
+-		s.Lock()
++		var lockErr error
++		if s, lockErr = a.lockForAppend(s); lockErr != nil {
++			return 0, lockErr
++		}
+@@ -942 +981,4 @@ func (a *headAppender) AppendHistogramSTZeroSample(ref storage.SeriesRef, lset l
+-		s.Lock()
++		var lockErr error
++		if s, lockErr = a.lockForAppend(s); lockErr != nil {
++			return 0, lockErr
++		}
+@@ -984 +1026,4 @@ func (a *headAppender) AppendHistogramSTZeroSample(ref storage.SeriesRef, lset l
+-		s.Lock()
++		var lockErr error
++		if s, lockErr = a.lockForAppend(s); lockErr != nil {
++			return 0, lockErr
++		}
+diff --git a/tsdb/head_append_v2.go b/tsdb/head_append_v2.go
+index a31c3a2c3..1857cd421 100644
+--- a/tsdb/head_append_v2.go
++++ b/tsdb/head_append_v2.go
+@@ -138,0 +139,3 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
++	if hook := a.head.testAfterSeriesLookup; hook != nil {
++		hook(s)
++	}
+@@ -148 +151 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
+-		a.bestEffortAppendSTZeroSample(s, ls, st, t, h, fh)
++		s = a.bestEffortAppendSTZeroSample(s, ls, st, t, h, fh)
+@@ -150,0 +154 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
++	var appended *memSeries
+@@ -154 +158 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
+-		appErr = a.appendFloatHistogram(s, st, t, fh, opts.RejectOutOfOrder)
++		appended, appErr = a.appendFloatHistogram(s, st, t, fh, opts.RejectOutOfOrder)
+@@ -157 +161 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
+-		appErr = a.appendHistogram(s, st, t, h, opts.RejectOutOfOrder)
++		appended, appErr = a.appendHistogram(s, st, t, h, opts.RejectOutOfOrder)
+@@ -183 +187 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
+-		appErr = a.appendFloat(s, st, t, v, opts.RejectOutOfOrder)
++		appended, appErr = a.appendFloat(s, st, t, v, opts.RejectOutOfOrder)
+@@ -194,0 +199 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
++	s = appended
+@@ -224,2 +229,7 @@ func (a *headAppenderV2) Append(ref storage.SeriesRef, ls labels.Labels, st, t i
+-func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastRejectOOO bool) error {
+-	s.Lock()
++// appendFloat appends v to s, and returns the series the sample was appended to, which
++// may differ from s if s was garbage-collected in the meantime (see lockForAppend).
++func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastRejectOOO bool) (*memSeries, error) {
++	s, err := a.lockForAppend(s)
++	if err != nil {
++		return nil, err
++	}
+@@ -231 +241 @@ func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastR
+-		return storage.ErrOutOfOrderSample
++		return nil, storage.ErrOutOfOrderSample
+@@ -241 +251 @@ func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastR
+-		return err
++		return nil, err
+@@ -247 +257 @@ func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastR
+-	return nil
++	return s, nil
+@@ -250,2 +260,7 @@ func (a *headAppenderV2) appendFloat(s *memSeries, st, t int64, v float64, fastR
+-func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram.Histogram, fastRejectOOO bool) error {
+-	s.Lock()
++// appendHistogram appends h to s, and returns the series the sample was appended to,
++// which may differ from s if s was garbage-collected in the meantime (see lockForAppend).
++func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram.Histogram, fastRejectOOO bool) (*memSeries, error) {
++	s, err := a.lockForAppend(s)
++	if err != nil {
++		return nil, err
++	}
+@@ -257 +272 @@ func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram
+-		return storage.ErrOutOfOrderSample
++		return nil, storage.ErrOutOfOrderSample
+@@ -267 +282 @@ func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram
+-		return err
++		return nil, err
+@@ -276 +291 @@ func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram
+-	return nil
++	return s, nil
+@@ -279,2 +294,8 @@ func (a *headAppenderV2) appendHistogram(s *memSeries, st, t int64, h *histogram
+-func (a *headAppenderV2) appendFloatHistogram(s *memSeries, st, t int64, fh *histogram.FloatHistogram, fastRejectOOO bool) error {
+-	s.Lock()
++// appendFloatHistogram appends fh to s, and returns the series the sample was appended
++// to, which may differ from s if s was garbage-collected in the meantime (see
++// lockForAppend).
++func (a *headAppenderV2) appendFloatHistogram(s *memSeries, st, t int64, fh *histogram.FloatHistogram, fastRejectOOO bool) (*memSeries, error) {
++	s, err := a.lockForAppend(s)
++	if err != nil {
++		return nil, err
++	}
+@@ -286 +307 @@ func (a *headAppenderV2) appendFloatHistogram(s *memSeries, st, t int64, fh *his
+-		return storage.ErrOutOfOrderSample
++		return nil, storage.ErrOutOfOrderSample
+@@ -296 +317 @@ func (a *headAppenderV2) appendFloatHistogram(s *memSeries, st, t int64, fh *his
+-		return err
++		return nil, err
+@@ -305 +326 @@ func (a *headAppenderV2) appendFloatHistogram(s *memSeries, st, t int64, fh *his
+-	return nil
++	return s, nil
+@@ -338 +359,4 @@ func (a *headAppenderV2) appendExemplars(s *memSeries, exemplar []exemplar.Exemp
+-func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.Labels, st, t int64, h *histogram.Histogram, fh *histogram.FloatHistogram) {
++//
++// It returns the series the zero sample was appended to, which may differ from s if s was
++// garbage-collected in the meantime (see lockForAppend).
++func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.Labels, st, t int64, h *histogram.Histogram, fh *histogram.FloatHistogram) *memSeries {
+@@ -342 +366 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		return
++		return s
+@@ -346 +370 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		return
++		return s
+@@ -349 +373,4 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-	var err error
++	var (
++		err      error
++		appended *memSeries
++	)
+@@ -360 +387 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		err = a.appendFloatHistogram(s, 0, st, zeroFloatHistogram, true)
++		appended, err = a.appendFloatHistogram(s, 0, st, zeroFloatHistogram, true)
+@@ -370 +397 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		err = a.appendHistogram(s, 0, st, zeroHistogram, true)
++		appended, err = a.appendHistogram(s, 0, st, zeroHistogram, true)
+@@ -372 +399 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		err = a.appendFloat(s, 0, st, 0, true)
++		appended, err = a.appendFloat(s, 0, st, 0, true)
+@@ -378 +405 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-			return
++			return s
+@@ -381 +408 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
+-		return
++		return s
+@@ -382,0 +410 @@ func (a *headAppenderV2) bestEffortAppendSTZeroSample(s *memSeries, ls labels.La
++	return appended

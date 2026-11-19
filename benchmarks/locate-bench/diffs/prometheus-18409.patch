@@ -1,0 +1,24 @@
+diff --git a/promql/engine.go b/promql/engine.go
+index fd0ac9374..feddc3439 100644
+--- a/promql/engine.go
++++ b/promql/engine.go
+@@ -2089,0 +2090,2 @@ func (ev *evaluator) eval(ctx context.Context, expr parser.Expr) (parser.Value,
++		// However, if the input series (e.g., from a subquery) already has
++		// DropName set, we should respect that.
+@@ -2104,0 +2107,10 @@ func (ev *evaluator) eval(ctx context.Context, expr parser.Expr) (parser.Value,
++
++			// Check if input series already wants to drop the name (e.g., from subquery).
++			inputDropName := false
++			if storageSeries, ok := s.(*StorageSeries); ok {
++				inputDropName = storageSeries.series.DropName
++			}
++
++			// Use OR logic: drop name if either the function wants it OR the input wants it.
++			seriesDropName := dropName || inputDropName
++
+@@ -2106 +2118 @@ func (ev *evaluator) eval(ctx context.Context, expr parser.Expr) (parser.Value,
+-			if !ev.enableDelayedNameRemoval && dropName {
++			if !ev.enableDelayedNameRemoval && seriesDropName {
+@@ -2111 +2123 @@ func (ev *evaluator) eval(ctx context.Context, expr parser.Expr) (parser.Value,
+-				DropName: dropName,
++				DropName: seriesDropName,

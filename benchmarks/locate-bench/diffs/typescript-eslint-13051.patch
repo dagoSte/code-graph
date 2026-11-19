@@ -1,0 +1,9 @@
+diff --git a/packages/ast-spec/src/jsx/JSXAttribute/spec.ts b/packages/ast-spec/src/jsx/JSXAttribute/spec.ts
+index c8e52b244..46c3e3072 100644
+--- a/packages/ast-spec/src/jsx/JSXAttribute/spec.ts
++++ b/packages/ast-spec/src/jsx/JSXAttribute/spec.ts
+@@ -3,0 +4 @@ import type { JSXElement } from '../../expression/JSXElement/spec';
++import type { JSXFragment } from '../../expression/JSXFragment/spec';
+@@ -12 +13 @@ export interface JSXAttribute extends BaseNode {
+-  value: JSXElement | JSXExpression | Literal | null;
++  value: JSXElement | JSXExpression | JSXFragment | Literal | null;

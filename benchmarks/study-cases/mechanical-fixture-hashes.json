@@ -1,0 +1,82 @@
+{
+  "cases_sha256": "2683551d2a818f6d0765858ca3f74c293c1bc23648bbbbbb2966f91da48e2b99",
+  "format": "codegraph-study-mechanical-fixture/1",
+  "production_files_sha256": {
+    "django-19361": {
+      "django/db/migrations/autodetector.py": "aaf475e92bd2c9eea624199a2da1e141b900e107d689fe08d2e259785b8961e6"
+    },
+    "django-19645": {
+      "django/db/models/options.py": "76fa11080e07227c9bcb4a7c075f847f404caf3f50fe871dede0cc3f1dc285a5"
+    },
+    "django-20183": {
+      "django/utils/html.py": "8705475eeb51775a926b333450173d52684fb359bd7b5187fa8efa5edf193eb8"
+    },
+    "django-20288": {
+      "django/dispatch/dispatcher.py": "dcde829497698c67c67b5d22b9ea0ac1e9bd451c3faad83a35a6fa90c92071c5"
+    },
+    "django-20395": {
+      "django/db/migrations/autodetector.py": "b1aea70cd2483df3621e8e950e5d82f1aacf14308bbb9c42d29ec62a7a7c5b88"
+    },
+    "django-20696": {
+      "django/contrib/contenttypes/management/__init__.py": "0b83a643c14f92d6fccb587868d206a130df9b79586b1b6cf6a5fddf476b6bfc"
+    },
+    "django-20837": {
+      "django/conf/locale/eu/formats.py": "8cacc928a8924c048418fd94913e31b73410b494a9ce07ca999bd174094d16c7"
+    },
+    "django-20959": {
+      "django/contrib/auth/backends.py": "67ebb3492c52f0ecad083d80fa48bf12ac35f3f8c922069b3c57fcebbc99d352"
+    },
+    "prometheus-17312": {
+      "model/histogram/float_histogram.go": "38983e8fb3a6c65f8b7f54027103646d41e7c51b9a53bc539625078860c30e59",
+      "promql/engine.go": "39f20bef43b28d9c7ce5e48f4e1ee4cd41c5b2b663696c149bf23fc9368712ea",
+      "promql/functions.go": "95b393540ba8b35aa968a2a35b03e2886a5946d198a348342f70dd8da018ec94"
+    },
+    "prometheus-18323": {
+      "discovery/azure/azure.go": "77e4c7cc4e0cf15bc11edac396073fb30042f9c9286566431e6c488d7e023898"
+    },
+    "prometheus-18375": {
+      "rules/alerting.go": "98880efced4f19b7560fa9f44de35735f7bc49d2a2e08419a5869113c2a90542"
+    },
+    "prometheus-18401": {
+      "tsdb/head.go": "8c15d393f64a8f33e647424d91a9d497e266d57f09aae8041c15fbf57047aaac"
+    },
+    "prometheus-18631": {
+      "promql/engine.go": "d918bba0fe1a1606b5fa4e2e8bf501aea57e7d5c3739826f8c1a68a8b464b546"
+    },
+    "prometheus-19368": {
+      "cmd/prometheus/main.go": "b667907e4784c06d3c05706a12a8aebaf53f229b55245f5249cc598fc2d8c445",
+      "tsdb/db.go": "0a6279ddfd71774d3bc8a2fed7bdd17ba038c48e46e16e2af1e3d4ca6641edb9"
+    },
+    "prometheus-19403": {
+      "promql/parser/generated_parser.y": "889bff9b1ba8c13282883deedd7ff16b4dad2203a133e5ba18db7ecb3db8f787",
+      "promql/parser/generated_parser.y.go": "03f805ff1be199dc672f5f5322e7054ccd0148e1d44cc470193a8eb3804ddd3f",
+      "promql/parser/parse.go": "d9f8b9cd6df44cba068e3d6e325bfecd09508ae67cac468ef18c1f84d5b97029",
+      "promql/parser/prettier.go": "5eaba2a910fa7ab4f947413b0eca5b53c8c4ebd409ddde86b0d57eb140390258"
+    },
+    "typescript-eslint-12941": {
+      "packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts": "4ef2a657afb88c3fc01185d396117ce3c146c04c45360c0ff836717b5a5f64d6"
+    },
+    "typescript-eslint-12953": {
+      "packages/eslint-plugin/src/rules/prefer-optional-chain-utils/analyzeChain.ts": "b5191cf63cda384d94b47db5715f3522424f977cf7c1209bc73ce3014d56c764"
+    },
+    "typescript-eslint-12974": {
+      "packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts": "a888813ab8e2268d72b2a84dc5cb48612688056a228163da6012bb3cdd767165"
+    },
+    "typescript-eslint-12977": {
+      "packages/eslint-plugin/src/rules/no-unused-vars.ts": "eb08e0c01e86de63925d2faec09975d3f9ab290e6cba869a7a76bfe454c8ed62"
+    },
+    "typescript-eslint-12991": {
+      "packages/eslint-plugin/src/rules/triple-slash-reference.ts": "26f2a88be8cbaf5d2523cff8ebe86afb217e2adf3796c83c45c1ceb3c077a186",
+      "packages/typescript-estree/src/convert.ts": "abcf5f18f7ea915cf5451764e6c27ed34c43fa379de7a94b32159ae791b91b08"
+    },
+    "typescript-eslint-12995": {
+      "packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts": "2c038d6874de74f3f9504f2e7d2d4923855f566f7be22bb6e1bcf373afd0565e"
+    },
+    "typescript-eslint-13058": {
+      "packages/eslint-plugin/src/rules/require-array-sort-compare.ts": "d0beace6bcec6e5405ef55cdb273f07010ec84a1a78c8f548bd7af5d5fee9a21"
+    },
+    "typescript-eslint-13062": {
+      "packages/eslint-plugin/src/rules/no-unnecessary-condition.ts": "5d19997752dcbc3480c97aa33fcc444a45a817be9d5e69ec30a4299a2d608384"
+    }
+  }
+}

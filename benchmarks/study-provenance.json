@@ -1,0 +1,318 @@
+{
+  "format": "codegraph-study-provenance/1",
+  "execution_commit": "774651080dec9e8a4637f56a6e243666e4b37d4e",
+  "engine_commit": "580cd6b3cb1ac03674fc0fc021d92603619740ac",
+  "original_receipt_sha256": "4e1853f5d5e59406bf3d7576ae4a8e131fbef6e267a79be931d03e8c426132f0",
+  "localization_receipt_sha256": "f01335b0ff2a56bdad57e0e0a9458fddc60ed4f63250195f569079110d7b499f",
+  "retention_correction_rule": {
+    "id": "studio-ricalcolo-retention",
+    "reason": "Regola del ricalcolo offline della conservazione dei test, fissata a metà corsa (17 percorsi su 46 osservati) e prima dei restanti, identica per i due bracci: un'istruzione originale di test è conservata se dopo la modifica esiste un'istruzione con lo stesso albero sintattico salvo l'aggiunta di elementi in coda o in mezzo a letterali di array/oggetti/slice/composite literal (tabelle di casi: RuleTester valid/invalid, test a tabella Go, liste parametrizzate Python); nessun elemento originale rimosso o modificato, nessuna asserzione rimossa, intestazioni e clausole invariate. Tutti gli altri gate (perimetro, test pubblici e nascosti, verifica host, revisione, integrazione con nuova esecuzione dei nascosti) restano invariati. La classificazione registrata resta il risultato primario come previsto dal protocollo; il ricalcolo è pubblicato a parte con la sua motivazione e la differenza per ogni percorso.",
+    "event_sha256": "7171d4bd1d8f8b8f69364bb1f9252364cef399aac794ba5ac9d88dbde38faa12",
+    "registered_utc": "2026-11-14T13:03:49.145237+00:00",
+    "observed_paths_at_registration": 17,
+    "primary": "classification_as_recorded",
+    "secondary": "separate_offline_sensitivity_rescore"
+  },
+  "host_load": {
+    "source": "Coordinator message S1-HOST-LOAD",
+    "windows_utc": [
+      {
+        "start": "2026-11-14T12:04:00+00:00",
+        "end": "2026-11-14T12:16:59+00:00"
+      },
+      {
+        "start": "2026-11-14T12:28:00+00:00",
+        "end": "2026-11-14T12:38:59+00:00"
+      }
+    ],
+    "precision": "approximate minute windows; end minute included",
+    "overlapping_workflow_phases": [
+      {
+        "task": "django-20959",
+        "arm": "source_only",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:04:00.670389+00:00",
+        "end_utc": "2026-11-14T12:05:07.254676+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "source_only",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:05:08.502006+00:00",
+        "end_utc": "2026-11-14T12:07:11.639012+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "source_only",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:07:11.677358+00:00",
+        "end_utc": "2026-11-14T12:07:54.076228+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "source_only",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:07:54.094923+00:00",
+        "end_utc": "2026-11-14T12:08:30.576423+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "graph_assisted",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:08:42.878848+00:00",
+        "end_utc": "2026-11-14T12:10:01.110230+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "graph_assisted",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:10:02.210002+00:00",
+        "end_utc": "2026-11-14T12:11:33.876062+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "graph_assisted",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:11:33.896222+00:00",
+        "end_utc": "2026-11-14T12:12:16.361175+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20959",
+        "arm": "graph_assisted",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:12:16.381385+00:00",
+        "end_utc": "2026-11-14T12:12:49.650601+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "typescript-eslint-13062",
+        "arm": "graph_assisted",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:13:01.822482+00:00",
+        "end_utc": "2026-11-14T12:13:58.820157+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "typescript-eslint-13062",
+        "arm": "graph_assisted",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:14:23.822325+00:00",
+        "end_utc": "2026-11-14T12:15:14.538863+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "typescript-eslint-13062",
+        "arm": "graph_assisted",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:15:14.570449+00:00",
+        "end_utc": "2026-11-14T12:15:25.433030+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "typescript-eslint-13062",
+        "arm": "graph_assisted",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:15:25.453787+00:00",
+        "end_utc": "2026-11-14T12:15:41.563487+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "typescript-eslint-13062",
+        "arm": "source_only",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:16:26.354884+00:00",
+        "end_utc": "2026-11-14T12:17:22.363752+00:00",
+        "concurrent_windows": [
+          1
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "graph_assisted",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:27:24.045111+00:00",
+        "end_utc": "2026-11-14T12:28:34.747273+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "graph_assisted",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:28:35.692899+00:00",
+        "end_utc": "2026-11-14T12:29:06.972610+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "graph_assisted",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:29:06.991100+00:00",
+        "end_utc": "2026-11-14T12:29:49.665597+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "graph_assisted",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:29:49.697859+00:00",
+        "end_utc": "2026-11-14T12:30:34.392348+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "source_only",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:30:46.804483+00:00",
+        "end_utc": "2026-11-14T12:31:43.567475+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "source_only",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:31:44.630777+00:00",
+        "end_utc": "2026-11-14T12:32:19.886940+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "source_only",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:32:19.922935+00:00",
+        "end_utc": "2026-11-14T12:33:02.062564+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "django-20837",
+        "arm": "source_only",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:33:02.104152+00:00",
+        "end_utc": "2026-11-14T12:33:51.505403+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "source_only",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:34:05.054018+00:00",
+        "end_utc": "2026-11-14T12:34:53.022130+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "source_only",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:35:13.448144+00:00",
+        "end_utc": "2026-11-14T12:36:07.415244+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "source_only",
+        "phase": "verify",
+        "start_utc": "2026-11-14T12:36:07.443401+00:00",
+        "end_utc": "2026-11-14T12:36:22.082783+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "source_only",
+        "phase": "review",
+        "start_utc": "2026-11-14T12:36:22.124956+00:00",
+        "end_utc": "2026-11-14T12:36:58.317929+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "graph_assisted",
+        "phase": "plan",
+        "start_utc": "2026-11-14T12:37:38.689680+00:00",
+        "end_utc": "2026-11-14T12:38:45.072988+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      },
+      {
+        "task": "typescript-eslint-13058",
+        "arm": "graph_assisted",
+        "phase": "edit",
+        "start_utc": "2026-11-14T12:38:56.163265+00:00",
+        "end_utc": "2026-11-14T12:39:52.698558+00:00",
+        "concurrent_windows": [
+          2
+        ]
+      }
+    ],
+    "meaning": "Contended timings are descriptive; no isolated speed effect can be inferred."
+  },
+  "localization_disposition": {
+    "first_rows_without_exclusive_reservation": 9,
+    "pause_seconds": 84.03,
+    "restarted": false,
+    "queries_repeated": 0,
+    "rows_retained": 23,
+    "meaning": "The tenth query includes the pause; no localization timing comparison is claimed."
+  },
+  "rescored_receipt_sha256": "f4ea94452d433660b3463bf90383fdf1d6df16f140721fab95ec9a5ef8818723",
+  "offline_scorer_commit": "b6a2ac32795bad8e1e00196cee6115a3affb3404",
+  "offline_scorer_files": {
+    "study_rescore.py": "27b41a7373aa89232c33ffdf99bdf5b898656b182f2d110c7a195caaa9e0aa7f",
+    "study_pilot.py": "477616b7136e709ace16e96fc133295e2e259720283e0c543401a2150ac026ee",
+    "real_rescore.py": "3535cbeb690fbdf7fcee30a83b4bbeaec5be04704b6c1c08b2eb3c26e98b6f05"
+  }
+}

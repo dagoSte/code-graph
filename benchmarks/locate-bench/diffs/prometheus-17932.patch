@@ -1,0 +1,66 @@
+diff --git a/promql/info.go b/promql/info.go
+index 97a79cd0f..539e5ad68 100644
+--- a/promql/info.go
++++ b/promql/info.go
+@@ -58,0 +59 @@ func (ev *evaluator) evalInfo(ctx context.Context, args parser.Expressions) (par
++	effectiveNameMatchers := effectiveInfoNameMatchers(infoNameMatchers)
+@@ -62 +63,8 @@ func (ev *evaluator) evalInfo(ctx context.Context, args parser.Expressions) (par
+-		if len(infoNameMatchers) > 0 && matchersMatch(infoNameMatchers, name) {
++		matchesAllMatchers := true
++		for _, m := range effectiveNameMatchers {
++			if !m.Matches(name) {
++				matchesAllMatchers = false
++				break
++			}
++		}
++		if matchesAllMatchers {
+@@ -79 +87,6 @@ func (ev *evaluator) evalInfo(ctx context.Context, args parser.Expressions) (par
+-func matchersMatch(matchers []*labels.Matcher, value string) bool {
++// effectiveInfoNameMatchers returns the set of __name__ matchers that will
++// actually be used to select info series.
++// When positive matchers exist, all matchers (positive + negative) are returned.
++// When only negative matchers exist, a synthetic .+_info matcher is prepended.
++// When no matchers exist, a target_info equality matcher is returned.
++func effectiveInfoNameMatchers(matchers []*labels.Matcher) []*labels.Matcher {
+@@ -81,2 +94,3 @@ func matchersMatch(matchers []*labels.Matcher, value string) bool {
+-		if !m.Matches(value) {
+-			return false
++		if m.Type == labels.MatchEqual || m.Type == labels.MatchRegexp {
++			// There's at least one positive matcher - return as-is.
++			return matchers
+@@ -85 +99,6 @@ func matchersMatch(matchers []*labels.Matcher, value string) bool {
+-	return true
++	if len(matchers) > 0 {
++		// Only negative matchers: prepend a synthetic .+_info matcher.
++		return append([]*labels.Matcher{labels.MustNewMatcher(labels.MatchRegexp, model.MetricNameLabel, ".+_info")}, matchers...)
++	}
++
++	return []*labels.Matcher{labels.MustNewMatcher(labels.MatchEqual, model.MetricNameLabel, targetInfo)}
+@@ -193 +212 @@ func (ev *evaluator) fetchInfoSeries(ctx context.Context, mat Matrix, ignoreSeri
+-	hasNameMatcher := false
++	var nameMatchers []*labels.Matcher
+@@ -197 +216,2 @@ func (ev *evaluator) fetchInfoSeries(ctx context.Context, mat Matrix, ignoreSeri
+-				hasNameMatcher = true
++				nameMatchers = append(nameMatchers, m)
++				continue
+@@ -203,4 +223 @@ func (ev *evaluator) fetchInfoSeries(ctx context.Context, mat Matrix, ignoreSeri
+-	if !hasNameMatcher {
+-		// Default to using the target_info metric.
+-		infoLabelMatchers = append([]*labels.Matcher{labels.MustNewMatcher(labels.MatchEqual, model.MetricNameLabel, targetInfo)}, infoLabelMatchers...)
+-	}
++	infoLabelMatchers = append(infoLabelMatchers, effectiveInfoNameMatchers(nameMatchers)...)
+diff --git a/web/ui/mantine-ui/src/promql/functionDocs.tsx b/web/ui/mantine-ui/src/promql/functionDocs.tsx
+index 890235fa8..c04ebc3aa 100644
+--- a/web/ui/mantine-ui/src/promql/functionDocs.tsx
++++ b/web/ui/mantine-ui/src/promql/functionDocs.tsx
+@@ -1823,0 +1824,10 @@ const funcDocs: Record<string, React.ReactNode> = {
++      <p>
++        When only negated <code>__name__</code> matchers are provided (e.g.
++        <code>
++          {"{"}__name__!=&quot;target_info&quot;{"}"}
++        </code>
++        ), <code>info</code> considers all metrics matching
++        <code>.+_info</code> and then applies the negated matchers as filters. This is because negated matchers alone
++        cannot positively identify which info metrics to consider.
++      </p>
++

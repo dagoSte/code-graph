@@ -1,0 +1,17 @@
+diff --git a/packages/eslint-plugin/src/rules/no-misused-promises.ts b/packages/eslint-plugin/src/rules/no-misused-promises.ts
+index 332e40895..e08a15bf8 100644
+--- a/packages/eslint-plugin/src/rules/no-misused-promises.ts
++++ b/packages/eslint-plugin/src/rules/no-misused-promises.ts
+@@ -16,2 +15,0 @@ import {
+-  nullThrows,
+-  NullThrowsReasons,
+@@ -629 +627 @@ export default createRule<Options, MessageId>({
+-        return nullThrows(current, NullThrowsReasons.MissingParent);
++        return current;
+@@ -631,0 +630,6 @@ export default createRule<Options, MessageId>({
++      // A `return` with no enclosing function is legal in a CommonJS module, and
++      // there is no function signature for the returned value to be misused against.
++      if (!functionNode) {
++        return;
++      }
++

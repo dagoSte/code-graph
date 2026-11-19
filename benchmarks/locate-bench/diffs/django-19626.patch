@@ -1,0 +1,32 @@
+diff --git a/django/contrib/auth/hashers.py b/django/contrib/auth/hashers.py
+index 3c88692845..aa183c3904 100644
+--- a/django/contrib/auth/hashers.py
++++ b/django/contrib/auth/hashers.py
+@@ -18,0 +19 @@ from django.utils.crypto import (
++from django.utils.encoding import force_bytes, force_str
+@@ -255 +256 @@ class BasePasswordHasher:
+-        if not salt or "$" in salt:
++        if not salt or "$" in force_str(salt):  # salt can be str or bytes.
+@@ -326,0 +328,2 @@ class PBKDF2PasswordHasher(BasePasswordHasher):
++        password = force_str(password)
++        salt = force_str(salt)
+@@ -399,2 +402,2 @@ class Argon2PasswordHasher(BasePasswordHasher):
+-            password.encode(),
+-            salt.encode(),
++            force_bytes(password),
++            force_bytes(salt),
+@@ -502 +505,2 @@ class BCryptSHA256PasswordHasher(BasePasswordHasher):
+-        password = password.encode()
++        password = force_bytes(password)
++        salt = force_bytes(salt)
+@@ -588,2 +592,2 @@ class ScryptPasswordHasher(BasePasswordHasher):
+-            password.encode(),
+-            salt=salt.encode(),
++            password=force_bytes(password),
++            salt=force_bytes(salt),
+@@ -597 +601 @@ class ScryptPasswordHasher(BasePasswordHasher):
+-        return "%s$%d$%s$%d$%d$%s" % (self.algorithm, n, salt, r, p, hash_)
++        return "%s$%d$%s$%d$%d$%s" % (self.algorithm, n, force_str(salt), r, p, hash_)
+@@ -657,0 +662,2 @@ class MD5PasswordHasher(BasePasswordHasher):
++        password = force_str(password)
++        salt = force_str(salt)

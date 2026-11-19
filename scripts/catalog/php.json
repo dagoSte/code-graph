@@ -1,0 +1,360 @@
+{
+ "format": "codegraph-catalog/1",
+ "language": "php",
+ "unrecognized_decorator": "none",
+ "entries": [
+  {
+   "id": "php.builtin.array_filter.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "array_filter"
+   },
+   "source": "https://www.php.net/manual/en/function.array-filter.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.array_map.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "array_map"
+   },
+   "source": "https://www.php.net/manual/en/function.array-map.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.array_reduce.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "array_reduce"
+   },
+   "source": "https://www.php.net/manual/en/function.array-reduce.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.array_walk.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "array_walk"
+   },
+   "source": "https://www.php.net/manual/en/function.array-walk.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.array_walk_recursive.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "array_walk_recursive"
+   },
+   "source": "https://www.php.net/manual/en/function.array-walk-recursive.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.call_user_func.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "call_user_func"
+   },
+   "source": "https://www.php.net/manual/en/function.call-user-func.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.call_user_func.dynamic",
+   "language": "php",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "call_user_func"
+   },
+   "source": "https://www.php.net/manual/en/function.call-user-func.php",
+   "checked_with": "php 8.3.23: function_exists() is true"
+  },
+  {
+   "id": "php.builtin.call_user_func_array.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "call_user_func_array"
+   },
+   "source": "https://www.php.net/manual/en/function.call-user-func-array.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.call_user_func_array.dynamic",
+   "language": "php",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "call_user_func_array"
+   },
+   "source": "https://www.php.net/manual/en/function.call-user-func-array.php",
+   "checked_with": "php 8.3.23: function_exists() is true"
+  },
+  {
+   "id": "php.builtin.eval.dynamic",
+   "language": "php",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "eval"
+   },
+   "source": "https://www.php.net/manual/en/function.eval.php",
+   "checked_with": "php 8.3.23: eval is a language construct, not a function"
+  },
+  {
+   "id": "php.builtin.forward_static_call.dynamic",
+   "language": "php",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "forward_static_call"
+   },
+   "source": "https://www.php.net/manual/en/function.forward-static-call.php",
+   "checked_with": "php 8.3.23: function_exists() is true"
+  },
+  {
+   "id": "php.builtin.iterator_apply.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "iterator_apply"
+   },
+   "source": "https://www.php.net/manual/en/function.iterator-apply.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.register_shutdown_function.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "register_shutdown_function"
+   },
+   "source": "https://www.php.net/manual/en/function.register-shutdown-function.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.set_error_handler.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "set_error_handler"
+   },
+   "source": "https://www.php.net/manual/en/function.set-error-handler.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.set_exception_handler.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "set_exception_handler"
+   },
+   "source": "https://www.php.net/manual/en/function.set-exception-handler.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.spl_autoload_register.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "spl_autoload_register"
+   },
+   "source": "https://www.php.net/manual/en/function.spl-autoload-register.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    0
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.uasort.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "uasort"
+   },
+   "source": "https://www.php.net/manual/en/function.uasort.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.uksort.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "uksort"
+   },
+   "source": "https://www.php.net/manual/en/function.uksort.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.builtin.usort.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "builtin",
+    "name": "usort"
+   },
+   "source": "https://www.php.net/manual/en/function.usort.php",
+   "checked_with": "PHP 8.3 ReflectionFunction: callback parameter name and position",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.wordpress.add_action.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "global",
+    "name": "add_action",
+    "provider": "wordpress"
+   },
+   "source": "https://developer.wordpress.org/reference/functions/add_action/",
+   "checked_with": "not run here: WordPress is not installed; function_exists() is false in plain PHP",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.wordpress.add_filter.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "global",
+    "name": "add_filter",
+    "provider": "wordpress"
+   },
+   "source": "https://developer.wordpress.org/reference/functions/add_filter/",
+   "checked_with": "not run here: WordPress is not installed; function_exists() is false in plain PHP",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  },
+  {
+   "id": "php.wordpress.add_shortcode.callback",
+   "language": "php",
+   "role": "callback",
+   "origin": {
+    "via": "global",
+    "name": "add_shortcode",
+    "provider": "wordpress"
+   },
+   "source": "https://developer.wordpress.org/reference/functions/add_shortcode/",
+   "checked_with": "WordPress 5.7.2 source signature; PHP 8.3.23 synthetic registration/render contract (not a full WordPress runtime)",
+   "args": [
+    1
+   ],
+   "kwargs": [
+    "callback"
+   ]
+  }
+ ]
+}

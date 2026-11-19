@@ -1,0 +1,44 @@
+diff --git a/packages/eslint-plugin/src/rules/no-misused-promises.ts b/packages/eslint-plugin/src/rules/no-misused-promises.ts
+index ab4798a86..332e40895 100644
+--- a/packages/eslint-plugin/src/rules/no-misused-promises.ts
++++ b/packages/eslint-plugin/src/rules/no-misused-promises.ts
+@@ -1163 +1163 @@ function hasMatchingPromiseTypeArgument(
+-  const promiseType = unionConstituents.find(type =>
++  const promiseTypes = unionConstituents.filter(type =>
+@@ -1166 +1166 @@ function hasMatchingPromiseTypeArgument(
+-  if (!promiseType) {
++  if (promiseTypes.length === 0) {
+@@ -1171 +1171 @@ function hasMatchingPromiseTypeArgument(
+-    type => type !== promiseType,
++    type => !promiseTypes.includes(type),
+@@ -1173 +1173 @@ function hasMatchingPromiseTypeArgument(
+-  const awaitedType = checker.getAwaitedType(promiseType);
++  const awaitedTypeConstituents: ts.Type[] = [];
+@@ -1175,2 +1175,6 @@ function hasMatchingPromiseTypeArgument(
+-  if (!awaitedType) {
+-    return false;
++  for (const promiseType of promiseTypes) {
++    const awaitedType = checker.getAwaitedType(promiseType);
++    if (!awaitedType) {
++      return false;
++    }
++    awaitedTypeConstituents.push(...tsutils.unionConstituents(awaitedType));
+@@ -1179 +1183,3 @@ function hasMatchingPromiseTypeArgument(
+-  const awaitedTypeConstituents = tsutils.unionConstituents(awaitedType);
++  const typesAreEquivalent = (left: ts.Type, right: ts.Type): boolean =>
++    checker.isTypeAssignableTo(left, right) &&
++    checker.isTypeAssignableTo(right, left);
+@@ -1182 +1187,0 @@ function hasMatchingPromiseTypeArgument(
+-    nonPromiseUnionConstituents.length === awaitedTypeConstituents.length &&
+@@ -1184,4 +1189,7 @@ function hasMatchingPromiseTypeArgument(
+-      awaitedTypeConstituents.some(
+-        awaited =>
+-          checker.isTypeAssignableTo(type, awaited) &&
+-          checker.isTypeAssignableTo(awaited, type),
++      awaitedTypeConstituents.some(awaited =>
++        typesAreEquivalent(type, awaited),
++      ),
++    ) &&
++    awaitedTypeConstituents.every(awaited =>
++      nonPromiseUnionConstituents.some(type =>
++        typesAreEquivalent(type, awaited),

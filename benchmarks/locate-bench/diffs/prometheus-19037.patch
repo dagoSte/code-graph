@@ -1,0 +1,263 @@
+diff --git a/discovery/aws/aws.go b/discovery/aws/aws.go
+index 89cae23f0..76508beb7 100644
+--- a/discovery/aws/aws.go
++++ b/discovery/aws/aws.go
+@@ -106,0 +107,2 @@ type SDConfig struct {
++// Region resolution is deferred to each concrete discovery's xxxClient
++// method; see loadRegion.
+@@ -117,6 +118,0 @@ func (c *SDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	var err error
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -403,2 +399,11 @@ func (c *SDConfig) SetDirectory(dir string) {
+-// loadRegion finds the region in order: AWS config/env vars ->IMDS.
+-func loadRegion(ctx context.Context, specifiedRegion string) (string, error) {
++// loadRegion finds the region in order: configured region -> AWS config/env vars -> IMDS.
++// Region resolution is intentionally deferred to SD init so config-only operations
++// (e.g. `promtool check config`) stay free of network I/O. See the UnmarshalYAML
++// docstrings in this package.
++func loadRegion(ctx context.Context, specifiedRegion string) (region string, err error) {
++	defer func() {
++		if err != nil {
++			err = fmt.Errorf("could not determine AWS region: %w", err)
++		}
++	}()
++
+@@ -420 +425 @@ func loadRegion(ctx context.Context, specifiedRegion string) (string, error) {
+-	region, err := imdsClient.GetRegion(ctx, &imds.GetRegionInput{})
++	imdsRegion, err := imdsClient.GetRegion(ctx, &imds.GetRegionInput{})
+@@ -425 +430 @@ func loadRegion(ctx context.Context, specifiedRegion string) (string, error) {
+-	if region.Region == "" {
++	if imdsRegion.Region == "" {
+@@ -429 +434 @@ func loadRegion(ctx context.Context, specifiedRegion string) (string, error) {
+-	return region.Region, nil
++	return imdsRegion.Region, nil
+diff --git a/discovery/aws/ec2.go b/discovery/aws/ec2.go
+index e6e3e7bb0..881fb0ff3 100644
+--- a/discovery/aws/ec2.go
++++ b/discovery/aws/ec2.go
+@@ -119,0 +120 @@ func (c *EC2SDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to ec2Client; see loadRegion.
+@@ -128,6 +128,0 @@ func (c *EC2SDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	// Check if the region is set, if not attempt to load it from the AWS SDK.
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -195,0 +191,4 @@ type EC2Discovery struct {
++	// region is the resolved region used for the AWS client and for the
++	// Source / __meta_ec2_region labels. Lazily populated by ec2Client.
++	region string
++
+@@ -240 +239,7 @@ func (d *EC2Discovery) ec2Client(ctx context.Context) (ec2Client, error) {
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See EC2SDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return nil, err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -242 +247 @@ func (d *EC2Discovery) ec2Client(ctx context.Context) (ec2Client, error) {
+-		awsConfig.WithRegion(d.cfg.Region),
++		awsConfig.WithRegion(d.region),
+@@ -309 +314 @@ func (d *EC2Discovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-		Source: d.cfg.Region,
++		Source: d.region,
+@@ -353 +358 @@ func (d *EC2Discovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-					ec2LabelRegion:     model.LabelValue(d.cfg.Region),
++					ec2LabelRegion:     model.LabelValue(d.region),
+diff --git a/discovery/aws/ecs.go b/discovery/aws/ecs.go
+index def9c88e6..aa63cad8d 100644
+--- a/discovery/aws/ecs.go
++++ b/discovery/aws/ecs.go
+@@ -138,0 +139 @@ func (c *ECSSDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to initEcsClient; see loadRegion.
+@@ -147,5 +147,0 @@ func (c *ECSSDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -231,0 +228,4 @@ type ECSDiscovery struct {
++
++	// region is the resolved region used for the AWS client and for the
++	// Source / __meta_ecs_region labels. Lazily populated by initEcsClient.
++	region string
+@@ -265,4 +264,0 @@ func (d *ECSDiscovery) initEcsClient(ctx context.Context) error {
+-	if d.cfg.Region == "" {
+-		return errors.New("region must be set for ECS service discovery")
+-	}
+-
+@@ -275 +271,7 @@ func (d *ECSDiscovery) initEcsClient(ctx context.Context) error {
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See ECSSDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -277 +279 @@ func (d *ECSDiscovery) initEcsClient(ctx context.Context) error {
+-	configOptions = append(configOptions, awsConfig.WithRegion(d.cfg.Region))
++	configOptions = append(configOptions, awsConfig.WithRegion(d.region))
+@@ -716 +718 @@ func (d *ECSDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-				Source: d.cfg.Region,
++				Source: d.region,
+@@ -722 +724 @@ func (d *ECSDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-		Source: d.cfg.Region,
++		Source: d.region,
+@@ -939 +941 @@ func (d *ECSDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-						ecsLabelRegion:           model.LabelValue(d.cfg.Region),
++						ecsLabelRegion:           model.LabelValue(d.region),
+diff --git a/discovery/aws/elasticache.go b/discovery/aws/elasticache.go
+index 722a46085..7aa1090cb 100644
+--- a/discovery/aws/elasticache.go
++++ b/discovery/aws/elasticache.go
+@@ -226,0 +227 @@ func (c *ElasticacheSDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to initElasticacheClient; see loadRegion.
+@@ -235,5 +235,0 @@ func (c *ElasticacheSDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -286,0 +283,4 @@ type ElasticacheDiscovery struct {
++
++	// region is the resolved region used for the AWS client and for the
++	// Source label. Lazily populated by initElasticacheClient.
++	region string
+@@ -320,4 +319,0 @@ func (d *ElasticacheDiscovery) initElasticacheClient(ctx context.Context) error
+-	if d.cfg.Region == "" {
+-		return errors.New("region must be set for Elasticache service discovery")
+-	}
+-
+@@ -330 +326,7 @@ func (d *ElasticacheDiscovery) initElasticacheClient(ctx context.Context) error
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See ElasticacheSDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -332 +334 @@ func (d *ElasticacheDiscovery) initElasticacheClient(ctx context.Context) error
+-	configOptions = append(configOptions, awsConfig.WithRegion(d.cfg.Region))
++	configOptions = append(configOptions, awsConfig.WithRegion(d.region))
+@@ -559 +561 @@ func (d *ElasticacheDiscovery) refresh(ctx context.Context) ([]*targetgroup.Grou
+-		Source: d.cfg.Region,
++		Source: d.region,
+diff --git a/discovery/aws/lightsail.go b/discovery/aws/lightsail.go
+index c56fe7594..2021e07db 100644
+--- a/discovery/aws/lightsail.go
++++ b/discovery/aws/lightsail.go
+@@ -105,0 +106 @@ func (c *LightsailSDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to lightsailClient; see loadRegion.
+@@ -114,5 +114,0 @@ func (c *LightsailSDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -144,0 +141,5 @@ type LightsailDiscovery struct {
++
++	// region is the resolved region used for the AWS client and for the
++	// Source / __meta_lightsail_region labels. Lazily populated by
++	// lightsailClient.
++	region string
+@@ -185 +186,7 @@ func (d *LightsailDiscovery) lightsailClient(ctx context.Context) (*lightsailCli
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See LightsailSDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return nil, err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -187 +194 @@ func (d *LightsailDiscovery) lightsailClient(ctx context.Context) (*lightsailCli
+-		awsConfig.WithRegion(d.cfg.Region),
++		awsConfig.WithRegion(d.region),
+@@ -235 +242 @@ func (d *LightsailDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group,
+-		Source: d.cfg.Region,
++		Source: d.region,
+@@ -262 +269 @@ func (d *LightsailDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group,
+-			lightsailLabelRegion:              model.LabelValue(d.cfg.Region),
++			lightsailLabelRegion:              model.LabelValue(d.region),
+diff --git a/discovery/aws/msk.go b/discovery/aws/msk.go
+index 475d2db14..14616f844 100644
+--- a/discovery/aws/msk.go
++++ b/discovery/aws/msk.go
+@@ -138,0 +139 @@ func (c *MSKSDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to initMskClient; see loadRegion.
+@@ -147,5 +147,0 @@ func (c *MSKSDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -197,0 +194,4 @@ type MSKDiscovery struct {
++
++	// region is the resolved region used for the AWS client and for the
++	// Source label. Lazily populated by initMskClient.
++	region string
+@@ -231,4 +230,0 @@ func (d *MSKDiscovery) initMskClient(ctx context.Context) error {
+-	if d.cfg.Region == "" {
+-		return errors.New("region must be set for MSK service discovery")
+-	}
+-
+@@ -241 +237,7 @@ func (d *MSKDiscovery) initMskClient(ctx context.Context) error {
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See MSKSDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -243 +245 @@ func (d *MSKDiscovery) initMskClient(ctx context.Context) error {
+-	configOptions = append(configOptions, awsConfig.WithRegion(d.cfg.Region))
++	configOptions = append(configOptions, awsConfig.WithRegion(d.region))
+@@ -392 +394 @@ func (d *MSKDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-		Source: d.cfg.Region,
++		Source: d.region,
+diff --git a/discovery/aws/rds.go b/discovery/aws/rds.go
+index cb16d36f4..941d515ab 100644
+--- a/discovery/aws/rds.go
++++ b/discovery/aws/rds.go
+@@ -258,0 +259 @@ func (c *RDSSDConfig) SetDirectory(dir string) {
++// Region resolution is deferred to initRdsClient; see loadRegion.
+@@ -267,5 +267,0 @@ func (c *RDSSDConfig) UnmarshalYAML(unmarshal func(any) error) error {
+-	c.Region, err = loadRegion(context.Background(), c.Region)
+-	if err != nil {
+-		return fmt.Errorf("could not determine AWS region: %w", err)
+-	}
+-
+@@ -310,0 +307,4 @@ type RDSDiscovery struct {
++
++	// region is the resolved region used for the AWS client and for the
++	// Source label. Lazily populated by initRdsClient.
++	region string
+@@ -344,4 +343,0 @@ func (d *RDSDiscovery) initRdsClient(ctx context.Context) error {
+-	if d.cfg.Region == "" {
+-		return errors.New("region must be set for RDS service discovery")
+-	}
+-
+@@ -354 +350,7 @@ func (d *RDSDiscovery) initRdsClient(ctx context.Context) error {
+-	// Build the AWS config with the provided region.
++	// Resolve the region lazily. See RDSSDConfig.UnmarshalYAML.
++	d.region, err = loadRegion(ctx, d.cfg.Region)
++	if err != nil {
++		return err
++	}
++
++	// Build the AWS config with the resolved region.
+@@ -356 +358 @@ func (d *RDSDiscovery) initRdsClient(ctx context.Context) error {
+-	configOptions = append(configOptions, awsConfig.WithRegion(d.cfg.Region))
++	configOptions = append(configOptions, awsConfig.WithRegion(d.region))
+@@ -515 +517 @@ func (d *RDSDiscovery) refresh(ctx context.Context) ([]*targetgroup.Group, error
+-		Source: d.cfg.Region,
++		Source: d.region,

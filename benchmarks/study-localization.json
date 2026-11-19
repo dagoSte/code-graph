@@ -1,0 +1,1020 @@
+{
+  "format": "codegraph-study/1",
+  "live": false,
+  "live_starts": 0,
+  "cases": [
+    {
+      "task": "django-20959",
+      "seconds": 19.314,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "reading": {
+        "file_chars": 40882,
+        "files": 4,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3412,
+        "saved_ratio": 0.917
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "typescript-eslint-13062",
+      "seconds": 4.485,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 5
+      },
+      "reading": {
+        "file_chars": 2943,
+        "files": 2,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3205,
+        "saved_ratio": -0.089
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "prometheus-19403",
+      "seconds": 8.8,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 66896,
+        "files": 4,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3541,
+        "saved_ratio": 0.947
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "django-20837",
+      "seconds": 17.784,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "reading": {
+        "file_chars": 35533,
+        "files": 2,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3884,
+        "saved_ratio": 0.891
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "typescript-eslint-13058",
+      "seconds": 4.292,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "reading": {
+        "file_chars": 6701,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3992,
+        "saved_ratio": 0.404
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "prometheus-19368",
+      "seconds": 9.5,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 2,
+          "targets": 2
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 2,
+          "targets": 2
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 614660,
+        "files": 4,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3309,
+        "saved_ratio": 0.995
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "django-20696",
+      "seconds": 18.005,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "reading": {
+        "file_chars": 13937,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3857,
+        "saved_ratio": 0.723
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "typescript-eslint-12995",
+      "seconds": 4.308,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 1862,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3630,
+        "saved_ratio": -0.95
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "prometheus-18631",
+      "seconds": 9.092,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "reading": {
+        "file_chars": 298799,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3279,
+        "saved_ratio": 0.989
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "django-20395",
+      "seconds": 102.146,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "reading": {
+        "file_chars": 475556,
+        "files": 6,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3823,
+        "saved_ratio": 0.992
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "typescript-eslint-12991",
+      "seconds": 4.14,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 20172,
+        "files": 5,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3323,
+        "saved_ratio": 0.835
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "prometheus-18401",
+      "seconds": 7.87,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "reading": {
+        "file_chars": 183612,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3473,
+        "saved_ratio": 0.981
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "django-20288",
+      "seconds": 17.775,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 2,
+        "targets": 7
+      },
+      "reading": {
+        "file_chars": 36753,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3881,
+        "saved_ratio": 0.894
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "typescript-eslint-12977",
+      "seconds": 4.169,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 72938,
+        "files": 2,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3964,
+        "saved_ratio": 0.946
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "prometheus-18375",
+      "seconds": 8.009,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "reading": {
+        "file_chars": 69087,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3927,
+        "saved_ratio": 0.943
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "django-20183",
+      "seconds": 17.79,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "reading": {
+        "file_chars": 112835,
+        "files": 7,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3791,
+        "saved_ratio": 0.966
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "typescript-eslint-12974",
+      "seconds": 4.136,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "reading": {
+        "file_chars": 6701,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3992,
+        "saved_ratio": 0.404
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "prometheus-18323",
+      "seconds": 7.767,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "reading": {
+        "file_chars": 25832,
+        "files": 1,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3562,
+        "saved_ratio": 0.862
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "django-19645",
+      "seconds": 17.799,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "reading": {
+        "file_chars": 284014,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3392,
+        "saved_ratio": 0.988
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "typescript-eslint-12953",
+      "seconds": 4.445,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "reading": {
+        "file_chars": 6701,
+        "files": 3,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3986,
+        "saved_ratio": 0.405
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "prometheus-17312",
+      "seconds": 6.949,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        },
+        "3": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        },
+        "5": {
+          "any_hit": true,
+          "all_hit": false,
+          "matched": 1,
+          "targets": 3
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 7
+      },
+      "reading": {
+        "file_chars": 91884,
+        "files": 2,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3139,
+        "saved_ratio": 0.966
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    },
+    {
+      "task": "django-19361",
+      "seconds": 17.946,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 3
+      },
+      "reading": {
+        "file_chars": 132375,
+        "files": 4,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3963,
+        "saved_ratio": 0.97
+      },
+      "locate_status": "ready",
+      "candidates_returned": 4
+    },
+    {
+      "task": "typescript-eslint-12941",
+      "seconds": 4.528,
+      "exit_code": 0,
+      "status": "passed",
+      "cleanup_error": false,
+      "files_at": {
+        "1": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "any_hit": false,
+          "all_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "reading": {
+        "file_chars": 16079,
+        "files": 5,
+        "meaning": "characters of the files the returned candidates, callers and tests live in, against the characters of this answer",
+        "returned_chars": 3518,
+        "saved_ratio": 0.781
+      },
+      "locate_status": "ready",
+      "candidates_returned": 3
+    }
+  ],
+  "cases_sha256": "2683551d2a818f6d0765858ca3f74c293c1bc23648bbbbbb2966f91da48e2b99",
+  "environment_sha256": "47f04733a3d7943f870d5df27cb0733eb6258bc339b7de808165e3b7a14da3df",
+  "engine_files": {
+    "scripts/agent_queries.py": "e4e906d9b0f4fa42b144a841fdb8613fa511077f2e253db75f1c66eaae6147e2",
+    "scripts/agents.py": "5a22fabd41611559565648bcf468b3b2d47076adca94f63aedf7deb6484d232f",
+    "scripts/architecture.py": "92edd450953d341fd97d9578bff8dd9a85e149b212998583fe72b4762aa6b71a",
+    "scripts/catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "scripts/cg.py": "6a5251298b937e5f916dcaffe11a315006816f1c099f3e0d685a932b5fffeea5",
+    "scripts/change_analysis.py": "24a0fb2df3d2350911fd7f6fb956f493459629b3e1001a4c3ddebbe0eacdf9f0",
+    "scripts/change_flow.py": "e0d0e089ec19d7a72fd4a61e2940b9a93753e7e40d990147db0be936d503ac3e",
+    "scripts/change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "scripts/checks.py": "a48a064608b2553a6842e63899ec7599f23b5847e4d34b4ab861089d593a03ad",
+    "scripts/entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "scripts/evidence.py": "b2219dbc4a5ca72c88dd4fb977b7f29a2a6dc0fe09d3b38c590d649e96ce34d0",
+    "scripts/feature_packets.py": "e735e9bf888b54b774cfeb5ed5a38776c1b351fd3d4c552bda43e80818a876ff",
+    "scripts/features.py": "b4cca379b593d094bc1f955a45a8a07a2f1b9adc04c86bba0ac3d41e7cdc75ce",
+    "scripts/language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "scripts/language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "scripts/language_go.py": "e84ff7a25d125c8d1ab39a4771ecf6982fce6824d231721300d111a0152bfe0e",
+    "scripts/language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "scripts/language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "scripts/language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "scripts/language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "scripts/language_sql.py": "948ea7acfa7f9a2911c0d6ab4361f7288865a33d8e7723187117337b3c6fd7ca",
+    "scripts/language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "scripts/locate.py": "f24ca31431a814010ae14d56e070f6fd4c0b1bb8545e5cd90b3a8f11b844a89c",
+    "scripts/mcp_server.py": "2f2169d3841888f50c4b702852e2c44a8b28a62ba4f28a7fc5efb7fb57af4201",
+    "scripts/project_data.py": "f6ed04dfc50965d9733f4b16afde87212f0838e23c442162b841b1f85016157f",
+    "scripts/search.py": "7934ce0d007a925e03801e6a033a9153b86b6eb3ca0d5ef18388da2f0c1ae931",
+    "scripts/source_windows.py": "78169a8e305afac374a62e493250c3846728f55f0132005e474b84ef428e5c96",
+    "scripts/start.py": "e7f29eaedd57abf72a22e4ec0b6ed7116c3a73cf6efac77063391c7a47ada637",
+    "scripts/workbench.py": "eb8beb24225217fe0ff41c5fb54a263aec2c5de5ee0d51a51c78580131d75972",
+    "scripts/catalog/files.json": "a764b5e702b2b147a2f21a1af95f6986e77a5c008aae3f81d1be5ee277ba6ea9",
+    "scripts/catalog/js.json": "aa62c130b51b5c740da51a7527f92c0fd4b1931a99d1d4dc9c7cd3d47ce99790",
+    "scripts/catalog/php.json": "d1c621a012dadd325f6d8cfb302f069e67e6ff6c4aa5081f6b208742984210a8",
+    "scripts/catalog/python.json": "a8972fc275dcef6786424e3d2e213918792fbf06e265886921f7a13163435cb6",
+    "scripts/catalog/schema.json": "83b69d808e892db447db1af8387f386c0ccc7e5b16091a54e0727998713c9c89"
+  },
+  "parser_versions": {
+    "tree-sitter": "0.25.2",
+    "tree-sitter-language-pack": "0.13.0"
+  },
+  "call_seconds": 600,
+  "max_starts": 144,
+  "max_reviews": 48,
+  "cohort_max_starts": 138,
+  "cohort_max_reviews": 46,
+  "harness_files": {
+    "search_retrieval.py": "06ccbb02f39662ffc1210cf8d9068cabe4ab3e5f38cb464d5cc86691a417c02b",
+    "study_localization.py": "96c1bc8afa05076a7d46e08b508adc7a9989284621142d5c190027d72f1f0cd1",
+    "study_pilot.py": "477616b7136e709ace16e96fc133295e2e259720283e0c543401a2150ac026ee",
+    "real_project.py": "ca80f047955b316bd16cdf230a80d4fcf525e04ca52386ad292b36309b9204b3",
+    "study_integrity.py": "c76329ebdb80b51848d0bbb5cf7f4c0816c7459e59b7d18e9784b84b10395840",
+    "improvement_probes.py": "baf698de7863e71682bb67e11aa9a4caa1615221c5a46258d79edde50ac37952",
+    "study_native.py": "93d55ef9340a6eaf23113dd8d63d53e380f6476509df85031ad4402670f0c6a0",
+    "source_only_mcp.py": "dcd00a7bc53ad8eb230dabbbedc869a46b2b20ab0aed492ed4fd0ae14ee18f5f",
+    "real_pilot_mcp.py": "f1d1932360089e9aac9a32cabf41a80d7c1dddc3caeff146395ab0a92d9561c1",
+    "live_agent.py": "90ecd04a514349d179988e7818ca554b8d7276af17768635b5c2723c33ff74d6",
+    "refinements-measure.py": "9c20b8c144f1a9c5f96874f8c5c4ffd45d7411edba1dd9cb69591706f71dc6ed",
+    "real_pytest.py": "1a224322722a35c094c018c0fda4404107bf52ce248ed586dbd6b445d578a039",
+    "real_rescore.py": "3535cbeb690fbdf7fcee30a83b4bbeaec5be04704b6c1c08b2eb3c26e98b6f05",
+    "refinements-evaluate.py": "4cedb7a665c8214eb7d1c2714ce622eb88af083be6eb2a00df68bddbaff6c4f3",
+    "study_analysis.py": "0c8fa50fa27a537aa68adb1a3c7979dbf3ff492446172c31114f5fb0308f26a5",
+    "run_tasks.py": "14d68e3464c9e9ac8bfaf8b45d91e35c63caad3a3eb7ac16c625fe4d852c1bc5",
+    "scale.py": "3f066875e0b1b24a1833a75998688eb3b755a01c556ec21f638b39c21a3a8fd7",
+    "real_pilot.py": "0fbe0ce6c0cb36af044830599c83c535ff8ef7ebb387d8f6435758a9a7140e32",
+    "refinements-capture.py": "af789529d42ef9c3ce10ee39ab44919fb54e5137640e62181f55b785fdef0c34"
+  },
+  "review_usd": 0.6,
+  "total_usd": 30
+}

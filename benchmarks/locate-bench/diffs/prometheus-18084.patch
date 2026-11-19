@@ -1,0 +1,23 @@
+diff --git a/storage/remote/write_handler.go b/storage/remote/write_handler.go
+index 3dac96f6a..9fdd75069 100644
+--- a/storage/remote/write_handler.go
++++ b/storage/remote/write_handler.go
+@@ -228 +228,2 @@ func (h *writeHandler) appendV1Samples(app storage.Appender, ss []prompb.Sample,
+-				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) {
++				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) ||
++				errors.Is(err, storage.ErrTooOldSample) {
+@@ -250 +251,2 @@ func (h *writeHandler) appendV1Histograms(app storage.Appender, hh []prompb.Hist
+-				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) {
++				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) ||
++				errors.Is(err, storage.ErrTooOldSample) {
+@@ -412 +414,2 @@ func (h *writeHandler) appendV2(app storage.Appender, req *writev2.Request, rs *
+-				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) {
++				errors.Is(err, storage.ErrDuplicateSampleForTimestamp) ||
++				errors.Is(err, storage.ErrTooOldSample) {
+diff --git a/storage/remote/write_otlp_handler.go b/storage/remote/write_otlp_handler.go
+index b8888baeb..6cb4a0fff 100644
+--- a/storage/remote/write_otlp_handler.go
++++ b/storage/remote/write_otlp_handler.go
+@@ -179 +179 @@ func (h *otlpWriteHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+-	case errors.Is(err, storage.ErrOutOfOrderSample), errors.Is(err, storage.ErrOutOfBounds), errors.Is(err, storage.ErrDuplicateSampleForTimestamp):
++	case errors.Is(err, storage.ErrOutOfOrderSample), errors.Is(err, storage.ErrOutOfBounds), errors.Is(err, storage.ErrDuplicateSampleForTimestamp), errors.Is(err, storage.ErrTooOldSample):

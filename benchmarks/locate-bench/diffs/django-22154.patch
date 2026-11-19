@@ -1,0 +1,16 @@
+diff --git a/django/contrib/contenttypes/fields.py b/django/contrib/contenttypes/fields.py
+index 6b6d56bdfc..89e896a79f 100644
+--- a/django/contrib/contenttypes/fields.py
++++ b/django/contrib/contenttypes/fields.py
+@@ -652 +651,0 @@ def create_generic_related_manager(superclass, rel):
+-            db = self._db or router.db_for_read(self.model, instance=self.instance)
+@@ -654,4 +653,5 @@ def create_generic_related_manager(superclass, rel):
+-                return (
+-                    queryset.using(db)
+-                    .fetch_mode(self.instance._state.fetch_mode)
+-                    .filter(**self.core_filters)
++                queryset._add_hints(instance=self.instance)
++                if self._db:
++                    queryset = queryset.using(self._db)
++                return queryset.fetch_mode(self.instance._state.fetch_mode).filter(
++                    **self.core_filters

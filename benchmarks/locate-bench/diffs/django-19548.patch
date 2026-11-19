@@ -1,0 +1,31 @@
+diff --git a/django/http/request.py b/django/http/request.py
+index 6438f26268..c26a4954d1 100644
+--- a/django/http/request.py
++++ b/django/http/request.py
+@@ -697 +697 @@ class MediaType:
+-        full_type, self._params = parse_header_parameters(
++        full_type, self.params = parse_header_parameters(
+@@ -703 +703 @@ class MediaType:
+-        params_str = "".join("; %s=%s" % (k, v) for k, v in self._params.items())
++        params_str = "".join("; %s=%s" % (k, v) for k, v in self.params.items())
+@@ -714,2 +714,2 @@ class MediaType:
+-    def params(self):
+-        params = self._params.copy()
++    def range_params(self):
++        params = self.params.copy()
+@@ -738 +738 @@ class MediaType:
+-        if bool(self.params) == bool(other.params):
++        if bool(self.range_params) == bool(other.range_params):
+@@ -740 +740 @@ class MediaType:
+-            result = self.params == other.params
++            result = self.range_params == other.range_params
+@@ -744,2 +744 @@ class MediaType:
+-            result = bool(self.params or not other.params)
+-
++            result = bool(self.range_params or not other.range_params)
+@@ -751 +750 @@ class MediaType:
+-            quality = float(self._params.get("q", 1))
++            quality = float(self.params.get("q", 1))
+@@ -771 +770 @@ class MediaType:
+-        elif not self.params:
++        elif not self.range_params:

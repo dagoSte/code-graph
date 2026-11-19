@@ -1,0 +1,10 @@
+diff --git a/discovery/azure/azure.go b/discovery/azure/azure.go
+index 834eaf1f2..0ac9a9af4 100644
+--- a/discovery/azure/azure.go
++++ b/discovery/azure/azure.go
+@@ -301 +301,4 @@ func newCredential(cfg SDConfig, policyClientOptions policy.ClientOptions) (azco
+-		options := &azidentity.ManagedIdentityCredentialOptions{ClientOptions: policyClientOptions, ID: azidentity.ClientID(cfg.ClientID)}
++		options := &azidentity.ManagedIdentityCredentialOptions{ClientOptions: policyClientOptions}
++		if cfg.ClientID != "" {
++			options.ID = azidentity.ClientID(cfg.ClientID)
++		}

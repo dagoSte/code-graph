@@ -1,0 +1,756 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "go/same_package",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive() string { return polish() }\nfunc main(){ fmt.Println(drive()) }\n",
+        "lib.go": "package main\nfunc polish()string{return `[[\"lib.go\",\"polish\"]]`}\n",
+        "decoy/a.go": "package decoy\nfunc polish()string{return \"wrong\"}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "decoy/a.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "decoy/a.go",
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "29ef6c7ceda63925c91e5e1ee18610f0a8d26a433221f71e8802002b28ef5655",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "21c5112a5e59b9ccb306f2b5b073e2ee58bf18a9c599bbe9d0d63835256d39ab"
+    },
+    {
+      "id": "go/explicit_alias",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nimport alias \"example.com/oracle/lib\"\nfunc drive() string { return alias.Export() }\nfunc main(){ fmt.Println(drive()) }\n",
+        "lib/a.go": "package actual\nfunc Export()string{return `[[\"lib/a.go\",\"Export\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib/a.go"
+      ],
+      "targets": [
+        [
+          "lib/a.go",
+          "Export"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            4,
+            "Export",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/a.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "d5effcb320fb1dfdeddc6702d8c7dd8b29bccfedb1f90914c0e662cd3eddb911",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/a.go\",\"Export\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "afb7bc6d7836c02f1af3320726919b95a3fed3866bb01cef5787db499d4c9ef5"
+    },
+    {
+      "id": "go/declared_package",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nimport \"example.com/oracle/lib\"\nfunc drive() string { return actual.Export() }\nfunc main(){ fmt.Println(drive()) }\n",
+        "lib/a.go": "package actual\nfunc Export()string{return `[[\"lib/a.go\",\"Export\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib/a.go"
+      ],
+      "targets": [
+        [
+          "lib/a.go",
+          "Export"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            4,
+            "Export",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/a.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "ff286f7497285b918092d4367d1ef4fb381bdc4f58ffd9d8aedded2f05115c78",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/a.go\",\"Export\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "4131724fd0f72b49c7d62492dbe5283b396f5e01e957beba940659ccc7d02f7b"
+    },
+    {
+      "id": "go/addressable_receiver",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive(r Repo)string{return r.Polish()}\nfunc main(){ fmt.Println(drive(Repo{})) }\n",
+        "lib.go": "package main\ntype Repo struct{}\nfunc(r *Repo) Polish() string { return `[[\"lib.go\",\"Repo.Polish\"]]` }\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Repo.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "cafa3e1e052d091e15fbbfd5fdb927488f32274e7055097844e7664acb263772",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Repo.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "39bf77141b7ae02ac2a7186a36d958023669a45455f5f6383282ff64eb2e6452"
+    },
+    {
+      "id": "go/interface_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive(r Contract)string{return r.Polish()}\nfunc main(){ fmt.Println(drive(&Repo{})) }\n",
+        "lib.go": "package main\ntype Repo struct{}\nfunc(r *Repo) Polish() string { return `[[\"lib.go\",\"Repo.Polish\"]]` }\ntype Contract interface { Polish() string }\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Repo.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "072a15ab571130dea85c4759820a605b7d032e19a51d2a8f9e9e722490df2c54",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Repo.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "f9d1ec502f3e32d5c5af3f3701a4c96135780a6701463ba4274000942f9fe7fc"
+    },
+    {
+      "id": "go/function_value_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive(polish func()string)string{return polish()}\nfunc main(){ fmt.Println(drive(other)) }\n",
+        "lib.go": "package main\nfunc polish()string{return \"wrong\"}\n",
+        "decoy.go": "package main\nfunc other()string{return `[[\"decoy.go\",\"other\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "decoy.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "decoy.go",
+          "other"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "decoy.go",
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "9840df0c0a72df8980cb3a72189cc81d5477a8a7d0d49eca0b7a986cdedda506",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"decoy.go\",\"other\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "c7936c51c362b2e60ed3d61de674ef08d2e4eba5d46b4a686ae6b8943fb0da12"
+    },
+    {
+      "id": "go/generic_conversion_grammar",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{return Pair[int,string](1)}\nfunc main(){ fmt.Println(drive()) }\n",
+        "lib.go": "package main\nfunc Pair[T,U any](n T)string{return `[[\"lib.go\",\"Pair\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Pair"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Pair",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "13d8143617c6272cd6ccf8e08f0640654a91f5c40cdb6aa030dedd6a4dfe1816",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Pair\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "ff174b38a2da35d74d7d17dedf4693ae42e050104cbff040618225d429a4e6cc"
+    },
+    {
+      "id": "go/conversion_is_not_constructor",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{return string(Polish(\"[]\"))}\nfunc main(){ fmt.Println(drive()) }\n",
+        "types.go": "package main\ntype Polish string\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "types.go"
+      ],
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "types.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "ca3d83ab0cd1d0f7380bcff971d10616e9bcd596cae1e2952f91b33952cef29a",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "da340d299a55a78a0ff86d15ab2116796dff9fb9c231b69010e006ee1065913b"
+    },
+    {
+      "id": "go/literal_value_receiver",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{r:=Repo{};return r.Polish()}\nfunc main(){fmt.Println(drive())}\n",
+        "lib.go": "package main\ntype Repo struct{}\nfunc(r *Repo) Polish()string{return `[[\"lib.go\",\"Repo.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Repo.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "28358ac60bc716747ebbc5b0656e2acec979ddb590705ac22baeabc362a6338b",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Repo.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "2ea64cf0df9e49c4b204d2e7377f0a8da921d85d9e0a96198c788f021cafdc1c"
+    },
+    {
+      "id": "go/literal_imported_method_value",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nimport alias \"example.com/oracle/lib\"\nfunc drive()string{r:=&alias.Repo{};f:=r.Polish;return f()}\nfunc main(){fmt.Println(drive())}\n",
+        "lib/a.go": "package actual\ntype Repo struct{}\nfunc(r *Repo) Polish()string{return `[[\"lib/a.go\",\"Repo.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib/a.go"
+      ],
+      "targets": [
+        [
+          "lib/a.go",
+          "Repo.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            4,
+            "Polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib/a.go"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "18a0095e6484a9f239aee22e999b87137206b54931ef915bc0564781f4174385",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/a.go\",\"Repo.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "a482e47c8bd3acc76b338ca6d5830f20e610af37bfbf619715d227904ca69e04"
+    },
+    {
+      "id": "go/predeclaration_receiver_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{first:=r.Polish();r:=Repo{};_=r;return first}\nfunc main(){fmt.Println(drive())}\n",
+        "lib.go": "package main\ntype Repo struct{p func()string};type Other struct{};var r=Other{}\nfunc(r Repo) Polish()string{return `[[\"lib.go\",\"Repo.Polish\"]]`}\nfunc(r Other) Polish()string{return `[[\"lib.go\",\"Other.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Other.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "cfccb9ac71bf8b8febc03b9b09bbc13da67d68a0e2b3e3ac1ba4abfc39a95008",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Other.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "d295722fb878c6dd263ffdbef475da7ff91e54d6bf6dce5a694cabda5e5be301"
+    },
+    {
+      "id": "go/initializer_receiver_reference_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{r:=Repo{p:r.Polish};return r.p()}\nfunc main(){fmt.Println(drive())}\n",
+        "lib.go": "package main\ntype Repo struct{p func()string};type Other struct{};var r=Other{}\nfunc(r Repo) Polish()string{return `[[\"lib.go\",\"Repo.Polish\"]]`}\nfunc(r Other) Polish()string{return `[[\"lib.go\",\"Other.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Other.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "743f8824a68980b8b4a616edfad75c38695526a9eeb296f7190bc985b55cb6dd",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Other.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "80a6d9db4735111893f71bd4b4f36cb20a1c35fe4f456a613daf9dce9431a557"
+    },
+    {
+      "id": "go/explicit_interface_initializer_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{var r interface{Polish()string}=&Repo{};r=&Other{};return r.Polish()}\nfunc main(){fmt.Println(drive())}\n",
+        "lib.go": "package main\ntype Repo struct{p func()string};type Other struct{};var r=Other{}\nfunc(r Repo) Polish()string{return `[[\"lib.go\",\"Repo.Polish\"]]`}\nfunc(r Other) Polish()string{return `[[\"lib.go\",\"Other.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Other.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "9794d65ad5377b87a7150fd454a82122cd5728893ed262c31309bd7aa545a9c6",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Other.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "252831a26dc61e07a5c27d95f6342e7d15238d9f37b696c2e99d925f88124aa6"
+    },
+    {
+      "id": "go/implicit_case_receiver_abstention",
+      "language": "go",
+      "files": {
+        "go.mod": "module example.com/oracle\n\ngo 1.23\n",
+        "app.go": "package main\nimport \"fmt\"\nfunc drive()string{switch 1 {case 1:var r=Repo{};_=r};f:=r.Polish;result:=r.Polish();if f()!=result{panic(\"different targets\")};return result}\nfunc main(){fmt.Println(drive())}\n",
+        "lib.go": "package main\ntype Repo struct{};type Other struct{};var r=Other{}\nfunc(Repo) Polish()string{return `[[\"lib.go\",\"Repo.Polish\"]]`}\nfunc(Other) Polish()string{return `[[\"lib.go\",\"Other.Polish\"]]`}\n"
+      },
+      "required_indexed": [
+        "app.go",
+        "lib.go"
+      ],
+      "targets": [
+        [
+          "lib.go",
+          "Other.Polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call",
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "call"
+          ],
+          [
+            "app.go",
+            "drive",
+            3,
+            "Polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib.go"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "go-targets",
+      "source_sha256": "74163a47bfa3e69ebaf2c6291c5f343ea47414c55ded227680c88728dd365fbb",
+      "native": {
+        "args": [
+          "run",
+          "."
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.go\",\"Other.Polish\"]]\n",
+        "stderr": "",
+        "version": "go version go1.27.4 darwin/arm64",
+        "toolchain_archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4"
+      },
+      "evidence_sha256": "0f942636f8b8d0fe0f7173ed7d5f752703030335b413836d8e6b77e403a48b0a"
+    }
+  ]
+}

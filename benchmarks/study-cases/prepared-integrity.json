@@ -1,0 +1,328 @@
+{
+  "cases": [
+    {
+      "changes": [],
+      "checked": 7038,
+      "commit": "ad073338d02fce884301d159f30eaf17c7f2d246",
+      "task": "django-20959",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7038,
+      "commit": "526b548cfb9c8a02ea2b7ae064ef3b795305d51a",
+      "task": "django-20959",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7025,
+      "commit": "c27d368b92f321e6f91704f554dccbc18df5b075",
+      "task": "django-20837",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7025,
+      "commit": "07c38764db1ba6a39ff0b3b224288e13c304f1c9",
+      "task": "django-20837",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7018,
+      "commit": "69d47f921979aba5ad5d876bff015b55121fc49c",
+      "task": "django-20696",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7018,
+      "commit": "169152f8f5ac586e19779faf9943086fe0f416e9",
+      "task": "django-20696",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7008,
+      "commit": "948f1bf5a1c1c93ee9c6f4baa2fd990e31361f81",
+      "task": "django-20395",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7008,
+      "commit": "33a0a6f033b9243e0cc98e76bd494de73cf144eb",
+      "task": "django-20395",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7010,
+      "commit": "1c34b8716afde049f95ad1c72c2f8e148f826662",
+      "task": "django-20288",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7010,
+      "commit": "cc0f6c4f74cc278fdab79b269401127f2d869334",
+      "task": "django-20288",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 6990,
+      "commit": "97acd4d2f92eef8c285bac070d437bf0fd52e071",
+      "task": "django-20183",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 6990,
+      "commit": "07419875685997a30cd281396e0dc867e98aefe3",
+      "task": "django-20183",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 6972,
+      "commit": "fd705912fff168d10c806568a222dfa25e3bb6a0",
+      "task": "django-19645",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 6972,
+      "commit": "5ee651f2555f3258b136f6e8be90f018fd8ffbf0",
+      "task": "django-19645",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 6924,
+      "commit": "a3882876927a819ca982ea61353945e9d86f3659",
+      "task": "django-19361",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 6924,
+      "commit": "29f5e1e97d660855d34c1ee5edbd5cfe094b6ca7",
+      "task": "django-19361",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7335,
+      "commit": "4dad0e491589cc9884c826d73232c9a97e424fdf",
+      "task": "typescript-eslint-13062",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7335,
+      "commit": "594fe286ec518c6899a9b89141cf3220bcfb9f72",
+      "task": "typescript-eslint-13062",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7335,
+      "commit": "2da5c4fca87fead576332c9bd1f0ada9db4803fb",
+      "task": "typescript-eslint-13058",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7335,
+      "commit": "e7d57dd6ea0945ae71ba9f68d04270caecda1735",
+      "task": "typescript-eslint-13058",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7582,
+      "commit": "8ba19195bf7967dfd7cfdbaf67f294075dcc0d96",
+      "task": "typescript-eslint-12995",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7582,
+      "commit": "f4c77f4b83727e5d86295ceb00a5c9732a37031d",
+      "task": "typescript-eslint-12995",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7582,
+      "commit": "7488d681f6e0e96c2aaa1eee9c3d1b9b1ef077cb",
+      "task": "typescript-eslint-12991",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7303,
+      "commit": "a05e4eebafc9e08430e94765f88f74b5569806e4",
+      "task": "typescript-eslint-12991",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7582,
+      "commit": "925dab353350d63c36bade0340b07935d2b6211b",
+      "task": "typescript-eslint-12977",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7582,
+      "commit": "8ba19195bf7967dfd7cfdbaf67f294075dcc0d96",
+      "task": "typescript-eslint-12977",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "50f5bb4449793b8e83a12a76af03d36c4c7cde20",
+      "task": "typescript-eslint-12974",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "29d25fa43c152761ccd3e3a632e5fd9f45b1e5c2",
+      "task": "typescript-eslint-12974",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "f43b108f32d7f1f57f487be6f6f25ba7ea50787f",
+      "task": "typescript-eslint-12953",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "2211d3fb8e9f596fe753c19baa48b8c7e52dea42",
+      "task": "typescript-eslint-12953",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "2211d3fb8e9f596fe753c19baa48b8c7e52dea42",
+      "task": "typescript-eslint-12941",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 7579,
+      "commit": "e8593b2be2fcf545c5379503e1ba0dd816fc6036",
+      "task": "typescript-eslint-12941",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1665,
+      "commit": "3c82a95e723946456b08a32ece691703833ce8d1",
+      "task": "prometheus-19403",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1665,
+      "commit": "52b8cb33c0280e374512ab2a800d3a9f8608ef61",
+      "task": "prometheus-19403",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1676,
+      "commit": "9606e393dc34f915af7689fe66b7936f981687e8",
+      "task": "prometheus-19368",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1676,
+      "commit": "dee5127070290d0152159de46d89401e831adc45",
+      "task": "prometheus-19368",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1687,
+      "commit": "f9d6ab82f8e0d8d069f578285950e65e3e02b2ea",
+      "task": "prometheus-18631",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1687,
+      "commit": "3fab29b0da5f31f98893b73bcc2b20fcf79d0e1e",
+      "task": "prometheus-18631",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1604,
+      "commit": "a2172f91c198aed8d2f645021a90942ffbcaf706",
+      "task": "prometheus-18401",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1604,
+      "commit": "4b562bba6e2664cfaa37e3b3de9ae60f178549b8",
+      "task": "prometheus-18401",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1590,
+      "commit": "5b1d22e2ce97dd5ebb9e834180c196f7ea353ece",
+      "task": "prometheus-18375",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1590,
+      "commit": "3f40ca38e6c371b9cb83fd8b552bb5532263e2a4",
+      "task": "prometheus-18375",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1583,
+      "commit": "776a71749a73375cba7e7173afecfbc02a187cee",
+      "task": "prometheus-18323",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1583,
+      "commit": "166d20151c0d1bd48fe939ce94f0da0e5c485b15",
+      "task": "prometheus-18323",
+      "tree": "fix"
+    },
+    {
+      "changes": [],
+      "checked": 1486,
+      "commit": "9e4d23ddafcdc00021cd8630e78bb819e84ccac9",
+      "task": "prometheus-17312",
+      "tree": "base"
+    },
+    {
+      "changes": [],
+      "checked": 1486,
+      "commit": "8558b722f223039e466180f60ffbf11ebb6193d1",
+      "task": "prometheus-17312",
+      "tree": "fix"
+    }
+  ],
+  "format": "codegraph-study-input-integrity/1",
+  "total_files": 254579
+}

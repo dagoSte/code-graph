@@ -1,0 +1,20 @@
+diff --git a/packages/eslint-plugin/src/rules/require-array-sort-compare.ts b/packages/eslint-plugin/src/rules/require-array-sort-compare.ts
+index bc2273dbf..6717af671 100644
+--- a/packages/eslint-plugin/src/rules/require-array-sort-compare.ts
++++ b/packages/eslint-plugin/src/rules/require-array-sort-compare.ts
+@@ -1,0 +2,3 @@ import type { TSESTree } from '@typescript-eslint/utils';
++import type * as ts from 'typescript';
++
++import * as tsutils from 'ts-api-utils';
+@@ -9 +11,0 @@ import {
+-  isTypeArrayTypeOrUnionOfArrayTypes,
+@@ -90 +92 @@ export default createRule<Options, MessageIds>({
+-      if (isTypeArrayTypeOrUnionOfArrayTypes(calleeObjType, checker)) {
++      if (isAlwaysArray(calleeObjType, checker)) {
+@@ -100,0 +103,6 @@ export default createRule<Options, MessageIds>({
++
++function isAlwaysArray(type: ts.Type, checker: ts.TypeChecker): boolean {
++  return tsutils
++    .unionConstituents(type)
++    .every(t => checker.isArrayType(t) || checker.isTupleType(t));
++}

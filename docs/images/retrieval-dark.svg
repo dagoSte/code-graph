@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="458" viewBox="0 0 672 458" role="img" aria-labelledby="t d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Relevant symbols in the top five results, per query</title>
+<desc id="d">BM25 text matching alone finds 9 of 15 relevant symbols; adding call-graph expansion with RRF finds 15 of 15. Synthetic benchmark, 7 queries.</desc>
+<rect width="672" height="458" rx="12" fill="#1a1a19"/>
+<text x="24" y="34" font-size="16" font-weight="600" fill="#f0efec">Relevant symbols in the top 5 results</text>
+<text x="24" y="56" font-size="12.5" fill="#c3c2b7">Synthetic retrieval benchmark · 7 queries with declared answers · BM25 alone 9/15 · hybrid 15/15</text>
+<rect x="24" y="67" width="10" height="10" rx="2" fill="#3987e5"/>
+<text x="40" y="76" font-size="12" fill="#c3c2b7">Also found by BM25 alone</text>
+<rect x="234" y="67" width="10" height="10" rx="2" fill="#d95926"/>
+<text x="250" y="76" font-size="12" fill="#c3c2b7">Found only with call-graph expansion</text>
+<text x="24" y="105" font-size="13" font-weight="600" fill="#f0efec">“cancel order”</text>
+<text x="24" y="121" font-size="11.5" fill="#c3c2b7">Python</text>
+<rect x="230" y="96" width="192" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="96" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="96" width="62" height="18" rx="4" fill="#d95926"/>
+<rect x="358" y="96" width="62" height="18" rx="4" fill="#d95926"/>
+<text x="434" y="110" font-size="12" fill="#f0efec">3/3  (BM25 alone 1/3)</text>
+<text x="24" y="149" font-size="13" font-weight="600" fill="#f0efec">“audit entry”</text>
+<text x="24" y="165" font-size="11.5" fill="#c3c2b7">Python</text>
+<rect x="230" y="140" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="140" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="140" width="62" height="18" rx="4" fill="#d95926"/>
+<text x="370" y="154" font-size="12" fill="#f0efec">2/2  (BM25 alone 1/2)</text>
+<text x="24" y="193" font-size="13" font-weight="600" fill="#f0efec">“parse config”</text>
+<text x="24" y="209" font-size="11.5" fill="#c3c2b7">Python</text>
+<rect x="230" y="184" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="184" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="184" width="62" height="18" rx="4" fill="#3987e5"/>
+<text x="370" y="198" font-size="12" fill="#f0efec">2/2  (BM25 alone 2/2)</text>
+<text x="24" y="237" font-size="13" font-weight="600" fill="#f0efec">“HTTPServer”</text>
+<text x="24" y="253" font-size="11.5" fill="#c3c2b7">TypeScript</text>
+<rect x="230" y="228" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="228" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="228" width="62" height="18" rx="4" fill="#d95926"/>
+<text x="370" y="242" font-size="12" fill="#f0efec">2/2  (BM25 alone 1/2)</text>
+<text x="24" y="281" font-size="13" font-weight="600" fill="#f0efec">“sendWire”</text>
+<text x="24" y="297" font-size="11.5" fill="#c3c2b7">TypeScript</text>
+<rect x="230" y="272" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="272" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="272" width="62" height="18" rx="4" fill="#3987e5"/>
+<text x="370" y="286" font-size="12" fill="#f0efec">2/2  (BM25 alone 2/2)</text>
+<text x="24" y="325" font-size="13" font-weight="600" fill="#f0efec">“cancel invoice”</text>
+<text x="24" y="341" font-size="11.5" fill="#c3c2b7">PHP</text>
+<rect x="230" y="316" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="316" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="316" width="62" height="18" rx="4" fill="#d95926"/>
+<text x="370" y="330" font-size="12" fill="#f0efec">2/2  (BM25 alone 1/2)</text>
+<text x="24" y="369" font-size="13" font-weight="600" fill="#f0efec">“release lock”</text>
+<text x="24" y="385" font-size="11.5" fill="#c3c2b7">Python</text>
+<rect x="230" y="360" width="128" height="18" rx="4" fill="#2a2a28"/>
+<rect x="230" y="360" width="62" height="18" rx="4" fill="#3987e5"/>
+<rect x="294" y="360" width="62" height="18" rx="4" fill="#d95926"/>
+<text x="370" y="374" font-size="12" fill="#f0efec">2/2  (BM25 alone 1/2)</text>
+<line x1="230" y1="90" x2="230" y2="398" stroke="#3a3a37" stroke-width="1"/>
+<text x="24" y="422" font-size="11" fill="#c3c2b7">Blocks = relevant symbols in the hybrid top 5; grey = not in the hybrid top 5. Cases are synthetic and small:</text>
+<text x="24" y="438" font-size="11" fill="#c3c2b7">they show the mechanism, not a general accuracy figure. A query with no answer returns nothing in both modes.</text>
+</svg>

@@ -1,0 +1,29 @@
+diff --git a/model/labels/regexp.go b/model/labels/regexp.go
+index 796a479fe..32766356f 100644
+--- a/model/labels/regexp.go
++++ b/model/labels/regexp.go
+@@ -641 +641 @@ func stringMatcherFromRegexpInternal(re *syntax.Regexp) StringMatcher {
+-// and starts and ends with a wildcard matcher (eg. .*-.*-.*).
++// and starts and ends with a wildcard matcher (eg. .*-.*-.*), with wildcards between every literal.
+@@ -647 +647 @@ func isSimpleConcatenationPattern(re *syntax.Regexp) bool {
+-	if len(re.Sub) < 2 {
++	if len(re.Sub) < 3 || len(re.Sub)%2 == 0 {
+@@ -651,9 +651,9 @@ func isSimpleConcatenationPattern(re *syntax.Regexp) bool {
+-	first := re.Sub[0]
+-	last := re.Sub[len(re.Sub)-1]
+-	if !isMatchAny(first) || !isMatchAny(last) {
+-		return false
+-	}
+-
+-	for _, re := range re.Sub[1 : len(re.Sub)-1] {
+-		if !isMatchAny(re) && !isCaseSensitiveLiteral(re) {
+-			return false
++	for i, sub := range re.Sub {
++		if i%2 == 0 {
++			if !isMatchAny(sub) {
++				return false
++			}
++		} else {
++			if !isCaseSensitiveLiteral(sub) {
++				return false
++			}

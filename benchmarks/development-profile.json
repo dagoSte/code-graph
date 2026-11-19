@@ -1,0 +1,12 @@
+{
+  "stage": "development_before_ast_index_and_diagnostic_aggregation",
+  "released": false,
+  "engine_sha256": "dab6417d908a978d98e7083704b9b62815e07ffe02aaf18ab973ae4b16c2de21",
+  "source_snapshot_sha256": "1251d9d28b0ffcff56bb6b2692e810985060088ed283c2867d3489e6d055efb9",
+  "indexed_files": 795,
+  "definitions": 7088,
+  "check_ms": 129987.93599999044,
+  "check_count": 9084,
+  "analysis_limit_occurrences": 9069,
+  "conclusion": "Measured regression motivated in-memory syntax lookup and grouped optional diagnostics. This development snapshot is not the release and differs from the final source snapshot; no precise speedup ratio is asserted."
+}

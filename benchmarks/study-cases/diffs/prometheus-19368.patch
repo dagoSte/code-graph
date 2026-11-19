@@ -1,0 +1,36 @@
+diff --git a/cmd/prometheus/main.go b/cmd/prometheus/main.go
+index e8de0ad7c..c6f737eb7 100644
+--- a/cmd/prometheus/main.go
++++ b/cmd/prometheus/main.go
+@@ -798,3 +798,5 @@ func main() {
+-	if cfg.tsdb.BlockReloadInterval < model.Duration(1*time.Second) {
+-		logger.Warn("The option --storage.tsdb.block-reload-interval is set to a value less than 1s. Setting it to 1s to avoid overload.")
+-		cfg.tsdb.BlockReloadInterval = model.Duration(1 * time.Second)
++	minBlockReloadInterval := model.Duration(tsdb.MinBlockReloadInterval)
++	if cfg.tsdb.BlockReloadInterval < minBlockReloadInterval {
++		minBlockReloadIntervalString := minBlockReloadInterval.String()
++		logger.Warn("The option --storage.tsdb.block-reload-interval is set to a value less than " + minBlockReloadIntervalString + ". Setting it to " + minBlockReloadIntervalString + " to avoid overload.")
++		cfg.tsdb.BlockReloadInterval = minBlockReloadInterval
+diff --git a/tsdb/db.go b/tsdb/db.go
+index b8c3d74e7..f740197f2 100644
+--- a/tsdb/db.go
++++ b/tsdb/db.go
+@@ -60,0 +61,5 @@ const (
++	// MinBlockReloadInterval is the minimum supported non-zero block reload interval.
++	MinBlockReloadInterval = time.Second
++
++	defaultBlockReloadInterval = time.Minute
++
+@@ -99 +104 @@ func DefaultOptions() *Options {
+-		BlockReloadInterval:         1 * time.Minute,
++		BlockReloadInterval:         defaultBlockReloadInterval,
+@@ -264,0 +270,2 @@ type Options struct {
++	// A zero value uses the default of one minute. Non-zero values below
++	// MinBlockReloadInterval are clamped to it.
+@@ -968,2 +975,4 @@ func validateOpts(opts *Options, rngs []int64) (*Options, []int64, error) {
+-	if opts.BlockReloadInterval < 1*time.Second {
+-		opts.BlockReloadInterval = 1 * time.Second
++	if opts.BlockReloadInterval == 0 {
++		opts.BlockReloadInterval = defaultBlockReloadInterval
++	} else if opts.BlockReloadInterval < MinBlockReloadInterval {
++		opts.BlockReloadInterval = MinBlockReloadInterval

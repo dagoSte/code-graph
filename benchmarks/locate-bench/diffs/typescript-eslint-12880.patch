@@ -1,0 +1,27 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts b/packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts
+index 7cdcb9f35..cb961a01f 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts
+@@ -160,6 +159,0 @@ export default createRule({
+-        const leftName = getPropertyName(node.left);
+-
+-        if (!leftName) {
+-          return;
+-        }
+-
+@@ -180,0 +175,15 @@ export default createRule({
++        // A prior write to the parameter binding means a later `this.x = x`
++        // may copy a different value than the parameter property initialized.
++        if (node.left.type === AST_NODE_TYPES.Identifier) {
++          if (isReferenceFromParameter(node.left)) {
++            assignedBeforeUnnecessary.add(node.left.name);
++          }
++          return;
++        }
++
++        const leftName = getPropertyName(node.left);
++
++        if (!leftName) {
++          return;
++        }
++

@@ -1,0 +1,105 @@
+{
+  "format": "codegraph-real-project-benchmark/1",
+  "project_name": "hotskiils",
+  "source_execution": false,
+  "test_execution": false,
+  "tokenizer": null,
+  "repetitions": 3,
+  "environment": "macOS arm64 / Python 3.12 / tree-sitter 0.25.2",
+  "versions": {
+    "before": {
+      "analysis_code_sha256": {
+        "cg.py": "082b57286e0496ac47ceddae77d1219abd43a1a17fa9498ebeb23807df7f4dbd",
+        "project_data.py": "22a6b6430e9f6da910a5d10a67ac34c13f308e0bad4aae9a5d2d1d280d3105f5",
+        "workbench.py": "2733b020ca587104a0d050fb6f9513fcdccc5de6b1f03a379a2afc67f5e9bbbf"
+      },
+      "engine_version": "1.3.0",
+      "engine_sha256": "082b57286e0496ac47ceddae77d1219abd43a1a17fa9498ebeb23807df7f4dbd",
+      "index_ms": 6054.5523329637945,
+      "index_repetitions": 1,
+      "check_repetitions": 1,
+      "counts": {
+        "files": 795,
+        "definitions": 7089,
+        "edges": 45429
+      },
+      "qualified_consumer_present": true,
+      "detail_full_bytes": 31877,
+      "source_tab_bytes": 31877,
+      "source_preserved": true,
+      "impact_bytes": 77961,
+      "impact_legacy_bytes": 77961,
+      "impact_items": 52,
+      "recognized_test_cases": 49,
+      "callback_registered": true,
+      "noop_revision_stable": false,
+      "resources_query_ms": {
+        "samples": [
+          6.479958072304726,
+          5.985959083773196,
+          9.117749985307455
+        ],
+        "median": 6.479958072304726,
+        "min": 5.985959083773196,
+        "max": 9.117749985307455
+      },
+      "check_ms": 630.6740420404822,
+      "check_count": 76
+    },
+    "after": {
+      "analysis_code_sha256": {
+        "agent_queries.py": "5f7205314ba0cba33bb366b938f0955df07f9a7eba72bb316cf7f66c9b4d72a3",
+        "architecture.py": "f295183f57b4b18ce3cefdbcb120dd2f1cd2737134ee105775c566007f3c2b5c",
+        "cg.py": "5e2a096f2eea9c8d199f95c2a825c5ddd408defe00b27716434681362441ee72",
+        "change_analysis.py": "6a4d6d3e8133234e8ad6e7cf00ad0378f9ca3d1872a8ba6e0ac1dc1dadf27650",
+        "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+        "evidence.py": "de8380abbd9b1452f44027ecb757c34f59574e1893460f5189c17c7367e8e330",
+        "project_data.py": "5ff97dd53e46c47f4de192d25f1eccc8b6f7fa4c81604bb3612ef6ce8a097f09",
+        "workbench.py": "9e8c8f4f6d0198e3e58dd471021a2af41c2d0f1fe3fa7fc53a5595c1464948e4"
+      },
+      "engine_version": "1.4.0",
+      "engine_sha256": "5e2a096f2eea9c8d199f95c2a825c5ddd408defe00b27716434681362441ee72",
+      "index_ms": 6652.172332978807,
+      "index_repetitions": 1,
+      "check_repetitions": 1,
+      "counts": {
+        "files": 795,
+        "definitions": 7089,
+        "edges": 45419
+      },
+      "qualified_consumer_present": true,
+      "detail_full_bytes": 31981,
+      "source_tab_bytes": 13614,
+      "source_preserved": true,
+      "impact_bytes": 51505,
+      "impact_legacy_bytes": 74466,
+      "impact_items": 52,
+      "recognized_test_cases": 39,
+      "callback_registered": true,
+      "architecture_totals": {
+        "observations": 794,
+        "declarations": 378,
+        "links": 0
+      },
+      "architecture_declarations_dynamic": 17,
+      "noop_revision_stable": true,
+      "resources_query_ms": {
+        "samples": [
+          21.16066706366837,
+          18.637375091202557,
+          15.251083066686988
+        ],
+        "median": 18.637375091202557,
+        "min": 15.251083066686988,
+        "max": 21.16066706366837
+      },
+      "check_ms": 3023.126207990572,
+      "check_count": 6,
+      "check_categories": {
+        "maintenance": 6
+      }
+    }
+  },
+  "source_snapshot_sha256": "ee569616400de2a31d52145a153597ac42436e10574050fa50ee65dc2c910fad",
+  "copied_files": 838
+}

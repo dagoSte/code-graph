@@ -1,0 +1,1 @@
+{"name": "@demo/lib", "exports": {".": "./src/index.js", "./tools": "./src/tools.js"}}

@@ -1,0 +1,626 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "dart/same_library",
+      "language": "dart",
+      "files": {
+        "app.dart": "String polish()=>'[[\"app.dart\",\"polish\"]]';\nString drive()=>polish();\nvoid main(){print((drive)());}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [
+        [
+          "app.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "60cb92b572e61a65262e1e7d422bb4201c0c8d89abd81fc73a534127b2978812",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "b0a4a00cfeab2d5b1f2dd8f5fa2d619a9d5eedace4079d7a7f05aa04e0121757"
+    },
+    {
+      "id": "dart/prefix",
+      "language": "dart",
+      "files": {
+        "app.dart": "import 'lib.dart' as api;\nString drive()=>api.polish();\nvoid main(){print((drive)());}\n",
+        "lib.dart": "String polish()=>'[[\"lib.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "app.dart",
+        "lib.dart"
+      ],
+      "targets": [
+        [
+          "lib.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "b9ff4e7dda911c4cc248bf47cd1276113e18ba4b35f2bbe0ded1a3c2a6f1e8cc",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "b295b587bf8354fca1d13de4d75f1d44d7a156cdbfbc273eac9cc11c806b9004"
+    },
+    {
+      "id": "dart/unprefixed_show",
+      "language": "dart",
+      "files": {
+        "app.dart": "import 'lib.dart' show polish;\nString drive()=>polish();\nvoid main(){print((drive)());}\n",
+        "lib.dart": "String polish()=>'[[\"lib.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "app.dart",
+        "lib.dart"
+      ],
+      "targets": [
+        [
+          "lib.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "8884c1403a253c3fc317d90d021972e91a53057254368fe59732fdeb6bfec324",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "ecf74901d28fdd6c306dd68db1b0321dd4dbec68a50a795e5f4172a0b221c2f8"
+    },
+    {
+      "id": "dart/static_method",
+      "language": "dart",
+      "files": {
+        "app.dart": "class Repo{static String polish()=>'[[\"app.dart\",\"Repo.polish\"]]';}\nString drive()=>Repo.polish();\nvoid main(){print((drive)());}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [
+        [
+          "app.dart",
+          "Repo.polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "6a7b6373ee69be0c7a9966186b6fa6c82b15831fdb7a8c1f18b0bee9c220aea4",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app.dart\",\"Repo.polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "77dfeeb08b3f61e51685ff6ca181264941da181732f45890e303103ea023cee5"
+    },
+    {
+      "id": "dart/tearoff",
+      "language": "dart",
+      "files": {
+        "app.dart": "String polish()=>'[[\"app.dart\",\"polish\"]]';\nString drive(){final fn=polish;return fn();}\nvoid main(){print(drive());}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [
+        [
+          "app.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "f3232950deef46641354398e3621999e8b5bd70fc65f116b9a22bdc4ddb3b9ab",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "3891b6b918c5bb7e7222b808783c90e0c4740a9b4f1e7160c1f46116ba38d0c0"
+    },
+    {
+      "id": "dart/parameter_shadow",
+      "language": "dart",
+      "files": {
+        "app.dart": "String polish()=>'[[\"app.dart\",\"polish\"]]';\nString drive(Function polish)=>polish();\nvoid main(){print((drive)(()=>'[]'));}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "36e13b0bcc06ac33fc31a1bcd1b6595613a025540ac3a06d6776e706546914d9",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "56c2a101498db73b8da69619f63f21f355e4bd8e61e08c7318a00780744f38f1"
+    },
+    {
+      "id": "dart/instance_abstention",
+      "language": "dart",
+      "files": {
+        "app.dart": "class Repo{String polish()=>'[[\"app.dart\",\"Repo.polish\"]]';}\nString drive(Repo repo)=>repo.polish();\nvoid main(){print((drive)(Repo()));}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [
+        [
+          "app.dart",
+          "Repo.polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "787e914dad5db83df35e4a37400c21bbb351a7f3dfb53d73a2c82904a0fb20e8",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app.dart\",\"Repo.polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "ee6609d145974de45557f8ff79d70b3d9484bed85f0fa48c72778cd424d665bd"
+    },
+    {
+      "id": "dart/extension_abstention",
+      "language": "dart",
+      "files": {
+        "app.dart": "extension E on String{String polish()=>'[[\"app.dart\",\"E.polish\"]]';}\nString drive()=>\"x\".polish();\nvoid main(){print((drive)());}\n"
+      },
+      "required_indexed": [
+        "app.dart"
+      ],
+      "targets": [
+        [
+          "app.dart",
+          "E.polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.dart",
+            "drive",
+            2,
+            "<indirect>",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app.dart"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "bf6aeb2cd4024f79f89622e4c0ae547e71aaf404ff11d193fa6ac50e987bfcfe",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app.dart\",\"E.polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "73bc7be0138d0d9fe8a31b54c63787013ad5354987ea817dafa6adf8dd68b89e"
+    },
+    {
+      "id": "dart/package_prefix",
+      "language": "dart",
+      "files": {
+        ".dart_tool/package_config.json": "{\"configVersion\": 2, \"packages\": [{\"name\": \"dep\", \"rootUri\": \"../deps/ops\", \"packageUri\": \"lib/\", \"languageVersion\": \"3.6\"}]}",
+        "bin/app.dart": "import 'package:dep/ops.dart' as api;\nString drive()=>api.polish();\nvoid main(){print((drive)());}\n",
+        "deps/ops/lib/ops.dart": "String polish()=>'[[\"deps/ops/lib/ops.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "bin/app.dart",
+        "deps/ops/lib/ops.dart"
+      ],
+      "targets": [
+        [
+          "deps/ops/lib/ops.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "bin/app.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "deps/ops/lib/ops.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "5c2a54a6e52876b79a19595a5cdc8097e0ebd4fdfe323774d4b84eb6d864d91f",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "bin/app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"deps/ops/lib/ops.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "8393f42485e93277fd9c3fc7a70d5ef17fb199de55d331123ee28ffac8d7ab47"
+    },
+    {
+      "id": "dart/package_tearoff",
+      "language": "dart",
+      "files": {
+        ".dart_tool/package_config.json": "{\"configVersion\": 2, \"packages\": [{\"name\": \"dep\", \"rootUri\": \"../deps/ops\", \"packageUri\": \"lib/\", \"languageVersion\": \"3.6\"}]}",
+        "bin/app.dart": "import 'package:dep/ops.dart' as api;\ndynamic drive()=>api.polish;\nvoid main(){print(((drive)())());}\n",
+        "deps/ops/lib/ops.dart": "String polish()=>'[[\"deps/ops/lib/ops.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "bin/app.dart",
+        "deps/ops/lib/ops.dart"
+      ],
+      "targets": [
+        [
+          "deps/ops/lib/ops.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "bin/app.dart",
+            "drive",
+            2,
+            "polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "deps/ops/lib/ops.dart"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "4f2699b2b90a32ab4e639a6a145410e363cf21c48fbdfe255d2a0240f31cd848",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "bin/app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"deps/ops/lib/ops.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "09185246e3ab0c5f5a7c95c81b09db4eadd29225278ef2d57e9b47272db27c3e"
+    },
+    {
+      "id": "dart/package_relative_context_package",
+      "language": "dart",
+      "files": {
+        ".dart_tool/package_config.json": "{\"configVersion\": 2, \"packages\": [{\"name\": \"dep\", \"rootUri\": \"../dep\", \"packageUri\": \"lib/\", \"languageVersion\": \"3.6\"}]}",
+        "bin/app.dart": "import 'package:dep/bridge.dart';\nvoid main(){print((drive)());}\n",
+        "dep/lib/bridge.dart": "import '../lib/ops.dart';\nString drive()=>polish();\n",
+        "dep/lib/ops.dart": "String polish()=>'[[\"dep/lib/ops.dart\",\"polish\"]]';\n",
+        "dep/lib/lib/ops.dart": "String polish()=>'[[\"dep/lib/lib/ops.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "bin/app.dart",
+        "dep/lib/bridge.dart",
+        "dep/lib/lib/ops.dart",
+        "dep/lib/ops.dart"
+      ],
+      "targets": [
+        [
+          "dep/lib/lib/ops.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "dep/lib/bridge.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "dep/lib/ops.dart",
+          "dep/lib/lib/ops.dart"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "182b6be61d3e9ff648fd17d9c505641ca93edee0bd8e5908ce23fe4f42f98c4b",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "bin/app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"dep/lib/lib/ops.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "f957a5ea7cab351a6842a27dd58a123e2b9b5a2b043b8fe28db246dd47daad8c"
+    },
+    {
+      "id": "dart/package_relative_context_file",
+      "language": "dart",
+      "files": {
+        ".dart_tool/package_config.json": "{\"configVersion\": 2, \"packages\": [{\"name\": \"dep\", \"rootUri\": \"../dep\", \"packageUri\": \"lib/\", \"languageVersion\": \"3.6\"}]}",
+        "bin/app.dart": "import '../dep/lib/bridge.dart';\nvoid main(){print((drive)());}\n",
+        "dep/lib/bridge.dart": "import '../lib/ops.dart';\nString drive()=>polish();\n",
+        "dep/lib/ops.dart": "String polish()=>'[[\"dep/lib/ops.dart\",\"polish\"]]';\n",
+        "dep/lib/lib/ops.dart": "String polish()=>'[[\"dep/lib/lib/ops.dart\",\"polish\"]]';\n"
+      },
+      "required_indexed": [
+        "bin/app.dart",
+        "dep/lib/bridge.dart",
+        "dep/lib/lib/ops.dart",
+        "dep/lib/ops.dart"
+      ],
+      "targets": [
+        [
+          "dep/lib/ops.dart",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "dep/lib/bridge.dart",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "dep/lib/ops.dart",
+          "dep/lib/lib/ops.dart"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "dart-targets",
+      "source_sha256": "5584f10545ef52e078b0f4a3914a037883fd9ca2da08c86a9b217098c82520dd",
+      "native": {
+        "args": [
+          "--disable-dart-dev",
+          "bin/app.dart"
+        ],
+        "exit": 0,
+        "stdout": "[[\"dep/lib/ops.dart\",\"polish\"]]\n",
+        "stderr": "",
+        "version": "Dart SDK 3.6.2 stable macos_arm64",
+        "toolchain_archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295"
+      },
+      "evidence_sha256": "6c69d287e391e13452e52a5fa8daa56604c4b52d948d6520353a99c7112bff76"
+    }
+  ]
+}

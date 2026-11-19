@@ -1,0 +1,71 @@
+diff --git a/django/dispatch/dispatcher.py b/django/dispatch/dispatcher.py
+index 63fb75285e..21d77bd884 100644
+--- a/django/dispatch/dispatcher.py
++++ b/django/dispatch/dispatcher.py
+@@ -1,0 +2 @@ import asyncio
++import contextvars
+@@ -25 +26,21 @@ NO_RECEIVERS = object()
+-async def _gather(*coros):
++def _restore_context(context):
++    """
++    Check for changes in contextvars, and set them to the current
++    context for downstream consumers.
++    """
++    for cvar in context:
++        cvalue = context.get(cvar)
++        try:
++            if cvar.get() != cvalue:
++                cvar.set(cvalue)
++        except LookupError:
++            cvar.set(cvalue)
++
++
++async def _run_parallel(*coros):
++    """
++    Execute multiple asynchronous coroutines in parallel,
++    sharing the current context between them.
++    """
++    context = contextvars.copy_context()
++
+@@ -29,3 +49,0 @@ async def _gather(*coros):
+-    if len(coros) == 1:
+-        return [await coros[0]]
+-
+@@ -39 +57 @@ async def _gather(*coros):
+-                tg.create_task(run(i, coro))
++                tg.create_task(run(i, coro), context=context)
+@@ -44,0 +63,2 @@ async def _gather(*coros):
++    finally:
++        _restore_context(context=context)
+@@ -236 +256 @@ class Signal:
+-                async_responses = await _gather(
++                async_responses = await _run_parallel(
+@@ -277,0 +298 @@ class Signal:
++
+@@ -293,8 +314,6 @@ class Signal:
+-        responses, async_responses = await _gather(
+-            sync_send(),
+-            _gather(
+-                *(
+-                    receiver(signal=self, sender=sender, **named)
+-                    for receiver in async_receivers
+-                )
+-            ),
++        responses = await sync_send()
++        async_responses = await _run_parallel(
++            *(
++                receiver(signal=self, sender=sender, **named)
++                for receiver in async_receivers
++            )
+@@ -365 +384 @@ class Signal:
+-                async_responses = await _gather(
++                async_responses = await _run_parallel(
+@@ -439,5 +458,3 @@ class Signal:
+-        responses, async_responses = await _gather(
+-            sync_send(),
+-            _gather(
+-                *(asend_and_wrap_exception(receiver) for receiver in async_receivers),
+-            ),
++        responses = await sync_send()
++        async_responses = await _run_parallel(
++            *(asend_and_wrap_exception(receiver) for receiver in async_receivers),

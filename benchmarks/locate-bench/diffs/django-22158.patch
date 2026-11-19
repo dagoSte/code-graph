@@ -1,0 +1,16 @@
+diff --git a/django/db/migrations/serializer.py b/django/db/migrations/serializer.py
+index 8d361e00a2..80b0b913b0 100644
+--- a/django/db/migrations/serializer.py
++++ b/django/db/migrations/serializer.py
+@@ -22 +22 @@ from django.utils.module_loading import qualname
+-from django.utils.version import get_docs_version
++from django.utils.version import PY315, get_docs_version
+@@ -156,0 +157,6 @@ class DictionarySerializer(BaseSerializer):
++class FrozenDictionarySerializer(DictionarySerializer):
++    def serialize(self):
++        value, imports = super().serialize()
++        return f"frozendict({value})", imports
++
++
+@@ -366,0 +373 @@ class Serializer:
++        **({frozendict: FrozenDictionarySerializer} if PY315 else {}),

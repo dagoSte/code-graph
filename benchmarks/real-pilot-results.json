@@ -1,0 +1,3744 @@
+{
+  "format": "codegraph-real-pilot-rescore/1",
+  "recorded_run": {
+    "format": "codegraph-real-pilot/1",
+    "live": true,
+    "live_starts": 24,
+    "cases_sha256": "e61eea49bf69ee20b673b5ec3df5b726ab0c6b6429e4ca4d3e65552ac12b25e8",
+    "selection_sha256": "b3c601b6f1f6a27fa53e7cca5339c03d24e4de34207a8468f038cc60114017c2",
+    "call_seconds": 600,
+    "max_calls": 24,
+    "test_seconds": 120,
+    "claude_review_budget_usd": 0.6,
+    "claude_total_budget_usd": 5,
+    "test_environment": {
+      "python": "3.13.14",
+      "packages": {
+        "pytest": "8.3.5",
+        "mpmath": "1.3.0",
+        "hypothesis": "6.131.9"
+      }
+    },
+    "engine_files": {
+      "agent_queries.py": "24256c4910917041e6b0764a571dd718e9e593485f484a4b20f3c58e80170649",
+      "agents.py": "5a22fabd41611559565648bcf468b3b2d47076adca94f63aedf7deb6484d232f",
+      "architecture.py": "473c6cce28ee1e7390c10ef68d3ecbc0888b309a4cadf72e4378e9a8cb075db7",
+      "catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+      "cg.py": "e13239580d4b67ec129886a531a7ba1da2e108384fbca81eebb6930ab3f45cd4",
+      "change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+      "change_flow.py": "e34a7e3a357dfac98c70564ab559c46331011187a3cdd96b198a30ef339d60a1",
+      "change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+      "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+      "entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+      "evidence.py": "e8b5b2e436cf1efb6a145d7fdb3c01ecbf4e9a4729851f4a6ff171e1b23cd04e",
+      "feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+      "features.py": "c2d4176d97399524da6d1bbc077b4d15e2fa370994d13cc1036968d7b1cc9af7",
+      "language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+      "language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+      "language_go.py": "e84ff7a25d125c8d1ab39a4771ecf6982fce6824d231721300d111a0152bfe0e",
+      "language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+      "language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+      "language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+      "language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+      "language_sql.py": "8f47857e066a878fa9b093e968b477e9df52997cd3890ec5e581dbc6267834a8",
+      "language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+      "mcp_server.py": "da6e175f7bb431fe7f2cbf3f3c56c1a5edcf785eb79f97b9860690b76a6d25b4",
+      "project_data.py": "4c426220b00f33a0952d34320a1f286e7430259d60d0c3f6154878442c099108",
+      "search.py": "fb2d7ac5ffb7210e6aa12b93dddecc5b7480c6f6699b1d1b4b7aeb59ce9eb496",
+      "source_windows.py": "20bed3fe0ba5d8a242fd81d69f97a47b9d7e946ef0f2f591f3d665dcfb23df79",
+      "start.py": "e7f29eaedd57abf72a22e4ec0b6ed7116c3a73cf6efac77063391c7a47ada637",
+      "workbench.py": "be716c0dbfe92b33f33901b7f5175cd857ed375973a5b9b7fa228a43c0bad358"
+    },
+    "harness_files": {
+      "real_pilot.py": "37c64dd41cde380de5bc5be2c044c03a89881c78227cf350f82fbd045d1dcf2a",
+      "real_pytest.py": "1a224322722a35c094c018c0fda4404107bf52ce248ed586dbd6b445d578a039",
+      "real_pilot_mcp.py": "f1d1932360089e9aac9a32cabf41a80d7c1dddc3caeff146395ab0a92d9561c1",
+      "live_agent.py": "91cd6a1dadccd9da9d86d1069b3a26dcd5c78105b700e3c4429c3f14f7320e8e"
+    },
+    "clients": {
+      "codex": {
+        "version": "codex-cli 0.167.1",
+        "version_exit": 0,
+        "model_override": null
+      },
+      "claude": {
+        "version": "2.1.323 (Claude Code)",
+        "version_exit": 0,
+        "model_override": null
+      }
+    },
+    "claude_reported_cost_usd": 3.468303
+  },
+  "cases": [
+    {
+      "task": "sympy-30885",
+      "arm": "source_only",
+      "historical_parent": "36e94607e83b672e423e6b17ab978261831f4613",
+      "parent_tree": "0f21380045c71c49448bbf5cd607a688037634c0",
+      "setup_seconds": 1.549,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 95.204,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 44.706,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 101.599,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 23.255,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 258967,
+            "output_tokens": 1296,
+            "cached_input_tokens": 216320,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 258967,
+              "output_tokens": 1296,
+              "cached_input_tokens": 216320,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 20,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py",
+            "sympy/simplify/simplify.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py",
+            "sympy/simplify/simplify.py"
+          ],
+          "seconds": 48.68,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 254815,
+            "output_tokens": 1271,
+            "cached_input_tokens": 220288,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 254815,
+              "output_tokens": 1271,
+              "cached_input_tokens": 220288,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 34,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 42.685,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 127380,
+            "output_tokens": 1933,
+            "cached_input_tokens": 83216,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.40859120000000004,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 1933,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 83216,
+              "cache_creation_input_tokens": 44158,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/logic/boolalg.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py"
+          ],
+          "seconds": 22.704,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/logic/boolalg.py",
+        "sympy/logic/tests/test_boolalg.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.417,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.621,
+          "exit": 0
+        }
+      },
+      "seconds": 271.672,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.349,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.412,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.458,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "rescored": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.278,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.363,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.368,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "mode": "merge",
+          "performed_offline": false,
+          "recorded_integration_rechecked": true
+        },
+        "offline_seconds": 6.694
+      }
+    },
+    {
+      "task": "sympy-30885",
+      "arm": "graph_assisted",
+      "historical_parent": "36e94607e83b672e423e6b17ab978261831f4613",
+      "parent_tree": "0f21380045c71c49448bbf5cd607a688037634c0",
+      "setup_seconds": 1.604,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 99.638,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 50.285,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 102.862,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 32.125,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 304248,
+            "output_tokens": 1547,
+            "cached_input_tokens": 253696,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 304248,
+              "output_tokens": 1547,
+              "cached_input_tokens": 253696,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 11,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 7,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": false
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py",
+            "sympy/polys/rings.py",
+            "sympy/solvers/polysys.py"
+          ],
+          "seconds": 49.977,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 260162,
+            "output_tokens": 1432,
+            "cached_input_tokens": 223872,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 260162,
+              "output_tokens": 1432,
+              "cached_input_tokens": 223872,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 10,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/logic/boolalg.py",
+            "sympy/logic/tests/test_boolalg.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/logic/boolalg.py"
+          ],
+          "seconds": 48.206,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 182783,
+            "output_tokens": 2669,
+            "cached_input_tokens": 135528,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.45849360000000006,
+          "native_usage": [
+            {
+              "input_tokens": 8,
+              "output_tokens": 2669,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 135528,
+              "cache_creation_input_tokens": 47247,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "Grep",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/logic/boolalg.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 31.454,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/logic/boolalg.py",
+        "sympy/logic/tests/test_boolalg.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.391,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.632,
+          "exit": 0
+        }
+      },
+      "seconds": 291.738,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.343,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.412,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.414,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "rescored": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.27,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.361,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.381,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "mode": "merge",
+          "performed_offline": false,
+          "recorded_integration_rechecked": true
+        },
+        "offline_seconds": 6.733
+      }
+    },
+    {
+      "task": "sympy-30882",
+      "arm": "graph_assisted",
+      "historical_parent": "8d955e7ef24b0322e4ae5e168c2b64a881c15f14",
+      "parent_tree": "36c968c9b577d48e61d3322b3af6a311589deb14",
+      "setup_seconds": 1.602,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 109.161,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 59.564,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 100.061,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 63.17,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 330187,
+            "output_tokens": 2018,
+            "cached_input_tokens": 268032,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 330187,
+              "output_tokens": 2018,
+              "cached_input_tokens": 268032,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 56,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 3,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 16,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 17,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/core/tests/test_relational.py",
+            "sympy/functions/elementary/exponential.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/assumptions/relation/equality.py",
+            "sympy/calculus/accumulationbounds.py",
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/operations.py",
+            "sympy/core/power.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/core/tests/test_relational.py",
+            "sympy/functions/elementary/exponential.py"
+          ],
+          "seconds": 60.792,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 383868,
+            "output_tokens": 1581,
+            "cached_input_tokens": 340096,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 383868,
+              "output_tokens": 1581,
+              "cached_input_tokens": 340096,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 136,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 16,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/functions/elementary/complexes.py",
+            "sympy/functions/elementary/exponential.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/operations.py",
+            "sympy/functions/elementary/complexes.py",
+            "sympy/functions/elementary/miscellaneous.py",
+            "sympy/polys/polytools.py"
+          ],
+          "seconds": 57.619,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 297911,
+            "output_tokens": 5697,
+            "cached_input_tokens": 251584,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.5348248,
+          "native_usage": [
+            {
+              "input_tokens": 12,
+              "output_tokens": 5697,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 251584,
+              "cache_creation_input_tokens": 46315,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "Grep",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "Grep",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 62.747,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/core/exprtools.py",
+        "sympy/core/tests/test_exprtools.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.301,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.518,
+          "exit": 0
+        }
+      },
+      "seconds": 335.708,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.153,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.113,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "changes"
+      },
+      "rescored": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.231,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.169,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "changes",
+        "integration": null,
+        "offline_seconds": 4.203
+      }
+    },
+    {
+      "task": "sympy-30882",
+      "arm": "source_only",
+      "historical_parent": "8d955e7ef24b0322e4ae5e168c2b64a881c15f14",
+      "parent_tree": "36c968c9b577d48e61d3322b3af6a311589deb14",
+      "setup_seconds": 1.46,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 100.252,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 47.081,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 102.58,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 44.455,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 439405,
+            "output_tokens": 1799,
+            "cached_input_tokens": 386432,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 439405,
+              "output_tokens": 1799,
+              "cached_input_tokens": 386432,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 73,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 16,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 17,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 18,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 19,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 20,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 21,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 22,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 23,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/core/tests/test_relational.py",
+            "sympy/functions/elementary/exponential.py",
+            "sympy/functions/elementary/tests/test_exponential.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/core/tests/test_relational.py",
+            "sympy/functions/elementary/exponential.py",
+            "sympy/functions/elementary/tests/test_exponential.py"
+          ],
+          "seconds": 52.38,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 300708,
+            "output_tokens": 1264,
+            "cached_input_tokens": 264576,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 300708,
+              "output_tokens": 1264,
+              "cached_input_tokens": 264576,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 76,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/exprtools.py",
+            "sympy/core/tests/test_exprtools.py",
+            "sympy/functions/elementary/exponential.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/__init__.py",
+            "sympy/core/add.py",
+            "sympy/core/expr.py",
+            "sympy/core/exprtools.py",
+            "sympy/core/function.py",
+            "sympy/core/mod.py",
+            "sympy/core/power.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_exprtools.py"
+          ],
+          "seconds": 44.97,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 223123,
+            "output_tokens": 3920,
+            "cached_input_tokens": 179680,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.46184000000000003,
+          "native_usage": [
+            {
+              "input_tokens": 10,
+              "output_tokens": 3920,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 179680,
+              "cache_creation_input_tokens": 43433,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/add.py",
+            "sympy/core/exprtools.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/add.py"
+          ],
+          "seconds": 44.024,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/core/exprtools.py",
+        "sympy/core/tests/test_exprtools.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.394,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.578,
+          "exit": 0
+        }
+      },
+      "seconds": 298.226,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.202,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.139,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "changes"
+      },
+      "rescored": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.221,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.177,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "changes",
+        "integration": null,
+        "offline_seconds": 4.214
+      }
+    },
+    {
+      "task": "sympy-30872",
+      "arm": "source_only",
+      "historical_parent": "5b861e4c4a06d56bac4b3f1398985416ae6ec6c7",
+      "parent_tree": "6b28a83c997174b2fa8c5ff49f0a87939a45e8aa",
+      "setup_seconds": 1.514,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 86.501,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 47.912,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 102.381,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 20.796,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 193615,
+            "output_tokens": 1165,
+            "cached_input_tokens": 150528,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 193615,
+              "output_tokens": 1165,
+              "cached_input_tokens": 150528,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 21,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/printing/latex.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "seconds": 38.216,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 228493,
+            "output_tokens": 1228,
+            "cached_input_tokens": 198656,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 228493,
+              "output_tokens": 1228,
+              "cached_input_tokens": 198656,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 26,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/printing/latex.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "seconds": 45.44,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 130831,
+            "output_tokens": 1658,
+            "cached_input_tokens": 89928,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.3783456,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 1658,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 89928,
+              "cache_creation_input_tokens": 40897,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 20.327,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/printing/latex.py",
+        "sympy/printing/tests/test_latex.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.8,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.947,
+          "exit": 0
+        }
+      },
+      "seconds": 262.667,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": false,
+          "weakened_test_ids": [
+            "sympy/printing/tests/test_latex.py::test_latex_NDimArray"
+          ],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.699,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.728,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept"
+      },
+      "rescored": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.706,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 1,
+          "seconds": 1.747,
+          "executed": 1,
+          "passed": 0,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integration": null,
+        "offline_seconds": 5.345
+      }
+    },
+    {
+      "task": "sympy-30872",
+      "arm": "graph_assisted",
+      "historical_parent": "5b861e4c4a06d56bac4b3f1398985416ae6ec6c7",
+      "parent_tree": "6b28a83c997174b2fa8c5ff49f0a87939a45e8aa",
+      "setup_seconds": 1.489,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 95.698,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 62.675,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 105.988,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 22.962,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 250931,
+            "output_tokens": 1622,
+            "cached_input_tokens": 200960,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 250931,
+              "output_tokens": 1622,
+              "cached_input_tokens": 200960,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 18,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 3,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": false
+            },
+            {
+              "id": 4,
+              "name": "cg_find",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py",
+            "sympy/printing/printer.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/printing/glsl.py",
+            "sympy/printing/latex.py",
+            "sympy/printing/mathematica.py",
+            "sympy/printing/pretty/pretty.py",
+            "sympy/printing/printer.py",
+            "sympy/tensor/array/dense_ndim_array.py",
+            "sympy/tensor/array/ndim_array.py"
+          ],
+          "seconds": 46.772,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 265895,
+            "output_tokens": 2111,
+            "cached_input_tokens": 227328,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 265895,
+              "output_tokens": 2111,
+              "cached_input_tokens": 227328,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 209,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py",
+            "sympy/printing/printer.py",
+            "sympy/printing/tests/test_latex.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/physics/vector/printing.py",
+            "sympy/printing/aesaracode.py",
+            "sympy/printing/latex.py",
+            "sympy/printing/mathematica.py",
+            "sympy/printing/printer.py"
+          ],
+          "seconds": 60.124,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 141535,
+            "output_tokens": 1913,
+            "cached_input_tokens": 100149,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.38935379999999997,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 1913,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 100149,
+              "cache_creation_input_tokens": 41380,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "Grep",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/printing/latex.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 22.357,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/printing/latex.py",
+        "sympy/printing/tests/test_latex.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.819,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 0.956,
+          "exit": 0
+        }
+      },
+      "seconds": 292.792,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "verification_review_or_hidden_failed",
+        "retention": {
+          "tests_preserved": false,
+          "weakened_test_ids": [
+            "sympy/printing/tests/test_latex.py::test_latex_NDimArray"
+          ],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "reviewed",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.862,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.825,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept"
+      },
+      "rescored": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.696,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.685,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.709,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "mode": "merge",
+          "performed_offline": true,
+          "candidate_tree": "e9317677f37458915ec1c9c5ac8a3866f5eceae0",
+          "integrated_tree": "e9317677f37458915ec1c9c5ac8a3866f5eceae0"
+        },
+        "offline_seconds": 8.148
+      }
+    },
+    {
+      "task": "sympy-30866",
+      "arm": "graph_assisted",
+      "historical_parent": "9c0cb1bcfa48af38d165441eae15b421ab8c07df",
+      "parent_tree": "4485f246cfa4923ddec4e79d6ba4f577d005de54",
+      "setup_seconds": 1.579,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 126.242,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 59.255,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 119.14,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 36.919,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 462990,
+            "output_tokens": 2340,
+            "cached_input_tokens": 395904,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 462990,
+              "output_tokens": 2340,
+              "cached_input_tokens": 395904,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 111,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": false
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_source",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": false
+            },
+            {
+              "id": 14,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 16,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 17,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 18,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 19,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 20,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/relational.py",
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/integrals.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/algebras/quaternion.py",
+            "sympy/core/relational.py",
+            "sympy/core/tests/test_expr.py",
+            "sympy/functions/elementary/exponential.py",
+            "sympy/functions/elementary/miscellaneous.py",
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/integrals.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/integrals/transforms.py",
+            "sympy/polys/numberfields/tests/test_minpoly.py",
+            "sympy/solvers/ode/ode.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/solveset.py",
+            "sympy/solvers/tests/test_solvers.py",
+            "sympy/solvers/tests/test_solveset.py",
+            "sympy/stats/symbolic_probability.py",
+            "sympy/vector/basisdependent.py"
+          ],
+          "seconds": 74.575,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 360156,
+            "output_tokens": 1717,
+            "cached_input_tokens": 310784,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 360156,
+              "output_tokens": 1717,
+              "cached_input_tokens": 310784,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 220,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 15,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 16,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/tests/test_expr.py",
+            "sympy/functions/elementary/exponential.py",
+            "sympy/functions/elementary/miscellaneous.py",
+            "sympy/functions/elementary/piecewise.py",
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/ode/ode.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "seconds": 56.547,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 144302,
+            "output_tokens": 3008,
+            "cached_input_tokens": 101045,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.426401,
+          "native_usage": [
+            {
+              "input_tokens": 6,
+              "output_tokens": 3008,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 101045,
+              "cache_creation_input_tokens": 43251,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/solvers.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 36.305,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/integrals/tests/test_heurisch.py",
+        "sympy/solvers/solvers.py",
+        "sympy/solvers/tests/test_solvers.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.969,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.119,
+          "exit": 0
+        }
+      },
+      "seconds": 349.946,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.838,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.904,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.682,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "rescored": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.744,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.588,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.607,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "mode": "merge",
+          "performed_offline": false,
+          "recorded_integration_rechecked": true
+        },
+        "offline_seconds": 7.781
+      }
+    },
+    {
+      "task": "sympy-30866",
+      "arm": "source_only",
+      "historical_parent": "9c0cb1bcfa48af38d165441eae15b421ab8c07df",
+      "parent_tree": "4485f246cfa4923ddec4e79d6ba4f577d005de54",
+      "setup_seconds": 1.6,
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 113.744,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 67.648,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 108.252,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "reviewed",
+          "seconds": 31.884,
+          "error_code": null
+        }
+      ],
+      "calls": [
+        {
+          "phase": "plan",
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 200887,
+            "output_tokens": 1708,
+            "cached_input_tokens": 155904,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 200887,
+              "output_tokens": 1708,
+              "cached_input_tokens": 155904,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 61,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 13,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 14,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/core/relational.py",
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/integrals.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "tool_returned_file_mentions": [
+            "sympy/core/relational.py",
+            "sympy/integrals/integrals.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "seconds": 61.746,
+          "command_events": 0
+        },
+        {
+          "phase": "edit",
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 318194,
+            "output_tokens": 1885,
+            "cached_input_tokens": 280320,
+            "cache_write_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 318194,
+              "output_tokens": 1885,
+              "cached_input_tokens": 280320,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 400,
+              "cache_write_input_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "text_search",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 11,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 12,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/integrals/heurisch.py",
+            "sympy/integrals/tests/test_heurisch.py",
+            "sympy/solvers/solvers.py",
+            "sympy/solvers/tests/test_solvers.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 64.978,
+          "command_events": 0
+        },
+        {
+          "phase": "review",
+          "client": "claude",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 181486,
+            "output_tokens": 2283,
+            "cached_input_tokens": 139367,
+            "cache_write_input_tokens": null,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0.4104534,
+          "native_usage": [
+            {
+              "input_tokens": 8,
+              "output_tokens": 2283,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 139367,
+              "cache_creation_input_tokens": 42111,
+              "reasoning_output_tokens": null,
+              "cache_write_input_tokens": null
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "mcp__code-graph__cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "StructuredOutput",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "explicit_source_files_read": [
+            "sympy/integrals/heurisch.py",
+            "sympy/solvers/solvers.py"
+          ],
+          "tool_returned_file_mentions": [],
+          "seconds": 31.278,
+          "command_events": 0
+        }
+      ],
+      "changed_files": [
+        "sympy/integrals/tests/test_heurisch.py",
+        "sympy/solvers/solvers.py",
+        "sympy/solvers/tests/test_solvers.py"
+      ],
+      "cleanup_drained": true,
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.969,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 5,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "pytest"
+          },
+          "duration_s": 1.109,
+          "exit": 0
+        }
+      },
+      "seconds": 329.349,
+      "access_failure": null,
+      "agent_command_violation": false,
+      "as_recorded": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.775,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.673,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.611,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "rescored": {
+        "outcome": "success",
+        "retention": {
+          "tests_preserved": true,
+          "weakened_test_ids": [],
+          "top_level_api": {
+            "passed": true,
+            "changed_signatures": []
+          }
+        },
+        "final_state": "integrated",
+        "candidate_public": {
+          "exit_code": 0,
+          "seconds": 1.73,
+          "executed": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_hidden": {
+          "exit_code": 0,
+          "seconds": 1.594,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate_scope_ok": true,
+        "verification_ok": true,
+        "review_verdict": "accept",
+        "integrated_hidden": {
+          "exit_code": 0,
+          "seconds": 1.601,
+          "executed": 1,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "mode": "merge",
+          "performed_offline": false,
+          "recorded_integration_rechecked": true
+        },
+        "offline_seconds": 7.784
+      }
+    }
+  ],
+  "rescore": {
+    "reason": "The recorded check compared whole compound statements and rejected added nested assertions. The corrected check preserves the original statement multiset and headers at every depth; additions are allowed.",
+    "additional_live_starts": 0,
+    "recorded_receipt_sha256": "26f2cb6293ec8aa42f7d0dbec8b318abf7288a4c9e3cffd9a32aaa51d6fdaa59",
+    "scorer_files": {
+      "real_rescore.py": "3535cbeb690fbdf7fcee30a83b4bbeaec5be04704b6c1c08b2eb3c26e98b6f05",
+      "real_pilot.py": "62b37cf421f905b4d18acab71bfdd8c2d7b9511904b33014d9b3b0edb16ba8bf"
+    },
+    "timing_scope": "Calls, stages and workflow seconds are as recorded; rescored test/integration timings are offline."
+  }
+}

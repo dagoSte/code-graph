@@ -1,0 +1,8 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+index 873f79143..3a95693ac 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+@@ -130 +130,2 @@ export default createRule({
+-                      grandparent.type === AST_NODE_TYPES.TSTypeOperator;
++                      grandparent.type === AST_NODE_TYPES.TSTypeOperator ||
++                      grandparent.type === AST_NODE_TYPES.TSOptionalType;

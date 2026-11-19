@@ -1,0 +1,49 @@
+diff --git a/cmd/prometheus/main.go b/cmd/prometheus/main.go
+index b7daf2bc0..d108e4c7a 100644
+--- a/cmd/prometheus/main.go
++++ b/cmd/prometheus/main.go
+@@ -236,0 +237 @@ func (c *flagConfig) setFeatureListOptions(logger *slog.Logger) error {
++				c.web.AppendMetadata = true
+diff --git a/storage/remote/write_handler.go b/storage/remote/write_handler.go
+index c19b499e1..e8559dd00 100644
+--- a/storage/remote/write_handler.go
++++ b/storage/remote/write_handler.go
+@@ -57,0 +58 @@ type writeHandler struct {
++	appendMetadata          bool
+@@ -67 +68 @@ const maxAheadTime = 10 * time.Minute
+-func NewWriteHandler(logger *slog.Logger, reg prometheus.Registerer, appendable storage.Appendable, acceptedMsgs remoteapi.MessageTypes, ingestCTZeroSample, enableTypeAndUnitLabels bool) http.Handler {
++func NewWriteHandler(logger *slog.Logger, reg prometheus.Registerer, appendable storage.Appendable, acceptedMsgs remoteapi.MessageTypes, ingestCTZeroSample, enableTypeAndUnitLabels, appendMetadata bool) http.Handler {
+@@ -85,0 +87 @@ func NewWriteHandler(logger *slog.Logger, reg prometheus.Registerer, appendable
++		appendMetadata:          appendMetadata,
+@@ -451,5 +453,9 @@ func (h *writeHandler) appendV2(app storage.Appender, req *writev2.Request, rs *
+-		if _, err = app.UpdateMetadata(ref, ls, m); err != nil {
+-			h.logger.Debug("error while updating metadata from remote write", "err", err)
+-			// Metadata is attached to each series, so since Prometheus does not reject sample without metadata information,
+-			// we don't report remote write error either. We increment metric instead.
+-			samplesWithoutMetadata += rs.AllSamples() - allSamplesSoFar
++		// Only update metadata in WAL if the metadata-wal-records feature is enabled.
++		// Without this feature, metadata is not persisted to WAL.
++		if h.appendMetadata {
++			if _, err = app.UpdateMetadata(ref, ls, m); err != nil {
++				h.logger.Debug("error while updating metadata from remote write", "err", err)
++				// Metadata is attached to each series, so since Prometheus does not reject sample without metadata information,
++				// we don't report remote write error either. We increment metric instead.
++				samplesWithoutMetadata += rs.AllSamples() - allSamplesSoFar
++			}
+diff --git a/web/api/v1/api.go b/web/api/v1/api.go
+index 645d18f75..baddedd49 100644
+--- a/web/api/v1/api.go
++++ b/web/api/v1/api.go
+@@ -295,0 +296 @@ func NewAPI(
++	appendMetadata bool,
+@@ -341 +342 @@ func NewAPI(
+-		a.remoteWriteHandler = remote.NewWriteHandler(logger, registerer, ap, acceptRemoteWriteProtoMsgs, ctZeroIngestionEnabled, enableTypeAndUnitLabels)
++		a.remoteWriteHandler = remote.NewWriteHandler(logger, registerer, ap, acceptRemoteWriteProtoMsgs, ctZeroIngestionEnabled, enableTypeAndUnitLabels, appendMetadata)
+diff --git a/web/web.go b/web/web.go
+index f6f87e30f..2d353a8af 100644
+--- a/web/web.go
++++ b/web/web.go
+@@ -297,0 +298 @@ type Options struct {
++	AppendMetadata             bool
+@@ -398,0 +400 @@ func New(logger *slog.Logger, o *Options) *Handler {
++		o.AppendMetadata,

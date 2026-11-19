@@ -1,0 +1,35 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+index 05e89d2c7..5dbca2654 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+@@ -471,0 +472,13 @@ function collectTypeParameterUsageCounts(
++
++          // `templateType` is a lazily populated checker cache. Once it is
++          // populated on an instantiated mapped type, its constraint is
++          // reachable only here: the type parameter's declaration holds the
++          // original constraint from before instantiation.
++          if (
++            type.templateType &&
++            type.constraintType &&
++            type.constraintType !==
++              getDeclaredConstraintType(type.typeParameter)
++          ) {
++            visitType(type.constraintType, false);
++          }
+@@ -475,0 +489,5 @@ function collectTypeParameterUsageCounts(
++        // Instantiated mapped types populate it lazily, which getting the
++        // awaited type forces.
++        if (!type.nameType) {
++          checker.getAwaitedType(type);
++        }
+@@ -515,0 +534,10 @@ function collectTypeParameterUsageCounts(
++  function getDeclaredConstraintType(
++    typeParameter: ts.Type | undefined,
++  ): ts.Type | undefined {
++    const constraint = typeParameter
++      ?.getSymbol()
++      ?.getDeclarations()
++      ?.find(ts.isTypeParameterDeclaration)?.constraint;
++    return constraint && checker.getTypeAtLocation(constraint);
++  }
++

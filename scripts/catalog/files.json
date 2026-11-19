@@ -1,0 +1,30 @@
+{
+ "format": "codegraph-catalog/1",
+ "files": [
+  {
+   "id": "file.containerfile",
+   "name": "Containerfile"
+  },
+  {
+   "id": "file.dockerfile",
+   "name": "Dockerfile"
+  },
+  {
+   "id": "file.dockerfile-variant",
+   "prefix": "Dockerfile.",
+   "note": "Dockerfile.dev, Dockerfile.prod and similar"
+  },
+  {
+   "id": "file.justfile",
+   "name": "Justfile"
+  },
+  {
+   "id": "file.makefile",
+   "name": "Makefile"
+  },
+  {
+   "id": "file.procfile",
+   "name": "Procfile"
+  }
+ ]
+}

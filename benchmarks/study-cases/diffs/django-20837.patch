@@ -1,0 +1,12 @@
+diff --git a/django/conf/locale/eu/formats.py b/django/conf/locale/eu/formats.py
+index 61b16fbc6f..e707f931c7 100644
+--- a/django/conf/locale/eu/formats.py
++++ b/django/conf/locale/eu/formats.py
+@@ -5 +5 @@
+-DATE_FORMAT = r"Y\k\o N j\a"
++DATE_FORMAT = r"Y(\e)\k\o N\k j"
+@@ -7,2 +7,2 @@ TIME_FORMAT = "H:i"
+-DATETIME_FORMAT = r"Y\k\o N j\a, H:i"
+-YEAR_MONTH_FORMAT = r"Y\k\o F"
++DATETIME_FORMAT = r"Y(\e)\k\o N\k j, H:i"
++YEAR_MONTH_FORMAT = r"Y(\e)\k\o F"

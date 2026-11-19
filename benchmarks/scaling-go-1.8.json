@@ -1,0 +1,100 @@
+{
+  "format": "codegraph-scale-followup/1",
+  "description": "Unprofiled full/unchanged/one-file-change/query run of the Go SDK after the import-lookup fix (T3), same protocol and input as the go-stdlib workload in scaling-1.7.0.json. See SCALING.md, \"Go SDK follow-up, 13 November 2026\".",
+  "engine_commit": "829d2f2baeeff95bf81199ba100a71545070f4cc",
+  "input_workload": "scaling-1.7.0.json#go-stdlib",
+  "source_files_input_map_sha256": "7fe297462b2016cadfcd358d07d51bf3ac0009b0914d4fd74acb7022bd9cdb8a",
+  "original_receipt_sha256": "84cfb1a083deb4017f547fc952297c4ef3e4cdc418bdc5df79a687c7eef02e39",
+  "measurement": {
+    "phases": {
+      "full": {
+        "seconds": 52.3055,
+        "parsed_files": 7035,
+        "content_revision": "0aa16c7d705fa2e1831d9eee7c4fc5a3f8b91bf1e85522c6d0b5b662548e0547",
+        "counts": {
+          "files": 7035,
+          "definitions": 97569,
+          "calls": 600140,
+          "resolved_calls": 128158,
+          "partial_files": 65,
+          "languages": {
+            "go": 7034,
+            "python": 1
+          }
+        }
+      },
+      "noop": {
+        "seconds": 3.1508,
+        "parsed_files": 0,
+        "content_revision": "0aa16c7d705fa2e1831d9eee7c4fc5a3f8b91bf1e85522c6d0b5b662548e0547",
+        "counts": {
+          "files": 7035,
+          "definitions": 97569,
+          "calls": 600140,
+          "resolved_calls": 128158,
+          "partial_files": 65,
+          "languages": {
+            "go": 7034,
+            "python": 1
+          }
+        }
+      },
+      "one_file_change": {
+        "seconds": 9.1573,
+        "parsed_files": 1,
+        "content_revision": "e4c7a17e6fa3cd2275539fee8cc4593b73b7e16cdbe7d7d00ca5c643ac654c5b",
+        "counts": {
+          "files": 7035,
+          "definitions": 97569,
+          "calls": 600140,
+          "resolved_calls": 128158,
+          "partial_files": 65,
+          "languages": {
+            "go": 7034,
+            "python": 1
+          }
+        }
+      }
+    },
+    "source_execution": false,
+    "test_execution": false,
+    "completed": true,
+    "noop_content_revision_stable": true,
+    "noop_parsed_nothing": true,
+    "incremental_parsed_one": true,
+    "query": "Test All",
+    "queries": {
+      "lexical": {
+        "milliseconds": [
+          821.293,
+          813.896,
+          814.045
+        ],
+        "median_ms": 814.045,
+        "statuses": [
+          "partial",
+          "partial",
+          "partial"
+        ]
+      },
+      "hybrid": {
+        "milliseconds": [
+          1025.252,
+          1036.582,
+          1048.154
+        ],
+        "median_ms": 1036.582,
+        "statuses": [
+          "partial",
+          "partial",
+          "partial"
+        ]
+      }
+    },
+    "query_scope": "fresh readonly reader open, source/config checks, search and close; warm OS cache; excludes HTTP",
+    "peak_worker_rss_bytes": 1088077824,
+    "peak_memory_scope": "worker lifetime, includes engine loading, indexing and queries",
+    "engine_version": "1.7.0",
+    "sqlite_version": "3.54.1"
+  }
+}

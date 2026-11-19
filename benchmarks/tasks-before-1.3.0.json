@@ -1,0 +1,118 @@
+{
+  "format": "codegraph-task-benchmark/1",
+  "engine_version": "1.3.0",
+  "engine_sha256": "082b57286e0496ac47ceddae77d1219abd43a1a17fa9498ebeb23807df7f4dbd",
+  "tokenizer": null,
+  "estimated_token_method": "unicode_characters/4",
+  "conversation_cost_measured": false,
+  "tool_calls_definition": "Top-level commands and API reads in the harness; not model-session telemetry.",
+  "tasks": [
+    {
+      "id": "T1",
+      "correct": true,
+      "tool_calls": 1,
+      "characters": 84,
+      "utf8_bytes": 86,
+      "estimated_tokens": 21,
+      "measured_tokens": null,
+      "latency_ms": 0.8182909805327654
+    },
+    {
+      "id": "T2",
+      "correct": true,
+      "tool_calls": 1,
+      "characters": 97,
+      "utf8_bytes": 99,
+      "estimated_tokens": 25,
+      "measured_tokens": null,
+      "latency_ms": 0.6911249365657568
+    },
+    {
+      "id": "T3",
+      "correct": true,
+      "tool_calls": 1,
+      "characters": 4413,
+      "utf8_bytes": 4413,
+      "estimated_tokens": 1104,
+      "measured_tokens": null,
+      "latency_ms": 0.4776250571012497
+    },
+    {
+      "id": "T4",
+      "correct": true,
+      "tool_calls": 1,
+      "characters": 504,
+      "utf8_bytes": 504,
+      "estimated_tokens": 126,
+      "measured_tokens": null,
+      "latency_ms": 0.1194999786093831
+    },
+    {
+      "id": "T5",
+      "correct": false,
+      "tool_calls": 1,
+      "characters": 1027,
+      "utf8_bytes": 1027,
+      "estimated_tokens": 257,
+      "measured_tokens": null,
+      "latency_ms": 0.8804999524727464
+    },
+    {
+      "id": "T6",
+      "correct": false,
+      "tool_calls": 1,
+      "characters": 4413,
+      "utf8_bytes": 4413,
+      "estimated_tokens": 1104,
+      "measured_tokens": null,
+      "latency_ms": 0.06908399518579245
+    },
+    {
+      "id": "T7",
+      "correct": false,
+      "tool_calls": 1,
+      "characters": 563,
+      "utf8_bytes": 563,
+      "estimated_tokens": 141,
+      "measured_tokens": null,
+      "latency_ms": 0.10054197628051043
+    },
+    {
+      "id": "T8",
+      "correct": false,
+      "tool_calls": 5,
+      "characters": 44,
+      "utf8_bytes": 44,
+      "estimated_tokens": 11,
+      "measured_tokens": null,
+      "latency_ms": 51.87791702337563
+    },
+    {
+      "id": "T9",
+      "correct": false,
+      "tool_calls": 1,
+      "characters": 486,
+      "utf8_bytes": 488,
+      "estimated_tokens": 122,
+      "measured_tokens": null,
+      "latency_ms": 2.234040992334485
+    },
+    {
+      "id": "T10",
+      "correct": false,
+      "tool_calls": 1,
+      "characters": 486,
+      "utf8_bytes": 488,
+      "estimated_tokens": 122,
+      "measured_tokens": null,
+      "latency_ms": 1.5971669927239418
+    }
+  ],
+  "source_fixture_sha256": "0925e1a549f149dad44b41aedd4ebf9f11bb5502dec7a9f6809c87d242046cd3",
+  "summary": {
+    "passed": 4,
+    "total": 10,
+    "characters": 12117,
+    "estimated_tokens": 3033
+  }
+}

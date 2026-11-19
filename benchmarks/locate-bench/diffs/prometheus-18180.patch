@@ -1,0 +1,7 @@
+diff --git a/tsdb/block.go b/tsdb/block.go
+index 118dd672e..12d87f4ca 100644
+--- a/tsdb/block.go
++++ b/tsdb/block.go
+@@ -294 +294 @@ func writeMetaFile(logger *slog.Logger, dir string, meta *BlockMeta) (int64, err
+-		return 0, err
++		return 0, errors.Join(err, f.Close())

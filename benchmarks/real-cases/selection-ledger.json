@@ -1,0 +1,608 @@
+{
+  "query": "repo:sympy/sympy is:pr is:merged merged:<2026-11-01",
+  "api_search_sha256": "b20c0be2d4d64e5a6ace76a1b05eec2d10fbe2153da17d155c8e6c7db7d76d1a",
+  "search_incomplete": false,
+  "pool": [
+    {
+      "number": 30909,
+      "created_at": "2026-10-31T19:29:56Z",
+      "url": "https://github.com/sympy/sympy/pull/30909",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30906,
+      "created_at": "2026-10-31T16:40:03Z",
+      "url": "https://github.com/sympy/sympy/pull/30906",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30895,
+      "created_at": "2026-10-30T15:52:29Z",
+      "url": "https://github.com/sympy/sympy/pull/30895",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30892,
+      "created_at": "2026-10-30T12:43:27Z",
+      "url": "https://github.com/sympy/sympy/pull/30892",
+      "status": "no_changed_tests"
+    },
+    {
+      "number": 30890,
+      "created_at": "2026-10-30T09:52:35Z",
+      "url": "https://github.com/sympy/sympy/pull/30890",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30888,
+      "created_at": "2026-10-29T19:53:34Z",
+      "url": "https://github.com/sympy/sympy/pull/30888",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30885,
+      "created_at": "2026-10-29T11:19:43Z",
+      "url": "https://github.com/sympy/sympy/pull/30885",
+      "status": "selected"
+    },
+    {
+      "number": 30883,
+      "created_at": "2026-10-29T09:54:30Z",
+      "url": "https://github.com/sympy/sympy/pull/30883",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30882,
+      "created_at": "2026-10-29T09:54:14Z",
+      "url": "https://github.com/sympy/sympy/pull/30882",
+      "status": "selected"
+    },
+    {
+      "number": 30881,
+      "created_at": "2026-10-29T09:14:23Z",
+      "url": "https://github.com/sympy/sympy/pull/30881",
+      "status": "no_production_python_change"
+    },
+    {
+      "number": 30872,
+      "created_at": "2026-10-28T19:40:07Z",
+      "url": "https://github.com/sympy/sympy/pull/30872",
+      "status": "selected"
+    },
+    {
+      "number": 30868,
+      "created_at": "2026-10-28T09:04:41Z",
+      "url": "https://github.com/sympy/sympy/pull/30868",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30866,
+      "created_at": "2026-10-27T22:15:41Z",
+      "url": "https://github.com/sympy/sympy/pull/30866",
+      "status": "selected"
+    },
+    {
+      "number": 30854,
+      "created_at": "2026-10-26T18:43:35Z",
+      "url": "https://github.com/sympy/sympy/pull/30854",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30851,
+      "created_at": "2026-10-26T16:24:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30851",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30841,
+      "created_at": "2026-10-25T02:15:15Z",
+      "url": "https://github.com/sympy/sympy/pull/30841",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30840,
+      "created_at": "2026-10-24T21:01:51Z",
+      "url": "https://github.com/sympy/sympy/pull/30840",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30838,
+      "created_at": "2026-10-24T17:51:06Z",
+      "url": "https://github.com/sympy/sympy/pull/30838",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30827,
+      "created_at": "2026-10-24T14:37:47Z",
+      "url": "https://github.com/sympy/sympy/pull/30827",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30825,
+      "created_at": "2026-10-24T09:59:41Z",
+      "url": "https://github.com/sympy/sympy/pull/30825",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30815,
+      "created_at": "2026-10-23T16:14:18Z",
+      "url": "https://github.com/sympy/sympy/pull/30815",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30811,
+      "created_at": "2026-10-23T08:29:30Z",
+      "url": "https://github.com/sympy/sympy/pull/30811",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30809,
+      "created_at": "2026-10-23T07:23:32Z",
+      "url": "https://github.com/sympy/sympy/pull/30809",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30808,
+      "created_at": "2026-10-23T02:50:16Z",
+      "url": "https://github.com/sympy/sympy/pull/30808",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30803,
+      "created_at": "2026-10-22T15:49:47Z",
+      "url": "https://github.com/sympy/sympy/pull/30803",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30801,
+      "created_at": "2026-10-22T14:15:29Z",
+      "url": "https://github.com/sympy/sympy/pull/30801",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30800,
+      "created_at": "2026-10-22T10:54:20Z",
+      "url": "https://github.com/sympy/sympy/pull/30800",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30797,
+      "created_at": "2026-10-22T01:16:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30797",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30794,
+      "created_at": "2026-10-21T17:37:15Z",
+      "url": "https://github.com/sympy/sympy/pull/30794",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30781,
+      "created_at": "2026-10-20T17:26:00Z",
+      "url": "https://github.com/sympy/sympy/pull/30781",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30780,
+      "created_at": "2026-10-20T04:55:38Z",
+      "url": "https://github.com/sympy/sympy/pull/30780",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30779,
+      "created_at": "2026-10-20T04:53:34Z",
+      "url": "https://github.com/sympy/sympy/pull/30779",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30777,
+      "created_at": "2026-10-19T16:08:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30777",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30776,
+      "created_at": "2026-10-19T15:42:10Z",
+      "url": "https://github.com/sympy/sympy/pull/30776",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30775,
+      "created_at": "2026-10-19T14:48:50Z",
+      "url": "https://github.com/sympy/sympy/pull/30775",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30772,
+      "created_at": "2026-10-18T19:09:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30772",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30771,
+      "created_at": "2026-10-18T17:59:03Z",
+      "url": "https://github.com/sympy/sympy/pull/30771",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30768,
+      "created_at": "2026-10-18T06:31:33Z",
+      "url": "https://github.com/sympy/sympy/pull/30768",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30754,
+      "created_at": "2026-10-15T19:46:47Z",
+      "url": "https://github.com/sympy/sympy/pull/30754",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30752,
+      "created_at": "2026-10-15T03:29:53Z",
+      "url": "https://github.com/sympy/sympy/pull/30752",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30750,
+      "created_at": "2026-10-14T14:25:38Z",
+      "url": "https://github.com/sympy/sympy/pull/30750",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30748,
+      "created_at": "2026-10-13T18:30:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30748",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30741,
+      "created_at": "2026-10-12T23:01:55Z",
+      "url": "https://github.com/sympy/sympy/pull/30741",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30734,
+      "created_at": "2026-10-12T06:34:26Z",
+      "url": "https://github.com/sympy/sympy/pull/30734",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30724,
+      "created_at": "2026-10-11T07:32:03Z",
+      "url": "https://github.com/sympy/sympy/pull/30724",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30716,
+      "created_at": "2026-10-10T16:23:18Z",
+      "url": "https://github.com/sympy/sympy/pull/30716",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30715,
+      "created_at": "2026-10-10T13:26:59Z",
+      "url": "https://github.com/sympy/sympy/pull/30715",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30712,
+      "created_at": "2026-10-10T09:57:27Z",
+      "url": "https://github.com/sympy/sympy/pull/30712",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30711,
+      "created_at": "2026-10-10T06:53:07Z",
+      "url": "https://github.com/sympy/sympy/pull/30711",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30707,
+      "created_at": "2026-10-09T07:44:29Z",
+      "url": "https://github.com/sympy/sympy/pull/30707",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30706,
+      "created_at": "2026-10-09T07:42:47Z",
+      "url": "https://github.com/sympy/sympy/pull/30706",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30703,
+      "created_at": "2026-10-08T22:44:41Z",
+      "url": "https://github.com/sympy/sympy/pull/30703",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30702,
+      "created_at": "2026-10-08T15:45:06Z",
+      "url": "https://github.com/sympy/sympy/pull/30702",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30701,
+      "created_at": "2026-10-08T15:37:48Z",
+      "url": "https://github.com/sympy/sympy/pull/30701",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30699,
+      "created_at": "2026-10-08T09:11:35Z",
+      "url": "https://github.com/sympy/sympy/pull/30699",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30697,
+      "created_at": "2026-10-07T19:20:44Z",
+      "url": "https://github.com/sympy/sympy/pull/30697",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30696,
+      "created_at": "2026-10-07T18:46:42Z",
+      "url": "https://github.com/sympy/sympy/pull/30696",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30693,
+      "created_at": "2026-10-07T11:39:25Z",
+      "url": "https://github.com/sympy/sympy/pull/30693",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30690,
+      "created_at": "2026-10-07T08:04:32Z",
+      "url": "https://github.com/sympy/sympy/pull/30690",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30687,
+      "created_at": "2026-10-06T18:36:34Z",
+      "url": "https://github.com/sympy/sympy/pull/30687",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30684,
+      "created_at": "2026-10-06T09:52:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30684",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30682,
+      "created_at": "2026-10-06T09:23:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30682",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30680,
+      "created_at": "2026-10-06T05:18:09Z",
+      "url": "https://github.com/sympy/sympy/pull/30680",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30673,
+      "created_at": "2026-10-05T03:09:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30673",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30669,
+      "created_at": "2026-10-04T13:22:05Z",
+      "url": "https://github.com/sympy/sympy/pull/30669",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30667,
+      "created_at": "2026-10-04T10:50:36Z",
+      "url": "https://github.com/sympy/sympy/pull/30667",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30650,
+      "created_at": "2026-10-02T22:01:05Z",
+      "url": "https://github.com/sympy/sympy/pull/30650",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30648,
+      "created_at": "2026-10-02T16:25:10Z",
+      "url": "https://github.com/sympy/sympy/pull/30648",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30646,
+      "created_at": "2026-10-02T06:26:54Z",
+      "url": "https://github.com/sympy/sympy/pull/30646",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30642,
+      "created_at": "2026-10-01T12:09:31Z",
+      "url": "https://github.com/sympy/sympy/pull/30642",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30639,
+      "created_at": "2026-10-01T01:46:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30639",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30636,
+      "created_at": "2026-09-30T19:56:33Z",
+      "url": "https://github.com/sympy/sympy/pull/30636",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30607,
+      "created_at": "2026-09-28T03:14:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30607",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30605,
+      "created_at": "2026-09-27T21:43:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30605",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30602,
+      "created_at": "2026-09-27T13:18:56Z",
+      "url": "https://github.com/sympy/sympy/pull/30602",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30601,
+      "created_at": "2026-09-27T13:07:45Z",
+      "url": "https://github.com/sympy/sympy/pull/30601",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30600,
+      "created_at": "2026-09-27T12:57:53Z",
+      "url": "https://github.com/sympy/sympy/pull/30600",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30596,
+      "created_at": "2026-09-26T12:29:39Z",
+      "url": "https://github.com/sympy/sympy/pull/30596",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30591,
+      "created_at": "2026-09-26T05:26:32Z",
+      "url": "https://github.com/sympy/sympy/pull/30591",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30590,
+      "created_at": "2026-09-26T03:23:18Z",
+      "url": "https://github.com/sympy/sympy/pull/30590",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30589,
+      "created_at": "2026-09-25T22:43:11Z",
+      "url": "https://github.com/sympy/sympy/pull/30589",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30585,
+      "created_at": "2026-09-25T08:57:47Z",
+      "url": "https://github.com/sympy/sympy/pull/30585",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30575,
+      "created_at": "2026-09-24T11:04:51Z",
+      "url": "https://github.com/sympy/sympy/pull/30575",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30572,
+      "created_at": "2026-09-23T18:57:34Z",
+      "url": "https://github.com/sympy/sympy/pull/30572",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30571,
+      "created_at": "2026-09-23T16:58:24Z",
+      "url": "https://github.com/sympy/sympy/pull/30571",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30569,
+      "created_at": "2026-09-23T11:41:17Z",
+      "url": "https://github.com/sympy/sympy/pull/30569",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30567,
+      "created_at": "2026-09-23T10:53:50Z",
+      "url": "https://github.com/sympy/sympy/pull/30567",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30565,
+      "created_at": "2026-09-22T17:36:50Z",
+      "url": "https://github.com/sympy/sympy/pull/30565",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30563,
+      "created_at": "2026-09-22T14:14:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30563",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30562,
+      "created_at": "2026-09-22T09:59:54Z",
+      "url": "https://github.com/sympy/sympy/pull/30562",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30558,
+      "created_at": "2026-09-21T16:38:49Z",
+      "url": "https://github.com/sympy/sympy/pull/30558",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30557,
+      "created_at": "2026-09-21T16:19:06Z",
+      "url": "https://github.com/sympy/sympy/pull/30557",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30555,
+      "created_at": "2026-09-21T14:04:01Z",
+      "url": "https://github.com/sympy/sympy/pull/30555",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30552,
+      "created_at": "2026-09-21T10:35:51Z",
+      "url": "https://github.com/sympy/sympy/pull/30552",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30544,
+      "created_at": "2026-09-20T04:54:45Z",
+      "url": "https://github.com/sympy/sympy/pull/30544",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30540,
+      "created_at": "2026-09-19T12:12:59Z",
+      "url": "https://github.com/sympy/sympy/pull/30540",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30534,
+      "created_at": "2026-09-18T07:23:45Z",
+      "url": "https://github.com/sympy/sympy/pull/30534",
+      "status": "no_active_closing_issue_reference"
+    },
+    {
+      "number": 30530,
+      "created_at": "2026-09-17T19:26:52Z",
+      "url": "https://github.com/sympy/sympy/pull/30530",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30525,
+      "created_at": "2026-09-16T20:48:24Z",
+      "url": "https://github.com/sympy/sympy/pull/30525",
+      "status": "not_evaluated_after_four_selected"
+    },
+    {
+      "number": 30523,
+      "created_at": "2026-09-16T11:21:09Z",
+      "url": "https://github.com/sympy/sympy/pull/30523",
+      "status": "no_active_closing_issue_reference"
+    }
+  ],
+  "qualification_receipt_sha256": "756c1e2693ee8589f80c623796ada6a9f45fbe0602441dd2e8a2f52c393c7d21"
+}

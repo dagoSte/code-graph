@@ -1,0 +1,8 @@
+diff --git a/packages/eslint-plugin/src/util/isTypeOnlyReference.ts b/packages/eslint-plugin/src/util/isTypeOnlyReference.ts
+index 349231856..fbfb52a47 100644
+--- a/packages/eslint-plugin/src/util/isTypeOnlyReference.ts
++++ b/packages/eslint-plugin/src/util/isTypeOnlyReference.ts
+@@ -31 +31,2 @@ export function isTypeOnlyReference(
+-    !ref.isValueReference
++    // eslint-disable-next-line @typescript-eslint/no-unnecessary-boolean-literal-compare -- no-unused-vars is one of our rare rules that's used across JS code that is not parsed by our parser. As such `isValueReference` may be undefined and using `!isValueReference` causes false-positives for those users.
++    ref.isValueReference === false

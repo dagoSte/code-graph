@@ -1,0 +1,19 @@
+{
+  "format": "codegraph-locate-truth-dispositions/1",
+  "decision": "l1-caso-12886",
+  "decision_event_sha256": "f623fc9b15b433954f9db58bedb16e4dcaa5d64c4b9b28a17841421e717371c9",
+  "registered_before_measurement": true,
+  "cases": {
+    "typescript-eslint-12886": {
+      "status": "ground_truth_unavailable",
+      "reason": "no_production_first_parent_diff",
+      "disposition": "Keep the case and its parent unchanged; run its query once. File endpoint has44 evaluable cases and1 missing ground truth; callable unmapped. No replacement.",
+      "listed_production_file": "packages/eslint-plugin/src/rules/unbound-method.ts",
+      "actual_first_parent_diff": [
+        "packages/eslint-plugin-internal/tests/fixtures/tsconfig.json",
+        "packages/eslint-plugin/tests/fixtures/tsconfig.json",
+        "packages/eslint-plugin/tests/fixtures/unstrict/tsconfig.json"
+      ]
+    }
+  }
+}

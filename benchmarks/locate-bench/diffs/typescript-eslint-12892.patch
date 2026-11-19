@@ -1,0 +1,94 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unused-vars.ts b/packages/eslint-plugin/src/rules/no-unused-vars.ts
+index 5c09aa461..93b786440 100644
+--- a/packages/eslint-plugin/src/rules/no-unused-vars.ts
++++ b/packages/eslint-plugin/src/rules/no-unused-vars.ts
+@@ -29,2 +29 @@ import {
+-import { referenceContainsTypePredicate } from '../util/referenceContainsTypePredicate';
+-import { referenceContainsTypeQuery } from '../util/referenceContainsTypeQuery';
++import { isTypeOnlyReference } from '../util/isTypeOnlyReference';
+@@ -1209,4 +1208,2 @@ export default createRule<Options, MessageIds>({
+-            const usedOnlyAsType = unusedVar.references.some(
+-              ref =>
+-                referenceContainsTypeQuery(ref.identifier) ||
+-                referenceContainsTypePredicate(ref.identifier),
++            const usedOnlyAsType = unusedVar.references.some(ref =>
++              isTypeOnlyReference(unusedVar, ref),
+diff --git a/packages/eslint-plugin/src/util/collectUnusedVariables.ts b/packages/eslint-plugin/src/util/collectUnusedVariables.ts
+index d4b768797..2712190d4 100644
+--- a/packages/eslint-plugin/src/util/collectUnusedVariables.ts
++++ b/packages/eslint-plugin/src/util/collectUnusedVariables.ts
+@@ -20,2 +20,4 @@ import { isTypeImport } from './isTypeImport';
+-import { referenceContainsTypePredicate } from './referenceContainsTypePredicate';
+-import { referenceContainsTypeQuery } from './referenceContainsTypeQuery';
++import {
++  isMergedTypeValueVariable,
++  isTypeOnlyReference,
++} from './isTypeOnlyReference';
+@@ -421,0 +424,12 @@ const MERGEABLE_TYPES = new Set([
++
++function isMergedTypeDeclaration(
++  variable: ScopeVariable,
++  node: TSESTree.Node,
++): boolean {
++  return (
++    (node.type === AST_NODE_TYPES.TSTypeAliasDeclaration ||
++      node.type === AST_NODE_TYPES.TSInterfaceDeclaration) &&
++    isMergedTypeValueVariable(variable)
++  );
++}
++
+@@ -441 +455 @@ function isMergeableExported(variable: ScopeVariable): boolean {
+-      return true;
++      return !isMergedTypeDeclaration(variable, def.node);
+@@ -463 +477,4 @@ function isExported(variable: ScopeVariable): boolean {
+-    return node.parent.type.startsWith('Export');
++    return (
++      !isMergedTypeDeclaration(variable, node) &&
++      node.parent.type.startsWith('Export')
++    );
+@@ -796,5 +813 @@ function isUsedVariable(variable: ScopeVariable): boolean {
+-      !(
+-        !isImportedAsType &&
+-        (referenceContainsTypeQuery(ref.identifier) ||
+-          referenceContainsTypePredicate(ref.identifier))
+-      ) &&
++      !(!isImportedAsType && isTypeOnlyReference(variable, ref)) &&
+diff --git a/packages/eslint-plugin/src/util/isTypeOnlyReference.ts b/packages/eslint-plugin/src/util/isTypeOnlyReference.ts
+new file mode 100644
+index 000000000..349231856
+--- /dev/null
++++ b/packages/eslint-plugin/src/util/isTypeOnlyReference.ts
+@@ -0,0 +1,33 @@
++import type { ScopeVariable } from '@typescript-eslint/scope-manager';
++import type { TSESLint } from '@typescript-eslint/utils';
++
++import { DefinitionType } from '@typescript-eslint/scope-manager';
++
++import { referenceContainsTypePredicate } from './referenceContainsTypePredicate';
++import { referenceContainsTypeQuery } from './referenceContainsTypeQuery';
++
++export function isMergedTypeValueVariable(variable: ScopeVariable): boolean {
++  return (
++    'isTypeVariable' in variable &&
++    'isValueVariable' in variable &&
++    variable.isTypeVariable &&
++    variable.isValueVariable
++  );
++}
++
++export function isTypeOnlyReference(
++  variable: ScopeVariable,
++  ref: TSESLint.Scope.Reference,
++): boolean {
++  if (
++    referenceContainsTypeQuery(ref.identifier) ||
++    referenceContainsTypePredicate(ref.identifier)
++  ) {
++    return true;
++  }
++
++  return (
++    variable.defs.some(def => def.type === DefinitionType.Variable) &&
++    !ref.isValueReference
++  );
++}

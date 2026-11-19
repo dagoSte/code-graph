@@ -1,0 +1,29 @@
+{
+ "format": "codegraph-catalog/1",
+ "language": "js",
+ "unrecognized_decorator": "none",
+ "entries": [
+  {
+   "id": "js.builtin.eval.dynamic",
+   "language": "js",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "eval"
+   },
+   "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+   "checked_with": "node v25.2.1: typeof eval === \"function\""
+  },
+  {
+   "id": "js.builtin.function.dynamic",
+   "language": "js",
+   "role": "dynamic",
+   "origin": {
+    "via": "builtin",
+    "name": "Function"
+   },
+   "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function",
+   "checked_with": "node v25.2.1: typeof Function === \"function\""
+  }
+ ]
+}

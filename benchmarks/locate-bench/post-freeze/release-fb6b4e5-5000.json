@@ -1,0 +1,3110 @@
+{
+  "cases": [
+    {
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "candidates": [
+        {
+          "end_line": 294,
+          "file": "django/db/migrations/writer.py",
+          "line": 293
+        },
+        {
+          "end_line": 298,
+          "file": "django/db/migrations/writer.py",
+          "line": 297
+        },
+        {
+          "end_line": 1252,
+          "file": "django/db/models/fields/__init__.py",
+          "line": 1248
+        },
+        {
+          "end_line": 2523,
+          "file": "django/db/models/fields/__init__.py",
+          "line": 2521
+        },
+        {
+          "end_line": 249,
+          "file": "django/db/migrations/serializer.py",
+          "line": 239
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 234854,
+        "files": 8,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4574,
+        "saved_ratio": 0.981
+      },
+      "status": "passed",
+      "task": "django-22158"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 431,
+          "file": "django/contrib/contenttypes/fields.py",
+          "line": 430
+        },
+        {
+          "end_line": 522,
+          "file": "django/contrib/contenttypes/fields.py",
+          "line": 520
+        },
+        {
+          "end_line": 622,
+          "file": "django/db/models/base.py",
+          "line": 509
+        },
+        {
+          "end_line": 111,
+          "file": "django/contrib/auth/management/__init__.py",
+          "line": 41
+        },
+        {
+          "end_line": 531,
+          "file": "django/contrib/auth/models.py",
+          "line": 522
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 431757,
+        "files": 10,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4339,
+        "saved_ratio": 0.99
+      },
+      "status": "passed",
+      "task": "django-22154"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 429,
+          "file": "django/db/models/fields/json.py",
+          "line": 405
+        },
+        {
+          "end_line": 397,
+          "file": "django/db/models/fields/json.py",
+          "line": 389
+        },
+        {
+          "end_line": 205,
+          "file": "django/db/backends/mysql/features.py",
+          "line": 202
+        },
+        {
+          "end_line": 18,
+          "file": "django/db/models/functions/comparison.py",
+          "line": 16
+        },
+        {
+          "end_line": 47,
+          "file": "django/db/models/functions/comparison.py",
+          "line": 38
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 43320,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4099,
+        "saved_ratio": 0.905
+      },
+      "status": "passed",
+      "task": "django-22051"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 284,
+          "file": "django/db/backends/base/creation.py",
+          "line": 264
+        },
+        {
+          "end_line": 306,
+          "file": "django/db/backends/base/creation.py",
+          "line": 299
+        },
+        {
+          "end_line": 23,
+          "file": "django/db/backends/sqlite3/creation.py",
+          "line": 19
+        },
+        {
+          "end_line": 107,
+          "file": "django/db/backends/sqlite3/creation.py",
+          "line": 74
+        },
+        {
+          "end_line": 127,
+          "file": "django/db/backends/oracle/creation.py",
+          "line": 31
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 50397,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4171,
+        "saved_ratio": 0.917
+      },
+      "status": "passed",
+      "task": "django-22030"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 624,
+          "file": "django/forms/widgets.py",
+          "line": 621
+        },
+        {
+          "end_line": 1265,
+          "file": "django/forms/fields.py",
+          "line": 1248
+        },
+        {
+          "end_line": 466,
+          "file": "django/forms/fields.py",
+          "line": 463
+        },
+        {
+          "end_line": 624,
+          "file": "django/forms/widgets.py",
+          "line": 613
+        },
+        {
+          "end_line": 240,
+          "file": "django/utils/formats.py",
+          "line": 218
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 130685,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4270,
+        "saved_ratio": 0.967
+      },
+      "status": "passed",
+      "task": "django-21152"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 6
+      },
+      "candidates": [
+        {
+          "end_line": 174,
+          "file": "django/contrib/staticfiles/storage.py",
+          "line": 142
+        },
+        {
+          "end_line": 476,
+          "file": "django/core/management/base.py",
+          "line": 441
+        },
+        {
+          "end_line": 195,
+          "file": "django/core/management/__init__.py",
+          "line": 83
+        },
+        {
+          "end_line": 129,
+          "file": "django/contrib/staticfiles/storage.py",
+          "line": 116
+        },
+        {
+          "end_line": 302,
+          "file": "django/db/migrations/serializer.py",
+          "line": 290
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 232947,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4496,
+        "saved_ratio": 0.981
+      },
+      "status": "passed",
+      "task": "django-20942"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 100,
+          "file": "django/db/models/functions/comparison.py",
+          "line": 88
+        },
+        {
+          "end_line": 386,
+          "file": "django/db/models/fields/json.py",
+          "line": 363
+        },
+        {
+          "end_line": 209,
+          "file": "django/contrib/gis/db/models/functions.py",
+          "line": 205
+        },
+        {
+          "end_line": 232,
+          "file": "django/contrib/gis/db/models/functions.py",
+          "line": 222
+        },
+        {
+          "end_line": 67,
+          "file": "django/db/models/functions/comparison.py",
+          "line": 60
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 55878,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4027,
+        "saved_ratio": 0.928
+      },
+      "status": "passed",
+      "task": "django-20864"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 61,
+          "file": "django/core/serializers/python.py",
+          "line": 54
+        },
+        {
+          "end_line": 99,
+          "file": "django/core/serializers/python.py",
+          "line": 14
+        },
+        {
+          "end_line": 374,
+          "file": "django/core/serializers/xml_serializer.py",
+          "line": 329
+        },
+        {
+          "end_line": 416,
+          "file": "django/core/serializers/base.py",
+          "line": 392
+        },
+        {
+          "end_line": 195,
+          "file": "django/core/management/__init__.py",
+          "line": 83
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 191551,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4081,
+        "saved_ratio": 0.979
+      },
+      "status": "passed",
+      "task": "django-20518"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 40,
+          "file": "django/contrib/postgres/indexes.py",
+          "line": 39
+        },
+        {
+          "end_line": 159,
+          "file": "django/contrib/postgres/constraints.py",
+          "line": 147
+        },
+        {
+          "end_line": 145,
+          "file": "django/contrib/postgres/constraints.py",
+          "line": 134
+        },
+        {
+          "end_line": 35,
+          "file": "django/db/models/constraints.py",
+          "line": 26
+        },
+        {
+          "end_line": 126,
+          "file": "django/db/models/constraints.py",
+          "line": 115
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 190344,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4384,
+        "saved_ratio": 0.977
+      },
+      "status": "passed",
+      "task": "django-20510"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 7
+      },
+      "candidates": [
+        {
+          "end_line": 1453,
+          "file": "django/db/models/sql/query.py",
+          "line": 1409
+        },
+        {
+          "end_line": 1655,
+          "file": "django/db/models/query.py",
+          "line": 1648
+        },
+        {
+          "end_line": 2752,
+          "file": "django/db/models/fields/__init__.py",
+          "line": 2748
+        },
+        {
+          "end_line": 21,
+          "file": "django/utils/xmlutils.py",
+          "line": 14
+        },
+        {
+          "end_line": 24,
+          "file": "django/contrib/contenttypes/models.py",
+          "line": 18
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 361280,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4101,
+        "saved_ratio": 0.989
+      },
+      "status": "passed",
+      "task": "django-20420"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "candidates": [
+        {
+          "end_line": 672,
+          "file": "django/http/response.py",
+          "line": 670
+        },
+        {
+          "end_line": 271,
+          "file": "django/views/generic/base.py",
+          "line": 261
+        },
+        {
+          "end_line": 247,
+          "file": "django/contrib/admin/sites.py",
+          "line": 234
+        },
+        {
+          "end_line": 108,
+          "file": "django/urls/base.py",
+          "line": 28
+        },
+        {
+          "end_line": 591,
+          "file": "django/http/request.py",
+          "line": 562
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 507418,
+        "files": 10,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4165,
+        "saved_ratio": 0.992
+      },
+      "status": "passed",
+      "task": "django-20350"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 6
+      },
+      "candidates": [
+        {
+          "end_line": 329,
+          "file": "django/contrib/auth/hashers.py",
+          "line": 324
+        },
+        {
+          "end_line": 364,
+          "file": "django/contrib/auth/hashers.py",
+          "line": 311
+        },
+        {
+          "end_line": 95,
+          "file": "django/contrib/auth/base_user.py",
+          "line": 93
+        },
+        {
+          "end_line": 109,
+          "file": "django/contrib/auth/base_user.py",
+          "line": 97
+        },
+        {
+          "end_line": 77,
+          "file": "django/utils/crypto.py",
+          "line": 70
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 68721,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4212,
+        "saved_ratio": 0.939
+      },
+      "status": "passed",
+      "task": "django-19626"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 6
+      },
+      "candidates": [
+        {
+          "end_line": 151,
+          "file": "django/http/request.py",
+          "line": 140
+        },
+        {
+          "end_line": 134,
+          "file": "django/http/request.py",
+          "line": 119
+        },
+        {
+          "end_line": 341,
+          "file": "django/utils/http.py",
+          "line": 319
+        },
+        {
+          "end_line": 73,
+          "file": "django/utils/datastructures.py",
+          "line": 72
+        },
+        {
+          "end_line": 79,
+          "file": "scripts/manage_translations.py",
+          "line": 63
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 394388,
+        "files": 11,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4544,
+        "saved_ratio": 0.988
+      },
+      "status": "passed",
+      "task": "django-19548"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 514,
+          "file": "django/contrib/auth/models.py",
+          "line": 446
+        },
+        {
+          "end_line": 75,
+          "file": "django/contrib/admin/migrations/0001_initial.py",
+          "line": 6
+        },
+        {
+          "end_line": 64,
+          "file": "django/contrib/redirects/migrations/0001_initial.py",
+          "line": 4
+        },
+        {
+          "end_line": 204,
+          "file": "django/contrib/auth/migrations/0001_initial.py",
+          "line": 7
+        }
+      ],
+      "candidates_returned": 4,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 33212,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 2950,
+        "saved_ratio": 0.911
+      },
+      "status": "passed",
+      "task": "django-19099"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 105,
+          "file": "django/db/backends/utils.py",
+          "line": 94
+        },
+        {
+          "end_line": 1862,
+          "file": "django/db/models/query.py",
+          "line": 1837
+        },
+        {
+          "end_line": 94,
+          "file": "django/db/utils.py",
+          "line": 73
+        },
+        {
+          "end_line": 504,
+          "file": "django/contrib/contenttypes/fields.py",
+          "line": 500
+        },
+        {
+          "end_line": 2423,
+          "file": "django/db/models/base.py",
+          "line": 2417
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 2,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 251718,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4096,
+        "saved_ratio": 0.984
+      },
+      "status": "passed",
+      "task": "django-19012"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "candidates": [
+        {
+          "end_line": 13,
+          "file": "packages/ast-spec/src/jsx/JSXAttribute/spec.ts",
+          "line": 9
+        },
+        {
+          "end_line": 446,
+          "file": "packages/eslint-plugin/src/rules/no-unsafe-assignment.ts",
+          "line": 428
+        },
+        {
+          "end_line": 431,
+          "file": "packages/eslint-plugin/src/rules/no-unsafe-enum-assignment.ts",
+          "line": 424
+        },
+        {
+          "end_line": 87,
+          "file": "packages/typescript-estree/src/create-program/createIsolatedProgram.ts",
+          "line": 17
+        },
+        {
+          "end_line": 207,
+          "file": "packages/parser/src/parser.ts",
+          "line": 99
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 56189,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4016,
+        "saved_ratio": 0.929
+      },
+      "status": "passed",
+      "task": "typescript-eslint-13051"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 3
+      },
+      "candidates": [
+        {
+          "end_line": 1176,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts",
+          "line": 80
+        },
+        {
+          "end_line": 166,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts",
+          "line": 88
+        },
+        {
+          "end_line": 73,
+          "file": "packages/types/src/parser-options.ts",
+          "line": 47
+        },
+        {
+          "end_line": 20,
+          "file": "packages/typescript-estree/src/withoutProjectParserOptions.ts",
+          "line": 9
+        },
+        {
+          "end_line": 23,
+          "file": "packages/project-service/src/getParsedConfigFileFromTSServer.ts",
+          "line": 5
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 52953,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4377,
+        "saved_ratio": 0.917
+      },
+      "status": "passed",
+      "task": "typescript-eslint-13039"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 105,
+          "file": "packages/eslint-plugin/src/rules/prefer-readonly-parameter-types.ts",
+          "line": 88
+        },
+        {
+          "end_line": 162,
+          "file": "packages/eslint-plugin/src/rules/prefer-readonly-parameter-types.ts",
+          "line": 75
+        },
+        {
+          "end_line": 346,
+          "file": "packages/type-utils/src/isTypeReadonly.ts",
+          "line": 225
+        },
+        {
+          "end_line": 27,
+          "file": "packages/type-utils/src/isTypeReadonly.ts",
+          "line": 24
+        },
+        {
+          "end_line": 65,
+          "file": "packages/type-utils/src/typeOrValueSpecifiers/typeDeclaredInPackageDeclarationFile.ts",
+          "line": 36
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 3
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 3
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 3
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 19786,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4405,
+        "saved_ratio": 0.777
+      },
+      "status": "passed",
+      "task": "typescript-eslint-13016"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 306,
+          "file": "packages/eslint-plugin/src/rules/no-unused-vars.ts",
+          "line": 302
+        },
+        {
+          "end_line": 575,
+          "file": "packages/eslint-plugin/src/rules/no-unused-vars.ts",
+          "line": 575
+        },
+        {
+          "end_line": 227,
+          "file": "packages/eslint-plugin/src/util/collectUnusedVariables.ts",
+          "line": 208
+        },
+        {
+          "end_line": 122,
+          "file": "packages/eslint-plugin/src/util/collectUnusedVariables.ts",
+          "line": 111
+        },
+        {
+          "end_line": 171,
+          "file": "packages/website-eslint/build.mts",
+          "line": 41
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 78793,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4335,
+        "saved_ratio": 0.945
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12989"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 179,
+          "file": "packages/eslint-plugin/src/rules/restrict-template-expressions.ts",
+          "line": 126
+        },
+        {
+          "end_line": 178,
+          "file": "packages/eslint-plugin/src/rules/restrict-template-expressions.ts",
+          "line": 158
+        },
+        {
+          "end_line": 278,
+          "file": "packages/eslint-plugin/src/rules/no-restricted-imports.ts",
+          "line": 276
+        },
+        {
+          "end_line": 315,
+          "file": "packages/eslint-plugin/src/rules/no-restricted-imports.ts",
+          "line": 307
+        },
+        {
+          "end_line": 92,
+          "file": "packages/eslint-plugin/src/util/baseTypeUtils.ts",
+          "line": 71
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 30892,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4441,
+        "saved_ratio": 0.856
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12948"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 4
+      },
+      "candidates": [
+        {
+          "end_line": 280,
+          "file": "packages/type-utils/src/TypeOrValueSpecifier.ts",
+          "line": 246
+        },
+        {
+          "end_line": 228,
+          "file": "packages/type-utils/src/TypeOrValueSpecifier.ts",
+          "line": 226
+        },
+        {
+          "end_line": 53,
+          "file": "packages/utils/src/ts-eslint/Rule.ts",
+          "line": 44
+        },
+        {
+          "end_line": 73,
+          "file": "packages/utils/src/ts-eslint/Rule.ts",
+          "line": 55
+        },
+        {
+          "end_line": 29,
+          "file": "packages/website/src/theme/MDXComponents/PackageLink.tsx",
+          "line": 12
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 37966,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3692,
+        "saved_ratio": 0.903
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12943"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 20,
+          "file": "packages/typescript-estree/src/withoutProjectParserOptions.ts",
+          "line": 9
+        },
+        {
+          "end_line": 73,
+          "file": "packages/types/src/parser-options.ts",
+          "line": 47
+        },
+        {
+          "end_line": 133,
+          "file": "packages/types/src/parser-options.ts",
+          "line": 76
+        },
+        {
+          "end_line": 173,
+          "file": "packages/typescript-estree/src/useProgramFromProjectService.ts",
+          "line": 164
+        },
+        {
+          "end_line": 305,
+          "file": "packages/typescript-estree/src/useProgramFromProjectService.ts",
+          "line": 282
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 18735,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4136,
+        "saved_ratio": 0.779
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12934"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 352,
+          "file": "packages/eslint-plugin/src/rules/no-confusing-void-expression.ts",
+          "line": 292
+        },
+        {
+          "end_line": 254,
+          "file": "packages/eslint-plugin/src/rules/no-confusing-void-expression.ts",
+          "line": 238
+        },
+        {
+          "end_line": 60,
+          "file": "packages/eslint-plugin-internal/src/rules/debug-namespace.ts",
+          "line": 60
+        },
+        {
+          "end_line": 31,
+          "file": "packages/website/src/components/lib/createCompilerOptions.ts",
+          "line": 6
+        },
+        {
+          "end_line": 261,
+          "file": "packages/website/src/components/linter/createLinter.ts",
+          "line": 47
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 41950,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4403,
+        "saved_ratio": 0.895
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12930"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 386,
+          "file": "packages/eslint-plugin/src/rules/no-misused-promises.ts",
+          "line": 340
+        },
+        {
+          "end_line": 83,
+          "file": "packages/eslint-plugin/src/rules/no-misused-promises.ts",
+          "line": 55
+        },
+        {
+          "end_line": 299,
+          "file": "packages/eslint-plugin/src/rules/await-thenable.ts",
+          "line": 276
+        },
+        {
+          "end_line": 32,
+          "file": "packages/website/src/components/TypeScriptOverlap/index.tsx",
+          "line": 4
+        },
+        {
+          "end_line": 35,
+          "file": "packages/website/src/components/linter/createParser.ts",
+          "line": 26
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 54164,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3990,
+        "saved_ratio": 0.926
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12912"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 33,
+          "file": "packages/eslint-plugin/src/rules/no-misused-promises.ts",
+          "line": 31
+        },
+        {
+          "end_line": 1201,
+          "file": "packages/eslint-plugin/src/rules/no-misused-promises.ts",
+          "line": 1193
+        },
+        {
+          "end_line": 667,
+          "file": "packages/eslint-plugin/src/rules/prefer-nullish-coalescing.ts",
+          "line": 184
+        },
+        {
+          "end_line": 136,
+          "file": "packages/website/src/components/linter/createParser.ts",
+          "line": 16
+        },
+        {
+          "end_line": 323,
+          "file": "packages/eslint-plugin/src/rules/consistent-type-exports.ts",
+          "line": 77
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 93384,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3939,
+        "saved_ratio": 0.958
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12904"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 5
+      },
+      "candidates": [
+        {
+          "end_line": 1271,
+          "file": "packages/eslint-plugin/src/rules/no-unused-vars.ts",
+          "line": 1254
+        },
+        {
+          "end_line": 893,
+          "file": "packages/eslint-plugin/src/rules/no-unused-vars.ts",
+          "line": 872
+        },
+        {
+          "end_line": 142,
+          "file": "packages/eslint-plugin/src/util/collectUnusedVariables.ts",
+          "line": 137
+        },
+        {
+          "end_line": 82,
+          "file": "packages/website/src/components/config/ConfigTypeScript.tsx",
+          "line": 17
+        },
+        {
+          "end_line": 35,
+          "file": "packages/website/src/components/linter/createParser.ts",
+          "line": 26
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 3
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 2,
+          "targets": 3
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 2,
+          "targets": 3
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 79637,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4258,
+        "saved_ratio": 0.947
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12892"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": null,
+        "matched": 0,
+        "targets": 0
+      },
+      "candidates": [
+        {
+          "end_line": 417,
+          "file": "packages/eslint-plugin/src/rules/unbound-method.ts",
+          "line": 387
+        },
+        {
+          "end_line": 310,
+          "file": "packages/eslint-plugin/src/rules/unbound-method.ts",
+          "line": 294
+        },
+        {
+          "end_line": 32,
+          "file": "packages/website/src/components/TypeScriptOverlap/index.tsx",
+          "line": 4
+        },
+        {
+          "end_line": 1072,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-condition.ts",
+          "line": 1059
+        },
+        {
+          "end_line": 65,
+          "file": "packages/utils/src/ast-utils/eslint-utils/ReferenceTracker.ts",
+          "line": 43
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": null,
+          "any_hit": null,
+          "matched": 0,
+          "targets": 0
+        },
+        "3": {
+          "all_hit": null,
+          "any_hit": null,
+          "matched": 0,
+          "targets": 0
+        },
+        "5": {
+          "all_hit": null,
+          "any_hit": null,
+          "matched": 0,
+          "targets": 0
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 54382,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3974,
+        "saved_ratio": 0.927
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12886"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 202,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts",
+          "line": 157
+        },
+        {
+          "end_line": 114,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-parameter-property-assignment.ts",
+          "line": 103
+        },
+        {
+          "end_line": 182,
+          "file": "packages/website/src/components/linter/createLinter.ts",
+          "line": 159
+        },
+        {
+          "end_line": 227,
+          "file": "packages/website/src/components/linter/createLinter.ts",
+          "line": 184
+        },
+        {
+          "end_line": 284,
+          "file": "tools/scripts/generate-configs.mts",
+          "line": 184
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 27252,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4403,
+        "saved_ratio": 0.838
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12880"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 123,
+          "file": "packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts",
+          "line": 58
+        },
+        {
+          "end_line": 64,
+          "file": "packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts",
+          "line": 59
+        },
+        {
+          "end_line": 35,
+          "file": "packages/website/src/components/linter/createParser.ts",
+          "line": 26
+        },
+        {
+          "end_line": 227,
+          "file": "packages/website/src/components/linter/createLinter.ts",
+          "line": 184
+        },
+        {
+          "end_line": 261,
+          "file": "packages/website/src/components/linter/createLinter.ts",
+          "line": 47
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 22255,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4275,
+        "saved_ratio": 0.808
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12873"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 2,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 275,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts",
+          "line": 198
+        },
+        {
+          "end_line": 1126,
+          "file": "packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts",
+          "line": 73
+        },
+        {
+          "end_line": 82,
+          "file": "packages/website/src/components/config/ConfigTypeScript.tsx",
+          "line": 17
+        },
+        {
+          "end_line": 31,
+          "file": "packages/website/src/components/lib/createCompilerOptions.ts",
+          "line": 6
+        },
+        {
+          "end_line": 35,
+          "file": "packages/website/src/components/linter/createParser.ts",
+          "line": 26
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 56400,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4161,
+        "saved_ratio": 0.926
+      },
+      "status": "passed",
+      "task": "typescript-eslint-12869"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 117,
+          "file": "model/labels/regexp.go",
+          "line": 56
+        },
+        {
+          "end_line": 155,
+          "file": "model/labels/regexp.go",
+          "line": 120
+        },
+        {
+          "end_line": 70,
+          "file": "model/labels/matcher.go",
+          "line": 56
+        },
+        {
+          "end_line": 101,
+          "file": "tsdb/db.go",
+          "line": 77
+        },
+        {
+          "end_line": 922,
+          "file": "tsdb/db.go",
+          "line": 902
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 611473,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4400,
+        "saved_ratio": 0.993
+      },
+      "status": "passed",
+      "task": "prometheus-19516"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 3
+      },
+      "candidates": [
+        {
+          "end_line": 449,
+          "file": "tsdb/head.go",
+          "line": 416
+        },
+        {
+          "end_line": 982,
+          "file": "tsdb/head.go",
+          "line": 723
+        },
+        {
+          "end_line": 1928,
+          "file": "tsdb/head_wal.go",
+          "line": 1708
+        },
+        {
+          "end_line": 690,
+          "file": "tsdb/agent/db.go",
+          "line": 481
+        },
+        {
+          "end_line": 1132,
+          "file": "tsdb/head_wal.go",
+          "line": 871
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 391537,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4247,
+        "saved_ratio": 0.989
+      },
+      "status": "passed",
+      "task": "prometheus-19307"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 11
+      },
+      "candidates": [
+        {
+          "end_line": 2599,
+          "file": "tsdb/head.go",
+          "line": 2531
+        },
+        {
+          "end_line": 2525,
+          "file": "tsdb/head.go",
+          "line": 2444
+        },
+        {
+          "end_line": 1857,
+          "file": "tsdb/head_append.go",
+          "line": 1839
+        },
+        {
+          "end_line": 238,
+          "file": "tsdb/agent/series.go",
+          "line": 176
+        },
+        {
+          "end_line": 245,
+          "file": "tsdb/agent/series.go",
+          "line": 240
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 3
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 2,
+          "targets": 3
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 2,
+          "targets": 3
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 265016,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4063,
+        "saved_ratio": 0.985
+      },
+      "status": "passed",
+      "task": "prometheus-19272"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 798,
+          "file": "web/api/v1/openapi_examples.go",
+          "line": 784
+        },
+        {
+          "end_line": 1824,
+          "file": "cmd/prometheus/main.go",
+          "line": 1795
+        },
+        {
+          "end_line": 810,
+          "file": "scrape/scrape.go",
+          "line": 794
+        },
+        {
+          "end_line": 842,
+          "file": "scrape/scrape.go",
+          "line": 824
+        },
+        {
+          "end_line": 55,
+          "file": "web/api/v1/openapi.go",
+          "line": 39
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 577911,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4127,
+        "saved_ratio": 0.993
+      },
+      "status": "passed",
+      "task": "prometheus-19241"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 20
+      },
+      "candidates": [
+        {
+          "end_line": 1362,
+          "file": "cmd/promtool/main.go",
+          "line": 1349
+        },
+        {
+          "end_line": 645,
+          "file": "cmd/promtool/main.go",
+          "line": 612
+        },
+        {
+          "end_line": 739,
+          "file": "web/api/v1/openapi_examples.go",
+          "line": 725
+        },
+        {
+          "end_line": 1623,
+          "file": "cmd/prometheus/main.go",
+          "line": 368
+        },
+        {
+          "end_line": 541,
+          "file": "config/config.go",
+          "line": 483
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 7
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 7
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 7
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 341417,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4080,
+        "saved_ratio": 0.988
+      },
+      "status": "passed",
+      "task": "prometheus-19037"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 2003,
+          "file": "tsdb/db.go",
+          "line": 1983
+        },
+        {
+          "end_line": 636,
+          "file": "tsdb/compact.go",
+          "line": 586
+        },
+        {
+          "end_line": 584,
+          "file": "tsdb/compact.go",
+          "line": 489
+        },
+        {
+          "end_line": 227,
+          "file": "cmd/prometheus/main.go",
+          "line": 183
+        },
+        {
+          "end_line": 161,
+          "file": "cmd/prometheus/main.go",
+          "line": 149
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 198305,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3761,
+        "saved_ratio": 0.981
+      },
+      "status": "passed",
+      "task": "prometheus-18628"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 914,
+          "file": "promql/promqltest/test.go",
+          "line": 903
+        },
+        {
+          "end_line": 2531,
+          "file": "promql/engine.go",
+          "line": 2487
+        },
+        {
+          "end_line": 242,
+          "file": "web/api/v1/openapi_examples.go",
+          "line": 192
+        },
+        {
+          "end_line": 331,
+          "file": "web/api/v1/openapi_examples.go",
+          "line": 290
+        },
+        {
+          "end_line": 233,
+          "file": "web/api/v1/openapi_helpers.go",
+          "line": 228
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 282635,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4227,
+        "saved_ratio": 0.985
+      },
+      "status": "passed",
+      "task": "prometheus-18409"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 310,
+          "file": "tsdb/block.go",
+          "line": 275
+        },
+        {
+          "end_line": 723,
+          "file": "tsdb/block.go",
+          "line": 686
+        },
+        {
+          "end_line": 132,
+          "file": "tsdb/blockwriter.go",
+          "line": 125
+        },
+        {
+          "end_line": 124,
+          "file": "tsdb/repair.go",
+          "line": 30
+        },
+        {
+          "end_line": 149,
+          "file": "cmd/promtool/tsdb.go",
+          "line": 67
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 288900,
+        "files": 8,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3895,
+        "saved_ratio": 0.987
+      },
+      "status": "passed",
+      "task": "prometheus-18180"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 4
+      },
+      "candidates": [
+        {
+          "end_line": 2024,
+          "file": "web/api/v1/api.go",
+          "line": 2018
+        },
+        {
+          "end_line": 139,
+          "file": "documentation/examples/remote_storage/remote_storage_adapter/opentsdb/client.go",
+          "line": 75
+        },
+        {
+          "end_line": 914,
+          "file": "web/web.go",
+          "line": 909
+        },
+        {
+          "end_line": 934,
+          "file": "web/web.go",
+          "line": 928
+        },
+        {
+          "end_line": 2016,
+          "file": "web/api/v1/api.go",
+          "line": 2010
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 254183,
+        "files": 5,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4065,
+        "saved_ratio": 0.984
+      },
+      "status": "passed",
+      "task": "prometheus-18084"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 2,
+        "targets": 3
+      },
+      "candidates": [
+        {
+          "end_line": 216,
+          "file": "promql/info.go",
+          "line": 130
+        },
+        {
+          "end_line": 77,
+          "file": "promql/info.go",
+          "line": 39
+        },
+        {
+          "end_line": 1162,
+          "file": "promql/engine.go",
+          "line": 1160
+        },
+        {
+          "end_line": 1848,
+          "file": "promql/engine.go",
+          "line": 1781
+        },
+        {
+          "end_line": 605,
+          "file": "cmd/promtool/tsdb.go",
+          "line": 408
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 247991,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4242,
+        "saved_ratio": 0.983
+      },
+      "status": "passed",
+      "task": "prometheus-17932"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 272,
+          "file": "promql/parser/ast.go",
+          "line": 272
+        },
+        {
+          "end_line": 278,
+          "file": "promql/parser/ast.go",
+          "line": 278
+        },
+        {
+          "end_line": 150,
+          "file": "config/config.go",
+          "line": 124
+        },
+        {
+          "end_line": 120,
+          "file": "config/config.go",
+          "line": 74
+        },
+        {
+          "end_line": 637,
+          "file": "discovery/kubernetes/kubernetes.go",
+          "line": 379
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 239234,
+        "files": 4,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3759,
+        "saved_ratio": 0.984
+      },
+      "status": "passed",
+      "task": "prometheus-17817"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 1
+      },
+      "candidates": [
+        {
+          "end_line": 1399,
+          "file": "config/config.go",
+          "line": 1378
+        },
+        {
+          "end_line": 111,
+          "file": "tsdb/chunks/chunk_write_queue.go",
+          "line": 82
+        },
+        {
+          "end_line": 340,
+          "file": "scrape/manager.go",
+          "line": 243
+        },
+        {
+          "end_line": 235,
+          "file": "tsdb/wlog/watcher.go",
+          "line": 224
+        },
+        {
+          "end_line": 49,
+          "file": "util/testutil/port.go",
+          "line": 29
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 232177,
+        "files": 10,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4122,
+        "saved_ratio": 0.982
+      },
+      "status": "passed",
+      "task": "prometheus-17683"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 5
+      },
+      "candidates": [
+        {
+          "end_line": 313,
+          "file": "cmd/prometheus/main.go",
+          "line": 222
+        },
+        {
+          "end_line": 59,
+          "file": "tsdb/wlog/watcher.go",
+          "line": 59
+        },
+        {
+          "end_line": 325,
+          "file": "tsdb/agent/db.go",
+          "line": 261
+        },
+        {
+          "end_line": 1448,
+          "file": "cmd/prometheus/main.go",
+          "line": 323
+        },
+        {
+          "end_line": 98,
+          "file": "scrape/manager.go",
+          "line": 74
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 4
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 4
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 4
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 214989,
+        "files": 6,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3635,
+        "saved_ratio": 0.983
+      },
+      "status": "passed",
+      "task": "prometheus-17470"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": true,
+        "matched": 1,
+        "targets": 2
+      },
+      "candidates": [
+        {
+          "end_line": 581,
+          "file": "promql/quantile.go",
+          "line": 506
+        },
+        {
+          "end_line": 346,
+          "file": "promql/quantile.go",
+          "line": 214
+        },
+        {
+          "end_line": 349,
+          "file": "util/annotations/annotations.go",
+          "line": 344
+        },
+        {
+          "end_line": 335,
+          "file": "util/annotations/annotations.go",
+          "line": 330
+        },
+        {
+          "end_line": 1652,
+          "file": "promql/functions.go",
+          "line": 1610
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "3": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        },
+        "5": {
+          "all_hit": true,
+          "any_hit": true,
+          "matched": 1,
+          "targets": 1
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 119203,
+        "files": 3,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 4338,
+        "saved_ratio": 0.964
+      },
+      "status": "passed",
+      "task": "prometheus-17424"
+    },
+    {
+      "callable_at_5": {
+        "any_hit": false,
+        "matched": 0,
+        "targets": 11
+      },
+      "candidates": [
+        {
+          "end_line": 1382,
+          "file": "config/config.go",
+          "line": 1361
+        },
+        {
+          "end_line": 1509,
+          "file": "config/config.go",
+          "line": 1485
+        },
+        {
+          "end_line": 49,
+          "file": "util/testutil/port.go",
+          "line": 29
+        },
+        {
+          "end_line": 644,
+          "file": "tsdb/wlog/watcher.go",
+          "line": 495
+        },
+        {
+          "end_line": 97,
+          "file": "tsdb/db.go",
+          "line": 75
+        }
+      ],
+      "candidates_returned": 5,
+      "cleanup_error": false,
+      "exit_code": 0,
+      "files_at": {
+        "1": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "3": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        },
+        "5": {
+          "all_hit": false,
+          "any_hit": false,
+          "matched": 0,
+          "targets": 2
+        }
+      },
+      "locate_status": "ready",
+      "reading": {
+        "file_chars": 214041,
+        "files": 7,
+        "meaning": "file characters for shown candidates/callers/tests versus this answer; not agent tokens",
+        "returned_chars": 3711,
+        "saved_ratio": 0.983
+      },
+      "status": "passed",
+      "task": "prometheus-17412"
+    }
+  ],
+  "cases_sha256": "882570a3870e211eae012aaa4a588529c1c8b0b7feaeeeb83974536252486be0",
+  "complete": true,
+  "defaults": true,
+  "engine_files": {
+    "scripts/agent_queries.py": "e4e906d9b0f4fa42b144a841fdb8613fa511077f2e253db75f1c66eaae6147e2",
+    "scripts/agents.py": "9093f0bc17f93e9a021301e82d70f64c481cdc0821be460a4f33247e971d210a",
+    "scripts/architecture.py": "92edd450953d341fd97d9578bff8dd9a85e149b212998583fe72b4762aa6b71a",
+    "scripts/catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "scripts/catalog/files.json": "a764b5e702b2b147a2f21a1af95f6986e77a5c008aae3f81d1be5ee277ba6ea9",
+    "scripts/catalog/js.json": "aa62c130b51b5c740da51a7527f92c0fd4b1931a99d1d4dc9c7cd3d47ce99790",
+    "scripts/catalog/php.json": "d1c621a012dadd325f6d8cfb302f069e67e6ff6c4aa5081f6b208742984210a8",
+    "scripts/catalog/python.json": "a8972fc275dcef6786424e3d2e213918792fbf06e265886921f7a13163435cb6",
+    "scripts/catalog/schema.json": "83b69d808e892db447db1af8387f386c0ccc7e5b16091a54e0727998713c9c89",
+    "scripts/cg.py": "aa22ada8fd5450896f9c7cac2e1daaad585c54c2433d1174abfade8f6473f5a2",
+    "scripts/change_analysis.py": "17f257460ef74a05e1472bc1924653e9f7c595ec17b0f78a1f0d4ed20ff1ac6b",
+    "scripts/change_flow.py": "e0d0e089ec19d7a72fd4a61e2940b9a93753e7e40d990147db0be936d503ac3e",
+    "scripts/change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "scripts/checks.py": "96bdcd080cb26d0f98260eb6377483a70273e155cf9f994539e337bdc4727069",
+    "scripts/entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "scripts/evidence.py": "b2219dbc4a5ca72c88dd4fb977b7f29a2a6dc0fe09d3b38c590d649e96ce34d0",
+    "scripts/feature_packets.py": "e735e9bf888b54b774cfeb5ed5a38776c1b351fd3d4c552bda43e80818a876ff",
+    "scripts/features.py": "b4cca379b593d094bc1f955a45a8a07a2f1b9adc04c86bba0ac3d41e7cdc75ce",
+    "scripts/language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "scripts/language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "scripts/language_go.py": "e84ff7a25d125c8d1ab39a4771ecf6982fce6824d231721300d111a0152bfe0e",
+    "scripts/language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "scripts/language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "scripts/language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "scripts/language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "scripts/language_sql.py": "948ea7acfa7f9a2911c0d6ab4361f7288865a33d8e7723187117337b3c6fd7ca",
+    "scripts/language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "scripts/locate.py": "6d3d22ca31e0e1735b8543f99e7d4c06e3a8f8b38aab971a04805d65706ea732",
+    "scripts/mcp_server.py": "3748bd19003e450c708a48889e1206b564ee5f4ae395c707edbfd9ae61192e7d",
+    "scripts/project_data.py": "f6ed04dfc50965d9733f4b16afde87212f0838e23c442162b841b1f85016157f",
+    "scripts/search.py": "7934ce0d007a925e03801e6a033a9153b86b6eb3ca0d5ef18388da2f0c1ae931",
+    "scripts/source_windows.py": "78169a8e305afac374a62e493250c3846728f55f0132005e474b84ef428e5c96",
+    "scripts/start.py": "93d2af38d1fdfa6b863904c8e0bdcf25d3586eb44e3759057d0786e89acd3e1f",
+    "scripts/summaries.py": "dd9e287386d04e9d31cbe4422f0412367e4e35996baf3e633ee6ba4eb28d5f7b",
+    "scripts/test_commands.py": "8dd4ffb28e6b3251065f16105101f97fa94ab2c8042933492775208a5cc79fab",
+    "scripts/workbench.py": "eb8beb24225217fe0ff41c5fb54a263aec2c5de5ee0d51a51c78580131d75972"
+  },
+  "format": "codegraph-locate-benchmark/1",
+  "ground_truth_dispositions_sha256": "700e76a0096627ff8b5c6a5528777ca6174b814c7cf540babad7a29172d02fb7",
+  "live_starts": 0,
+  "not_started": [],
+  "parser_versions": {
+    "tree-sitter": "0.25.2",
+    "tree-sitter-language-pack": "0.13.0"
+  },
+  "requested_max_chars": null,
+  "rule_sha256": "decc43b2ae8428338d5555bfe84bc841ecabfc14eacb4655e84001b2f90183d3",
+  "stop_reason": null,
+  "summary": {
+    "assigned": 45,
+    "callable_at_5": {
+      "any": 18,
+      "mapped_cases": 41,
+      "matched": 20,
+      "targets": 135
+    },
+    "failed": 0,
+    "file_ground_truth_missing": 1,
+    "files_at": {
+      "1": {
+        "all": 18,
+        "any": 23,
+        "cases": 44
+      },
+      "3": {
+        "all": 21,
+        "any": 28,
+        "cases": 44
+      },
+      "5": {
+        "all": 24,
+        "any": 30,
+        "cases": 44
+      }
+    },
+    "measured": 45,
+    "missing": 0,
+    "reading": {
+      "file_chars": {
+        "known": 45,
+        "median": 190344,
+        "missing": 0
+      },
+      "returned_chars": {
+        "known": 45,
+        "median": 4161,
+        "missing": 0
+      },
+      "upper_bound_answers": 0
+    }
+  },
+  "tool_sha256": "cf701facff243531064678d0ba623dbfd5826ab56642f26c435f9fab998b3166"
+}

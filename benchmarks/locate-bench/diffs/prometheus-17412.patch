@@ -1,0 +1,100 @@
+diff --git a/storage/remote/queue_manager.go b/storage/remote/queue_manager.go
+index 6adaa0d4c..6e417ef44 100644
+--- a/storage/remote/queue_manager.go
++++ b/storage/remote/queue_manager.go
+@@ -456 +456 @@ type QueueManager struct {
+-	dataIn, dataOut, dataOutDuration *ewmaRate
++	dataIn, dataDropped, dataOut, dataOutDuration *ewmaRate
+@@ -458,2 +458,3 @@ type QueueManager struct {
+-	metrics  *queueManagerMetrics
+-	interner *pool
++	metrics              *queueManagerMetrics
++	interner             *pool
++	highestRecvTimestamp *maxTimestamp
+@@ -472,0 +474 @@ func NewQueueManager(
++	samplesIn *ewmaRate,
+@@ -479,0 +482 @@ func NewQueueManager(
++	highestRecvTimestamp *maxTimestamp,
+@@ -519 +522,2 @@ func NewQueueManager(
+-		dataIn:          newEWMARate(ewmaWeight, shardUpdateDuration),
++		dataIn:          samplesIn,
++		dataDropped:     newEWMARate(ewmaWeight, shardUpdateDuration),
+@@ -523,2 +527,3 @@ func NewQueueManager(
+-		metrics:  metrics,
+-		interner: interner,
++		metrics:              metrics,
++		interner:             interner,
++		highestRecvTimestamp: highestRecvTimestamp,
+@@ -713,0 +719 @@ outer:
++			t.dataDropped.incr(1)
+@@ -774,0 +781,2 @@ outer:
++			// Track dropped exemplars in the same EWMA for sharding calc.
++			t.dataDropped.incr(1)
+@@ -835,0 +844 @@ outer:
++			t.dataDropped.incr(1)
+@@ -895,0 +905 @@ outer:
++			t.dataDropped.incr(1)
+@@ -1125 +1134,0 @@ func (t *QueueManager) calculateDesiredShards() int {
+-	t.dataIn.tick()
+@@ -1126,0 +1136 @@ func (t *QueueManager) calculateDesiredShards() int {
++	t.dataDropped.tick()
+@@ -1135,0 +1146 @@ func (t *QueueManager) calculateDesiredShards() int {
++		dataKeptRatio   = dataOutRate / (t.dataDropped.rate() + dataOutRate)
+@@ -1137 +1148 @@ func (t *QueueManager) calculateDesiredShards() int {
+-		dataPendingRate = dataInRate - dataOutRate
++		dataPendingRate = dataInRate*dataKeptRatio - dataOutRate
+@@ -1139 +1150 @@ func (t *QueueManager) calculateDesiredShards() int {
+-		highestRecv     = t.metrics.highestTimestamp.Get()
++		highestRecv     = t.highestRecvTimestamp.Get()
+@@ -1141 +1152 @@ func (t *QueueManager) calculateDesiredShards() int {
+-		dataPending     = delay * dataInRate
++		dataPending     = delay * dataInRate * dataKeptRatio
+@@ -1153 +1164 @@ func (t *QueueManager) calculateDesiredShards() int {
+-		desiredShards = timePerSample * (dataInRate + backlogCatchup)
++		desiredShards = timePerSample * (dataInRate*dataKeptRatio + backlogCatchup)
+@@ -1158,0 +1170 @@ func (t *QueueManager) calculateDesiredShards() int {
++		"dataKeptRatio", dataKeptRatio,
+@@ -1351 +1362,0 @@ func (s *shards) enqueue(ref chunks.HeadSeriesRef, data timeSeries) bool {
+-		s.qm.dataIn.incr(1)
+diff --git a/storage/remote/write.go b/storage/remote/write.go
+index 34c589371..6bc02bd6f 100644
+--- a/storage/remote/write.go
++++ b/storage/remote/write.go
+@@ -37,2 +36,0 @@ import (
+-// TODO: Remove along with timestampTracker logic once we can be sure no user
+-// will encounter a gap that these metrics cover but other metrics don't.
+@@ -70,0 +69 @@ type WriteStorage struct {
++	samplesIn         *ewmaRate
+@@ -73,0 +73 @@ type WriteStorage struct {
++	quit              chan struct{}
+@@ -91,0 +92 @@ func NewWriteStorage(logger *slog.Logger, reg prometheus.Registerer, dir string,
++		samplesIn:         newEWMARate(ewmaWeight, shardUpdateDuration),
+@@ -95,2 +96 @@ func NewWriteStorage(logger *slog.Logger, reg prometheus.Registerer, dir string,
+-		// TODO: Remove along with timestampTracker logic once we can be sure no user
+-		// will encounter a gap that this metric covers but other metrics don't.
++		quit:              make(chan struct{}),
+@@ -109,0 +110 @@ func NewWriteStorage(logger *slog.Logger, reg prometheus.Registerer, dir string,
++	go rws.run()
+@@ -112,0 +114,13 @@ func NewWriteStorage(logger *slog.Logger, reg prometheus.Registerer, dir string,
++func (rws *WriteStorage) run() {
++	ticker := time.NewTicker(shardUpdateDuration)
++	defer ticker.Stop()
++	for {
++		select {
++		case <-ticker.C:
++			rws.samplesIn.tick()
++		case <-rws.quit:
++			return
++		}
++	}
++}
++
+@@ -189,0 +204 @@ func (rws *WriteStorage) ApplyConfig(conf *config.Config) error {
++			rws.samplesIn,
+@@ -196,0 +212 @@ func (rws *WriteStorage) ApplyConfig(conf *config.Config) error {
++			rws.highestTimestamp,
+@@ -256,0 +273 @@ func (rws *WriteStorage) Close() error {
++	close(rws.quit)
+@@ -331,0 +349,2 @@ func (t *timestampTracker) Commit() error {
++	t.writeStorage.samplesIn.incr(t.samples + t.exemplars + t.histograms)
++

@@ -1,0 +1,166 @@
+[
+  {
+    "name": "group_import_interface",
+    "files": {},
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "trait_over_parent",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Concrete;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "class_over_trait",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Concrete;public function getContainer():string{return \"CLASS\";}public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Service.getContainer",
+    "native": "CLASS",
+    "call": "getContainer"
+  },
+  {
+    "name": "nested_trait",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Concrete{public function getContainer():string{return \"TRAIT\";}}trait Nested{use Concrete;}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Service implements Resolver{use Nested;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "parent_over_interface",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Base.getContainer",
+    "native": "PARENT",
+    "call": "getContainer"
+  },
+  {
+    "name": "explicit_parent",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Concrete;public function run():string{return parent::getContainer();}}"
+    },
+    "expected": "Base.getContainer",
+    "native": "PARENT",
+    "call": "getContainer"
+  },
+  {
+    "name": "case_insensitive",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Service implements Resolver{use Concrete;public function run():string{return $this->GETCONTAINER();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "GETCONTAINER"
+  },
+  {
+    "name": "nested_over_parent",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Concrete{public function getContainer():string{return \"TRAIT\";}}trait Nested{use Concrete;}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Nested;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "abstract_trait_parent",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Requirement{abstract public function getContainer():string;}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Requirement;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Base.getContainer",
+    "native": "PARENT",
+    "call": "getContainer"
+  },
+  {
+    "name": "abstract_trait_concrete",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Requirement{abstract public function getContainer():string;}trait Concrete{public function getContainer():string{return \"TRAIT\";}}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Service implements Resolver{use Requirement, Concrete;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "concrete_trait_abstract",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Requirement{abstract public function getContainer():string;}trait Concrete{public function getContainer():string{return \"TRAIT\";}}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Service implements Resolver{use Concrete, Requirement;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Concrete.getContainer",
+    "native": "TRAIT",
+    "call": "getContainer"
+  },
+  {
+    "name": "multiline_abstract_trait",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Requirement{public\nabstract function getContainer():string;}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Requirement;public function run():string{return $this->getContainer();}}"
+    },
+    "expected": "Base.getContainer",
+    "native": "PARENT",
+    "call": "getContainer"
+  },
+  {
+    "name": "interface_without_body",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};abstract class Service implements Resolver{public function run():string{return $this->getContainer();}}class Child extends Service{public function getContainer():string{return \"CHILD\";}}",
+      "app.php": "<?php require __DIR__.\"/types.php\";require __DIR__.\"/trait.php\";require __DIR__.\"/object.php\";echo (new \\Example\\Child())->run();"
+    },
+    "expected": "Aware.getContainer",
+    "native": "CHILD",
+    "call": "getContainer"
+  },
+  {
+    "name": "abstract_class_without_body",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};abstract class Service implements Resolver{abstract public function getContainer():string;public function run():string{return $this->getContainer();}}class Child extends Service{public function getContainer():string{return \"CHILD\";}}",
+      "app.php": "<?php require __DIR__.\"/types.php\";require __DIR__.\"/trait.php\";require __DIR__.\"/object.php\";echo (new \\Example\\Child())->run();"
+    },
+    "expected": "Service.getContainer",
+    "native": "CHILD",
+    "call": "getContainer"
+  },
+  {
+    "name": "callback_abstract_class_without_body",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};abstract class Service implements Resolver{abstract public function getContainer():string;public function run():string{return call_user_func([$this,\"getContainer\"]);}}class Child extends Service{public function getContainer():string{return \"CHILD\";}}",
+      "app.php": "<?php require __DIR__.\"/types.php\";require __DIR__.\"/trait.php\";require __DIR__.\"/object.php\";echo (new \\Example\\Child())->run();"
+    },
+    "expected": null,
+    "native": "CHILD",
+    "call": "getContainer",
+    "reference": "Service.getContainer"
+  },
+  {
+    "name": "callback_abstract_trait_parent",
+    "files": {
+      "trait.php": "<?php namespace Example;trait Requirement{abstract public function getContainer():string;}",
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Base{public function getContainer():string{return \"PARENT\";}}class Service extends Base implements Resolver{use Requirement;public function run():string{return call_user_func([$this,\"getContainer\"]);}}"
+    },
+    "expected": null,
+    "native": "PARENT",
+    "call": "getContainer",
+    "reference": "Base.getContainer"
+  },
+  {
+    "name": "callback_group_import_interface",
+    "files": {
+      "object.php": "<?php namespace Example;use Example\\Types\\{Resolver};class Service implements Resolver{use Concrete;public function run():string{return call_user_func([$this,\"getContainer\"]);}}\n"
+    },
+    "expected": null,
+    "native": "TRAIT",
+    "call": "getContainer",
+    "reference": "Concrete.getContainer"
+  }
+]

@@ -1,0 +1,12 @@
+diff --git a/promql/info.go b/promql/info.go
+index ab4250104..204ac44b4 100644
+--- a/promql/info.go
++++ b/promql/info.go
+@@ -427,3 +427,4 @@ func (ev *evaluator) combineWithInfoVector(base, info Vector, ignoreSeries map[u
+-		if infoLbls.Len() == 0 {
+-			// If there's at least one data label matcher not matching the empty string,
+-			// we have to ignore this series as there are no matching info series.
++		if len(seenInfoMetrics) == 0 {
++			// No info series matched this base series. If there's at least one data
++			// label matcher not matching the empty string, we have to ignore this
++			// series as there are no matching info series.

@@ -1,0 +1,32 @@
+{
+  "format": "codegraph-catalog/1",
+  "languages": ["python", "js", "php"],
+  "unrecognized_decorator": ["registrar", "none"],
+  "via": {
+    "import": {"module": true, "provider": false, "project": true},
+    "instance": {"module": true, "provider": false, "project": true},
+    "builtin": {"module": false, "provider": false, "project": false},
+    "global": {"module": false, "provider": true, "project": false}
+  },
+  "entry_fields": {
+    "required": ["id", "language", "role", "origin", "source", "checked_with"],
+    "optional": ["note"]
+  },
+  "roles": {
+    "pure_decorator": {"fields": [], "one_of": []},
+    "registrar": {"fields": ["observation"], "one_of": []},
+    "callback": {"fields": ["args", "kwargs", "rest_from", "label"], "one_of": ["args", "kwargs", "rest_from"]},
+    "dynamic": {"fields": [], "one_of": []}
+  },
+  "observations": ["registration.site", "registration.mcp"],
+  "project_may_disable": ["pure_decorator", "registrar", "callback"],
+  "reserved": {"roles": ["dynamic_loader", "return_type"], "fields": ["returns"]},
+  "limits": {
+    "project_bytes": 262144,
+    "entries": 2000,
+    "arg_index": 63,
+    "name_segments": 8,
+    "segment_chars": 128,
+    "text_chars": 500
+  }
+}

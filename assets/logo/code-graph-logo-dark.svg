@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="128" viewBox="0 0 560 128" role="img" aria-label="code-graph"><title>code-graph</title>
+<g transform="translate(8 8)">
+<rect width="112" height="112" rx="30" fill="#8069e0"/>
+<g transform="translate(14 14) scale(2.625)" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+<path d="M8 8 24 16 8 24Z"/>
+</g>
+<g transform="translate(14 14) scale(2.625)"><circle cx="8" cy="8" r="4.2" fill="#ffffff"/><circle cx="8" cy="24" r="4.2" fill="#ffffff"/><circle cx="24" cy="16" r="4.6" fill="#5fd4c7" stroke="#ffffff" stroke-width="1.6"/></g>
+</g>
+<text x="146" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="56" font-weight="700" letter-spacing="-1.5" fill="#e4e5f1">code-graph</text>
+<text x="148" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" fill="#a4a9bf">local code search that follows the call graph</text>
+</svg>

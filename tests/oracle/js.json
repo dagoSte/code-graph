@@ -1,0 +1,5099 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "js/require_equal",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire=fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "0a75e9a72ad4e8a079f3c781de09f40b38e738f2fa9d64c3f0a11c566928cc20",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d1af91e64db106f702c32436d185f6e6f0cd3a3db3f76862c0b9e2a595ec83e7"
+    },
+    {
+      "id": "js/require_arrow",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire=()=>({polish:()=>\"SHADOW\"});\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e94f1f80f9b1c0f99c161fd0873120f8976cb02377c77032e3093e6f3eb54d17",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "bb97af5df893119a0d6986e0b87c86059eb9a022be427362a5238c3c86c33cd3"
+    },
+    {
+      "id": "js/require_logical_and",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire &&= fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "591d5022bf077180f0883149578e7086dbdaf7efd896c147af83ab0b29cff72f",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "02404b61537fda6f00654e62c3666e7175a35b29628bacba5986f04fc6db012b"
+    },
+    {
+      "id": "js/require_logical_or",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire ||= fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "0f5a78850de1e7ff2756c316d20db6473c78041556b3550aad33033fe036bc73",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "202d15451a15e277fa2ef3384044c12df9a2417e43c192b3a64a481508a088e5"
+    },
+    {
+      "id": "js/require_logical_nullish",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire ??= fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9828e085c40677ead3ed213881dcc520ae84e22c1297d8e10a328d13515994cc",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "8fbdcfd9b8f78d1afd6fddeea8fc275e9025e8fc6a4e00e5c20f1bc3b93db29a"
+    },
+    {
+      "id": "js/require_plus",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire += 1;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "eea5a9f64c0086c7315633225f10cfbb835dff2fcc1a75444a6c1bae228de2f0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "772d9872a67129dee02fb4bbfd9fb8470dcc60ecf05b36d33a97777701a9a408"
+    },
+    {
+      "id": "js/require_increment",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire++;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "082ea68b4082a9637a57c3ffd5611b7c785324f52e9323cc569465891b975189",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "eff618ed6d6acaf14a60ce47554079ad1fa23ff91eb6d981236580212a2ba36e"
+    },
+    {
+      "id": "js/require_decrement",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n--require;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "273043bde5fdc9c2c83eb1ee23913cb046d079b5eb51976b3523aa306ead14fb",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d22bf40d679b687fb7fb4f674e1cae8eba7d28ef85b60e48d88169fa8d2ddfc8"
+    },
+    {
+      "id": "js/require_array",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n[require]=[fake];\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "be63a50230a205099fcdd13c3edc5f5e20ff86156db1a1537d2eab88b65e0cc1",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "26a5195fccd6a1b5f59baa79e6eb57951a419dd17c8fd2196f7d0aeb7e037c96"
+    },
+    {
+      "id": "js/require_object",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n({r:require}={r:fake});\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "4e6e5f58f2626e2c6cafca3098b674df08b47e7ce6f932ac421863594d812623",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "19529171a3e6d2e3169e04bafaf914d3572d1fb615f3e69835b3daf2d2b8415c"
+    },
+    {
+      "id": "js/require_nested",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n({r:[require]}={r:[fake]});\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "4412e63c8425ca54d72449ae358fd9cc7bc6c4b631de0b5664b52845eb1c563d",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "8cbdc33c72e9c6297e5182ed00fe069091c957a968dc4ca4fc5fafbac58d03d3"
+    },
+    {
+      "id": "js/require_default",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n[require=fake]=[];\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "f3bcaee0624c03ce6bf9fa525353cd5624fda0826b943df962d6d98646ffaa2c",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "5893fe8b2f74e61f690d7d7a1ef4288815b19f9d8fa45de7e0d7183e5972973b"
+    },
+    {
+      "id": "js/require_rest",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n[...require]=[fake];\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "b40f2731946adf6c0419850550ebb8daf9199f384da0dbe2846ee8ad500a7c01",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "3854e0d0037b18327b31bfc35f118160861414e1c2ec9472a4e22c22f0ebe96a"
+    },
+    {
+      "id": "js/require_for_of",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nfor(require of [fake]){}\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "866a6c116a778738835e5c9ef7885e78db07023c4969856dace0598cabc7802b",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "4e15429575c03e084e807b04199654f4c24479e3dabff07ea448e88dafac00cc"
+    },
+    {
+      "id": "js/require_for_in",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nfor(require in {x:1}){}\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "eac53b8dd7b2b3132ae5b799f684673c569d83ee802ff971d96311f8f177b4f0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "623e088ed2afeed73acebfb535488ab0a99050da0fc52531084a627545a1f3ea"
+    },
+    {
+      "id": "js/require_var",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nvar require=fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "cf8ef8415fc919ce7ee7e8a48fde63b200544f067d01c795434fa538df0a8949",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "edc175159968d5ba38957a5cc0deec986c8c7f952926416a4d2cdc05c05cdd6f"
+    },
+    {
+      "id": "js/require_parenthesized",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n(require)=fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "020af482e8430b9ee09693164646f75eb890fbf52c54abaefad3ab470162cdf1",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "2ff9a748a581363353815d85b003e1d2ccbd55a36a00fc47caee137f2d8d429f"
+    },
+    {
+      "id": "js/require_function_write",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nfunction change(){require=fake;} change();\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "52ced3d85ec2a1b551c3bc70cfd72705c49e44b6e0f43df9950c29f80d35797b",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "37fc412bbf59b6e2fa145d6e0d6b381c4aee2538d3b7296f4876ccb6b782831a"
+    },
+    {
+      "id": "js/require_callback_write",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\n[fake].forEach(x=>{require=x;});\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "8343e4041f27253add4db2bcbc9c5fac7a5d866d97039dfd6662e4b8298651c8",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a2f3a88b9b388a12fb9303fa94fa46a7b9bb5f7aa2a9b61e959a7512c7e94070"
+    },
+    {
+      "id": "js/require_object_global",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nglobalThis.require=fake;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "64c64603ca6c7235292c7b390d0bd594b1d05988500c67b07b987ad64e3ca33f",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "443ddf9ee64fba33e5700d8f0fcc17b435edea17a34b740c2878fe482c917cd7"
+    },
+    {
+      "id": "js/require_reflect_global",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nReflect.set(globalThis,\"require\",fake);\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e76a15e3701d1c0a66a461cd340ea3ad269432b4b06282dcc062e05d10d73d02",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "19f16e57feb925d27bd499e9a85f0ac9e593b3b61ee85c66a3ed776e7502eedb"
+    },
+    {
+      "id": "js/require_after_site",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nfunction drive(){return require(\"./a.js\").polish();}\nrequire=fake;console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "3cbc5a425b88509ec91796781f3951c6858b6b48c8bfed424dcf7bb4c3892020",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "dc060df3b4f068d9385e9b3b0f4afadf4cb3ded937d1f12de33b602d94b83138"
+    },
+    {
+      "id": "js/require_cache",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nrequire.cache.dummy={};\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e0e6a4383cad823b5cfd13c20461bb4ee3feb5ee34d5463ee39f158fb99b7432",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "ffe49cb5ef60f4ef0a3a8413fd71649c2b9df44f3e9c3cb874bb285872fec261"
+    },
+    {
+      "id": "js/require_delete",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\ndelete require.cache;\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "3ace6a653820298f97888a1597bbfe5c7bc36fe6ab9e53de341cb478bf4670b8",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "218ae9a1e3290bbfb508772859baf67b0ebf16bcdb3fea6fbc74d281e979bd25"
+    },
+    {
+      "id": "js/require_object_assign",
+      "language": "js",
+      "files": {
+        "app.js": "const fake=()=>({polish:()=>\"SHADOW\"});\nObject.assign(require,{dummy:1});\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "91d4897c2c3fe8f2df0707fdbd04dc0c77436171e3164150a0d94e5b3f40354f",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "b3a744de40e3d97ab314f693e40e8f111e27017b02bfaa8a2237edf68e2144d2"
+    },
+    {
+      "id": "js/require_plain",
+      "language": "js",
+      "files": {
+        "app.js": "\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "993bdd293ca1be55e327713d07d81ca6b15fbf59c13a29e8d38941ce57bcc935",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "00ac76f2720455f5bd65c50dc6907e72b50311d006025d39eb2e91694d1ecc05"
+    },
+    {
+      "id": "js/string_comment",
+      "language": "js",
+      "files": {
+        "app.js": "const s=\"require=fake\"; // require=fake\n\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "b2aeb3ba398bb6133f9ee2f5df8a9579da52b57c07e1bcb9c159a03d7b967e48",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "caf8626f9efaa75e17be0970fc545a5133d7f8bf51950f0de4b86fab1b824e29"
+    },
+    {
+      "id": "js/local_require_scope",
+      "language": "js",
+      "files": {
+        "app.js": "function other(require){require=1;}\nfunction drive(){return typeof require===\"function\"?require(\"./a.js\").polish():\"NOT_CALLABLE\";}\nconsole.log(drive());\n",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "73b159837e3153a4b81dd67caf490667e7d8c48c2e5f37fd0ea356e07fc012a8",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "fc0e7977679b9ca1cc23454349826efe5597b56176a69328f81587353716e21c"
+    },
+    {
+      "id": "js/factory_dot",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM.createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "cf46aa090750c2cf4ef44ebdafce2455a2e530ba4b69acd4039c2ce882d7a7e7",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a408149e7bc94564d2fecba520b856ed20b5dcfb6ae43764052cb88c5b6726e1"
+    },
+    {
+      "id": "js/factory_bracket",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM[\"createRequire\"]=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "59e0de93799b84922ed353ac3db8af6a93a109da3bd4d6b90fed1ef079a5655a",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d012d3dd34dabbe1752b09f28f836327c7f3215d0278527f84153e5f91fb5017"
+    },
+    {
+      "id": "js/factory_template",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM[`createRequire`]=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "89468e8b0faf44da9132c21537e7943f4005ba4dd4d0ffdf324b5eaf005925de",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "99ac71722dabc5d9c9f4124aed298a5dcc0b98516c48a1467928620780765b53"
+    },
+    {
+      "id": "js/factory_escaped",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM[\"create\\x52equire\"]=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "3a044f39cd93e0572fbad095e7d6b75ca3377ddc213f8216c6f150fddef7c648",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "331887c939704977abd9a42798cbfedad08e6e04443fb5db4abbc4dc7f8089b0"
+    },
+    {
+      "id": "js/factory_unicode",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM[\"create\\u0052equire\"]=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "292b322603dc9fab32e9b5134636cd8e21f3529dd3f43bc1cbefa48df0bf45ff",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e8c26131480e59b70030a9164e81fc7754a8a51af25c987854ff1482dc803a0b"
+    },
+    {
+      "id": "js/factory_computed",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nconst k=\"createRequire\";M[k]=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "d4bffc4eacd7b94791954a49728fb3dbc51181843771b948b1dd1ef84a72c6e4",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "403fc1e7a0285afebe4addf88ff6cdfcb5e3c8265c999aa47051ef4792e2bb18"
+    },
+    {
+      "id": "js/factory_parenthesized",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n(M).createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "3825b47afbb975e5193612ebf9756263970a6e4cee92db5b3b01122c29065d0a",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "4584fef664f305ae2fbe1d7a5c552753965bc12a61e037c0ad3ad9e1aa7641aa"
+    },
+    {
+      "id": "js/factory_logical_and",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM.createRequire &&= fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "6979003e89a9aca386edecd5721654b40c310316ca71f02670c001c3a1d2fd2b",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "93a7af7e95a378ec44e033d6c5dd204e4c244bdce7ab60bb57ec7a0bd8e8b768"
+    },
+    {
+      "id": "js/factory_logical_or",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM.createRequire ||= fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "ce9cd3f4da9563e84d4267bd954d50272087dafb3acf74903e9781ae03aae143",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "77d71e97956bf91beac85256e00c5038503392c7c622953a42ff01be17ede6ea"
+    },
+    {
+      "id": "js/factory_delete",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\ndelete M.createRequire;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "c79bbd95f443fcd34ae3f34edc4dd31874a3e37b137d9a4f745c0891e86617d9",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "8880100892f5638ca0c85957ee4654ef8d1c9b564b96f3fd4740b47c3d8a3fb8"
+    },
+    {
+      "id": "js/factory_nested_member",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM.createRequire.extra=1;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "83abb8d94d48a1ff84f6a3115707f11316cf652573bb7b2840504b524d070933",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "8dfeb120ec7baf185afb8ead3359dd0aaa9f2de9ab20270c08988acf5c655bef"
+    },
+    {
+      "id": "js/factory_array",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n[M.createRequire]=[fakeFactory];\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "ac5ab897bc0a82fb6a1cff83efd229c966c38f9207ec0ef91818f4db0457b748",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "45aed99e77b10025f5db9960ecd658313b28454b34769eb5bf5611e9040855d1"
+    },
+    {
+      "id": "js/factory_object",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n({f:M.createRequire}={f:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "ac385ca0f239cc023b643021b5ecdcc896cbb27df887e6182405f8319c21233a",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "8859ce151cb2b3319c10cd7835e3c826d3e9a5a1d1f1a3e34503abfc6a874ada"
+    },
+    {
+      "id": "js/factory_for_of",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nfor(M.createRequire of [fakeFactory]){}\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "32807e33231aab7d97161ff43d5eeff565ed54da701041f822c2494a4185b78f",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "1c78a00037f8bea38272c7f379dd6e14e3cd900c689005db2153c5dadcc08611"
+    },
+    {
+      "id": "js/factory_assign",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.assign(M,{createRequire:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "560329cad6497a721538b2b7092a689d423b2021c41f8cec0010dcaa166c8911",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "f8c49510ac55c705d4557f5b870b828397a9139875734d3c80dec20d1c4754b8"
+    },
+    {
+      "id": "js/factory_define",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.defineProperty(M,\"createRequire\",{value:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "4f8113c91fca47ec6f84cc6b336936341b71e75c0a4533b65a403ffabfe74e75",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "632953c25e15497fcab10da3edad325197a95b8c38f4379141e128365af89e7d"
+    },
+    {
+      "id": "js/factory_defines",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.defineProperties(M,{createRequire:{value:fakeFactory}});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e4094f730c1a27e56d8354c821fcbdb8c01d6f34eacb38b6c11ac7c0d73a72ee",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "9577c863ac3117f30d89316ed861c242927b68f1c2eab0aaab21421dc994e405"
+    },
+    {
+      "id": "js/factory_prototype",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.setPrototypeOf(M,{});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "fff21fb887777b287694e68257a5418ef591bf75a149118f5efc005f646721d4",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "caeceb2ee9dfc20fef3189abd4b545156c36119b0bccfca3e43ab4723bf6cca4"
+    },
+    {
+      "id": "js/factory_reflect_set",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nReflect.set(M,\"createRequire\",fakeFactory);\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "f039ef27d2a86ffffff795dc19278afeae51af17cb1c6d73bd67220d35bdc466",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a4d760bd8a76aa9f20b42bcb46ee569366974b5ec5ebfae9f2c63df0ee9407a9"
+    },
+    {
+      "id": "js/factory_reflect_define",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nReflect.defineProperty(M,\"createRequire\",{value:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "69e29fdc34c45beb082841cc2c62856baa3df552533e09f819dc70413d9a5c97",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "1cf5f2d723eb8e0da3db54fabe90374ac88d8ccb91e67f0b66cdd1c00dbfa3c4"
+    },
+    {
+      "id": "js/factory_reflect_delete",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nReflect.deleteProperty(M,\"createRequire\");\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "1678e8459a43ca73c124c4006b34c7b8758b452497ac26fe2538e965eebd0ad8",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "86cbd6c87f0c68e46a859e7cbdebe461ca56d2d074b8fc729fd74509894b9282"
+    },
+    {
+      "id": "js/factory_alias",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nconst alias=M;alias.createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "8715ccf42565a5791ca97ed7f74ed48fbdc8ec617681d5bc5b7767e2ad93fdc5",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "5b70bcc814ef55c94fead7ac231e398dd3a0ec994b83f402f5af2b02caced89e"
+    },
+    {
+      "id": "js/factory_destructure_alias",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nconst {value:alias}={value:M};alias.createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e9b8208df5049ec238ccfefd264e6da1969371676238590cff6b839ece9fa873",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "72bb15fddf2bab3a5317bbc7c1b38ff6971890e101e53975fcc3430a3b8f6b26"
+    },
+    {
+      "id": "js/factory_local_helper",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nfunction change(m){m.createRequire=fakeFactory;}change(M);\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "2dca84bd51f119dcf1d2ad7984fbd97b4aafdf93d85386c3284db82ecb80ab66",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "005f85943ca3e1d452bc0af56ed4c85f0413bad14966658e0e625a9722c7268c"
+    },
+    {
+      "id": "js/factory_assign_alias",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nconst assign=Object.assign;assign(M,{createRequire:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "4d60f2c38d0ec3881c06af6a9ddfec72e253a3666536733fa3105a1b91a9055d",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "0ffb82bffc2db9d637f1e5e55d6aefdd2b3fa49f9a0eb2504e330f8e4465c4a8"
+    },
+    {
+      "id": "js/factory_object_computed",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject[\"assign\"](M,{createRequire:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "4bbf06536795cf0064c7683c966fe8e61075318781800908bdcad866d42824ad",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "374a62565ec238de33660ad71c008caa73f9b8a465997ef6a1514bf29654191d"
+    },
+    {
+      "id": "js/factory_call_assign",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.assign.call(null,M,{createRequire:fakeFactory});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "890ad67c31c48fc0ddd67f318f1446c0c4d76e7a29a201ea2ccb51fb70640385",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "57619dcf8ea96b9652db78df939386fb9f830f2de14c3c068bfb85fc47ec9763"
+    },
+    {
+      "id": "js/factory_factory_object_assign",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nObject.assign(M.createRequire,{extra:1});\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "e8d9d2fcab2e888fb0abc66686f5e7754e935fa79f766c437830f5eabb987bbf",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "7f0f720919499ae03c02cdb46fc63f2b695c1f546f23be14c25ff588e2c308ee"
+    },
+    {
+      "id": "js/factory_binding",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM={createRequire:fakeFactory};\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "1b2daaefa414b94fbd80109811bd66db545da03a2f6652c23c17e5b85be1b63d",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "1a58fe01c8975e464ba61361a15ffcbaf52414c4ad75d9cdf115d3d75039f74f"
+    },
+    {
+      "id": "js/factory_binding_destructure",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n[M]=[{createRequire:fakeFactory}];\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "19d6bd786770da24d301229275a12a1f191d2817e9bad99c166ddf8cc83d8a5d",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "88d0aa9bff1629cc3b265a0801191ee8a10176c364e1307337442eda136634b2"
+    },
+    {
+      "id": "js/factory_control_plain",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "5d15ac4b2b0bc7812bfa101b427c1bf0ea9eb2d39a97eda5b8f241fcca161a45",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "f0a9637b489b25474f8a66ba5829ff2c76d108c1648d0c435e4b1b1a11d8c49f"
+    },
+    {
+      "id": "js/factory_control_unrelated",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM.unrelated=1;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "97cf2b3070270092b172e47f06fcc44f10453a38aacd52013ce906819c74eb23",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "39a0185c542ffa82d069b1873d653ac0c533608b7ac8cc7280fd8f2917cf54de"
+    },
+    {
+      "id": "js/factory_control_unrelated_bracket",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM[\"unrelated\"]=1;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9c708c2426dfcc72f9eab313c5b29c360500efb70407df55ce25ed81fae3efce",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "38ea95948e8476be91287f6294d7126f07f943d3aa8c266e7cbd1b53af3d4e62"
+    },
+    {
+      "id": "js/factory_control_read",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nconst read=M.createRequire;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9aea93c9d0604cd0947df0ab3ed785a6a91267de72909f29844b506b2fbe601b",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "bfa4800c590074949b10e56d1a18af66b2b8337013cf5a521ed7a9865eb270bc"
+    },
+    {
+      "id": "js/factory_control_other_scope",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nfunction other(M){M.createRequire=1;}\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "69ae9f2d823d870a491c8bec2b02464aab2b54b465087f12de941de23a63a689",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a21a8646e2afb2294c6481ed7431b10fcb8ad8ee5bfedf946bf3e11ef9786156"
+    },
+    {
+      "id": "js/factory_control_exports",
+      "language": "js",
+      "files": {
+        "app.js": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nmodule.exports={};\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "824014f158bd2cd2c76d5fefffce09753c61545355e422208c770879bfa49118",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d9b778d1b0e31de0904272c8c9ecf32997abe42ea21398bfe8ca2eb5519ac7cd"
+    },
+    {
+      "id": "js/createRequire_equal",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:createRequire}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\ncreateRequire=fakeFactory;\nfunction drive(){const require=createRequire(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "6b019371cda2343bb18999431bd8ea266e69199f7f4716881ab13e7db37439a7",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "54957eca62dff78d160e32a0ec02b04be481fc66b14cd48b601b92b39ff4cd39"
+    },
+    {
+      "id": "js/createRequire_logical",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:createRequire}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\ncreateRequire&&=fakeFactory;\nfunction drive(){const require=createRequire(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "26f4761124e8967ca437e4452fcba1fe73dc1b973df9fb76c13a8c4fb5ab55d3",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "0c824010c3027e6396ce84c9f133e9430f2255569f1d6c5a9347889b130140e3"
+    },
+    {
+      "id": "js/createRequire_array",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:createRequire}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n[createRequire]=[fakeFactory];\nfunction drive(){const require=createRequire(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "c56a217ed8907db1c911e245f68f92ffcbfe0e4690d7da3a478418c6e33b3a44",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "3dea8115df0c33d3afc918e285603c32869b7797486fa0a765324dbded020d09"
+    },
+    {
+      "id": "js/createRequire_function",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:createRequire}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nfunction change(){createRequire=fakeFactory;}change();\nfunction drive(){const require=createRequire(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "19134da53e5925cd69a5faf25e6af454baa84e8aad59afc56bfe703b35e7d1d0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "6bf0125593b13a0810641782ef4d2738da30d34d713b384cfd0ad8bbbd46d634"
+    },
+    {
+      "id": "js/createRequire_plain",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:createRequire}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n\nfunction drive(){const require=createRequire(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "1078616e75f3ddab121229f848f3bace24964532b533d6a3ae724f71de202923",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "94487aafe8c560acdf8e667b06ab8ac8dbe8f8714983b0d2ac243db5aad1137a"
+    },
+    {
+      "id": "js/make_equal",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:make}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nmake=fakeFactory;\nfunction drive(){const require=make(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "39bef0df2c3da7381f6da1524359251766920f8c9c1d9061ed2e4f93bfe12752",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "9d3b0ee52d8f40876fc0d0b35ec0b265153d060496c0041c85610f5cb4c88574"
+    },
+    {
+      "id": "js/make_logical",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:make}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nmake&&=fakeFactory;\nfunction drive(){const require=make(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "6ddd36aa8de9c1e53d861be3f9755ad18ebd9373c25888c4638b2046290df479",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "b3c1fae4674c74cbbb63812a1b686b9f44e50e801f28e6918211d24c1fdcf2c0"
+    },
+    {
+      "id": "js/make_array",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:make}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n[make]=[fakeFactory];\nfunction drive(){const require=make(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "99069acf3973ed4a2b02912c7d670b64f92eb07d88947df3a854724f6ef3f32e",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "5949b40eb92d7fe6f7bd78f57e853738e4f04fd4009da806d310f5791e68b659"
+    },
+    {
+      "id": "js/make_function",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:make}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nfunction change(){make=fakeFactory;}change();\nfunction drive(){const require=make(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "1550be035590997885876636bdfaf9dea4c75592307d23e4c35e5e479ea84ad0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "86aab04067a3d52b51dd8c8392a478be4b857351dc393a09ff5a34b130baa775"
+    },
+    {
+      "id": "js/make_plain",
+      "language": "js",
+      "files": {
+        "app.js": "let {createRequire:make}=require(\"module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n\nfunction drive(){const require=make(__filename);return require(\"./a.js\").polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "ba0f715527fd578ab443c8d73305dd681edba9de3884a641b905e8d79fcbd874",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "97f6265620846097d82388b2ca2111b0ba575b7c53bd9fb20950498d178cb8d3"
+    },
+    {
+      "id": "js/module_binding",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nmodule={require:fake};\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "eac1f045219617a6e94ab3bd83a3bd44508ffad053ab9a91caca4f3eb71460ce",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "1097a8e7a4e2a6a5dcbb150935db822c5a9e5106f0493ab10df4a7e90e8d30bc"
+    },
+    {
+      "id": "js/module_member",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nmodule.require=fake;\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9ddf326e95ac5bf9d035a42f9e6b5dac40412a46bc17d4ea7448e44ff258133d",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "77da2e8e4bb026e534202c09d5c56ee4d9e5106ca431e0b288d355cb6a4fcc3a"
+    },
+    {
+      "id": "js/module_bracket",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nmodule[\"require\"]=fake;\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "bd5342498bce21782aca5f2fdeaf160649f9414388e3598cf82898c07af0f12e",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "3f067ee280b07413cd1e98daf598bef93e1b7e7b2810cafdb701c8a2291a7aa8"
+    },
+    {
+      "id": "js/module_delete",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\ndelete module.require;\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "f16c4a2894ab9b49e37316cfbd5b83ad2212ccd1967b8277ddf93859dbf7141f",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "7868675df05a0a4bbe5e18afa5859a2101af157e5c99e9070419492e469685bc"
+    },
+    {
+      "id": "js/module_assign",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nObject.assign(module,{require:fake});\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "05c19723b5aca086c308acc3d01612941d77e14fc13aded7398c1512838011c9",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e04dff80217060b8b14e9530562b21f9c1b1e83b1d025318054d0612eb80109a"
+    },
+    {
+      "id": "js/module_computed",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nconst k=\"require\";module[k]=fake;\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "a9d7ae3b93a6dcc5a3658a5cc6bca117cd6e2a6a1bc107915f3d6569feb50ae8",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "70ef80949ae295c17cd0bec9db8c9cc07e00a480756ddedf4e5cd8adfef77713"
+    },
+    {
+      "id": "js/module_nested",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nmodule.require.extra=1;\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "653b4160faa0b7729c333a69da22a5f50a40b386ec5e60cfa24930fd3705f305",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "3fcd1700915d5f3f5b2653a4db81097cefe92f56608cb36ee43af55e23dc0a0c"
+    },
+    {
+      "id": "js/module_exports",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const fake=()=>({polish:()=>\"SHADOW\"});\nmodule.exports={};\nfunction drive(){return mod.polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "5f13b657056116bc1b4747c1f167095d3ad3b1c5ff12a120f3e0d39040cf75d0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d4c275cda1d7b9824acc7e3a5f0d7f2d625ba8b2253683906b967d82cd061001"
+    },
+    {
+      "id": "js/ordinary_dot",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");mod.polish=()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "f7e8422171531c07f2f000de789ca442dd3f08b34c9dfefc937f247a3fe02bf1",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a360ac90a4f627d08ecb7ff0b41e148fed0d21421d3fc39e3400e5d50cbc61f3"
+    },
+    {
+      "id": "js/ordinary_bracket",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");mod[\"polish\"]=()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "75122a37a8157648b85044f36a23e7af398cdd1691b9fed3537ebe285784c47b",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "99bc8b936b15e5e856b03fa69177576e82389f36b6e42b67f2a5812de2e20ec3"
+    },
+    {
+      "id": "js/ordinary_escape",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");mod[\"pol\\x69sh\"]=()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "7a880bcaf36e553dc39ef3002bfa32e1e6e51bc6bf4d672055a7108f30a65ec4",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "11af3891966f4c092215d50233d8720478f6906652177ee33f9f128583aca792"
+    },
+    {
+      "id": "js/ordinary_computed",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const k=\"polish\";mod[k]=()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "b3b50890344922fb9b8072b25a18b4bed875db2e6d731accf9f3f6fc5dfd46bf",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e890ccae34915daa3924f9ed18b67b4e6b9ec65dc880123e9c87148d55881774"
+    },
+    {
+      "id": "js/ordinary_logical",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");mod.polish &&= ()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "99e5b3d11d97884852ef2717897fe9cde1b5ba59b3438b412d49fb5cef651567",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e3cf6b4b42a017bebd4faa7c94d19c83896770523182a1984e123f605a5274fb"
+    },
+    {
+      "id": "js/ordinary_delete",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");delete mod.polish;\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9ea92e6e4f3fe1e2ce364f1a3bc2d2f93e5d29cfda6c5e26e6ff078b5792f5d0",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "NOT_CALLABLE\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "fce264dda99f74ec434f445b8b997bd3cef493c435daab6814376b94207c05cd"
+    },
+    {
+      "id": "js/ordinary_assign",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");Object.assign(mod,{polish:()=>\"SHADOW\"});\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "cef9b00218032a6a56ebcfa17f6c1d4a8ad576d30e502e4c550af7da41f98348",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "a0f858a96d85274de58af370785051c6ce22fdb9888189805f5cbc095f75ad4a"
+    },
+    {
+      "id": "js/ordinary_reflect",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");Reflect.set(mod,\"polish\",()=>\"SHADOW\");\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "69aae1989bb51bc1a0b4493c2903d3103fd5314d9738ad0601c614a858837052",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "2cca37c893fbcd4eed87db4289e15427cb8438b70ffe9af50ef8237c480fdff2"
+    },
+    {
+      "id": "js/ordinary_alias",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");const other=mod;other.polish=()=>\"SHADOW\";\nfunction drive(){return typeof mod.polish===\"function\"?mod.polish():\"NOT_CALLABLE\";}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9cf83b25247a943fb0d2595944cbb280ac702e345af39e37140f490fd65cd8bf",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e83c90b7d5c1d74f9e91f455c43cdbade1e8d927b5a3f030b7b785350f5f059e"
+    },
+    {
+      "id": "js/receiver_Service_control",
+      "language": "js",
+      "files": {
+        "app.js": "const Service=require(\"./a.js\");\nfunction drive(){return Service.polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "decoy.js": "class Service {static polish(){return \"B\";}}"
+      },
+      "source_sha256": "16aa9ac1db6ee8e2c1f05f05551dfcc6c7bd6d0b7fd43570861464c0864dc748",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js",
+        "decoy.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "b28e1564068f3d13861299e10811fe97b22b0473894ebebe709f5a40feff4ded"
+    },
+    {
+      "id": "js/receiver_Service_tampered",
+      "language": "js",
+      "files": {
+        "app.js": "const Service=require(\"./a.js\");\nconst fake=()=>({polish:()=>\"SHADOW\"});\nrequire=fake;\nfunction drive(){return Service.polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "decoy.js": "class Service {static polish(){return \"B\";}}"
+      },
+      "source_sha256": "83a6ec13b1f3acb5899f18f4497a502a00c349c617d2d63edf4c7ba86d849f77",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js",
+        "decoy.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            4,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "d44061503f02684f9ac61903554f2b5259bc383570227ca40934dac54e988398"
+    },
+    {
+      "id": "js/receiver_mod_control",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");\nfunction drive(){return mod.polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "decoy.js": "class Service {static polish(){return \"B\";}}"
+      },
+      "source_sha256": "0e68196c3ea9f23932ff05d015b226db87acdd0f0af8df1d3f115ed3da682b53",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js",
+        "decoy.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "88b0ee6a6d78e17e3b0007d79260a1d7b4512b537e1e1874c3ae66ea696a3d4f"
+    },
+    {
+      "id": "js/receiver_mod_tampered",
+      "language": "js",
+      "files": {
+        "app.js": "const mod=require(\"./a.js\");\nconst fake=()=>({polish:()=>\"SHADOW\"});\nrequire=fake;\nfunction drive(){return mod.polish();}\nconsole.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "decoy.js": "class Service {static polish(){return \"B\";}}"
+      },
+      "source_sha256": "49d8202f0132735da18d43953a749a50448f40266a563c5e63b59b04c0b77b96",
+      "required_indexed": [
+        "a.js",
+        "app.js",
+        "b.js",
+        "decoy.js"
+      ],
+      "native": {
+        "args": [
+          "app.js"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.js",
+            "drive",
+            4,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "f995fcb083813c1765f47cc8fe0c01121fe40f8b795c3f127c7d06fb8cea115b"
+    },
+    {
+      "id": "js/esm_named",
+      "language": "js",
+      "files": {
+        "app.mjs": "import {createRequire} from \"node:module\";\nfunction drive(){const require=createRequire(import.meta.url);return require(\"./a.js\").polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "2a8ccaaefc20287d29e22a036c71930f78fb9c737896313be10a14d4bd29ff28",
+      "required_indexed": [
+        "a.js",
+        "app.mjs",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.mjs"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.mjs",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "ceab88ab72a682cfea92f61d36e9aa32b95fc774df05d3d2714a9a975dad7845"
+    },
+    {
+      "id": "js/esm_alias",
+      "language": "js",
+      "files": {
+        "app.mjs": "import {createRequire as make} from \"module\";\nfunction drive(){const require=make(import.meta.url);return require(\"./a.js\").polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "d38170d9ec76baa3bc0c411b4a85d0e41096721b2b15af6061110904718cb280",
+      "required_indexed": [
+        "a.js",
+        "app.mjs",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.mjs"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.mjs",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "38137bb89fee8c01019015de25df9c4ee77f3f18cbe3617b2653dea08ccaa6b0"
+    },
+    {
+      "id": "js/esm_namespace",
+      "language": "js",
+      "files": {
+        "app.mjs": "import * as M from \"node:module\";\nfunction drive(){const require=M.createRequire(import.meta.url);return require(\"./a.js\").polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "bdf5ab2ff3bff7cc6bad4fef507e1efa1c060770fc6a9d3242d7d66bf5f3cda0",
+      "required_indexed": [
+        "a.js",
+        "app.mjs",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.mjs"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.mjs",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "38e66e8c72885b24d45a001b96dae2d5cd3c1ee23a50e023cef557d60f6f85c0"
+    },
+    {
+      "id": "js/esm_default",
+      "language": "js",
+      "files": {
+        "app.mjs": "import M from \"node:module\";\nfunction drive(){const require=M.createRequire(import.meta.url);return require(\"./a.js\").polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "9474962c8141a797271baa99f813e468ef5ddca383a544dfd825576a836aacc2",
+      "required_indexed": [
+        "a.js",
+        "app.mjs",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.mjs"
+        ],
+        "exit": 0,
+        "stdout": "A\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "a.js",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.mjs",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "b92501c8eeb769c7ec8a6cb94117fbd8674b260780254a257b8b4572fa4f7a1a"
+    },
+    {
+      "id": "js/esm_default_mutated",
+      "language": "js",
+      "files": {
+        "app.mjs": "import M from \"node:module\"; M.createRequire=()=>()=>({polish:()=>\"SHADOW\"});\nfunction drive(){const require=M.createRequire(import.meta.url);return require(\"./a.js\").polish();}console.log(drive());",
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n"
+      },
+      "source_sha256": "c2a2afc13d3bb4ae1e61e05b08a56c388e375f870b066021e531f2e1f5721583",
+      "required_indexed": [
+        "a.js",
+        "app.mjs",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.mjs"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.mjs",
+            "drive",
+            2,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "5cd494e75c0e6965ac7bbe4c5a26e2477f4af647b1e2f791fb4ec166b7ee30a4"
+    },
+    {
+      "id": "js/ts_cast_member",
+      "language": "js",
+      "files": {
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "app.ts": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\n(M as any).createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());"
+      },
+      "source_sha256": "c850b26b4c5dd27eb6e8517d7cad784002fec7e724f673763784255dadce36cf",
+      "required_indexed": [
+        "a.js",
+        "app.ts",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.ts"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.ts",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "c6a7f4397b0e1b9b77e319eca9423f044c04b5bb4b5240b40d04f1c32e39243d"
+    },
+    {
+      "id": "js/ts_nonnull_member",
+      "language": "js",
+      "files": {
+        "a.js": "exports.polish=function polish(){return \"A\";};\n",
+        "b.js": "exports.polish=function polish(){return \"B\";};\n",
+        "app.ts": "let M=require(\"node:module\"); const fakeFactory=()=>()=>({polish:()=>\"SHADOW\"});\nM!.createRequire=fakeFactory;\nfunction drive(){if(typeof M.createRequire!==\"function\")return \"NOT_CALLABLE\"; const require=M.createRequire(__filename); return require(\"./a.js\").polish();}\nconsole.log(drive());"
+      },
+      "source_sha256": "e1df6dee229129ae231b1e2d9381724e4e50f5e7055be202d4d5f7f240ba1306",
+      "required_indexed": [
+        "a.js",
+        "app.ts",
+        "b.js"
+      ],
+      "native": {
+        "args": [
+          "app.ts"
+        ],
+        "exit": 0,
+        "stdout": "SHADOW\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app.ts",
+            "drive",
+            3,
+            "polish",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "a.js",
+          "b.js",
+          "decoy.js"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "js-polish",
+      "evidence_sha256": "e41982c4e5533f5bd34cdc02908461c5da1fbf876dadae907773ce4596890b2c"
+    }
+  ]
+}

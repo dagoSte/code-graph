@@ -1,0 +1,14 @@
+diff --git a/django/utils/html.py b/django/utils/html.py
+index 059767d394..68260af337 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -9,0 +10 @@ from html.parser import HTMLParser
++from itertools import chain
+@@ -79,2 +80,5 @@ _js_escapes = {
+-# Escape every ASCII character with a value less than 32.
+-_js_escapes.update((ord("%c" % z), "\\u%04X" % z) for z in range(32))
++# Escape every ASCII character with a value less than 32 (C0), 127(C0),
++# or 128-159(C1).
++_js_escapes.update(
++    (ord("%c" % z), "\\u%04X" % z) for z in chain(range(32), range(0x7F, 0xA0))
++)

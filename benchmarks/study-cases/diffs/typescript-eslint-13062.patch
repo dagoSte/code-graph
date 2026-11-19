@@ -1,0 +1,18 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-condition.ts b/packages/eslint-plugin/src/rules/no-unnecessary-condition.ts
+index b969b331a..93be24ea3 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-condition.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-condition.ts
+@@ -353 +353,4 @@ export default createRule<Options, MessageId>({
+-            isTypeFlagSet(part, ts.TypeFlags.TypeVariable),
++            isTypeFlagSet(
++              part,
++              ts.TypeFlags.TypeVariable | ts.TypeFlags.Conditional,
++            ),
+@@ -514 +517,2 @@ export default createRule<Options, MessageId>({
+-            ts.TypeFlags.TypeVariable,
++            ts.TypeFlags.TypeVariable |
++            ts.TypeFlags.Conditional,
+@@ -609 +613,2 @@ export default createRule<Options, MessageId>({
+-            ts.TypeFlags.TypeVariable;
++            ts.TypeFlags.TypeVariable |
++            ts.TypeFlags.Conditional;

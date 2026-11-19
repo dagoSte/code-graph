@@ -1,0 +1,128 @@
+{
+  "description": "Development paraphrase cases (written by the implementer before the query-expansion code, 13 November 2026): queries whose words differ from the code by inflection, derivation or a common programming synonym. Same synthetic sources as search-retrieval.json. Not an independent evaluation.",
+  "projects": [
+    {
+      "id": "purchase",
+      "sources": {
+        "checkout.py": "from ledger import record_adjustment\ndef void_purchase():\n    \"\"\"Cancel order.\"\"\"\n    return record_adjustment()\n",
+        "ledger.py": "def record_adjustment():\n    \"\"\"Append audit entry.\"\"\"\n    return 1\n",
+        "preview.py": "def obsolete_cancel_order(): return 'preview only'\n",
+        "tests/test_checkout.py": "from checkout import void_purchase\ndef test_reversal(): return void_purchase()\n"
+      },
+      "queries": [
+        {
+          "text": "cancelling orders",
+          "relevant": [
+            "checkout.py:void_purchase",
+            "ledger.py:record_adjustment",
+            "tests/test_checkout.py:test_reversal"
+          ]
+        },
+        {
+          "text": "abort the order",
+          "relevant": [
+            "checkout.py:void_purchase",
+            "ledger.py:record_adjustment",
+            "tests/test_checkout.py:test_reversal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "sources": {
+        "settings.py": "from decoder import decode_value\ndef load_settings():\n    \"\"\"Parse config.\"\"\"\n    return decode_value()\n",
+        "decoder.py": "def decode_value(): return 1\n",
+        "unrelated.py": "def write_record(): return 2\n"
+      },
+      "queries": [
+        {
+          "text": "parsing configuration",
+          "relevant": [
+            "settings.py:load_settings",
+            "decoder.py:decode_value"
+          ]
+        },
+        {
+          "text": "read the settings",
+          "relevant": [
+            "settings.py:load_settings",
+            "decoder.py:decode_value"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "sources": {
+        "api.ts": "import { sendWire } from './transport';\nexport function startHTTPServer() { return sendWire(); }\n",
+        "transport.ts": "export function sendWire() { return 1; }\n"
+      },
+      "queries": [
+        {
+          "text": "http servers",
+          "relevant": [
+            "api.ts:startHTTPServer",
+            "transport.ts:sendWire"
+          ]
+        },
+        {
+          "text": "launch server",
+          "relevant": [
+            "api.ts:startHTTPServer",
+            "transport.ts:sendWire"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "php",
+      "sources": {
+        "actions.php": "<?php namespace Billing; use function Ledger\\append; function cancel_invoice(){ return append(); }\n",
+        "ledger.php": "<?php namespace Ledger; function append(){ return 1; }\n"
+      },
+      "queries": [
+        {
+          "text": "invoice cancellation",
+          "relevant": [
+            "actions.php:cancel_invoice",
+            "ledger.php:append"
+          ]
+        },
+        {
+          "text": "aborting invoices",
+          "relevant": [
+            "actions.php:cancel_invoice",
+            "ledger.php:append"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "callback",
+      "sources": {
+        "lifecycle.py": "import atexit\ndef exit_cleanup():\n    \"\"\"Release lock.\"\"\"\n    pass\ndef bind_shutdown():\n    atexit.register(exit_cleanup)\n"
+      },
+      "queries": [
+        {
+          "text": "releasing locks",
+          "relevant": [
+            "lifecycle.py:exit_cleanup",
+            "lifecycle.py:bind_shutdown"
+          ]
+        },
+        {
+          "text": "free the mutex",
+          "relevant": [
+            "lifecycle.py:exit_cleanup",
+            "lifecycle.py:bind_shutdown"
+          ]
+        },
+        {
+          "text": "quasar nebula",
+          "relevant": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+diff --git a/django/db/migrations/autodetector.py b/django/db/migrations/autodetector.py
+index 7cc22c0637..0c2e215fcd 100644
+--- a/django/db/migrations/autodetector.py
++++ b/django/db/migrations/autodetector.py
+@@ -1342 +1342,4 @@ class MigrationAutodetector:
+-                if both_m2m or neither_m2m:
++                target_changed = (
++                    both_m2m and new_field_dec[2]["to"] != old_field_dec[2]["to"]
++                )
++                if (both_m2m or neither_m2m) and not target_changed:

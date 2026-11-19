@@ -1,0 +1,28 @@
+diff --git a/django/db/models/constraints.py b/django/db/models/constraints.py
+index 7dfeb3b649..a4e8ab8ab1 100644
+--- a/django/db/models/constraints.py
++++ b/django/db/models/constraints.py
+@@ -8,0 +9,2 @@ from django.db.models.expressions import Exists, ExpressionList, F, RawSQL
++from django.db.models.fields import BooleanField
++from django.db.models.functions import Coalesce
+@@ -215 +217,5 @@ class CheckConstraint(BaseConstraint):
+-        if not Q(self.condition).check(against, using=using):
++        condition = self.condition
++        if connections[using].features.supports_comparing_boolean_expr:
++            # Checks constraints do not fail when they evaluate to UNKNOWN.
++            condition = Coalesce(condition, True, output_field=BooleanField())
++        if not Q(condition).check(against, using=using):
+diff --git a/django/db/models/query_utils.py b/django/db/models/query_utils.py
+index c282c4f744..c37e6b7a49 100644
+--- a/django/db/models/query_utils.py
++++ b/django/db/models/query_utils.py
+@@ -168,2 +168 @@ class Q(tree.Node):
+-        from django.db.models import BooleanField, Value
+-        from django.db.models.functions import Coalesce
++        from django.db.models import Value
+@@ -181,4 +180 @@ class Q(tree.Node):
+-        if connection.features.supports_comparing_boolean_expr:
+-            query.add_q(Q(Coalesce(self, True, output_field=BooleanField())))
+-        else:
+-            query.add_q(self)
++        query.add_q(self)

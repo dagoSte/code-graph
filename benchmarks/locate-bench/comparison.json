@@ -1,0 +1,696 @@
+{
+  "assigned": 45,
+  "audits": {
+    "baseline": {
+      "errors": [
+        {
+          "cleanup_error": false,
+          "error_code": "locate_failed_or_invalid_receipt",
+          "exit_code": 1,
+          "status": "failed",
+          "task": "django-20942"
+        }
+      ],
+      "query_statuses": {
+        "failed": 1,
+        "passed": 44
+      },
+      "receipt_sha256": "f4bbee79f9950d15e3dc8540c7612be8242ee24318ff7128314b7ad2b6015819",
+      "scores_recomputed": 45,
+      "summary": {
+        "assigned": 45,
+        "callable_at_5": {
+          "any": 7,
+          "mapped_cases": 41,
+          "matched": 8,
+          "targets": 135
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 8,
+            "any": 10,
+            "cases": 44
+          },
+          "3": {
+            "all": 13,
+            "any": 17,
+            "cases": 44
+          },
+          "5": {
+            "all": 13,
+            "any": 17,
+            "cases": 44
+          }
+        },
+        "measured": 45,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 44,
+            "median": 55312.0,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 44,
+            "median": 3452.5,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    },
+    "candidate4000": {
+      "errors": [
+        {
+          "cleanup_error": false,
+          "error_code": "locate_failed_or_invalid_receipt",
+          "exit_code": 1,
+          "status": "failed",
+          "task": "django-20942"
+        }
+      ],
+      "query_statuses": {
+        "failed": 1,
+        "passed": 44
+      },
+      "receipt_sha256": "e48f2423b9e40e5abda2eb4e764b6404df237811bec4d65ee67ba5ecd133cdf5",
+      "scores_recomputed": 45,
+      "summary": {
+        "assigned": 45,
+        "callable_at_5": {
+          "any": 16,
+          "mapped_cases": 41,
+          "matched": 20,
+          "targets": 135
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 18,
+            "any": 23,
+            "cases": 44
+          },
+          "3": {
+            "all": 21,
+            "any": 28,
+            "cases": 44
+          },
+          "5": {
+            "all": 22,
+            "any": 28,
+            "cases": 44
+          }
+        },
+        "measured": 45,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 44,
+            "median": 119307.0,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 44,
+            "median": 3622.0,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    },
+    "candidate5000": {
+      "errors": [
+        {
+          "cleanup_error": false,
+          "error_code": "locate_failed_or_invalid_receipt",
+          "exit_code": 1,
+          "status": "failed",
+          "task": "django-20942"
+        }
+      ],
+      "query_statuses": {
+        "failed": 1,
+        "passed": 44
+      },
+      "receipt_sha256": "d3d6aa520cad1e90794c08acce5da38002371e5ecb53a687aa69bb418aa159d0",
+      "scores_recomputed": 45,
+      "summary": {
+        "assigned": 45,
+        "callable_at_5": {
+          "any": 16,
+          "mapped_cases": 41,
+          "matched": 20,
+          "targets": 135
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 18,
+            "any": 23,
+            "cases": 44
+          },
+          "3": {
+            "all": 21,
+            "any": 28,
+            "cases": 44
+          },
+          "5": {
+            "all": 23,
+            "any": 30,
+            "cases": 44
+          }
+        },
+        "measured": 45,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 44,
+            "median": 130079.0,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 44,
+            "median": 4166.0,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    }
+  },
+  "baseline_budget": 4000,
+  "baseline_commit": "aa1af2f8d131d53646b32c711b647ab3e99d04a7",
+  "by_repository": {
+    "django": {
+      "baseline": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 2,
+          "mapped_cases": 13,
+          "matched": 2,
+          "targets": 40
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 5,
+            "any": 5,
+            "cases": 15
+          },
+          "3": {
+            "all": 7,
+            "any": 8,
+            "cases": 15
+          },
+          "5": {
+            "all": 7,
+            "any": 8,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 14,
+            "median": 68363.0,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 14,
+            "median": 3392.5,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate4000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 3,
+          "mapped_cases": 13,
+          "matched": 3,
+          "targets": 40
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 5,
+            "any": 5,
+            "cases": 15
+          },
+          "3": {
+            "all": 6,
+            "any": 7,
+            "cases": 15
+          },
+          "5": {
+            "all": 7,
+            "any": 7,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 14,
+            "median": 131455.5,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 14,
+            "median": 3495.5,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate5000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 3,
+          "mapped_cases": 13,
+          "matched": 3,
+          "targets": 40
+        },
+        "failed": 1,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 5,
+            "any": 5,
+            "cases": 15
+          },
+          "3": {
+            "all": 6,
+            "any": 7,
+            "cases": 15
+          },
+          "5": {
+            "all": 8,
+            "any": 8,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 14,
+            "median": 167525.5,
+            "missing": 1
+          },
+          "returned_chars": {
+            "known": 14,
+            "median": 4136.0,
+            "missing": 1
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    },
+    "prometheus": {
+      "baseline": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 5,
+          "mapped_cases": 15,
+          "matched": 6,
+          "targets": 67
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 3,
+            "any": 5,
+            "cases": 15
+          },
+          "3": {
+            "all": 6,
+            "any": 9,
+            "cases": 15
+          },
+          "5": {
+            "all": 6,
+            "any": 9,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 147342,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 3409,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate4000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 7,
+          "mapped_cases": 15,
+          "matched": 8,
+          "targets": 67
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 5,
+            "any": 8,
+            "cases": 15
+          },
+          "3": {
+            "all": 7,
+            "any": 10,
+            "cases": 15
+          },
+          "5": {
+            "all": 7,
+            "any": 10,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 211203,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 3641,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate5000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 7,
+          "mapped_cases": 15,
+          "matched": 8,
+          "targets": 67
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 0,
+        "files_at": {
+          "1": {
+            "all": 5,
+            "any": 8,
+            "cases": 15
+          },
+          "3": {
+            "all": 7,
+            "any": 10,
+            "cases": 15
+          },
+          "5": {
+            "all": 7,
+            "any": 10,
+            "cases": 15
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 239234,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 4208,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    },
+    "typescript-eslint": {
+      "baseline": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 0,
+          "mapped_cases": 13,
+          "matched": 0,
+          "targets": 28
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 0,
+            "any": 0,
+            "cases": 14
+          },
+          "3": {
+            "all": 0,
+            "any": 0,
+            "cases": 14
+          },
+          "5": {
+            "all": 0,
+            "any": 0,
+            "cases": 14
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 8990,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 3551,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate4000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 6,
+          "mapped_cases": 13,
+          "matched": 9,
+          "targets": 28
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 8,
+            "any": 10,
+            "cases": 14
+          },
+          "3": {
+            "all": 8,
+            "any": 11,
+            "cases": 14
+          },
+          "5": {
+            "all": 8,
+            "any": 11,
+            "cases": 14
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 44971,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 3692,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      },
+      "candidate5000": {
+        "assigned": 15,
+        "callable_at_5": {
+          "any": 6,
+          "mapped_cases": 13,
+          "matched": 9,
+          "targets": 28
+        },
+        "failed": 0,
+        "file_ground_truth_missing": 1,
+        "files_at": {
+          "1": {
+            "all": 8,
+            "any": 10,
+            "cases": 14
+          },
+          "3": {
+            "all": 8,
+            "any": 11,
+            "cases": 14
+          },
+          "5": {
+            "all": 8,
+            "any": 12,
+            "cases": 14
+          }
+        },
+        "measured": 15,
+        "missing": 0,
+        "reading": {
+          "file_chars": {
+            "known": 15,
+            "median": 52953,
+            "missing": 0
+          },
+          "returned_chars": {
+            "known": 15,
+            "median": 4161,
+            "missing": 0
+          },
+          "upper_bound_answers": 0
+        }
+      }
+    }
+  },
+  "candidate_budgets": [
+    4000,
+    5000
+  ],
+  "candidate_commit": "bb6da5e4072f9d585d4d01c39d0c2d48a0975dfa",
+  "candidate_snapshot": "ceab8d0784e93f9746c8ef61d735cc28813d3c49119edaf03ffcc8493114168c",
+  "cases_sha256": "882570a3870e211eae012aaa4a588529c1c8b0b7feaeeeb83974536252486be0",
+  "declaration_targets": 135,
+  "file_ground_truth_known": 44,
+  "file_ground_truth_missing": 1,
+  "format": "codegraph-locate-comparison/1",
+  "ground_truth_dispositions_sha256": "700e76a0096627ff8b5c6a5528777ca6174b814c7cf540babad7a29172d02fb7",
+  "mapped_callable_cases": 41,
+  "models": 0,
+  "paired_comparisons": {
+    "baseline_to_candidate4000": {
+      "callable_any_at_5": {
+        "both_hit": 7,
+        "evaluable": 41,
+        "improved": 9,
+        "neither_hit": 25,
+        "regressed": 0
+      },
+      "files_any_at": {
+        "1": {
+          "both_hit": 10,
+          "evaluable": 44,
+          "improved": 13,
+          "neither_hit": 21,
+          "regressed": 0
+        },
+        "3": {
+          "both_hit": 16,
+          "evaluable": 44,
+          "improved": 12,
+          "neither_hit": 15,
+          "regressed": 1
+        },
+        "5": {
+          "both_hit": 16,
+          "evaluable": 44,
+          "improved": 12,
+          "neither_hit": 15,
+          "regressed": 1
+        }
+      }
+    },
+    "baseline_to_candidate5000": {
+      "callable_any_at_5": {
+        "both_hit": 7,
+        "evaluable": 41,
+        "improved": 9,
+        "neither_hit": 25,
+        "regressed": 0
+      },
+      "files_any_at": {
+        "1": {
+          "both_hit": 10,
+          "evaluable": 44,
+          "improved": 13,
+          "neither_hit": 21,
+          "regressed": 0
+        },
+        "3": {
+          "both_hit": 16,
+          "evaluable": 44,
+          "improved": 12,
+          "neither_hit": 15,
+          "regressed": 1
+        },
+        "5": {
+          "both_hit": 17,
+          "evaluable": 44,
+          "improved": 13,
+          "neither_hit": 14,
+          "regressed": 0
+        }
+      }
+    },
+    "candidate4000_to_candidate5000": {
+      "callable_any_at_5": {
+        "both_hit": 16,
+        "evaluable": 41,
+        "improved": 0,
+        "neither_hit": 25,
+        "regressed": 0
+      },
+      "files_any_at": {
+        "1": {
+          "both_hit": 23,
+          "evaluable": 44,
+          "improved": 0,
+          "neither_hit": 21,
+          "regressed": 0
+        },
+        "3": {
+          "both_hit": 28,
+          "evaluable": 44,
+          "improved": 0,
+          "neither_hit": 16,
+          "regressed": 0
+        },
+        "5": {
+          "both_hit": 28,
+          "evaluable": 44,
+          "improved": 2,
+          "neither_hit": 14,
+          "regressed": 0
+        }
+      }
+    }
+  },
+  "rule_sha256": "decc43b2ae8428338d5555bfe84bc841ecabfc14eacb4655e84001b2f90183d3",
+  "tool_sha256": "d4e6e23e77593fc0462ee1f33ae9e1f58eba64124d68c2472f68d7da0144921c"
+}

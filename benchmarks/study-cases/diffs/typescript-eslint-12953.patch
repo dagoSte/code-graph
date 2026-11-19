@@ -1,0 +1,40 @@
+diff --git a/packages/eslint-plugin/src/rules/prefer-optional-chain-utils/analyzeChain.ts b/packages/eslint-plugin/src/rules/prefer-optional-chain-utils/analyzeChain.ts
+index b9387c620..b145c18e7 100644
+--- a/packages/eslint-plugin/src/rules/prefer-optional-chain-utils/analyzeChain.ts
++++ b/packages/eslint-plugin/src/rules/prefer-optional-chain-utils/analyzeChain.ts
+@@ -22,0 +23 @@ import {
++  getConstrainedTypeAtLocation,
+@@ -59,0 +61,7 @@ function includesType(
++const MAYBE_UNDEFINED_FLAGS =
++  ts.TypeFlags.Any |
++  ts.TypeFlags.Unknown |
++  ts.TypeFlags.InstantiableNonPrimitive |
++  ts.TypeFlags.Undefined |
++  ts.TypeFlags.Void;
++
+@@ -65,2 +73,4 @@ function isValidAndLastChainOperand(
+-  const type = parserServices.getTypeAtLocation(ComparisonValueType);
+-  const ANY_UNKNOWN_FLAGS = ts.TypeFlags.Any | ts.TypeFlags.Unknown;
++  const type = getConstrainedTypeAtLocation(
++    parserServices,
++    ComparisonValueType,
++  );
+@@ -75 +85 @@ function isValidAndLastChainOperand(
+-          ANY_UNKNOWN_FLAGS | ts.TypeFlags.Null | ts.TypeFlags.Undefined,
++          MAYBE_UNDEFINED_FLAGS | ts.TypeFlags.Null,
+@@ -83 +93 @@ function isValidAndLastChainOperand(
+-        isTypeFlagSet(t, ANY_UNKNOWN_FLAGS | ts.TypeFlags.Undefined),
++        isTypeFlagSet(t, MAYBE_UNDEFINED_FLAGS),
+@@ -102,2 +112,4 @@ function isValidOrLastChainOperand(
+-  const type = parserServices.getTypeAtLocation(ComparisonValueType);
+-  const ANY_UNKNOWN_FLAGS = ts.TypeFlags.Any | ts.TypeFlags.Unknown;
++  const type = getConstrainedTypeAtLocation(
++    parserServices,
++    ComparisonValueType,
++  );
+@@ -112 +124 @@ function isValidOrLastChainOperand(
+-          ANY_UNKNOWN_FLAGS | ts.TypeFlags.Null | ts.TypeFlags.Undefined,
++          MAYBE_UNDEFINED_FLAGS | ts.TypeFlags.Null,
+@@ -120 +132 @@ function isValidOrLastChainOperand(
+-        isTypeFlagSet(t, ANY_UNKNOWN_FLAGS | ts.TypeFlags.Undefined),
++        isTypeFlagSet(t, MAYBE_UNDEFINED_FLAGS),

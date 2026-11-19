@@ -1,0 +1,54 @@
+{
+  "description": "Synthetic retrieval cases, separate from unit fixtures; expected symbols are declared relevance judgments, not runtime or whole-task correctness.",
+  "projects": [
+    {
+      "id": "purchase",
+      "sources": {
+        "checkout.py": "from ledger import record_adjustment\ndef void_purchase():\n    \"\"\"Cancel order.\"\"\"\n    return record_adjustment()\n",
+        "ledger.py": "def record_adjustment():\n    \"\"\"Append audit entry.\"\"\"\n    return 1\n",
+        "preview.py": "def obsolete_cancel_order(): return 'preview only'\n",
+        "tests/test_checkout.py": "from checkout import void_purchase\ndef test_reversal(): return void_purchase()\n"
+      },
+      "queries": [
+        {"text": "cancel order", "relevant": ["checkout.py:void_purchase", "ledger.py:record_adjustment", "tests/test_checkout.py:test_reversal"]},
+        {"text": "audit entry", "relevant": ["ledger.py:record_adjustment", "checkout.py:void_purchase"]},
+        {"text": "nonexistent quasar", "relevant": []}
+      ]
+    },
+    {
+      "id": "settings",
+      "sources": {
+        "settings.py": "from decoder import decode_value\ndef load_settings():\n    \"\"\"Parse config.\"\"\"\n    return decode_value()\n",
+        "decoder.py": "def decode_value(): return 1\n",
+        "unrelated.py": "def write_record(): return 2\n"
+      },
+      "queries": [{"text": "parse config", "relevant": ["settings.py:load_settings", "decoder.py:decode_value"]}]
+    },
+    {
+      "id": "typescript",
+      "sources": {
+        "api.ts": "import { sendWire } from './transport';\nexport function startHTTPServer() { return sendWire(); }\n",
+        "transport.ts": "export function sendWire() { return 1; }\n"
+      },
+      "queries": [
+        {"text": "HTTPServer", "relevant": ["api.ts:startHTTPServer", "transport.ts:sendWire"]},
+        {"text": "sendWire", "relevant": ["transport.ts:sendWire", "api.ts:startHTTPServer"]}
+      ]
+    },
+    {
+      "id": "php",
+      "sources": {
+        "actions.php": "<?php namespace Billing; use function Ledger\\append; function cancel_invoice(){ return append(); }\n",
+        "ledger.php": "<?php namespace Ledger; function append(){ return 1; }\n"
+      },
+      "queries": [{"text": "cancel invoice", "relevant": ["actions.php:cancel_invoice", "ledger.php:append"]}]
+    },
+    {
+      "id": "callback",
+      "sources": {
+        "lifecycle.py": "import atexit\ndef exit_cleanup():\n    \"\"\"Release lock.\"\"\"\n    pass\ndef bind_shutdown():\n    atexit.register(exit_cleanup)\n"
+      },
+      "queries": [{"text": "release lock", "relevant": ["lifecycle.py:exit_cleanup", "lifecycle.py:bind_shutdown"]}]
+    }
+  ]
+}

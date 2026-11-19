@@ -1,0 +1,45 @@
+diff --git a/packages/eslint-plugin/src/rules/no-confusing-void-expression.ts b/packages/eslint-plugin/src/rules/no-confusing-void-expression.ts
+index fcd7567db..74917ef73 100644
+--- a/packages/eslint-plugin/src/rules/no-confusing-void-expression.ts
++++ b/packages/eslint-plugin/src/rules/no-confusing-void-expression.ts
+@@ -410 +410,39 @@ export default createRule<Options, MessageId>({
+-      return tsutils.isTypeFlagSet(type, ts.TypeFlags.VoidLike);
++      if (!tsutils.isTypeFlagSet(type, ts.TypeFlags.VoidLike)) {
++        return false;
++      }
++
++      const functionNode = nullThrows(
++        node.type === AST_NODE_TYPES.ArrowFunctionExpression
++          ? node
++          : getParentFunctionNode(node),
++        'Expected a return statement to be inside a function.',
++      );
++      return functionDeclarationAllowsEmptyReturn(functionNode);
++    }
++
++    function functionDeclarationAllowsEmptyReturn(
++      functionNode:
++        | TSESTree.ArrowFunctionExpression
++        | TSESTree.FunctionDeclaration
++        | TSESTree.FunctionExpression,
++    ): boolean {
++      if (!functionNode.returnType) {
++        return true;
++      }
++
++      const declaredReturnType = services.getTypeFromTypeNode(
++        functionNode.returnType.typeAnnotation,
++      );
++
++      const checker = services.program.getTypeChecker();
++      const resolvedReturnType = functionNode.async
++        ? (checker.getAwaitedType(declaredReturnType) ?? declaredReturnType)
++        : declaredReturnType;
++
++      return tsutils
++        .unionConstituents(resolvedReturnType)
++        .some(
++          part =>
++            tsutils.isTypeFlagSet(part, ts.TypeFlags.Any) ||
++            tsutils.isTypeFlagSet(part, ts.TypeFlags.VoidLike),
++        );

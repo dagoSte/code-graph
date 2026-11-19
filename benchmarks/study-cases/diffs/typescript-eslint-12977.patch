@@ -1,0 +1,9 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unused-vars.ts b/packages/eslint-plugin/src/rules/no-unused-vars.ts
+index 93b786440..4ac11bad3 100644
+--- a/packages/eslint-plugin/src/rules/no-unused-vars.ts
++++ b/packages/eslint-plugin/src/rules/no-unused-vars.ts
+@@ -967 +967,3 @@ export default createRule<Options, MessageIds>({
+-          v => v.references.length > 0 || v.eslintUsed,
++          v =>
++            v.eslintUsed ||
++            v.references.some(ref => !isTypeOnlyReference(v, ref)),

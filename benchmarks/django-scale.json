@@ -1,0 +1,26 @@
+{
+ "format": "codegraph-scale-django/1",
+ "date": "2026-11-14",
+ "project": "django at the parent of PR #20959 plus a one-file mechanical edit (2,918 indexed files)",
+ "machine": "macOS ARM64, Python 3.13, running desktop; single observations",
+ "engines": {
+  "before": "39e8f82 (scan of every Python module per binding; review re-indexes the base from scratch)",
+  "after": "be4b113 / main (indexed module lookup, seeded base snapshot, bisected budget)"
+ },
+ "full_index_seconds": {
+  "before": 98.5,
+  "after": 17.6
+ },
+ "facts_identical": {
+  "symbols": 45312,
+  "edges": 107515,
+  "files": 2918,
+  "equal": true
+ },
+ "review_base_seconds": {
+  "before": ">600 (stopped by the study harness limit)",
+  "after": 40.7
+ },
+ "review_answer": "identical except content_revision/workspace_revision; after the English translation of messages only translated texts differ",
+ "reviewed_by": "codex2-read (task PERF-review-scale, accepted)"
+}

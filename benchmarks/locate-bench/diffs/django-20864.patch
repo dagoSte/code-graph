@@ -1,0 +1,12 @@
+diff --git a/django/db/models/functions/comparison.py b/django/db/models/functions/comparison.py
+index 8f7493f2fd..5827925e6e 100644
+--- a/django/db/models/functions/comparison.py
++++ b/django/db/models/functions/comparison.py
+@@ -89,3 +89,4 @@ class Coalesce(Func):
+-        # Oracle prohibits mixing TextField (NCLOB) and CharField (NVARCHAR2),
+-        # so convert all fields to NCLOB when that type is expected.
+-        if self.output_field.get_internal_type() == "TextField":
++        # Oracle prohibits mixing TextField, JSONField (NCLOB) and CharField
++        # (NVARCHAR2), so convert all fields to NCLOB when that type is
++        # expected.
++        if self.output_field.get_internal_type() in ("TextField", "JSONField"):

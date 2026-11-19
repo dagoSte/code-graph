@@ -1,0 +1,132 @@
+{
+  "format": "codegraph-study-selection/4",
+  "cutoff_exclusive_utc": "2026-11-01T00:00:00Z",
+  "repositories": [
+    {
+      "id": "django",
+      "github": "django/django",
+      "language": "python",
+      "source_root": "django/",
+      "extensions": [
+        ".py"
+      ],
+      "issue_tracker": "https://code.djangoproject.com/ticket/",
+      "fallback_if_repository_gate_fails": "bokeh/bokeh"
+    },
+    {
+      "id": "typescript-eslint",
+      "github": "typescript-eslint/typescript-eslint",
+      "language": "typescript",
+      "source_root": "packages/",
+      "extensions": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    {
+      "id": "prometheus",
+      "github": "prometheus/prometheus",
+      "language": "go",
+      "source_root": "",
+      "extensions": [
+        ".go"
+      ]
+    }
+  ],
+  "repository_gate": {
+    "reference": "latest default-branch commit strictly before cutoff",
+    "minimum_production_source_files": 300,
+    "excluded_path_components": [
+      "tests",
+      "test",
+      "testdata",
+      "__tests__",
+      "fixtures",
+      "vendor",
+      "node_modules",
+      "testRunner",
+      "harness"
+    ],
+    "excluded_file_names": [
+      "test_*.py",
+      "*_test.go",
+      "*.test.ts",
+      "*.spec.ts"
+    ],
+    "licenses": [
+      "MIT",
+      "BSD-2-Clause",
+      "BSD-3-Clause",
+      "Apache-2.0",
+      "ISC"
+    ],
+    "license_check": "actual license text controls; read GitHub SPDX metadata too, but NOASSERTION alone is not rejection if actual permissive license verified",
+    "environment": "isolated host environment, pinned toolchain, preinstalled dependencies, tests run without network or external services",
+    "on_failure": "record the failed criterion and stop that repository; no replacement or relaxed threshold",
+    "large_production_file_fraction_max_exclusive": 0.01,
+    "large_file_bytes": 1000000
+  },
+  "pool": {
+    "count_per_repository": 500,
+    "query": "repo:{github} is:pr is:merged merged:<2026-11-01",
+    "search_sort": "created",
+    "search_order": "desc",
+    "tie_break": "number descending",
+    "extension": "If fewer than eight eligible cases, process the preceding block of500 in the same created/number order, up to1500 total; record the new rule before fetching extension metadata. No criterion changes.",
+    "maximum_count_per_repository": 1500
+  },
+  "eligibility": {
+    "production_source_files_touched_min": 1,
+    "production_source_files_touched_max": 3,
+    "other_production_language_changes": "reject",
+    "test_files_added_or_modified": true,
+    "issue": "Django: official code.djangoproject.com/ticket/N URL or Fixed/Refs #N in PR body; other repos: Fixes/Closes/Resolves same-repository GitHub issue in PR body. Ignore HTML comments, smallest linked number.",
+    "intent": "original linked issue title and body, no historical fix description or production diff",
+    "parent": "first parent of merged commit",
+    "hidden_tests": "changed or added test cases, including parameter variants; historical test-only patch applied externally",
+    "red_green": "one or more assertion failures on parent and all hidden tests pass on fix; identical nonzero case count; no setup/build/collection error, skip or timeout",
+    "public_smoke": "up to five existing unchanged test cases in the affected test modules, sorted qualified name, excluding hidden cases; nonempty and all pass on parent and fix",
+    "test_seconds_per_run": 600,
+    "issue_is_bug": "Django Trac type=Bug; GitHub issue type=Bug or case-insensitive label bug,kind/bug,type:bug,type: bug,type / bug, or a label starting bug:. Unlabelled/new-feature issues do not qualify."
+  },
+  "take_per_repository": 8,
+  "selection": "first eight qualifying PRs per repository in fixed order, extending only as preregistered; retain every rejection. At1500 stop that repository and retain its count; live study requires at least20 total bugs across all3 repositories, otherwise declared stop.",
+  "toolchains": {
+    "python": "3.13.14",
+    "node": "26.6.0",
+    "npm": "12.1.0",
+    "go": "go1.27.4 darwin/arm64"
+  },
+  "evidence_access": "both arms get identical text_search and file reading; assisted arm additionally gets code-graph; no model shell or network",
+  "engine": "supplied through --skill-root and frozen only after the engine lanes are accepted; never copy it into the bank",
+  "observation_policy": "no provider/model calls in S0; selection rule registered before fetching PR metadata; protocol/cases/harness independently accepted before a separately authorized live phase",
+  "live_caps": {
+    "max_starts": 144,
+    "max_reviews": 48,
+    "review_usd": 0.6,
+    "total_claude_reported_usd": 30,
+    "call_seconds": 600,
+    "retry": false,
+    "edit_rounds": 1,
+    "authorization": "a separately assigned live phase after protocol/harness/cases acceptance and final engine freeze"
+  },
+  "prior_rule_sha256": "6620be91fb2da4d58ce93c53ddb8129d23145141ccde650f0aacd7ff6eafe375",
+  "authorized_decisions": [
+    "s0-tetti-studio",
+    "s0-python-sostituto",
+    "s0-pool-esteso"
+  ],
+  "candidate_history": [
+    {
+      "github": "networkx/networkx",
+      "status": "stopped_before_PR_metadata",
+      "reason": "290 production .py files under the fixed rule, below300; actual BSD-3-Clause license read despite GitHub NOASSERTION"
+    },
+    {
+      "github": "microsoft/TypeScript",
+      "status": "excluded_before_PR_metadata_by_coordinator",
+      "reason": "coordinator requires a representative indexable repository; compiler files over1MB are omitted by code-graph; initial recursive API was truncated and current reference has no src/"
+    }
+  ],
+  "minimum_total_cases": 20
+}

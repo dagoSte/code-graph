@@ -1,0 +1,582 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "java/type_import",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; import lib.Ops; public class App {\nstatic String drive(){return Ops.leaf();}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "lib/Ops.java": "package lib; public class Ops {public static String leaf(){return \"[[\\\"lib/Ops.java\\\",\\\"Ops.leaf\\\"]]\";}}\n"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java"
+      ],
+      "targets": [
+        [
+          "lib/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "e5dbc7d2013660c80d7d5f58396ab4cf7f52ae5d259708d5eede2de7868e4b2a",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "1178cb51076298928edafd516eae9eb9d7af2b66f1bb70017e20ce0746795282"
+    },
+    {
+      "id": "java/qualified_type",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; public class App {\nstatic String drive(){return lib.Ops.leaf();}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "lib/Ops.java": "package lib; public class Ops {public static String leaf(){return \"[[\\\"lib/Ops.java\\\",\\\"Ops.leaf\\\"]]\";}}\n"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java"
+      ],
+      "targets": [
+        [
+          "lib/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "99f3abef23bd430f3132592f6d76dd7d35b8576ad09bc43c6acc3bf5d6f4c137",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "6f606b767318d528b119211631c1fab7c2c021af819ce0bdbae19abf8af50e29"
+    },
+    {
+      "id": "java/same_package",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; public class App {\nstatic String drive(){return Ops.leaf();}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "app/Ops.java": "package app; class Ops{static String leaf(){return \"[[\\\"app/Ops.java\\\",\\\"Ops.leaf\\\"]]\";}}"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "app/Ops.java"
+      ],
+      "targets": [
+        [
+          "app/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "4f7d3cdfd1ac9de0409cd676e0205e5fdff3ed278e4eab75a6bb31f62907229f",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "0f0a4527eb518ed1e323ade69ae7e89a55cb5296fa4fe86e2262a1d1380bf50e"
+    },
+    {
+      "id": "java/static_import",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; import static lib.Ops.leaf; public class App {\nstatic String drive(){return leaf();}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "lib/Ops.java": "package lib; public class Ops {public static String leaf(){return \"[[\\\"lib/Ops.java\\\",\\\"Ops.leaf\\\"]]\";}}\n"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java"
+      ],
+      "targets": [
+        [
+          "lib/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "48bcd285eac7f97e33226902ae1d166752926d5aa5154a0090d18796780446d7",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "771aaedc8f22454795e3f2e6eb1490cb3342ffd3ba4461998a9ed8b7320e4453"
+    },
+    {
+      "id": "java/private_lexical",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; public class App {\nprivate String leaf(){return \"[[\\\"app/App.java\\\",\\\"App.leaf\\\"]]\";}\nString drive(){return this.leaf();}\npublic static void main(String[]args){System.out.println(new App().drive());}}"
+      },
+      "required_indexed": [
+        "app/App.java"
+      ],
+      "targets": [
+        [
+          "app/App.java",
+          "App.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            3,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app/App.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "d96cb01e53d3750a7bee327f531fef391dc3f1778a9854e66f53892ad23e3bde",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app/App.java\",\"App.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "5513d19b645efae8af853fd2c16a0ee58f8b46dcc5b1bb073ddf95f134f345f8"
+    },
+    {
+      "id": "java/final_lexical",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; public final class App {\nfinal String leaf(){return \"[[\\\"app/App.java\\\",\\\"App.leaf\\\"]]\";}\nString drive(){return this.leaf();}\npublic static void main(String[]args){System.out.println(new App().drive());}}"
+      },
+      "required_indexed": [
+        "app/App.java"
+      ],
+      "targets": [
+        [
+          "app/App.java",
+          "App.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            3,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app/App.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "8a5ef1b18b6e689492a868b66f793c77e7117fd15a40949a26b4615e5ba33100",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app/App.java\",\"App.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "340a53fa7de1c77e5e0e0479534e29e0e0dd7e88fe2c77eba2f669286e446a59"
+    },
+    {
+      "id": "java/method_namespace",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; public class App {\nstatic String leaf(){return \"[[\\\"app/App.java\\\",\\\"App.leaf\\\"]]\";}\nstatic String drive(){int leaf=42;return leaf();}\npublic static void main(String[]args){System.out.println(new App().drive());}}"
+      },
+      "required_indexed": [
+        "app/App.java"
+      ],
+      "targets": [
+        [
+          "app/App.java",
+          "App.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            3,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "app/App.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "1301f1c45337a3ff50cf467673dbda3658f794c870a39218ec3cef6de307108a",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"app/App.java\",\"App.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "ff02852ea2b8f51abbd4a9015c518917e6abb232c58f56ca05d3e9d916c4dccf"
+    },
+    {
+      "id": "java/method_reference",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; import lib.Ops; public class App {\nstatic String drive(){java.util.function.Supplier<String> f=Ops::leaf;return f.get();}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "lib/Ops.java": "package lib; public class Ops {public static String leaf(){return \"[[\\\"lib/Ops.java\\\",\\\"Ops.leaf\\\"]]\";}}\n"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java"
+      ],
+      "targets": [
+        [
+          "lib/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "083524dc32e7753eb61fdb8d4741270ea78bde9835fcdcccff3802ae407e6237",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "bf5a631e4e61f002da34f75eea3cb9e508d08b1675c53af36f4df4052b0a0f16"
+    },
+    {
+      "id": "java/overload_abstention",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; import lib.Ops; public class App {\nstatic String drive(){return Ops.leaf(1);}\npublic static void main(String[] args){System.out.println(drive());}}\n",
+        "lib/Ops.java": "package lib; public class Ops{public static String leaf(int x){return \"[[\\\"lib/Ops.java\\\",\\\"Ops.leaf\\\"]]\";} public static String leaf(String x){return \"wrong\";}}"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java"
+      ],
+      "targets": [
+        [
+          "lib/Ops.java",
+          "Ops.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "488f0d81c3bff73fdb27c2c6bcfd7709396e9e67073eb51f95405fc14ba3646e",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Ops.java\",\"Ops.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "cef96326f834dbd972d2f38621bfce3e37c06761fe97522d1c8903e2d0c8cd6a"
+    },
+    {
+      "id": "java/virtual_abstention",
+      "language": "java",
+      "files": {
+        "app/App.java": "package app; import lib.Ops; public class App {\nstatic String drive(Ops value){return value.leaf();}\npublic static void main(String[]args){System.out.println(drive(new lib.Other()));}}",
+        "lib/Ops.java": "package lib; public class Ops {public String leaf(){return \"wrong\";}}",
+        "lib/Other.java": "package lib; public class Other extends Ops {public String leaf(){return \"[[\\\"lib/Other.java\\\",\\\"Other.leaf\\\"]]\";}}"
+      },
+      "required_indexed": [
+        "app/App.java",
+        "lib/Ops.java",
+        "lib/Other.java"
+      ],
+      "targets": [
+        [
+          "lib/Other.java",
+          "Other.leaf"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "call"
+        ],
+        "sites": [
+          [
+            "app/App.java",
+            "App.drive",
+            2,
+            "leaf",
+            "call"
+          ]
+        ],
+        "target_files": [
+          "lib/Ops.java",
+          "lib/Other.java"
+        ]
+      },
+      "baseline": {
+        "status": "abstention"
+      },
+      "protocol": "java-targets",
+      "source_sha256": "ef951217882b220bbcdb1119a1de5aff1d62879e2a2cf6616a7c3e8e6b0b7386",
+      "native": {
+        "args": [
+          "app.App"
+        ],
+        "exit": 0,
+        "stdout": "[[\"lib/Other.java\",\"Other.leaf\"]]\n",
+        "stderr": "",
+        "version": "OpenJDK21.0.2 --release17",
+        "toolchain_archive_sha256": "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4",
+        "compiler_flags": [
+          "--release",
+          "17",
+          "-proc:none",
+          "-implicit:none",
+          "isolated-classpath-and-sourcepath"
+        ]
+      },
+      "evidence_sha256": "7d65d09a015945adddbe7256f3d946d5e4d890720bdd0f4deff165a99bfe06fd"
+    }
+  ]
+}

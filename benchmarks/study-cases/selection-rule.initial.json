@@ -1,0 +1,46 @@
+{
+  "format": "codegraph-study-selection/1",
+  "cutoff_exclusive_utc": "2026-11-01T00:00:00Z",
+  "repositories": [
+    {"id": "networkx", "github": "networkx/networkx", "language": "python", "source_root": "networkx/", "extensions": [".py"]},
+    {"id": "typescript", "github": "microsoft/TypeScript", "language": "typescript", "source_root": "src/", "extensions": [".ts", ".tsx"]},
+    {"id": "prometheus", "github": "prometheus/prometheus", "language": "go", "source_root": "", "extensions": [".go"]}
+  ],
+  "repository_gate": {
+    "reference": "latest default-branch commit strictly before cutoff",
+    "minimum_production_source_files": 300,
+    "excluded_path_components": ["tests", "test", "testdata", "__tests__", "fixtures", "vendor", "node_modules", "testRunner", "harness"],
+    "excluded_file_names": ["test_*.py", "*_test.go", "*.test.ts", "*.spec.ts"],
+    "licenses": ["MIT", "BSD-2-Clause", "BSD-3-Clause", "Apache-2.0", "ISC"],
+    "license_check": "read the repository license as well as its GitHub SPDX metadata",
+    "environment": "isolated host environment, pinned toolchain, preinstalled dependencies, tests run without network or external services",
+    "on_failure": "record the failed criterion and stop that repository; no replacement or relaxed threshold"
+  },
+  "pool": {
+    "count_per_repository": 500,
+    "query": "repo:{github} is:pr is:merged merged:<2026-11-01",
+    "search_sort": "created",
+    "search_order": "desc",
+    "tie_break": "number descending"
+  },
+  "eligibility": {
+    "production_source_files_touched_min": 1,
+    "production_source_files_touched_max": 3,
+    "other_production_language_changes": "reject",
+    "test_files_added_or_modified": true,
+    "issue": "Fixes/Closes/Resolves same-repository issue in PR body, ignoring HTML comments; smallest issue number if several",
+    "intent": "original linked issue title and body, no historical fix description or production diff",
+    "parent": "first parent of merged commit",
+    "hidden_tests": "changed or added test cases, including parameter variants; historical test-only patch applied externally",
+    "red_green": "one or more assertion failures on parent and all hidden tests pass on fix; identical nonzero case count; no setup/build/collection error, skip or timeout",
+    "public_smoke": "up to five existing unchanged test cases in the affected test modules, sorted qualified name, excluding hidden cases; nonempty and all pass on parent and fix",
+    "test_seconds_per_run": 600
+  },
+  "take_per_repository": 8,
+  "selection": "first eight qualifying PRs in fixed pool order; retain every rejection and its reason; stop on pool exhaustion, never extend or repick after outcomes",
+  "toolchains": {"python": "3.13.14", "node": "26.6.0", "npm": "12.1.0", "go": "go1.27.4 darwin/arm64"},
+  "evidence_access": "both arms get identical text_search and file reading; assisted arm additionally gets code-graph; no model shell or network",
+  "engine": "supplied through --skill-root and frozen only after the engine lanes are accepted; never copy it into the bank",
+  "observation_policy": "no provider/model calls in S0; selection rule registered before fetching PR metadata; protocol/cases/harness independently accepted before a separately authorized live phase",
+  "live_caps": "pending coordinator reconciliation: 24 bugs x two arms x three phases need 144 starts, incompatible with scope's 60; Claude reported total remains <=30 USD"
+}

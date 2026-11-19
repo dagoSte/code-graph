@@ -1,0 +1,62 @@
+{
+  "engine_version": "1.4.0",
+  "analysis_code_sha256": {
+    "agent_queries.py": "5f7205314ba0cba33bb366b938f0955df07f9a7eba72bb316cf7f66c9b4d72a3",
+    "architecture.py": "f295183f57b4b18ce3cefdbcb120dd2f1cd2737134ee105775c566007f3c2b5c",
+    "cg.py": "5e2a096f2eea9c8d199f95c2a825c5ddd408defe00b27716434681362441ee72",
+    "change_analysis.py": "6a4d6d3e8133234e8ad6e7cf00ad0378f9ca3d1872a8ba6e0ac1dc1dadf27650",
+    "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "evidence.py": "de8380abbd9b1452f44027ecb757c34f59574e1893460f5189c17c7367e8e330",
+    "project_data.py": "5ff97dd53e46c47f4de192d25f1eccc8b6f7fa4c81604bb3612ef6ce8a097f09",
+    "workbench.py": "9e8c8f4f6d0198e3e58dd471021a2af41c2d0f1fe3fa7fc53a5595c1464948e4"
+  },
+  "engine_sha256": "5e2a096f2eea9c8d199f95c2a825c5ddd408defe00b27716434681362441ee72",
+  "fixture": {
+    "indexed_files": 2,
+    "test_functions": 12,
+    "work_assignment_lines": 240,
+    "source_executed": false
+  },
+  "context": {
+    "requested_estimated_tokens": 250,
+    "output_characters_including_footer": 976,
+    "output_utf8_bytes": 979,
+    "body_truncated": true,
+    "callers_section_present": true,
+    "callees_section_present": true
+  },
+  "impact": {
+    "items": 13,
+    "test_items": 12,
+    "chain_snippet_references": 25,
+    "source_snippet_occurrences": 13,
+    "unique_source_snippets": 13,
+    "repeated_source_snippet_occurrences": 0
+  },
+  "detail": {
+    "fields": [
+      "id",
+      "name",
+      "kind",
+      "line",
+      "end_line",
+      "signature",
+      "file",
+      "language",
+      "revision",
+      "content_revision",
+      "role",
+      "pages",
+      "source",
+      "references",
+      "references_truncated"
+    ],
+    "json_utf8_bytes": 11126,
+    "source_lines": 200,
+    "source_truncated": true
+  },
+  "index": {
+    "no_source_changes": true,
+    "revision_changed_on_noop": false
+  }
+}

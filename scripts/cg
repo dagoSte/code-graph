@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+CG_SKILL_DIR="$(cd -- "$(dirname -- "$0")/.." && pwd)"
+if [[ ! -x "$CG_SKILL_DIR/.venv/bin/python" ]]; then
+  printf '%s\n' "Environment missing: run bash $CG_SKILL_DIR/scripts/setup.sh" >&2
+  exit 1
+fi
+exec "$CG_SKILL_DIR/.venv/bin/python" -I "$CG_SKILL_DIR/scripts/cg.py" "$@"

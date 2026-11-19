@@ -1,0 +1,616 @@
+{
+  "format": "codegraph-scale/1",
+  "source_execution": false,
+  "test_execution": false,
+  "environment": {
+    "python": "3.13.14",
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "engine_files": {
+    "agent_queries.py": "24256c4910917041e6b0764a571dd718e9e593485f484a4b20f3c58e80170649",
+    "agents.py": "f0a3d7faa457b42fab4008f4e542088c045b947f9fc065d7e5c7eab9d664be15",
+    "architecture.py": "473c6cce28ee1e7390c10ef68d3ecbc0888b309a4cadf72e4378e9a8cb075db7",
+    "catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "cg.py": "89337eee72d1e12e3659f35ec6085cafc335ff0f8afe70754a3b22e2043c1cb9",
+    "change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+    "change_flow.py": "e34a7e3a357dfac98c70564ab559c46331011187a3cdd96b198a30ef339d60a1",
+    "change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "evidence.py": "e8b5b2e436cf1efb6a145d7fdb3c01ecbf4e9a4729851f4a6ff171e1b23cd04e",
+    "feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+    "features.py": "c2d4176d97399524da6d1bbc077b4d15e2fa370994d13cc1036968d7b1cc9af7",
+    "language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "language_go.py": "9cc107faaf64c7549642c9ede3fdccde8caa2d333c80421ac4053e3264d163db",
+    "language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "language_sql.py": "8f47857e066a878fa9b093e968b477e9df52997cd3890ec5e581dbc6267834a8",
+    "language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "mcp_server.py": "da6e175f7bb431fe7f2cbf3f3c56c1a5edcf785eb79f97b9860690b76a6d25b4",
+    "project_data.py": "4c426220b00f33a0952d34320a1f286e7430259d60d0c3f6154878442c099108",
+    "search.py": "fb2d7ac5ffb7210e6aa12b93dddecc5b7480c6f6699b1d1b4b7aeb59ce9eb496",
+    "source_windows.py": "20bed3fe0ba5d8a242fd81d69f97a47b9d7e946ef0f2f591f3d665dcfb23df79",
+    "workbench.py": "be716c0dbfe92b33f33901b7f5175cd857ed375973a5b9b7fa228a43c0bad358"
+  },
+  "methodology": "One full/noop/incremental index per frozen workload; three warm query samples. Constructor counting is instrumented. No cache flush or statistical significance claim.",
+  "workloads": [
+    {
+      "label": "generated-10000",
+      "kind": "generated",
+      "target_lines": 10000,
+      "actual_source_lines": 10000,
+      "expected": {
+        "definitions": 3328,
+        "calls": 2145,
+        "resolved_calls": 2145
+      },
+      "input": {
+        "files": 63,
+        "excluded_from_copy": 0,
+        "source_lines": 10000,
+        "bytes": 263675,
+        "source_snapshot_sha256": "ad437d3a054c7bed2a59c0535ef223f4e6c7851ac418f58cedffa09ba0e6f7a4"
+      },
+      "measurement": {
+        "phases": {
+          "full": {
+            "seconds": 0.3624,
+            "parsed_files": 62,
+            "content_revision": "73d166de10aa180bc20b6cdcb93641dc57d37909d5d528dd6b59fac763368e96",
+            "counts": {
+              "files": 62,
+              "definitions": 3328,
+              "calls": 2145,
+              "resolved_calls": 2145,
+              "partial_files": 0,
+              "languages": {
+                "dart": 8,
+                "go": 8,
+                "java": 8,
+                "php": 8,
+                "python": 8,
+                "sql": 7,
+                "swift": 7,
+                "typescript": 8
+              }
+            }
+          },
+          "noop": {
+            "seconds": 0.1055,
+            "parsed_files": 0,
+            "content_revision": "73d166de10aa180bc20b6cdcb93641dc57d37909d5d528dd6b59fac763368e96",
+            "counts": {
+              "files": 62,
+              "definitions": 3328,
+              "calls": 2145,
+              "resolved_calls": 2145,
+              "partial_files": 0,
+              "languages": {
+                "dart": 8,
+                "go": 8,
+                "java": 8,
+                "php": 8,
+                "python": 8,
+                "sql": 7,
+                "swift": 7,
+                "typescript": 8
+              }
+            }
+          },
+          "one_file_change": {
+            "seconds": 0.1283,
+            "parsed_files": 1,
+            "content_revision": "959a97c4614ae545a9568f5d472620df542cb2a16c3e28df631c87b0757c5b4a",
+            "counts": {
+              "files": 62,
+              "definitions": 3328,
+              "calls": 2145,
+              "resolved_calls": 2145,
+              "partial_files": 0,
+              "languages": {
+                "dart": 8,
+                "go": 8,
+                "java": 8,
+                "php": 8,
+                "python": 8,
+                "sql": 7,
+                "swift": 7,
+                "typescript": 8
+              }
+            }
+          }
+        },
+        "source_execution": false,
+        "test_execution": false,
+        "completed": true,
+        "noop_content_revision_stable": true,
+        "noop_parsed_nothing": true,
+        "incremental_parsed_one": true,
+        "query": "bench960",
+        "queries": {
+          "lexical": {
+            "milliseconds": [
+              28.883,
+              30.735,
+              32.412
+            ],
+            "median_ms": 30.735,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          },
+          "hybrid": {
+            "milliseconds": [
+              30.72,
+              30.774,
+              31.274
+            ],
+            "median_ms": 30.774,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          }
+        },
+        "query_scope": "fresh readonly reader open, source/config checks, search and close; warm OS cache; excludes HTTP",
+        "peak_worker_rss_bytes": 62832640,
+        "peak_memory_scope": "worker lifetime, includes engine loading, indexing and queries",
+        "engine_version": "1.6.5",
+        "sqlite_version": "3.54.1"
+      },
+      "synthetic_counts_match": true
+    },
+    {
+      "label": "generated-100000",
+      "kind": "generated",
+      "target_lines": 100000,
+      "actual_source_lines": 100110,
+      "expected": {
+        "definitions": 34278,
+        "calls": 21294,
+        "resolved_calls": 21294
+      },
+      "input": {
+        "files": 624,
+        "excluded_from_copy": 0,
+        "source_lines": 100110,
+        "bytes": 2699723,
+        "source_snapshot_sha256": "0ec9f4f66ea6c43e8b3fbaf756d6aa7b8a58f41166485a7a51a3554d3d263e62"
+      },
+      "measurement": {
+        "phases": {
+          "full": {
+            "seconds": 2.4872,
+            "parsed_files": 623,
+            "content_revision": "4fbf03045a80c8cc5fd87dc3722745fd97be6f3c6b71b05a75df91a0ff15565c",
+            "counts": {
+              "files": 623,
+              "definitions": 34278,
+              "calls": 21294,
+              "resolved_calls": 21294,
+              "partial_files": 0,
+              "languages": {
+                "dart": 78,
+                "go": 78,
+                "java": 78,
+                "php": 78,
+                "python": 78,
+                "sql": 77,
+                "swift": 78,
+                "typescript": 78
+              }
+            }
+          },
+          "noop": {
+            "seconds": 0.2108,
+            "parsed_files": 0,
+            "content_revision": "4fbf03045a80c8cc5fd87dc3722745fd97be6f3c6b71b05a75df91a0ff15565c",
+            "counts": {
+              "files": 623,
+              "definitions": 34278,
+              "calls": 21294,
+              "resolved_calls": 21294,
+              "partial_files": 0,
+              "languages": {
+                "dart": 78,
+                "go": 78,
+                "java": 78,
+                "php": 78,
+                "python": 78,
+                "sql": 77,
+                "swift": 78,
+                "typescript": 78
+              }
+            }
+          },
+          "one_file_change": {
+            "seconds": 0.4173,
+            "parsed_files": 1,
+            "content_revision": "0ab4c5f1eac9c35409857f10c12731a4f453131f154e65d760f6f054fc0bfee1",
+            "counts": {
+              "files": 623,
+              "definitions": 34278,
+              "calls": 21294,
+              "resolved_calls": 21294,
+              "partial_files": 0,
+              "languages": {
+                "dart": 78,
+                "go": 78,
+                "java": 78,
+                "php": 78,
+                "python": 78,
+                "sql": 77,
+                "swift": 78,
+                "typescript": 78
+              }
+            }
+          }
+        },
+        "source_execution": false,
+        "test_execution": false,
+        "completed": true,
+        "noop_content_revision_stable": true,
+        "noop_parsed_nothing": true,
+        "incremental_parsed_one": true,
+        "query": "bench16000",
+        "queries": {
+          "lexical": {
+            "milliseconds": [
+              49.94,
+              49.019,
+              50.127
+            ],
+            "median_ms": 49.94,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          },
+          "hybrid": {
+            "milliseconds": [
+              54.668,
+              50.76,
+              49.392
+            ],
+            "median_ms": 50.76,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          }
+        },
+        "query_scope": "fresh readonly reader open, source/config checks, search and close; warm OS cache; excludes HTTP",
+        "peak_worker_rss_bytes": 124092416,
+        "peak_memory_scope": "worker lifetime, includes engine loading, indexing and queries",
+        "engine_version": "1.6.5",
+        "sqlite_version": "3.54.1"
+      },
+      "synthetic_counts_match": true
+    },
+    {
+      "label": "generated-1000000",
+      "kind": "generated",
+      "target_lines": 1000000,
+      "actual_source_lines": 1000091,
+      "expected": {
+        "definitions": 343178,
+        "calls": 212472,
+        "resolved_calls": 212472
+      },
+      "input": {
+        "files": 6227,
+        "excluded_from_copy": 0,
+        "source_lines": 1000091,
+        "bytes": 27500098,
+        "source_snapshot_sha256": "43e2d8807ded22afecd8f5f7a4ace43659c8a7911150897ccdaefd2749ddfb49"
+      },
+      "measurement": {
+        "phases": {
+          "full": {
+            "seconds": 26.9938,
+            "parsed_files": 6226,
+            "content_revision": "b002bf5f48df6563aacea3e74573260a33074d8aea49ea6ab256bf0318e4e759",
+            "counts": {
+              "files": 6226,
+              "definitions": 343178,
+              "calls": 212472,
+              "resolved_calls": 212472,
+              "partial_files": 0,
+              "languages": {
+                "dart": 778,
+                "go": 778,
+                "java": 778,
+                "php": 779,
+                "python": 779,
+                "sql": 778,
+                "swift": 778,
+                "typescript": 778
+              }
+            }
+          },
+          "noop": {
+            "seconds": 1.2383,
+            "parsed_files": 0,
+            "content_revision": "b002bf5f48df6563aacea3e74573260a33074d8aea49ea6ab256bf0318e4e759",
+            "counts": {
+              "files": 6226,
+              "definitions": 343178,
+              "calls": 212472,
+              "resolved_calls": 212472,
+              "partial_files": 0,
+              "languages": {
+                "dart": 778,
+                "go": 778,
+                "java": 778,
+                "php": 779,
+                "python": 779,
+                "sql": 778,
+                "swift": 778,
+                "typescript": 778
+              }
+            }
+          },
+          "one_file_change": {
+            "seconds": 3.5753,
+            "parsed_files": 1,
+            "content_revision": "dc68db5e16f4733faf7c088fa9e731e7903649ab64fc7082260214e99a596d0b",
+            "counts": {
+              "files": 6226,
+              "definitions": 343178,
+              "calls": 212472,
+              "resolved_calls": 212472,
+              "partial_files": 0,
+              "languages": {
+                "dart": 778,
+                "go": 778,
+                "java": 778,
+                "php": 779,
+                "python": 779,
+                "sql": 778,
+                "swift": 778,
+                "typescript": 778
+              }
+            }
+          }
+        },
+        "source_execution": false,
+        "test_execution": false,
+        "completed": true,
+        "noop_content_revision_stable": true,
+        "noop_parsed_nothing": true,
+        "incremental_parsed_one": true,
+        "query": "bench49600",
+        "queries": {
+          "lexical": {
+            "milliseconds": [
+              206.257,
+              208.85,
+              209.214
+            ],
+            "median_ms": 208.85,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          },
+          "hybrid": {
+            "milliseconds": [
+              245.804,
+              231.58,
+              233.743
+            ],
+            "median_ms": 233.743,
+            "statuses": [
+              "ready",
+              "ready",
+              "ready"
+            ]
+          }
+        },
+        "query_scope": "fresh readonly reader open, source/config checks, search and close; warm OS cache; excludes HTTP",
+        "peak_worker_rss_bytes": 766951424,
+        "peak_memory_scope": "worker lifetime, includes engine loading, indexing and queries",
+        "engine_version": "1.6.5",
+        "sqlite_version": "3.54.1"
+      },
+      "synthetic_counts_match": true
+    },
+    {
+      "label": "go-stdlib",
+      "kind": "real_source",
+      "input": {
+        "files": 7058,
+        "excluded_from_copy": 3,
+        "source_lines": 2233479,
+        "bytes": 65584373,
+        "source_snapshot_sha256": "7fe297462b2016cadfcd358d07d51bf3ac0009b0914d4fd74acb7022bd9cdb8a"
+      },
+      "error": {
+        "timeout_seconds": 600
+      }
+    },
+    {
+      "label": "dart-sdk",
+      "kind": "real_source",
+      "input": {
+        "files": 433,
+        "excluded_from_copy": 1,
+        "source_lines": 208759,
+        "bytes": 7009529,
+        "source_snapshot_sha256": "97bd61fa55b11b96f1a37fe51d8f9b4a2ad3d1c272342fe9b5d707d811d43dec"
+      },
+      "measurement": {
+        "phases": {
+          "full": {
+            "seconds": 4.3264,
+            "parsed_files": 433,
+            "content_revision": "ce06a7b2fc16eb21c92d6f2f2f5dc7514a725e93267656ac8cd5cc77f8e67f95",
+            "counts": {
+              "files": 433,
+              "definitions": 28788,
+              "calls": 34920,
+              "resolved_calls": 3978,
+              "partial_files": 29,
+              "languages": {
+                "dart": 425,
+                "javascript": 8
+              }
+            }
+          },
+          "noop": {
+            "seconds": 0.1947,
+            "parsed_files": 0,
+            "content_revision": "ce06a7b2fc16eb21c92d6f2f2f5dc7514a725e93267656ac8cd5cc77f8e67f95",
+            "counts": {
+              "files": 433,
+              "definitions": 28788,
+              "calls": 34920,
+              "resolved_calls": 3978,
+              "partial_files": 29,
+              "languages": {
+                "dart": 425,
+                "javascript": 8
+              }
+            }
+          },
+          "one_file_change": {
+            "seconds": 0.4847,
+            "parsed_files": 1,
+            "content_revision": "aedac4ddb20364409bc5e9a0bdcfa6422acbba500e2f61ab5c64e99072406fe0",
+            "counts": {
+              "files": 433,
+              "definitions": 28788,
+              "calls": 34920,
+              "resolved_calls": 3978,
+              "partial_files": 29,
+              "languages": {
+                "dart": 425,
+                "javascript": 8
+              }
+            }
+          }
+        },
+        "source_execution": false,
+        "test_execution": false,
+        "completed": true,
+        "noop_content_revision_stable": true,
+        "noop_parsed_nothing": true,
+        "incremental_parsed_one": true,
+        "query": "Svg Element Factory",
+        "queries": {
+          "lexical": {
+            "milliseconds": [
+              69.522,
+              70.334,
+              70.079
+            ],
+            "median_ms": 70.079,
+            "statuses": [
+              "partial",
+              "partial",
+              "partial"
+            ]
+          },
+          "hybrid": {
+            "milliseconds": [
+              76.745,
+              76.416,
+              76.575
+            ],
+            "median_ms": 76.575,
+            "statuses": [
+              "partial",
+              "partial",
+              "partial"
+            ]
+          }
+        },
+        "query_scope": "fresh readonly reader open, source/config checks, search and close; warm OS cache; excludes HTTP",
+        "peak_worker_rss_bytes": 149929984,
+        "peak_memory_scope": "worker lifetime, includes engine loading, indexing and queries",
+        "engine_version": "1.6.5",
+        "sqlite_version": "3.54.1"
+      }
+    }
+  ],
+  "provenance": {
+    "engine_checkpoint": "167bd3cbb02b943b9e40d244e94e8e964209366c",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm64",
+    "sources": [
+      {
+        "label": "go-stdlib",
+        "version": "go1.27.4",
+        "archive_sha256": "91a44a2b8a716600ad94a4f143e156116620db8828086a6e3602291be9bd0bb4",
+        "license_sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+        "source_execution": false
+      },
+      {
+        "label": "dart-sdk",
+        "version": "3.6.2",
+        "archive_sha256": "453bbfa3d73f28e090b644268e2c809b899d11a3a6507874715e1a4042166295",
+        "license_sha256": "2cfa3ee8e7512e6d44c854b986510810fadc815f93f890373b3a81c1b6ccd256",
+        "source_execution": false
+      }
+    ]
+  },
+  "generated_target_audit": [
+    {
+      "label": "generated-10000",
+      "expected": 2145,
+      "actual": 2145,
+      "missing": 0,
+      "unexpected": 0,
+      "identity_fields": [
+        "caller_file",
+        "caller_name",
+        "target_file",
+        "target_name",
+        "confidence"
+      ]
+    },
+    {
+      "label": "generated-100000",
+      "expected": 21294,
+      "actual": 21294,
+      "missing": 0,
+      "unexpected": 0,
+      "identity_fields": [
+        "caller_file",
+        "caller_name",
+        "target_file",
+        "target_name",
+        "confidence"
+      ]
+    },
+    {
+      "label": "generated-1000000",
+      "expected": 212472,
+      "actual": 212472,
+      "missing": 0,
+      "unexpected": 0,
+      "identity_fields": [
+        "caller_file",
+        "caller_name",
+        "target_file",
+        "target_name",
+        "confidence"
+      ]
+    }
+  ],
+  "runner_files": {
+    "benchmarks/scale.py": "3f066875e0b1b24a1833a75998688eb3b755a01c556ec21f638b39c21a3a8fd7",
+    "tests/test_scale_benchmark.py": "d5531da592eafd20ce0264f0f845b70d0c1c6cf3d620588493b1aa8c84979a2a"
+  },
+  "measurement_freeze_manifest_sha256": "a264068e80c7c636e4f388fde07777fe756e920601ec22ae4c811262cf908c09"
+}

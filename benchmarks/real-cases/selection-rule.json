@@ -1,0 +1,43 @@
+{
+  "version": "codegraph-real-pilot-selection/1",
+  "repository": "https://github.com/sympy/sympy",
+  "repository_gate": {
+    "license": "permissive",
+    "minimum_non_test_python_files": 300,
+    "tests": "offline,pure-Python project imports,no external services; pilot venv only"
+  },
+  "cutoff_exclusive_utc": "2026-11-01T00:00:00Z",
+  "pool": {
+    "count": 100,
+    "kind": "merged pull requests before cutoff",
+    "order": [
+      "created_at descending",
+      "number descending"
+    ],
+    "query": "repo:sympy/sympy is:pr is:merged merged:<2026-11-01",
+    "search_sort": "created",
+    "search_order": "desc"
+  },
+  "eligibility": {
+    "production_python_files_touched_max": 3,
+    "production_python_file_required": true,
+    "tests_added_or_modified": true,
+    "linked_issue": "Fixes/Closes/Resolves reference to same-repository issue,lowest issue number if several",
+    "test_outcome": "at least one hidden test call fails on first parent and all pass on historical fix; no collection/setup errors,skip or timeout",
+    "public_smoke": "up to five existing unchanged test functions from changed test modules,ordered qualified name,exclude hidden IDs; all pass on parent and fix",
+    "environment_seconds_per_run": 120
+  },
+  "take": "first four eligible PRs in fixed order; log every excluded candidate; if fewer than four eligible in pool,stop and report,do not silently extend pool or swap repository",
+  "observation_policy": "no model/provider calls until protocol,case set,harness and tests delivered and coord-read accepts",
+  "proposed_live": {
+    "calls_max": 24,
+    "call_seconds": 600,
+    "review_budget_usd": 0.6,
+    "total_claude_usd": 5,
+    "author": "codex",
+    "reviewer": "claude",
+    "arms": "source-only versus graph-assisted,alternating by selected task order",
+    "edit_rounds": 1
+  },
+  "native_metrics": "outcome,stage wall time,per-call native input/output/cache units,tool outcomes,graph witnesses and relative file reads; never estimate tokens or merge tokenizers as one cost"
+}

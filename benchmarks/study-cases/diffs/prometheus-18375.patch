@@ -1,0 +1,10 @@
+diff --git a/rules/alerting.go b/rules/alerting.go
+index 3d45224a7..1cd8bf4c8 100644
+--- a/rules/alerting.go
++++ b/rules/alerting.go
+@@ -284,0 +285,5 @@ func (r *AlertingRule) QueryForStateSeries(ctx context.Context, q storage.Querie
++		// Skip labels with template syntax: their values are expanded per alert
++		// instance and would not match the stored series.
++		if strings.Contains(l.Value, "{{") {
++			return
++		}

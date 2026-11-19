@@ -1,0 +1,17 @@
+diff --git a/storage/remote/client.go b/storage/remote/client.go
+index c535ea342..0f2b5ddca 100644
+--- a/storage/remote/client.go
++++ b/storage/remote/client.go
+@@ -303,0 +304,3 @@ func (c *Client) Store(ctx context.Context, req []byte, attempt int) (WriteRespo
++	// NOTE(bwplotka): Only PRW2 spec defines response HTTP headers. However, spec does not block
++	// PRW1 from sending them too for reliability. Support this case.
++	//
+diff --git a/storage/remote/write_handler.go b/storage/remote/write_handler.go
+index f8296b4a8..2bc65e828 100644
+--- a/storage/remote/write_handler.go
++++ b/storage/remote/write_handler.go
+@@ -98,0 +99,4 @@ func isHistogramValidationError(err error) bool {
++// TODO(bwplotka): Improve remoteapi.Store API. Right now it's confusing if PRWv1 flows should use WriteResponse or not.
++// If it's not filled, it will be "confirmed zero" which caused partial error reporting on client side in the past.
++// Temporary fix was done to only care about WriteResponse stats for PRW2 (see https://github.com/prometheus/client_golang/pull/1927
++// but better approach would be to only confirm if explicit stats were injected.

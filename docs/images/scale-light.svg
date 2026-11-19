@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="426" viewBox="0 0 730 426" role="img" aria-labelledby="st sd" font-family="-apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Helvetica, Arial, sans-serif">
+<title id="st">Indexing time: full index and re-index after a one-file change</title>
+<desc id="sd">Generated, 8 languages, 10,000 lines: full 0.4 s, one-file change 0.13 s; Generated, 8 languages, 100,110 lines: full 2.5 s, one-file change 0.42 s; Dart SDK 3.6 (real), 208,759 lines: full 4.3 s, one-file change 0.48 s; Generated, 8 languages, 1,000,091 lines: full 27.0 s, one-file change 3.58 s; Go SDK (real), 2,233,479 lines: full 52.3 s, one-file change 9.16 s</desc>
+<rect width="730" height="426" rx="12" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="16" font-weight="600" fill="#0b0b0b">Indexing time (seconds)</text>
+<text x="24" y="56" font-size="12.5" fill="#52514e">macOS ARM64, Python 3.13 · no source executed · re-indexing parses only the changed file</text>
+<rect x="24" y="67" width="10" height="10" rx="2" fill="#2a78d6"/>
+<text x="40" y="76" font-size="12" fill="#52514e">Full index</text>
+<rect x="154" y="67" width="10" height="10" rx="2" fill="#eb6834"/>
+<text x="170" y="76" font-size="12" fill="#52514e">Re-index after a one-file change</text>
+<text x="24" y="108" font-size="13" font-weight="600" fill="#0b0b0b">10,000 lines</text>
+<text x="24" y="125" font-size="11.5" fill="#52514e">Generated, 8 languages · 62 files</text>
+<rect x="250" y="96" width="3.0" height="14" rx="3" fill="#2a78d6"/>
+<text x="261.0" y="107" font-size="11.5" fill="#0b0b0b">0.4 s</text>
+<rect x="250" y="113" width="3.0" height="14" rx="3" fill="#eb6834"/>
+<text x="261.0" y="124" font-size="11.5" fill="#0b0b0b">0.13 s</text>
+<text x="24" y="166" font-size="13" font-weight="600" fill="#0b0b0b">100,110 lines</text>
+<text x="24" y="183" font-size="11.5" fill="#52514e">Generated, 8 languages · 623 files</text>
+<rect x="250" y="154" width="15.7" height="14" rx="3" fill="#2a78d6"/>
+<text x="273.7" y="165" font-size="11.5" fill="#0b0b0b">2.5 s</text>
+<rect x="250" y="171" width="3.0" height="14" rx="3" fill="#eb6834"/>
+<text x="261.0" y="182" font-size="11.5" fill="#0b0b0b">0.42 s</text>
+<text x="24" y="224" font-size="13" font-weight="600" fill="#0b0b0b">208,759 lines</text>
+<text x="24" y="241" font-size="11.5" fill="#52514e">Dart SDK 3.6 (real) · 433 files</text>
+<rect x="250" y="212" width="27.3" height="14" rx="3" fill="#2a78d6"/>
+<text x="285.3" y="223" font-size="11.5" fill="#0b0b0b">4.3 s</text>
+<rect x="250" y="229" width="3.1" height="14" rx="3" fill="#eb6834"/>
+<text x="261.1" y="240" font-size="11.5" fill="#0b0b0b">0.48 s</text>
+<text x="24" y="282" font-size="13" font-weight="600" fill="#0b0b0b">1,000,091 lines</text>
+<text x="24" y="299" font-size="11.5" fill="#52514e">Generated, 8 languages · 6,226 files</text>
+<rect x="250" y="270" width="170.3" height="14" rx="3" fill="#2a78d6"/>
+<text x="428.3" y="281" font-size="11.5" fill="#0b0b0b">27.0 s</text>
+<rect x="250" y="287" width="22.6" height="14" rx="3" fill="#eb6834"/>
+<text x="280.6" y="298" font-size="11.5" fill="#0b0b0b">3.58 s</text>
+<text x="24" y="340" font-size="13" font-weight="600" fill="#0b0b0b">2,233,479 lines</text>
+<text x="24" y="357" font-size="11.5" fill="#52514e">Go SDK (real) · 7,035 files</text>
+<text x="24" y="373" font-size="11.5" fill="#52514e">was &gt; 600 s before the fix</text>
+<rect x="250" y="328" width="330.0" height="14" rx="3" fill="#2a78d6"/>
+<text x="588.0" y="339" font-size="11.5" fill="#0b0b0b">52.3 s</text>
+<rect x="250" y="345" width="57.8" height="14" rx="3" fill="#eb6834"/>
+<text x="315.8" y="356" font-size="11.5" fill="#0b0b0b">9.16 s</text>
+<line x1="250" y1="92" x2="250" y2="376" stroke="#d9d8d4" stroke-width="1"/>
+<text x="24" y="402" font-size="11" fill="#52514e">Single observations on a running desktop. Peak memory, query times and limits: benchmarks/SCALING.md.</text>
+</svg>

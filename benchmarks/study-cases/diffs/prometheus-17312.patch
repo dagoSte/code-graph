@@ -1,0 +1,245 @@
+diff --git a/model/histogram/float_histogram.go b/model/histogram/float_histogram.go
+index 6d7365b8b..08469ad12 100644
+--- a/model/histogram/float_histogram.go
++++ b/model/histogram/float_histogram.go
+@@ -286 +286,2 @@ func (h *FloatHistogram) ZeroBucket() Bucket[float64] {
+-// pointer to the receiving histogram for convenience.
++// pointer to the receiving histogram for convenience. If factor is negative,
++// the counter reset hint is set to GaugeType.
+@@ -304 +305,2 @@ func (h *FloatHistogram) Mul(factor float64) *FloatHistogram {
+-// When dividing by 0, everything will be set to Inf.
++// When dividing by 0, everything will be set to Inf. If scalar is negative,
++// the counter reset hint is set to GaugeType.
+@@ -346,5 +348,2 @@ func (h *FloatHistogram) Add(other *FloatHistogram) (res *FloatHistogram, counte
+-	if h.UsesCustomBuckets() != other.UsesCustomBuckets() {
+-		return nil, false, ErrHistogramsIncompatibleSchema
+-	}
+-	if h.UsesCustomBuckets() && !CustomBucketBoundsMatch(h.CustomValues, other.CustomValues) {
+-		return nil, false, ErrHistogramsIncompatibleBounds
++	if err := h.checkSchemaAndBounds(other); err != nil {
++		return nil, false, err
+@@ -352,25 +351 @@ func (h *FloatHistogram) Add(other *FloatHistogram) (res *FloatHistogram, counte
+-
+-	switch {
+-	case other.CounterResetHint == h.CounterResetHint:
+-		// Adding apples to apples, all good. No need to change anything.
+-	case h.CounterResetHint == GaugeType:
+-		// Adding something else to a gauge. That's probably OK. Outcome is a gauge.
+-		// Nothing to do since the receiver is already marked as gauge.
+-	case other.CounterResetHint == GaugeType:
+-		// Similar to before, but this time the receiver is "something else" and we have to change it to gauge.
+-		h.CounterResetHint = GaugeType
+-	case h.CounterResetHint == UnknownCounterReset:
+-		// With the receiver's CounterResetHint being "unknown", this could still be legitimate
+-		// if the caller knows what they are doing. Outcome is then again "unknown".
+-		// No need to do anything since the receiver's CounterResetHint is already "unknown".
+-	case other.CounterResetHint == UnknownCounterReset:
+-		// Similar to before, but now we have to set the receiver's CounterResetHint to "unknown".
+-		h.CounterResetHint = UnknownCounterReset
+-	default:
+-		// All other cases shouldn't actually happen.
+-		// They are a direct collision of CounterReset and NotCounterReset.
+-		// Conservatively set the CounterResetHint to "unknown" and issue a warning.
+-		h.CounterResetHint = UnknownCounterReset
+-		counterResetCollision = true
+-	}
+-
++	counterResetCollision = h.adjustCounterReset(other)
+@@ -420 +395,5 @@ func (h *FloatHistogram) Add(other *FloatHistogram) (res *FloatHistogram, counte
+-// Sub works like Add but subtracts the other histogram.
++// Sub works like Add but subtracts the other histogram. It uses the same logic
++// to adjust the counter reset hint. This is useful where this method is used
++// for incremental mean calculation. However, if it is used for the actual "-"
++// operator in PromQL, the counter reset needs to be set to GaugeType after
++// calling this method.
+@@ -422,5 +401,2 @@ func (h *FloatHistogram) Sub(other *FloatHistogram) (res *FloatHistogram, counte
+-	if h.UsesCustomBuckets() != other.UsesCustomBuckets() {
+-		return nil, false, ErrHistogramsIncompatibleSchema
+-	}
+-	if h.UsesCustomBuckets() && !CustomBucketBoundsMatch(h.CustomValues, other.CustomValues) {
+-		return nil, false, ErrHistogramsIncompatibleBounds
++	if err := h.checkSchemaAndBounds(other); err != nil {
++		return nil, false, err
+@@ -428,5 +404 @@ func (h *FloatHistogram) Sub(other *FloatHistogram) (res *FloatHistogram, counte
+-
+-	counterResetCollision = hasCounterResetCollision(h, other)
+-
+-	h.CounterResetHint = GaugeType
+-
++	counterResetCollision = h.adjustCounterReset(other)
+@@ -475,7 +446,0 @@ func (h *FloatHistogram) Sub(other *FloatHistogram) (res *FloatHistogram, counte
+-// hasCounterResetCollision returns true iff one of two histogram indicates
+-// a counter reset (CounterReset) while the other indicates no reset (NotCounterReset).
+-func hasCounterResetCollision(a, b *FloatHistogram) bool {
+-	return a.CounterResetHint == CounterReset && b.CounterResetHint == NotCounterReset ||
+-		a.CounterResetHint == NotCounterReset && b.CounterResetHint == CounterReset
+-}
+-
+@@ -1389,0 +1355,46 @@ func (h *FloatHistogram) ReduceResolution(targetSchema int32) *FloatHistogram {
++
++// checkSchemaAndBounds checks if two histograms are compatible because they
++// both use a standard exponential schema or because they both are NHCBs. In the
++// latter case, they also have to use the same custom bounds.
++func (h *FloatHistogram) checkSchemaAndBounds(other *FloatHistogram) error {
++	if h.UsesCustomBuckets() != other.UsesCustomBuckets() {
++		return ErrHistogramsIncompatibleSchema
++	}
++	if h.UsesCustomBuckets() && !CustomBucketBoundsMatch(h.CustomValues, other.CustomValues) {
++		return ErrHistogramsIncompatibleBounds
++	}
++	return nil
++}
++
++// adjustCounterReset is used for addition and subtraction. Those operation are
++// usually only performed between gauge histograms, but if one or both are
++// counters, we try to at least set the counter reset hint to something
++// meaningful (see code comments below). The return counterResetCollision is
++// true if one histogram has a counter reset hint of CounterReset and the other
++// NotCounterReset. All other combinations are not considered a collision.
++func (h *FloatHistogram) adjustCounterReset(other *FloatHistogram) (counterResetCollision bool) {
++	switch {
++	case other.CounterResetHint == h.CounterResetHint:
++		// Adding apples to apples, all good. No need to change anything.
++	case h.CounterResetHint == GaugeType:
++		// Adding something else to a gauge. That's probably OK. Outcome is a gauge.
++		// Nothing to do since the receiver is already marked as gauge.
++	case other.CounterResetHint == GaugeType:
++		// Similar to before, but this time the receiver is "something else" and we have to change it to gauge.
++		h.CounterResetHint = GaugeType
++	case h.CounterResetHint == UnknownCounterReset:
++		// With the receiver's CounterResetHint being "unknown", this could still be legitimate
++		// if the caller knows what they are doing. Outcome is then again "unknown".
++		// No need to do anything since the receiver's CounterResetHint is already "unknown".
++	case other.CounterResetHint == UnknownCounterReset:
++		// Similar to before, but now we have to set the receiver's CounterResetHint to "unknown".
++		h.CounterResetHint = UnknownCounterReset
++	default:
++		// All other cases shouldn't actually happen.
++		// They are a direct collision of CounterReset and NotCounterReset.
++		// Conservatively set the CounterResetHint to "unknown" and issue a warning.
++		h.CounterResetHint = UnknownCounterReset
++		return true
++	}
++	return false
++}
+diff --git a/promql/engine.go b/promql/engine.go
+index 31d910da9..6603972c2 100644
+--- a/promql/engine.go
++++ b/promql/engine.go
+@@ -3127,0 +3128,2 @@ func vectorElemBinop(op parser.ItemType, lhs, rhs float64, hlhs, hrhs *histogram
++				// The result must be marked as gauge.
++				res.CounterResetHint = histogram.GaugeType
+@@ -3160,0 +3163,2 @@ type groupedAggregation struct {
++	counterResetSeen       bool // Counter reset hint CounterReset seen. Currently only used for histogram samples.
++	notCounterResetSeen    bool // Counter reset hint NotCounterReset seen. Currently only used for histogram samples.
+@@ -3196,0 +3201,6 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
++					switch h.CounterResetHint {
++					case histogram.CounterReset:
++						group.counterResetSeen = true
++					case histogram.NotCounterReset:
++						group.notCounterResetSeen = true
++					}
+@@ -3244 +3254,7 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
+-					_, counterResetCollision, err := group.histogramValue.Add(h)
++					switch h.CounterResetHint {
++					case histogram.CounterReset:
++						group.counterResetSeen = true
++					case histogram.NotCounterReset:
++						group.notCounterResetSeen = true
++					}
++					_, _, err := group.histogramValue.Add(h)
+@@ -3249,3 +3264,0 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
+-					if counterResetCollision {
+-						annos.Add(annotations.NewHistogramCounterResetCollisionWarning(e.Expr.PositionRange(), annotations.HistogramAgg))
+-					}
+@@ -3297,0 +3311,6 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
++					switch h.CounterResetHint {
++					case histogram.CounterReset:
++						group.counterResetSeen = true
++					case histogram.NotCounterReset:
++						group.notCounterResetSeen = true
++					}
+@@ -3300 +3319 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
+-					toAdd, counterResetCollision, err := left.Sub(right)
++					toAdd, _, err := left.Sub(right)
+@@ -3306,4 +3325 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
+-					if counterResetCollision {
+-						annos.Add(annotations.NewHistogramCounterResetCollisionWarning(e.Expr.PositionRange(), annotations.HistogramAgg))
+-					}
+-					_, counterResetCollision, err = group.histogramValue.Add(toAdd)
++					_, _, err = group.histogramValue.Add(toAdd)
+@@ -3315,3 +3330,0 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
+-					if counterResetCollision {
+-						annos.Add(annotations.NewHistogramCounterResetCollisionWarning(e.Expr.PositionRange(), annotations.HistogramAgg))
+-					}
+@@ -3448,0 +3462 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
++
+@@ -3452,0 +3467,7 @@ func (ev *evaluator) aggregation(e *parser.AggregateExpr, q float64, inputMatrix
++		// This only is relevant for AVG and SUM with native histograms
++		// involved, but since those booleans aren't touched in other
++		// cases, we can just do it here in general.
++		if aggr.counterResetSeen && aggr.notCounterResetSeen {
++			annos.Add(annotations.NewHistogramCounterResetCollisionWarning(e.Expr.PositionRange(), annotations.HistogramAgg))
++		}
++
+diff --git a/promql/functions.go b/promql/functions.go
+index 6dfe9611f..2d9d26dfb 100644
+--- a/promql/functions.go
++++ b/promql/functions.go
+@@ -822,0 +823,17 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
++			var counterResetSeen, notCounterResetSeen bool
++
++			trackCounterReset := func(h *histogram.FloatHistogram) {
++				switch h.CounterResetHint {
++				case histogram.CounterReset:
++					counterResetSeen = true
++				case histogram.NotCounterReset:
++					notCounterResetSeen = true
++				}
++			}
++
++			defer func() {
++				if counterResetSeen && notCounterResetSeen {
++					annos.Add(annotations.NewHistogramCounterResetCollisionWarning(args[0].PositionRange(), annotations.HistogramAgg))
++				}
++			}()
++
+@@ -823,0 +841 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
++			trackCounterReset(mean)
+@@ -824,0 +843 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
++				trackCounterReset(h.H)
+@@ -828 +847 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
+-				toAdd, counterResetCollision, err := left.Sub(right)
++				toAdd, _, err := left.Sub(right)
+@@ -832,4 +851 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
+-				if counterResetCollision {
+-					annos.Add(annotations.NewHistogramCounterResetCollisionWarning(args[0].PositionRange(), annotations.HistogramSub))
+-				}
+-				_, counterResetCollision, err = mean.Add(toAdd)
++				_, _, err = mean.Add(toAdd)
+@@ -839,3 +854,0 @@ func funcAvgOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
+-				if counterResetCollision {
+-					annos.Add(annotations.NewHistogramCounterResetCollisionWarning(args[0].PositionRange(), annotations.HistogramAdd))
+-				}
+@@ -1079,0 +1093,8 @@ func funcSumOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
++			var counterResetSeen, notCounterResetSeen bool
++
++			defer func() {
++				if counterResetSeen && notCounterResetSeen {
++					annos.Add(annotations.NewHistogramCounterResetCollisionWarning(args[0].PositionRange(), annotations.HistogramAgg))
++				}
++			}()
++
+@@ -1082 +1103,7 @@ func funcSumOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
+-				_, counterResetCollision, err := sum.Add(h.H)
++				switch h.H.CounterResetHint {
++				case histogram.CounterReset:
++					counterResetSeen = true
++				case histogram.NotCounterReset:
++					notCounterResetSeen = true
++				}
++				_, _, err := sum.Add(h.H)
+@@ -1086,3 +1112,0 @@ func funcSumOverTime(_ []Vector, matrixVal Matrix, args parser.Expressions, enh
+-				if counterResetCollision {
+-					annos.Add(annotations.NewHistogramCounterResetCollisionWarning(args[0].PositionRange(), annotations.HistogramAdd))
+-				}

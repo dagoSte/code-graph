@@ -1,0 +1,36 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts b/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
+index 3582c5181..6a59e2ba1 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
+@@ -38,0 +39,2 @@ export type MessageIds =
++const MAX_TYPE_CONTAINS_DEPTH = 50;
++
+@@ -300,0 +303 @@ export default createRule<Options, MessageIds>({
++    // Recursive generic types instantiate new types forever, so give up past a fixed depth (#12705).
+@@ -304,0 +308 @@ export default createRule<Options, MessageIds>({
++      depth = 0,
+@@ -306 +310 @@ export default createRule<Options, MessageIds>({
+-      if (seen.has(type)) {
++      if (seen.has(type) || depth > MAX_TYPE_CONTAINS_DEPTH) {
+@@ -314 +318,3 @@ export default createRule<Options, MessageIds>({
+-        return type.types.some(t => typeContains(t, predicate, seen));
++        return type.types.some(t =>
++          typeContains(t, predicate, seen, depth + 1),
++        );
+@@ -325 +331 @@ export default createRule<Options, MessageIds>({
+-      return nestedTypes.some(t => typeContains(t, predicate, seen));
++      return nestedTypes.some(t => typeContains(t, predicate, seen, depth + 1));
+@@ -329,12 +335 @@ export default createRule<Options, MessageIds>({
+-      try {
+-        return typeContains(type, t => isTypeFlagSet(t, ts.TypeFlags.Any));
+-      } catch (error) {
+-        // Workaround for https://github.com/typescript-eslint/typescript-eslint/issues/12705
+-        if (
+-          error instanceof RangeError &&
+-          error.message === 'Maximum call stack size exceeded'
+-        ) {
+-          return false;
+-        }
+-        throw error;
+-      }
++      return typeContains(type, t => isTypeFlagSet(t, ts.TypeFlags.Any));

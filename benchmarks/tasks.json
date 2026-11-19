@@ -1,0 +1,17 @@
+{
+  "format": "codegraph-benchmark-tasks/1",
+  "tokenizer": null,
+  "estimator": "unicode_characters/4",
+  "tasks": [
+    {"id":"T1","goal":"PHP callers through a supported namespace alias","oracle":["Consumer.run"],"confidence":"high"},
+    {"id":"T2","goal":"Python qualified import consumer","oracle":["run"],"confidence":"high"},
+    {"id":"T3","goal":"Callsites and test plan for a signature change","oracle":["gateway","test_contract"],"confidence":"medium","depth":5},
+    {"id":"T4","goal":"Registered callback is referenced, never dead","oracle":["cleanup"],"confidence":"high"},
+    {"id":"T5","goal":"Long function within a 1000-character budget","oracle":["entry","leaf","work"],"max_chars":1000},
+    {"id":"T6","goal":"Keep detecting test and distinguish support","oracle":["test_contract"],"excluded_as_case":["helper"],"depth":5},
+    {"id":"T7","goal":"Producer and consumer have versioned declaration evidence","oracle":["artifact.json","producer","consumer"]},
+    {"id":"T8","goal":"Noop stability then source invalidation","oracle":["stable_noop","changed_content"]},
+    {"id":"T9","goal":"Mixin provider accepted and actual typo retained","oracle":["veriffy"],"excluded_as_defect":["verify"]},
+    {"id":"T10","goal":"Finding remains persistent after line movement","oracle":["persistent"],"new_count":0}
+  ]
+}

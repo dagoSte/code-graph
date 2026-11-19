@@ -1,0 +1,7 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index 0e24f6cb18..93b2bcb87f 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -61 +61 @@ class DisallowedRedirect(SuspiciousOperation):
+-    """Redirect to scheme not in allowed list"""
++    """Redirect was too long or scheme was not in allowed list."""

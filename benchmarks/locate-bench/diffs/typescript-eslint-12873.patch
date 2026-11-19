@@ -1,0 +1,11 @@
+diff --git a/packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts b/packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts
+index c8be3b09d..674568b6d 100644
+--- a/packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts
++++ b/packages/eslint-plugin/src/rules/no-meaningless-void-operator.ts
+@@ -72,0 +73,6 @@ export default createRule<
++          // `void (x = value)` discards the assignment result so the
++          // expression evaluates to undefined (e.g. `() => void (x = 1)`).
++          if (inner.type === AST_NODE_TYPES.AssignmentExpression) {
++            return;
++          }
++

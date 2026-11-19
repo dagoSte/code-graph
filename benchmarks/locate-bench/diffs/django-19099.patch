@@ -1,0 +1,26 @@
+diff --git a/django/contrib/contenttypes/fields.py b/django/contrib/contenttypes/fields.py
+index 0e68c2eef0..272cb2b02c 100644
+--- a/django/contrib/contenttypes/fields.py
++++ b/django/contrib/contenttypes/fields.py
+@@ -391,0 +392,14 @@ class GenericRelation(ForeignObject):
++    def get_local_related_value(self, instance):
++        return self.get_instance_value_for_fields(instance, self.foreign_related_fields)
++
++    def get_foreign_related_value(self, instance):
++        # We (possibly) need to convert object IDs to the type of the
++        # instances' PK in order to match up instances during prefetching.
++        return tuple(
++            foreign_field.to_python(val)
++            for foreign_field, val in zip(
++                self.foreign_related_fields,
++                self.get_instance_value_for_fields(instance, self.local_related_fields),
++            )
++        )
++
+diff --git a/django/db/models/fields/related_descriptors.py b/django/db/models/fields/related_descriptors.py
+index e4698b4092..c69c998049 100644
+--- a/django/db/models/fields/related_descriptors.py
++++ b/django/db/models/fields/related_descriptors.py
+@@ -761 +761 @@ def create_reverse_many_to_one_manager(superclass, rel):
+-                    setattr(rel_obj, self.field.name, instance)
++                    self.field.set_cached_value(rel_obj, instance)

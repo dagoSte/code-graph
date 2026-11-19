@@ -1,0 +1,54 @@
+diff --git a/django/core/serializers/xml_serializer.py b/django/core/serializers/xml_serializer.py
+index a9fe3cf01d..d43865c257 100644
+--- a/django/core/serializers/xml_serializer.py
++++ b/django/core/serializers/xml_serializer.py
+@@ -137 +137,4 @@ class Serializer(base.Serializer):
+-                    self.xml.characters(str(key_value))
++                    if key_value is None:
++                        self.xml.addQuickElement("None")
++                    else:
++                        self.xml.characters(str(key_value))
+@@ -163 +166,4 @@ class Serializer(base.Serializer):
+-                            self.xml.characters(str(key_value))
++                            if key_value is None:
++                                self.xml.addQuickElement("None")
++                            else:
++                                self.xml.characters(str(key_value))
+@@ -282 +288,5 @@ class Deserializer(base.Deserializer):
+-                            getInnerText(nat_node).strip()
++                            (
++                                None
++                                if nat_node.getElementsByTagName("None")
++                                else getInnerText(nat_node).strip()
++                            )
+@@ -295 +305,5 @@ class Deserializer(base.Deserializer):
+-                        getInnerText(k).strip()
++                        (
++                            None
++                            if k.getElementsByTagName("None")
++                            else getInnerText(k).strip()
++                        )
+@@ -320 +334,2 @@ class Deserializer(base.Deserializer):
+-        if node.getElementsByTagName("None"):
++        natural_keys = node.getElementsByTagName("natural")
++        if node.getElementsByTagName("None") and not natural_keys:
+@@ -325,2 +340 @@ class Deserializer(base.Deserializer):
+-                keys = node.getElementsByTagName("natural")
+-                if keys:
++                if natural_keys:
+@@ -329 +343,6 @@ class Deserializer(base.Deserializer):
+-                    field_value = [getInnerText(k).strip() for k in keys]
++                    field_value = []
++                    for k in natural_keys:
++                        if k.getElementsByTagName("None"):
++                            field_value.append(None)
++                        else:
++                            field_value.append(getInnerText(k).strip())
+@@ -370 +389,6 @@ class Deserializer(base.Deserializer):
+-                    field_value = [getInnerText(k).strip() for k in keys]
++                    field_value = []
++                    for k in keys:
++                        if k.getElementsByTagName("None"):
++                            field_value.append(None)
++                        else:
++                            field_value.append(getInnerText(k).strip())

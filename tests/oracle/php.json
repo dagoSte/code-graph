@@ -1,0 +1,155 @@
+{
+  "schema": "oracle-matrix/1",
+  "cases": [
+    {
+      "id": "php/firstclass_import_global_decoy",
+      "language": "php",
+      "files": {
+        "app.php": "<?php namespace App; use function Other\\polish; function drive(){return polish(...)();}",
+        "lib.php": "<?php namespace Other; function polish(){return 1;}",
+        "global.php": "<?php function polish(){return 0;}"
+      },
+      "source_sha256": "5d9d7d4999e53891b18e28edb41a8b6d684ccb0caa13bfeed4d91ae1fe0e945f",
+      "required_indexed": [
+        "app.php",
+        "global.php",
+        "lib.php"
+      ],
+      "native": {
+        "args": [
+          "-r",
+          "require 'lib.php'; require 'global.php'; require 'app.php'; echo App\\drive(), PHP_EOL;"
+        ],
+        "exit": 0,
+        "stdout": "1\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "lib.php",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.php",
+            "drive",
+            1,
+            "polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib.php",
+          "global.php"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "php-firstclass",
+      "evidence_sha256": "2e4da9c6ca474cba606271bbce8df88328a590f6818b0806aca4b81960d01a4f"
+    },
+    {
+      "id": "php/namespace_block_positive",
+      "language": "php",
+      "files": {
+        "app.php": "<?php\nnamespace App { function drive(){return array_map('polish', []);} }",
+        "lib.php": "<?php\nnamespace { function polish(){return 1;} }\nnamespace Other { function unrelated(){} }"
+      },
+      "source_sha256": "5c07fbff36ad516e7c92b731a322594c59a08d79811b6cda195b7533cdd7737a",
+      "required_indexed": [
+        "app.php",
+        "lib.php"
+      ],
+      "native": {
+        "args": [
+          "-r",
+          "require 'lib.php'; require 'app.php'; echo json_encode(['global'=>is_callable('polish'),'other'=>is_callable('Other\\\\polish')]), PHP_EOL;"
+        ],
+        "exit": 0,
+        "stdout": "{\"global\":true,\"other\":false}\n",
+        "stderr": ""
+      },
+      "targets": [
+        [
+          "lib.php",
+          "polish"
+        ]
+      ],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.php",
+            "drive",
+            2,
+            "polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib.php",
+          "global.php"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "php-global-callable",
+      "evidence_sha256": "c793a5bd331cb24f746e77ddb5429e85ebaefccfaf0b8e682f9829cb8329dd69"
+    },
+    {
+      "id": "php/namespace_block_negative",
+      "language": "php",
+      "files": {
+        "app.php": "<?php\nnamespace App { function drive(){return array_map('polish', []);} }",
+        "lib.php": "<?php\nnamespace Other { function polish(){return 1;} }\nnamespace { function unrelated(){} }"
+      },
+      "source_sha256": "371786cb6be98dc4bbcc4f7aa1d5336f5bc2f942cb7677cc4274fd85d18c90a5",
+      "required_indexed": [
+        "app.php",
+        "lib.php"
+      ],
+      "native": {
+        "args": [
+          "-r",
+          "require 'lib.php'; require 'app.php'; echo json_encode(['global'=>is_callable('polish'),'other'=>is_callable('Other\\\\polish')]), PHP_EOL;"
+        ],
+        "exit": 0,
+        "stdout": "{\"global\":false,\"other\":true}\n",
+        "stderr": ""
+      },
+      "targets": [],
+      "observe": {
+        "relations": [
+          "reference"
+        ],
+        "sites": [
+          [
+            "app.php",
+            "drive",
+            2,
+            "polish",
+            "reference"
+          ]
+        ],
+        "target_files": [
+          "lib.php",
+          "global.php"
+        ]
+      },
+      "baseline": {
+        "status": "ok"
+      },
+      "protocol": "php-global-callable",
+      "evidence_sha256": "1c9fc6bb567ba5a6079da518fb5fab2a96a36e20ccdfc39c098cd6d7a2dbde4e"
+    }
+  ]
+}

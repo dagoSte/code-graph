@@ -1,0 +1,741 @@
+{
+  "format": "codegraph-live-pilot/1",
+  "live": true,
+  "max_calls": 12,
+  "call_seconds": 180,
+  "claude_review_budget_usd": 1,
+  "tokenizer_estimates": false,
+  "cases": [
+    {
+      "task": "refund",
+      "arm": "source_only",
+      "fixture_sha256": "8bf8b2d53f72cbb5547baf8e973965593d07919934be608fa22584f761c8835e",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 23.624,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 29.995,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.591,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "verified",
+          "seconds": 2.181,
+          "error_code": "invalid"
+        }
+      ],
+      "outcome": "review_failed",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 49823,
+            "output_tokens": 643,
+            "cached_input_tokens": 32768,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 49823,
+              "output_tokens": 643,
+              "cached_input_tokens": 32768,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "measured_client_seconds": 23.255
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 122687,
+            "output_tokens": 763,
+            "cached_input_tokens": 111104,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 122687,
+              "output_tokens": 763,
+              "cached_input_tokens": 111104,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "measured_client_seconds": 29.632
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "failed",
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0,
+          "native_usage": [
+            {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "reasoning_output_tokens": null
+            }
+          ],
+          "native_tools": null,
+          "measured_client_seconds": 1.993
+        }
+      ],
+      "cleanup_drained": true,
+      "final_state": "verified",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.052,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.049,
+          "exit": 0
+        }
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "changed_files": [
+        "domain/refunds.py",
+        "tests/test_refunds.py"
+      ],
+      "seconds": 56.512,
+      "access_failure": null,
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_refunds.RefundTests.test_refund_eligibility_window"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "candidate_scope_ok": true,
+      "offline_poststop_checks": true
+    },
+    {
+      "task": "refund",
+      "arm": "graph_assisted",
+      "fixture_sha256": "8bf8b2d53f72cbb5547baf8e973965593d07919934be608fa22584f761c8835e",
+      "baseline_holdout": {
+        "passed": false,
+        "actual": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "baseline_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stages": [
+        {
+          "stage": "plan",
+          "state": "planned",
+          "seconds": 50.976,
+          "error_code": null
+        },
+        {
+          "stage": "edit",
+          "state": "edited",
+          "seconds": 34.603,
+          "error_code": null
+        },
+        {
+          "stage": "verify",
+          "state": "verified",
+          "seconds": 0.588,
+          "error_code": null
+        },
+        {
+          "stage": "review",
+          "state": "verified",
+          "seconds": 1.9,
+          "error_code": "invalid"
+        }
+      ],
+      "outcome": "review_failed",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "done",
+          "usage": {
+            "input_tokens": 74650,
+            "output_tokens": 989,
+            "cached_input_tokens": 52352,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 74650,
+              "output_tokens": 989,
+              "cached_input_tokens": 52352,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 0
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "measured_client_seconds": 50.564
+        },
+        {
+          "client": "codex",
+          "mode": "write",
+          "status": "done",
+          "usage": {
+            "input_tokens": 145223,
+            "output_tokens": 932,
+            "cached_input_tokens": 127744,
+            "measured": true
+          },
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": [
+            {
+              "input_tokens": 145223,
+              "output_tokens": 932,
+              "cached_input_tokens": 127744,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_output_tokens": 22
+            }
+          ],
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 2,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 4,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 5,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 6,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 7,
+              "name": "cg_impact",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 8,
+              "name": "cg_verify_plan",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 9,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 10,
+              "name": "cg_read",
+              "status": "ok",
+              "graph_evidence_observed": null
+            }
+          ],
+          "measured_client_seconds": 34.252
+        },
+        {
+          "client": "claude",
+          "mode": "read",
+          "status": "failed",
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "measured": true
+          },
+          "resolved_models": [
+            "claude-opus-5-5"
+          ],
+          "cli_reported_cost_usd": 0,
+          "native_usage": [
+            {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cached_input_tokens": null,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "reasoning_output_tokens": null
+            }
+          ],
+          "native_tools": null,
+          "measured_client_seconds": 1.699
+        }
+      ],
+      "cleanup_drained": true,
+      "final_state": "verified",
+      "workflow_tests": {
+        "baseline": {
+          "status": "passed",
+          "summary": {
+            "total": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.051,
+          "exit": 0
+        },
+        "after": {
+          "status": "passed",
+          "summary": {
+            "total": 3,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "framework": "unittest"
+          },
+          "duration_s": 0.048,
+          "exit": 0
+        }
+      },
+      "candidate_public": {
+        "passed": true,
+        "executed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "candidate_holdout": {
+        "passed": true,
+        "actual": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "expected": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "exit_code": 0
+      },
+      "test_retention": {
+        "passed": true,
+        "removed_or_weakened": [],
+        "regression_test_added": true
+      },
+      "api_retention": {
+        "passed": true,
+        "changed_signatures": []
+      },
+      "changed_files": [
+        "domain/refunds.py",
+        "tests/test_refunds.py"
+      ],
+      "seconds": 88.198,
+      "access_failure": null,
+      "regression_probe": {
+        "passed": true,
+        "test_ids": [
+          "test_refunds.RefundTests.test_refund_window_and_status"
+        ],
+        "original": {
+          "passed": false,
+          "executed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0
+        },
+        "candidate": {
+          "passed": true,
+          "executed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "candidate_scope_ok": true,
+      "offline_poststop_checks": true
+    },
+    {
+      "task": "falsy",
+      "arm": "graph_assisted",
+      "outcome": "cancelled_after_manual_quota_stop",
+      "final_state": "draft",
+      "calls": [
+        {
+          "client": "codex",
+          "mode": "read",
+          "status": "cancelled",
+          "usage": null,
+          "resolved_models": null,
+          "cli_reported_cost_usd": null,
+          "native_usage": null,
+          "native_tools": [
+            {
+              "id": 1,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            },
+            {
+              "id": 2,
+              "name": "cg_search",
+              "status": "ok",
+              "graph_evidence_observed": true
+            },
+            {
+              "id": 3,
+              "name": "cg_read",
+              "status": "error",
+              "graph_evidence_observed": null
+            }
+          ],
+          "measured_client_seconds": 14.447
+        }
+      ],
+      "cleanup_drained": null,
+      "manual_cleanup_verified": true
+    },
+    {
+      "task": "falsy",
+      "arm": "source_only",
+      "outcome": "not_started_after_quota_stop",
+      "calls": []
+    }
+  ],
+  "environment": {
+    "python": "3.13.14",
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "engine_files": {
+    "agent_queries.py": "24256c4910917041e6b0764a571dd718e9e593485f484a4b20f3c58e80170649",
+    "agents.py": "f0a3d7faa457b42fab4008f4e542088c045b947f9fc065d7e5c7eab9d664be15",
+    "architecture.py": "473c6cce28ee1e7390c10ef68d3ecbc0888b309a4cadf72e4378e9a8cb075db7",
+    "catalog.py": "4ed3e6276d5ff11fa23947ea412b4a073e7daaba882cd72b5d10310bba563be6",
+    "cg.py": "89337eee72d1e12e3659f35ec6085cafc335ff0f8afe70754a3b22e2043c1cb9",
+    "change_analysis.py": "69f1c5e2d4415126cb63abe477ec26b8227f13796b6d62d3066b66e5b8d62000",
+    "change_flow.py": "e34a7e3a357dfac98c70564ab559c46331011187a3cdd96b198a30ef339d60a1",
+    "change_tests.py": "7ff24aee00eeee003fdc8e6850693daa90c523559b54faf918fb6fc0b68db9ab",
+    "checks.py": "a3bfec6f972d3e24776d6f35fa7135f4cd714a1b13f90ca2e3ced53e13b3506e",
+    "entrypoints.py": "f5951f9a28ef30cc8d8b7858ef7fa51f6cdc0a27a25e0d68e9dad10f23d6ac95",
+    "evidence.py": "e8b5b2e436cf1efb6a145d7fdb3c01ecbf4e9a4729851f4a6ff171e1b23cd04e",
+    "feature_packets.py": "9991c063711434b406fea9337b0256e4184462be19ca947f41079e4ea1a00fc4",
+    "features.py": "c2d4176d97399524da6d1bbc077b4d15e2fa370994d13cc1036968d7b1cc9af7",
+    "language_adapters.py": "52d5f6b3cd42006c931b183d1ded287dba7361be01c30dff28304b0bc982bbbd",
+    "language_dart.py": "e4a4865e378b038741648be6cfa11b956e5368d707e5a0e4c0ae10b66258a944",
+    "language_go.py": "9cc107faaf64c7549642c9ede3fdccde8caa2d333c80421ac4053e3264d163db",
+    "language_java.py": "b0d9d717c42b30735d14986735ceaa348fa288d42af107cc86504cb6a05bea65",
+    "language_javascript.py": "89c2a679ce1a2cfd694298808a7b70e0c520072a7b2b37e57a1ea80f57a7d793",
+    "language_php.py": "3b922d91ecd182203c27e3fc63da0cb62969946aecf59ce6e41e17c8525d3f0a",
+    "language_python.py": "45f6328397214ced820bd2ac16594d8c5d7282a5442668be84040104dae7f19b",
+    "language_sql.py": "8f47857e066a878fa9b093e968b477e9df52997cd3890ec5e581dbc6267834a8",
+    "language_swift.py": "54a073223e1ac5d3c28033bfc59cbcaf3d2d910dcb8b02c168713bbceb09305c",
+    "mcp_server.py": "da6e175f7bb431fe7f2cbf3f3c56c1a5edcf785eb79f97b9860690b76a6d25b4",
+    "project_data.py": "4c426220b00f33a0952d34320a1f286e7430259d60d0c3f6154878442c099108",
+    "search.py": "fb2d7ac5ffb7210e6aa12b93dddecc5b7480c6f6699b1d1b4b7aeb59ce9eb496",
+    "source_windows.py": "20bed3fe0ba5d8a242fd81d69f97a47b9d7e946ef0f2f591f3d665dcfb23df79",
+    "workbench.py": "be716c0dbfe92b33f33901b7f5175cd857ed375973a5b9b7fa228a43c0bad358"
+  },
+  "clients": {
+    "codex": {
+      "version": "codex-cli 0.167.1",
+      "version_exit": 0,
+      "model_override": null
+    },
+    "claude": {
+      "version": "2.1.322 (Claude Code)",
+      "version_exit": 0,
+      "model_override": null
+    }
+  },
+  "live_starts": 7,
+  "stop": {
+    "reason": "claude_weekly_limit",
+    "automatic_detection": false,
+    "manual_stop": true,
+    "process_exit": 130,
+    "client_starts_observed": 7,
+    "completed_codex_calls": 4,
+    "failed_claude_calls": 2,
+    "cancelled_codex_calls": 1,
+    "additional_calls_allowed": false,
+    "scope": "No retry, provider change, credits purchase or limit increase",
+    "recorded_unix_time": 1794504141.014136
+  },
+  "execution_manifest_sha256": "164098d53b2b90f6eb3e8d701b531ec2fb251dce7008c73af674c981c6956c0a",
+  "execution_runner_sha256": "470ffbc613b57b8cf44fdeba2cda7648807081fda86a89fe33812ca0b96aa58e",
+  "result": "inconclusive_weekly_quota",
+  "integration_completed": 0,
+  "execution_commit": "aad270a35e48a79aeb69b5393b197b5aa775f28e",
+  "published_runner_sha256": "1248abe55dc8cf6b6da0a7a3b933537fbf9da06407683a440492a52c1f882fb2",
+  "published_runner_change": "Recognize weekly/monthly/daily limit messages; not used to rerun this pilot."
+}

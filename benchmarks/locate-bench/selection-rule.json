@@ -1,0 +1,19 @@
+{
+  "baseline_commit": "2cfb459fff4f234ef8f77018b9228d8fc8f14497",
+  "blinding": "Do not communicate individual baseline results to codex2 until coordinator declares L2 frozen.",
+  "decision": "locate-bench-regola",
+  "decision_event_sha256": "1c64ed735b8625b40fc5bf96241ebe1dea8a94c6a4302fdfa3260729272c8620",
+  "excluded_cases_sha256": "2683551d2a818f6d0765858ca3f74c293c1bc23648bbbbbb2966f91da48e2b99",
+  "format": "codegraph-locate-selection/1",
+  "ground_truth": "production_files plus other_production when present; historical first-parent diff, old-side callable mapping from study_localization, language by extension; unsupported/absent/partial/unmapped declarations retained explicitly.",
+  "ledger_sha256": "3a06500463dfacaaa956c0900af1d9ff0db6d6680afabcaec3fd898ae97af6eb",
+  "measurement": "One default locate on each historical parent, original title plus two newlines plus original issue body; all failures/missing retained. No ranking, term, limit or case tuning.",
+  "models": 0,
+  "per_repository": 15,
+  "repositories": [
+    "django",
+    "typescript-eslint",
+    "prometheus"
+  ],
+  "selection": "First15 rows in each stored metadata array with verified bug issue, fix and nonempty production_files, excluding the23 study cases. No filter on native qualification or tests."
+}

@@ -1,0 +1,360 @@
+{
+  "case_locks": {
+    "django-19361": {
+      "package.json": "0d61d3dfa9282a5dbfdc009ae66df33e98da9f54e23d50293da709628ad03cf2",
+      "pyproject.toml": "9c8195981a12132e85e5bab5bf8587cce7ce80150370993424f2e2684fcb54f3",
+      "tests/requirements/py3.txt": "09180245130fbbf5033a02b7d8d1e7b88deb08b15dd5bb875d7f3c3c37ff5932"
+    },
+    "django-19645": {
+      "package.json": "0d61d3dfa9282a5dbfdc009ae66df33e98da9f54e23d50293da709628ad03cf2",
+      "pyproject.toml": "93255bda742c9373f0ff8e13e4f1a449bd26dd3bafd1153296e95ad5467be8f8",
+      "tests/requirements/py3.txt": "314fb5a58831681e30cc91575f86a24df5f1b6acc72a60b4db7364609de1f2ad"
+    },
+    "django-20183": {
+      "package.json": "e82143d5ec9b904216f97d4592dc11d2b021e39e4db2b908e97fabfd428afcf3",
+      "pyproject.toml": "75a54f0930d44b45ec26d46169b4bf8b9318f28b96d68476a29a339f6e57fef7",
+      "tests/requirements/py3.txt": "e78de2149efa21f376f14bf0b306bf988aac34fd0ab0d1d87608d1af2cc6cc07"
+    },
+    "django-20288": {
+      "package.json": "e82143d5ec9b904216f97d4592dc11d2b021e39e4db2b908e97fabfd428afcf3",
+      "pyproject.toml": "75a54f0930d44b45ec26d46169b4bf8b9318f28b96d68476a29a339f6e57fef7",
+      "tests/requirements/py3.txt": "e78de2149efa21f376f14bf0b306bf988aac34fd0ab0d1d87608d1af2cc6cc07"
+    },
+    "django-20395": {
+      "package.json": "e82143d5ec9b904216f97d4592dc11d2b021e39e4db2b908e97fabfd428afcf3",
+      "pyproject.toml": "75a54f0930d44b45ec26d46169b4bf8b9318f28b96d68476a29a339f6e57fef7",
+      "tests/requirements/py3.txt": "e78de2149efa21f376f14bf0b306bf988aac34fd0ab0d1d87608d1af2cc6cc07"
+    },
+    "django-20696": {
+      "package.json": "9c354de6094567898d346ad311a24b5d370beb80a1bec4314b0c187435f271b3",
+      "pyproject.toml": "9442fea5438e1078049605455d3b489ec8dc5a8d4dc333e2849c330706dc8258",
+      "tests/requirements/py3.txt": "920479afe1e52671092e28faf8926bb6ce7a4f5c1233ec1c6df291b24d9815c7"
+    },
+    "django-20837": {
+      "package.json": "9c354de6094567898d346ad311a24b5d370beb80a1bec4314b0c187435f271b3",
+      "pyproject.toml": "9442fea5438e1078049605455d3b489ec8dc5a8d4dc333e2849c330706dc8258",
+      "tests/requirements/py3.txt": "920479afe1e52671092e28faf8926bb6ce7a4f5c1233ec1c6df291b24d9815c7"
+    },
+    "django-20959": {
+      "package.json": "a64d201b173bf5445fdd24e6ee116ffdf2452cd9f5d3bb33dbc6d28d230a49bc",
+      "pyproject.toml": "9442fea5438e1078049605455d3b489ec8dc5a8d4dc333e2849c330706dc8258",
+      "tests/requirements/py3.txt": "920479afe1e52671092e28faf8926bb6ce7a4f5c1233ec1c6df291b24d9815c7"
+    },
+    "prometheus-17312": {
+      "go.mod": "dc72a3236e9c58c429c8d21d61b311d4c3e6590ca6b11932434ee543b45bc363",
+      "go.sum": "33880505cd89e6ff68203e0286d4eef6cc44cb936d766b5bf32f0c2293da172f"
+    },
+    "prometheus-18323": {
+      "go.mod": "645ca55b5fe9ebe019083dcc5bbe5f89208e4848712941687f0160d057591eca",
+      "go.sum": "b839f0139e6c83e1e4ad8b93f6508c58c2e48b9a3842f5af7986fa6fe69b24d9"
+    },
+    "prometheus-18375": {
+      "go.mod": "a5c937fc797be13f8a56e4b21c0a9f75d5139539a33dcac769595ba8d6b854f2",
+      "go.sum": "2c35a4f26c79a89a11bdcd7d0b48d34976b99957991c5eb18a24b8f0037b4d89"
+    },
+    "prometheus-18401": {
+      "go.mod": "936bfed37431ad558fc8d37de2d8a8cc3c2eebd993786597289b4f5697fb0a19",
+      "go.sum": "d8bf07503547dfafdbd73f0e15a25c3c9be488d70908d47f9852d6561b747e0f"
+    },
+    "prometheus-18631": {
+      "go.mod": "94e39d68d3abd10168c4b1944a63356a1d9a467ddeceee46aea75fc14e4381d1",
+      "go.sum": "2b0f11cdccdc6605922c8f48d7afc68ae44fdc90df6b5d2f6f677b447b07d99e"
+    },
+    "prometheus-19368": {
+      "go.mod": "0f4c47aa6b66607fa8794a8aee0180990884cf10dbe185c24a882705fb85f2f2",
+      "go.sum": "cc04b3d790c1dacc220fb7d513289edee5c01b2275d69bb8d759688ad40cd584"
+    },
+    "prometheus-19403": {
+      "go.mod": "3906eb16c64ede02a26b5f7663d7ddf363c0b715e1c2f9f3540f7f1e9d42249a",
+      "go.sum": "603b62cecded61524d616e6699a188ba4856394e2d38fe0a917e336d78b83ed5"
+    },
+    "typescript-eslint-12941": {
+      "package.json": "be496dc241048e1fac11173c5ab1af065fdef3ec560d3a00a88059bd21e765f0",
+      "pnpm-lock.yaml": "c3014c3b23d75c5236651d03721031beaf1d76fdefdf84e06a9296bc510e5fa4",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-12953": {
+      "package.json": "be496dc241048e1fac11173c5ab1af065fdef3ec560d3a00a88059bd21e765f0",
+      "pnpm-lock.yaml": "c3014c3b23d75c5236651d03721031beaf1d76fdefdf84e06a9296bc510e5fa4",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-12974": {
+      "package.json": "05f34688c9f482963511b1b3c474b5a3479297f08b7d86e4a0061cf488af34ad",
+      "pnpm-lock.yaml": "30202b59793376cd21ed0d727922835b2efd84e43101f71cc3685c993fcfe3fa",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-12977": {
+      "package.json": "05f34688c9f482963511b1b3c474b5a3479297f08b7d86e4a0061cf488af34ad",
+      "pnpm-lock.yaml": "30202b59793376cd21ed0d727922835b2efd84e43101f71cc3685c993fcfe3fa",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-12991": {
+      "package.json": "05f34688c9f482963511b1b3c474b5a3479297f08b7d86e4a0061cf488af34ad",
+      "pnpm-lock.yaml": "064a39dae582b9659bb4e01a853cd1f5ce2eb0a082e1c581ab4dae4d469ffc7f",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-12995": {
+      "package.json": "05f34688c9f482963511b1b3c474b5a3479297f08b7d86e4a0061cf488af34ad",
+      "pnpm-lock.yaml": "30202b59793376cd21ed0d727922835b2efd84e43101f71cc3685c993fcfe3fa",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-13058": {
+      "package.json": "b4af0c4005257a371f17b75bf210952e0e1616811589c2baaeaf1ca57503178a",
+      "pnpm-lock.yaml": "b198de2378a2412c32fb8f7d7476f7846d0f4600041c5c9b255bfd3e583f13d7",
+      "pnpm-workspace.yaml": "821dfffe7b334de72053664c9d34c0e6d77f3b49bf1a79c0db7568daea569190"
+    },
+    "typescript-eslint-13062": {
+      "package.json": "b4af0c4005257a371f17b75bf210952e0e1616811589c2baaeaf1ca57503178a",
+      "pnpm-lock.yaml": "a0bb19de6c6bbaed5891a790b0c5b0e08483177d253ed5826d8015d532025257",
+      "pnpm-workspace.yaml": "c2b87701a7da45848c539632faf08c661b3f923934549d32a575bc7cd6e8c1e1"
+    }
+  },
+  "format": "codegraph-study-environment/1",
+  "network_during_qualification": "IP egress denied by macOS Seatbelt; Unix IPC allowed",
+  "platform": {
+    "machine": "arm64",
+    "release": "27.2.0",
+    "system": "Darwin"
+  },
+  "preparation_scripts": {
+    "extend_pool.py": "1e41ef71267cc3a02aa70a46b1c033710a3f2f1c0a8a079ba281444ae3a17ca2",
+    "fetch_pool.py": "ff60f441260d7743aaa3b68600cad1a8c1a2d20a5d6bed0dec6cec995182c084",
+    "prefilter.py": "81d12b7874b47a0163dd47977ea00ad26f390dac0813470b180a2e20befa32e2",
+    "prepare_cases.py": "e9db31c039de9f4eb9fe5c87b0d164e7f055af3dd0ea58cb1e8491b424924798",
+    "qualify_cases.py": "0a43c957fc4c1bba8dd06589a8839cafd9a25a13e9224b0f182577eeeefc5e61",
+    "repository_gates.py": "dc51852a0990ebd3a4292ee32bb11e084e1689a921dd006268cbfc21bc36bc16",
+    "resolve_django_selectors.py": "b17e991f9c8299d8ce801a1d179a8d3912c327afccac8687a3ff1eb1ae86ee25",
+    "resolve_ts_selectors.py": "18c4d6ca8fcb0722929d22141378dc84d09c2973c788f8028d8fedbd62ce3830",
+    "verify_prepared.py": "e8bd3cfc9aa3014e9376793e5e85f533e0f2cde0583d16773417107379a91846"
+  },
+  "python_packages": [
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "wheel_sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "wheel_sha256": "73e77980c7207854f00fc4e71fb1626868d5740ab4012623d55c7a99ad122a72"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "wheel_sha256": "2283a07e2c21a2aa78d9c4442724ec1eb15f5e42a723b99cb3d822d48f5f7ad1"
+    },
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "wheel_sha256": "9243213661e29250eb41368e5daa826fc017156c3b8a11440826b2e3ed376472"
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.5",
+      "wheel_sha256": "e1cc2bfaee8c214f06080a7c7d5772419b8a1108e8e5349236189811823fb02a"
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "wheel_sha256": "053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e"
+    },
+    {
+      "name": "aiosmtpd",
+      "version": "1.4.6",
+      "wheel_sha256": "72c99179ba5aa9ae0abbda6994668239b64a5ce054471955fe75f581d2592475"
+    },
+    {
+      "name": "argon2-cffi",
+      "version": "25.1.0",
+      "wheel_sha256": "fdc8b074db390fccb6eb4a3604ae7231f219aa669a2652e0f20e16ba513d5741"
+    },
+    {
+      "name": "argon2-cffi-bindings",
+      "version": "26.2.0",
+      "wheel_sha256": "5ec171ae5e52691b5f111d815cb656a8142bedc1408c3db904d1a11df44604ca"
+    },
+    {
+      "name": "asgiref",
+      "version": "3.13.0",
+      "wheel_sha256": "f9596a2434512686473d50f96ff6207fbba49ae1a785dfac614df4aeb085674d"
+    },
+    {
+      "name": "atpublic",
+      "version": "9.0.0",
+      "wheel_sha256": "449c3c4f0c74df79749d6fe225ba55e2a2fce34b303f0329211e4d6989ed6f6e"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "wheel_sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+    },
+    {
+      "name": "bcrypt",
+      "version": "5.0.0",
+      "wheel_sha256": "0c418ca99fd47e9c59a301744d63328f17798b5947b0f791e9af3c1c499c2d0a"
+    },
+    {
+      "name": "black",
+      "version": "26.10.1",
+      "wheel_sha256": "978113a40223a6aaefc17364176a809a320e6b288683841427fff04c6d7b4130"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "wheel_sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "wheel_sha256": "19ee6127ee34de7d83ce3d371ebc5ed91addbdcc39f9ab15ce4eb35a4e534971"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "wheel_sha256": "6045373d5a89a5ec71afde535db987ca28e76dfa276c2d4c818265b375d4b055"
+    },
+    {
+      "name": "click",
+      "version": "8.5.1",
+      "wheel_sha256": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37"
+    },
+    {
+      "name": "docutils",
+      "version": "0.23",
+      "wheel_sha256": "25d013af9bf23bc1c7b2b093dff4208166c53a94786c9e447808335ef1185fea"
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "wheel_sha256": "f21f00a91358803399890ab167098c131ec2ddd5f8f5fd5fe9c9f2c6fcd91e40"
+    },
+    {
+      "name": "geoip2",
+      "version": "5.3.0",
+      "wheel_sha256": "7f82c587f3f3691f30adc8634d0b93de9853d96d514ed48ff3ba38f188a5df31"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "wheel_sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+    },
+    {
+      "name": "maxminddb",
+      "version": "3.2.0",
+      "wheel_sha256": "4a6c12ccc49f9b9abe29aa9f32bf153f8a17efbc7d568bd64f80f2f4c71d64d5"
+    },
+    {
+      "name": "multidict",
+      "version": "7.2.1",
+      "wheel_sha256": "4bebc9587cc29359e3b045518a7a09264fa882a7d165b0d143fdac8eeb7ea948"
+    },
+    {
+      "name": "mypy_extensions",
+      "version": "1.2.0",
+      "wheel_sha256": "993e7a20aa5671eb41a7132cf555af30062da99729601601b9a8382b11cae768"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "wheel_sha256": "6d6a71b9d9a97c03633aa12565ef2825ffa036cc1d99cfd50dacf0f128af4fe2"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "wheel_sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "name": "pathspec",
+      "version": "1.1.1",
+      "wheel_sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "wheel_sha256": "f11a3c1358bb3c68012a7b1f41b223c3db9f7bfde90b481df028cfe1c3363313"
+    },
+    {
+      "name": "pip",
+      "version": "26.1.2",
+      "wheel_sha256": null
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.14.5",
+      "wheel_sha256": "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750"
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.4",
+      "wheel_sha256": "44149f46500a0a41b95b4d99c2e586a77319539730607b9892974a092788b111"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "wheel_sha256": "a076f3f489b39b43ed13563a1dafe42447445bec2e294154ec5c57fcdda4c85e"
+    },
+    {
+      "name": "pymemcache",
+      "version": "4.0.0",
+      "wheel_sha256": "f507bc20e0dc8d562f8df9d872107a278df049fa496805c1431b926f3ddd0eab"
+    },
+    {
+      "name": "pytokens",
+      "version": "0.4.1",
+      "wheel_sha256": "8bdb9d0ce90cbf99c525e75a2fa415144fd570a1ba987380190e8b786bc6ef9b"
+    },
+    {
+      "name": "redis",
+      "version": "8.1.0",
+      "wheel_sha256": "a4fe1aac3d3b3cc791d4b3d5931c5a956045dc951ee74d1c913ee3ac4d2ee9fb"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "wheel_sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+    },
+    {
+      "name": "sqlparse",
+      "version": "0.6.1",
+      "wheel_sha256": "3be5a72d04c873d690d7c6dedd33d6fae2ef82759881ceec02fc2efd0cba564f"
+    },
+    {
+      "name": "tblib",
+      "version": "3.2.2",
+      "wheel_sha256": "26bdccf339bcce6a88b2b5432c988b266ebbe63a4e593f6b578b1d2e723d2b76"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6",
+      "wheel_sha256": "0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "wheel_sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+    },
+    {
+      "name": "yarl",
+      "version": "1.25.1",
+      "wheel_sha256": "0f12afda4eea8c8994a76d4df1875c765194f5fbe8a9d197929ea303caee29ec"
+    }
+  ],
+  "toolchains": {
+    "go": {
+      "executable_sha256": "d4f87582b3289f95d5913feeda16a0682e6ec9ac37b48a600b32b00fb58b1b81",
+      "version": "go version go1.27.4 darwin/arm64"
+    },
+    "node": {
+      "executable_sha256": "aa7c3390685f1388f3b898b7d7f84edf95fcee4aa062725aa56dee348afbe6be",
+      "version": "v26.6.0"
+    },
+    "pnpm": {
+      "executable_sha256": "d9c23be5ad12e3e31faf6bdbe8c1566f642eddd03d915bfc0b9ab46120c8a521",
+      "version": "12.15.0"
+    },
+    "python": {
+      "executable_sha256": "e81eb555fbfb8c6bd4ea528c60d4b3a8f9a94e53c31b0470f4f1524b4b9548c0",
+      "version": "Python 3.13.14"
+    }
+  }
+}

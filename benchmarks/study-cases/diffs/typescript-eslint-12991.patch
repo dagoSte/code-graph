@@ -1,0 +1,20 @@
+diff --git a/packages/eslint-plugin/src/rules/triple-slash-reference.ts b/packages/eslint-plugin/src/rules/triple-slash-reference.ts
+index e79c77a45..e8f6130b1 100644
+--- a/packages/eslint-plugin/src/rules/triple-slash-reference.ts
++++ b/packages/eslint-plugin/src/rules/triple-slash-reference.ts
+@@ -97,2 +97,6 @@ export default createRule<Options, MessageIds>({
+-        const commentsBefore =
+-          context.sourceCode.getCommentsBefore(programNode);
++
++        const firstToken = context.sourceCode.getFirstToken(programNode);
++
++        const commentsBefore = firstToken
++          ? context.sourceCode.getCommentsBefore(firstToken)
++          : context.sourceCode.getAllComments();
+diff --git a/packages/typescript-estree/src/convert.ts b/packages/typescript-estree/src/convert.ts
+index c765bdb93..f3eefd130 100644
+--- a/packages/typescript-estree/src/convert.ts
++++ b/packages/typescript-estree/src/convert.ts
+@@ -663 +663 @@ export class Converter {
+-          range: [node.getStart(this.ast), node.endOfFileToken.end],
++          range: [0, node.endOfFileToken.end],

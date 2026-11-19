@@ -1,0 +1,11 @@
+diff --git a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+index 5dbca2654..873f79143 100644
+--- a/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
++++ b/packages/eslint-plugin/src/rules/no-unnecessary-type-parameters.ts
+@@ -468,0 +469,6 @@ function collectTypeParameterUsageCounts(
++          // Instantiated mapped types populate `templateType` lazily, which
++          // building a type node forces.
++          if (!type.templateType) {
++            checker.typeToTypeNode(type, undefined, undefined);
++          }
++
