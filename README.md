@@ -7,10 +7,12 @@
 
 # code-graph
 
+[![Sponsor on Ko-fi](https://img.shields.io/badge/Sponsor-Ko--fi-FF6433?logo=kofi&logoColor=white&style=for-the-badge)](https://ko-fi.com/J3K52ADG60)
+
 **Local code intelligence for 8 languages and SQLite SQL.**<br>
 Ask your coding agent where to change the code, what the change could affect and which tests to run.
 
-[![Latest release](https://img.shields.io/github/v/release/dagoSte/code-graph?label=release&color=2ea44f)](https://github.com/dagoSte/code-graph/releases/latest) [![License: FSL-1.1-MIT](https://img.shields.io/badge/license-FSL--1.1--MIT-blue)](LICENSE.md) [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](#install) [![MCP server](https://img.shields.io/badge/MCP-15%20tools-5A67D8)](#mcp) [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-D97757?logo=claude&logoColor=white)](#install) [![Codex skill](https://img.shields.io/badge/Codex-skill-412991?logo=openai&logoColor=white)](#install) [![Sponsor on Ko-fi](https://img.shields.io/badge/Sponsor-Ko--fi-FF6433?logo=kofi&logoColor=white)](https://ko-fi.com/J3K52ADG60)
+[![Latest release](https://img.shields.io/github/v/release/dagoSte/code-graph?label=release&color=2ea44f)](https://github.com/dagoSte/code-graph/releases/latest) [![License: FSL-1.1-MIT](https://img.shields.io/badge/license-FSL--1.1--MIT-blue)](LICENSE.md) [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](#install) [![MCP server](https://img.shields.io/badge/MCP-15%20tools-5A67D8)](#mcp) [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-D97757?logo=claude&logoColor=white)](#install) [![Codex skill](https://img.shields.io/badge/Codex-skill-412991?logo=openai&logoColor=white)](#install)
 
 **English** · [Italiano](README.it.md) · [Privacy](PRIVACY.md)
 
